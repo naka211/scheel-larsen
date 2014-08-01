@@ -1,1 +1,0 @@
-<?php defined('_JEXEC') OR die('Access Denied!');
