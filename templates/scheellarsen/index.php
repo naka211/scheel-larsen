@@ -2,6 +2,7 @@
 // No direct access.
 defined('_JEXEC') or die;
 $tmpl = JURI::base().'templates/'.$this->template."/";
+$session = JFactory::getSession();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -281,7 +282,7 @@ $tmpl = JURI::base().'templates/'.$this->template."/";
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="container">
-                    {module Main menu}
+                    {module Top Menu}
                 <!--<ul class="nav navbar-nav">
                   <li class="active"><a href="index.php">Forside</a></li>
                   <li><a href="product.php">Produkter</a>
@@ -375,6 +376,7 @@ $tmpl = JURI::base().'templates/'.$this->template."/";
                     <h4>• Ved køb af 2 stk.</h4>
                     <p>190 liter – 1300 kr.<br>
                         240 liter – 1500 kr.</p>
+                    <a class="btnseemore" href="#"><span class="fl">SE MERE</span> <b class="icon_right"></b></a>
                 </div>
                 <div class="cane">
                     <h2><img src="<?php echo $tmpl;?>img/title_cane.png" alt=""></h2>
@@ -487,7 +489,7 @@ $tmpl = JURI::base().'templates/'.$this->template."/";
                 <li>
                     <div class="icon_delivery"> <img class="mt5" src="<?php echo $tmpl;?>img/icon_struck.png" alt=""> </div>
                     <div class="fl">
-                        <h4>GRATIS LEVERING I SJÆLLAND</h4>
+                        <h4>GRATIS LEVERING PÅ SJÆLLAND</h4>
                         <p>Fri fragt ved køb over 1.000 DKK</p>
                     </div>
                 </li>
@@ -556,15 +558,16 @@ $tmpl = JURI::base().'templates/'.$this->template."/";
                             <li><a href="#">Muubs havemøbler MV.</a></li>
                         </ul>
                     </div>
+                    
                     <div class="sitemap_list">
                         <h3>Betingelser & Vilkår</h3>
                         <ul>
-                            <li><a href="#">Kontakt</a></li>
-                            <li><a href="#">Levering</a></li>
-                            <li><a href="#">Returnering & Ombytning</a></li>
-                            <li><a href="#">Handelsbetingelser</a></li>
+                            <li><a href="contact.php">Kontakt</a></li>
+                            <li><a href="info.php">Info</a></li>
+                            <li><a href="terms.php">Handelsbetingelser</a></li>
                         </ul>
                     </div>
+                    
                 </div>
                 <div class="newsletter clearfix">
                     <div class="w485 fl">
@@ -572,26 +575,33 @@ $tmpl = JURI::base().'templates/'.$this->template."/";
                             VI UDSENDER NYHEDSBREV 1-2 GANGE OM MÅNEDEN!</p>
                     </div>
                     <div class="w430 fr mt5">
-                        <input type="text" placeholder="Indtast din e-mail">
-                        <a class="btnSubscribe btn2" href="#">Tilmeld</a> </div>
+                        <input type="text" placeholder="Indtast din e-mail" class="fl">
+                        <a class="btnSubscribe btn2 fl ml5" href="#">Tilmeld</a> </div>
                 </div>
             </div>
         </div>
         <div class="footer_bottom clearfix">
             <div class="container">
-                <p class="fl">Copyright © 2013 <a href="index.php">Scheel-Larsen.dk</a> . All rights reserved</p>
+                <p class="fl">Copyright © 2014 <a href="index.php">Scheel-Larsen.dk</a> . All rights reserved</p>
                 <p class="fr">Design af <a target="_blank" href="http://www.mywebcreations.dk/">My Web Creations</a></p>
             </div>
         </div>
     </footer>
     
-
+<?php if($session->get('notify') != 1){?>
+<script language="javascript">
+$(document).ready(function() {
+    $(".btnCookie").click(function(event) {
+        jQuery.post("<?php echo JURI::base().'index.php?option=com_virtuemart&controller=virtuemart&task=set_session'?>");
+    });
+});
+</script>
     <div id="CookieInfo" class="CookieInfo">
         <div class="cookie-content">
             <p>Cookies er nødvendige for at få hjemmesiden til at fungere, men de gemmer også information om hvordan du bruger vores hjemmeside, så vi kan forbedre den både for dig og for andre. Cookies på denne hjemmeside bruges primært til trafikmåling og optimering af sidens indhold. Du kan forsætte med at bruge vores side som altid, hvis du accepterer at vi bruger cookies. Lær mere om hvordan du håndterer cookies på dine enheder.</p>
-            <!--<a href="#">Læs mere om vores brug af cookies her.</a>--> 
-            <a class="btnCookie" href="#">Luk</a> </div>
+            <a class="btnCookie" href="javascript:void(0);">Luk</a> </div>
     </div>
+<?php }?>
 </div>
 </body>
 </html>

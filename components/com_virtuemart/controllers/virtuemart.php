@@ -60,7 +60,11 @@ class VirtueMartControllerVirtuemart extends JController
 		return $this;
 	}
 
-
+    public function set_session(){
+        $session = JFactory::getSession();
+        $session->set('notify', 1);
+        die(true);
+    }
 
 }
  //pure php no closing tag

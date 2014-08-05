@@ -21,7 +21,7 @@
 		margin-left: -175px;
 		/*width: 520px;*/
 		background: #fff;
-		position: absolute;
+		position: fixed;
 		z-index: 99999;
 		/*padding: 10px 40px 20px;*/
 		/*-moz-border-radius: 5px;

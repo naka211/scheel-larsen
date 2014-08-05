@@ -28,7 +28,7 @@
           auto    : true, /*{
                   pauseOnHover: "resume"
               },*/
-          //pagination  : "#block1_pag",
+          pagination  : "#block1_pag",
           scroll      :
               {
                   duration    :1200,

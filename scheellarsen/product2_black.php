@@ -16,10 +16,10 @@
               <div class="product_page">
                 <ul class="breadcrumb">
                   <li><a href="index.php">Forside</a></li>
-                  <li><a href="product.php">Diningsæt</a></li>
-                  <li><a href="product2_black.php">Krukker antique</a></li>
+                  <li><a href="product2_black.php">Diningsæt</a></li>
                 </ul>
                 <h2 class="c505050">DININGSÆT</h2>
+                <?php require_once('banner.php'); ?>
                 <h4 class="c505050">Italienske Urtepotter </h4>
                 <p>Vores italienske urtepotter fremstilles på et velrenomeret potteværksted i Toscana i Norditalien - et område, hvor der gennem århundreder har været tradition for fremstilling af smukt designede urtepotter af høj kvalitet. På Pottemageriet er det ægteparret Milo og Therese, der står for den daglige produktion. Det er en virksomhed, som er gået i arv, og som tredje generation ved de, hvad de har med at gøre. De tog derfor vores leverandørs opfordring op med glæde, da de bad dem fremstille en serie nye potter efter gamle, </p>
                 <div class="products">

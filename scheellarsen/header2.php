@@ -236,63 +236,83 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <div class="container">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="index.php">Forside</a></li>
               <li><a href="product.php">Produkter</a>
                 <div class="sub clearfix">
-                  <ul>
-                    <h4>• 1000 KRUKKER</h4>
-                    <li><a href="#">Italienske</a></li>
-                    <li><a href="#">Krukker antique</a></li>
-                    <li><a href="#">Krukker romantic</a></li>
-                    <li><a href="#">Krukker classic</a></li>
-                    <li><a href="#">Beton & terrazzo</a></li>
-                    <li><a href="#">Afrikanske potter</a></li>
-                    <li><a href="#">Pynt til haven</a></li>
-                  </ul>
-                  <ul>
-                    <h4>• PARASOL/PAVILLION ETC.</h4>
-                    <li><a href="#">Parasoller</a></li>
-                    <li><a href="#">Pavillioner</a></li>
-                    <li><a href="#">Parasolfødder</a></li>
-                    <li><a href="#">Parasol cover</a></li>
-                  </ul>
-                  <ul>
-                    <h4>• HAVEMØBLER</h4>
-                    <li><a href="#">Havemøbelsæt </a></li>
-                    <li><a href="#">Bænke </a></li>
-                    <li><a href="#">Stole & chaiselong's </a></li>
-                    <li><a href="#">Borde </a></li>
-                    <li><a href="#">Loungemøbler </a></li>
-                    <li><a href="#">Solvogne & dækstole </a></li>
-                    <li><a href="#">Hyndebokse </a></li>
-                    <li><a href="#">Hynder </a></li>
-                    <li><a href="#">Cover</a></li>
-                  </ul>
-                  <ul>
-                    <h4>• CANE-LINE</h4>
-                    <li><a href="#">Diningsæt </a></li>
-                    <li><a href="#">Borde </a></li>
-                    <li><a href="#">Stole </a></li>
-                    <li><a href="#">Loungesæt </a></li>
-                    <li><a href="#">Sunlounge </a></li>
-                    <li><a href="#">Accessories </a></li>
-                    <li><a href="#">Hynder </a></li>
-                    <li><a href="#">Parasoller & cover</a></li>
-                  </ul>
-                  <ul>
-                    <h4>• MOSAIK & SMEDEJERN</h4>
-                    <h4>• ACCESSORIES TIL HAVEN</h4>
-                    <li><a href="#">Lanterner og lys </a></li>
-                    <li><a href="#">Bålfade etc</a></li>
-                    <h4>• SKIND</h4>
-                    <h4>• HAVEBEHOLDERE</h4>
-                    <h4>• GAVEKORT</h4>
-                  </ul>
+                  <div class="sub_col w178">
+                    <h4><a href="product.php">• 1000 KRUKKER</a></h4>
+                    <ul>
+                      <li><a href="#">Italienske</a></li>
+                      <li><a href="#">Krukker antique</a></li>
+                      <li><a href="#">Krukker romantic</a></li>
+                      <li><a href="#">Krukker classic</a></li>
+                      <li><a href="#">Beton & terrazzo</a></li>
+                      <li><a href="#">Afrikanske potter</a></li>
+                      <li><a href="#">Pynt til haven</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub_col w178">
+                    <h4><a href="product.php">• PARASOL/PAVILLION ETC.</a></h4>
+                    <ul>
+                      <li><a href="#">Parasoller</a></li>
+                      <li><a href="#">Pavillioner</a></li>
+                      <li><a href="#">Parasolfødder</a></li>
+                      <li><a href="#">Parasol cover</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub_col w178">
+                    <h4><a href="product.php">• HAVEMØBLER</a></h4>
+                    <ul>
+                      <li><a href="#">Havemøbelsæt </a></li>
+                      <li><a href="#">Bænke </a></li>
+                      <li><a href="#">Stole & chaiselong's </a></li>
+                      <li><a href="#">Borde </a></li>
+                      <li><a href="#">Loungemøbler </a></li>
+                      <li><a href="#">Solvogne & dækstole </a></li>
+                      <li><a href="#">Hyndebokse </a></li>
+                      <li><a href="#">Hynder </a></li>
+                      <li><a href="#">Cover</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub_col w178">
+                    <h4><a href="product_.php">• CANE-LINE</a></h4>
+                    <ul>
+                      <li><a href="#">Diningsæt </a></li>
+                      <li><a href="#">Borde </a></li>
+                      <li><a href="#">Stole </a></li>
+                      <li><a href="#">Loungesæt </a></li>
+                      <li><a href="#">Sunlounge </a></li>
+                      <li><a href="#">Accessories </a></li>
+                      <li><a href="#">Hynder </a></li>
+                      <li><a href="#">Parasoller & cover</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="sub_col w178 mr0">
+                    <h4><a href="product.php">• MOSAIK & SMEDEJERN</a></h4>
+                  </div>
+                  <div class="sub_col mr0">
+                    <h4><a href="product.php">• ACCESSORIES TIL HAVEN</a></h4>
+                  </div>
+                  <div class="sub_col mr0">
+                    <ul>
+                      <li><a href="#">Lanterner og lys </a></li>
+                      <li><a href="#">Bålfade etc</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub_col mr0">
+                    <h4><a href="product.php">• SKIND</a></h4>
+                  </div>
+                  <div class="sub_col mr0">
+                    <h4><a href="product.php">• HAVEBEHOLDERE</a></h4>
+                  </div>
+                  <div class="sub_col mr0">
+                    <h4><a href="product.php">• GAVEKORT</a></h4>
+                  </div>
                 </div>
               </li>
               <li><a href="about.php">om scheel-larsen</a></li>
-              <li><a href="info.php">info</a></li>
-              <li><a href="terms.php">Handelsbetingelser</a></li>
+              <li><a data-reveal-id="f_map" href="#">Find os her</a></li>
+              <li><a href="newsletter.php">NYHEDSBREV TILMELDING</a></li>
               <li><a href="contact.php">kontakt</a></li>
             </ul>
           </div>

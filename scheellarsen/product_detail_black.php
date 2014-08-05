@@ -24,13 +24,18 @@
 
                     <a id="btnZoomIcon" class="imgZoom btnZoom" href="img/thumnail/img_larg.jpg"><img src="img/icon_zoom.png" alt=""></a>
 
-                    <ul id="thumblist" class="thumail clearfix gallery">
+                    <!--<ul id="thumblist" class="thumail clearfix gallery">
                       <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
                       <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
                       <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
                     </ul>
-                    <a class="fr imgZoom" href="https://www.youtube.com/watch?v=-1gQDlgrAQk"><img src="img/thumnail/img_small2.jpg" alt=""></a>
+                    -->
+                    <hr>
                     <a href="#"><img src="img/icon_face.png" alt=""></a>
+                    <div class="clear mb10"></div>
+                    <div class="video clearfix">
+                      <a class="fl imgZoom" href="https://www.youtube.com/watch?v=-1gQDlgrAQk"><img src="img/thumnail/img_small2.jpg" alt=""></a>
+                    </div>
                   </div>
                   <div class="product_content">
                     <h2 class="c505050">Lucie Antique Terracotta</h2>

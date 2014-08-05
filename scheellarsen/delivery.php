@@ -6,7 +6,7 @@
                 <img class="mt5" src="img/icon_struck.png" alt="">
               </div>
               <div class="fl">
-                <h4>GRATIS LEVERING I SJÆLLAND</h4>
+                <h4>GRATIS LEVERING PÅ SJÆLLAND</h4>
                 <p>Fri fragt ved køb over 1.000 DKK</p>
               </div>
             </li>
