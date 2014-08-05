@@ -44,10 +44,9 @@
         <div class="sitemap_list">
           <h3>Betingelser & Vilkår</h3>
           <ul>
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="#">Levering</a></li>
-            <li><a href="#">Returnering & Ombytning</a></li>
-            <li><a href="#">Handelsbetingelser</a></li>
+            <li><a href="contact.php">Kontakt</a></li>
+            <li><a href="info.php">Info</a></li>
+            <li><a href="terms.php">Handelsbetingelser</a></li>
           </ul>
         </div>
       </div>
@@ -57,8 +56,8 @@
             VI UDSENDER NYHEDSBREV 1-2 GANGE OM MÅNEDEN!</p>
           </div>
           <div class="w430 fr mt5">
-            <input type="text" placeholder="Indtast din e-mail">
-            <a class="btnSubscribe btn2 btn_black" href="#">Tilmeld</a>
+            <input class="fl" type="text" placeholder="Indtast din e-mail">
+            <a class="btnSubscribe btn_black fl ml5" href="#">Tilmeld</a>
           </div>
         </div>
     </div>

@@ -31,6 +31,7 @@
   <h4>• Ved køb af 2 stk.</h4>
   <p>190 liter – 1300 kr.<br>
   240 liter – 1500 kr.</p>
+  <a class="btnseemore" href="#"><span class="fl">SE MERE</span> <b class="icon_right"></b></a>
 </div>
 <div class="cane">
   <h2><img src="img/title_cane.png" alt=""></h2>
