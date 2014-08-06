@@ -30,6 +30,7 @@ $session = JFactory::getSession();
     <![endif]-->
     <link rel="icon" href="<?php echo $tmpl;?>favicon.ico">
     
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="<?php echo $tmpl;?>js/jquery-1.9.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -47,6 +48,15 @@ $session = JFactory::getSession();
 </head>
 <body>
 <div id="page">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/da_DK/sdk.js#xfbml=1&appId=176427392509007&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
     <header class="clearfix">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
           <div class="container relative">
@@ -354,7 +364,7 @@ $session = JFactory::getSession();
             
             
                 <div class="category clearfix">
-                    <h2><img src="<?php echo $tmpl;?>img/title_cate.png" alt=""></h2>
+                    <h2>Produkter</h2>
                     <ul class="cate">
                         <li><a href="product.php">1000 KRUKKER</a></li>
                         <li><a href="#">PARASOL/PAVILLION ETC.</a></li>
@@ -367,39 +377,38 @@ $session = JFactory::getSession();
                         <li><a href="#">GAVEKORT</a></li>
                     </ul>
                 </div>
-                <div class="havebeholder clearfix">
-                    <h2><img src="<?php echo $tmpl;?>img/title_haveb.png" alt=""></h2>
-                    <h4>• Ved køb af 1stk.</h4>
-                    <p>190 liter – 750 kr.<br>
-                        240 liter – 850 kr.<br>
-                        Inkl. moms og lev.</p>
-                    <h4>• Ved køb af 2 stk.</h4>
-                    <p>190 liter – 1300 kr.<br>
-                        240 liter – 1500 kr.</p>
-                    <a class="btnseemore" href="#"><span class="fl">SE MERE</span> <b class="icon_right"></b></a>
-                </div>
-                <div class="cane">
-                    <h2><img src="<?php echo $tmpl;?>img/title_cane.png" alt=""></h2>
-                    <div class="cane_img"> <a href="#"><img src="<?php echo $tmpl;?>img/img03.jpg" alt=""></a> </div>
-                </div>
-                <div class="nature">
-                    <h2><img src="<?php echo $tmpl;?>img/title_natures.png" alt=""></h2>
-                    <div class="nature_img"> <a href="#"><img src="<?php echo $tmpl;?>img/img05.jpg" alt=""></a> </div>
-                </div>
-                <div class="face_dev"> <img src="<?php echo $tmpl;?>img/face_dev.jpg" alt=""> </div>
+                {modulepos left}
+                <div class="fb-like-box" data-href="https://www.facebook.com/ScheelLarsen" data-width="220" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
                 
 
             </div>
             <div class="main_right">
-                <div class="banner">
+                <jdoc:include type="component" />
+                <!--<div class="banner">
                     <div class="html_carousel">
                         <div class="shawdow-banner"></div>
                         <div id="foo1">
-                            <div class="slide"> <img src="<?php echo $tmpl;?>img/slider01.jpg" alt="" /> </div>
-                            <div class="slide"> <img src="<?php echo $tmpl;?>img/slider02.jpg" alt="" /> </div>
-                            <div class="slide"> <img src="<?php echo $tmpl;?>img/slider03.jpg" alt="" /> </div>
+                            <div class="slide"> <a href="#"><img src="<?php echo $tmpl;?>img/slider01.jpg" alt="" /></a>
+                                <div class="title">
+                                    <h3>Cras ornare tristique elit 1</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis... 1</p>
+                                </div>
+                            </div>
+                            <div class="slide"> <a href="#"><img src="<?php echo $tmpl;?>img/slider02.jpg" alt="" /></a>
+                                <div class="title">
+                                    <h3>Cras ornare tristique elit 2</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis... 1</p>
+                                </div>
+                            </div>
+                            <div class="slide"> <a href="#"><img src="<?php echo $tmpl;?>img/slider03.jpg" alt="" /></a>
+                                <div class="title">
+                                    <h3>Cras ornare tristique elit 3</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis... 1</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="clearfix"></div>
+                        <div class="pagination" id="block1_pag"></div>
                     </div>
                 </div>
 
@@ -477,64 +486,25 @@ $session = JFactory::getSession();
                             <h3>RECYCLED TEAK</h3>
                         </li>
                     </ul>
-                </div>
+                </div>-->
             </div>
         </div>
     </section>
-    
-    
     <section class="delivery">
-        <div class="container">
-            <ul>
-                <li>
-                    <div class="icon_delivery"> <img class="mt5" src="<?php echo $tmpl;?>img/icon_struck.png" alt=""> </div>
-                    <div class="fl">
-                        <h4>GRATIS LEVERING PÅ SJÆLLAND</h4>
-                        <p>Fri fragt ved køb over 1.000 DKK</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon_delivery"> <img src="<?php echo $tmpl;?>img/icon_returns.png" alt=""> </div>
-                    <div class="fl">
-                        <h4>Fortrydelsesret</h4>
-                        <p>14 dages fortrydelsesret</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon_delivery"> <img src="<?php echo $tmpl;?>img/icon_Leveringstid.png" alt=""> </div>
-                    <div class="fl">
-                        <h4>Leveringstid</h4>
-                        <p>Levering 1-5 hverdage</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="icon_delivery"> <img src="<?php echo $tmpl;?>img/icon_Viabill.png" alt=""> </div>
-                    <div class="fl">
-                        <h4>Viabill Faktura</h4>
-                        <p>køb nu og betal senere</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    {module Footer Information}
     </section>
-
-
-
     <footer>
         <div id="f_map" class="reveal-modal">
-            <div class="f_map clearfix"> <img src="<?php echo $tmpl;?>img/map2.jpg" alt=""> </div>
+            <div class="f_map clearfix">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2235.3331502889896!2d12.431027599999998!3d55.9262623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652478c58c6b30d%3A0x882207eeab2b9c27!2zSGVzc2VscsO4ZHZlaiAyNiwgMjk4MCBLb2trZWRhbCwgxJBhbiBN4bqhY2g!5e0!3m2!1svi!2s!4v1407298529040" width="940" height="450" frameborder="0" style="border:0"></iframe>
+            </div>
             <a id="close-reveal-modal" class="close-reveal-modal"></a> </div>
         <div class="footer_top clearfix">
             <div class="container">
                 <div class="footer_top_content clearfix">
                     <div class="contact_info">
-                        <h3 class="bor_bottom0"><a data-reveal-id="f_map" href="#"><img src="<?php echo $tmpl;?>img/title_find_os.png" alt=""></a></h3>
-                        <p>Have- & Havemøbler ApS<br>
-                            Hesselrødvej 26, Karlebo<br>
-                            2980 Kokkedal<br>
-                            Mobil: 41628001<br>
-                            Email: <a href="mailto:info@scheel-larsen.dk">info@scheel-larsen.dk</a><br>
-                            CVR 30711912</p>
+                        <h3 class="bor_bottom0"><a data-reveal-id="f_map" href="javascript:void(0);"><img src="<?php echo $tmpl;?>img/title_find_os.png" alt=""></a></h3>
+                        {module Footer Information 2}
                     </div>
                     <div class="cate_list">
                         <h3>Kategorier</h3>

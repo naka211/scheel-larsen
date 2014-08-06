@@ -97,7 +97,7 @@ $(document).ready(function() {
       auto    : true, /*{
               pauseOnHover: "resume"
           },*/
-      //pagination  : "#block1_pag",
+      pagination  : "#block1_pag",
       scroll      :
           {
               duration    :1200,
@@ -170,7 +170,9 @@ $(document).ready(function() {
 
     //Product change thumnail
     changeThumnail();
-  });
+    
+    $(".item-132 a").attr("data-reveal-id","f_map");
+});
 
    function changeThumnail(){
     var $imgLarge = $('#btnLargeImage'),
