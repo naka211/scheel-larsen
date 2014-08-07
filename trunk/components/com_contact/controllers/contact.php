@@ -37,7 +37,7 @@ class ContactControllerContact extends JControllerForm
 		$params->merge($contact->params);
 
 		// Check for a valid session cookie
-		if ($params->get('validate_session', 0))
+		/*if ($params->get('validate_session', 0))
 		{
 			if (JFactory::getSession()->getState() != 'active')
 			{
@@ -51,7 +51,7 @@ class ContactControllerContact extends JControllerForm
 
 				return false;
 			}
-		}
+		}*/
 
 		// Contact plugins
 		JPluginHelper::importPlugin('contact');
@@ -67,7 +67,7 @@ class ContactControllerContact extends JControllerForm
 			return false;
 		}
 
-		$validate = $model->validate($form, $data);
+		/*$validate = $model->validate($form, $data);
 
 		if ($validate === false)
 		{
@@ -94,7 +94,7 @@ class ContactControllerContact extends JControllerForm
 			$this->setRedirect(JRoute::_('index.php?option=com_contact&view=contact&id=' . $stub, false));
 
 			return false;
-		}
+		}*/
 
 		// Validation succeeded, continue with custom handlers
 		$results = $dispatcher->trigger('onValidateContact', array(&$contact, &$data));
@@ -134,7 +134,7 @@ class ContactControllerContact extends JControllerForm
 		// Redirect if it is set in the parameters, otherwise redirect back to where we came from
 		if ($contact->params->get('redirect'))
 		{
-			$this->setRedirect($contact->params->get('redirect'), $msg);
+			$this->setRedirect(JRoute::_($contact->params->get('redirect'), false), $msg);
 		}
 		else
 		{
@@ -162,12 +162,12 @@ class ContactControllerContact extends JControllerForm
 
 		$name    = $data['contact_name'];
 		$email   = $data['contact_email'];
-		$subject = $data['contact_subject'];
+		$phone = $data['contact_phone'];
 		$body    = $data['contact_message'];
 
 		// Prepare email body
-		$prefix = JText::sprintf('COM_CONTACT_ENQUIRY_TEXT', JURI::base());
-		$body   = $prefix . "\n" . $name . ' <' . $email . '>' . "\r\n\r\n" . stripslashes($body);
+		//$prefix = JText::sprintf('COM_CONTACT_ENQUIRY_TEXT', JURI::base());
+		$body   = $prefix . "\n" . $name . ' - '.$phone.' <' . $email . '>' . "\r\n\r\n" . stripslashes($body);
 
 		$mail = JFactory::getMailer();
 		$mail->addRecipient($contact->email_to);

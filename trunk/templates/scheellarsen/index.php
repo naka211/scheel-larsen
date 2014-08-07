@@ -531,11 +531,7 @@ $session = JFactory::getSession();
                     
                     <div class="sitemap_list">
                         <h3>Betingelser & Vilkår</h3>
-                        <ul>
-                            <li><a href="contact.php">Kontakt</a></li>
-                            <li><a href="info.php">Info</a></li>
-                            <li><a href="terms.php">Handelsbetingelser</a></li>
-                        </ul>
+                        {module Bottom Menu}
                     </div>
                     
                 </div>
