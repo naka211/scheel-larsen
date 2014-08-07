@@ -7,108 +7,53 @@
  */
 
 defined('_JEXEC') or die;
-$db = JFactory::getDBO();
-$db->setQuery("SELECT title, introtext FROM #__content WHERE id = 9");
-$contact = $db->loadObject();
-
-$db->setQuery("SELECT name, information FROM #__boutique");
-$shops = $db->loadObjectList();
+JHtml::_('behavior.formvalidation');
 if(JRequest::getVar('success')){?>
-<div id="signup-page">
-    <div id="w-signup-page">
-    <div class="signup-title">
+<div class="template">
+    <div class="about_page">
+        {module Breadcrumbs}
         <h2>Kvittering</h2>
-    </div><!--.signup-title-->
-    		<p style="margin-left:10px; margin-top:10px;">Kære kunde, <br>Tak for din henvendelse. Vi vil kontakte dig hurtigst muligt.<br><br>
+        <p>Kære kunde, <br>
+        Tak for din henvendelse. Vi vil kontakte dig hurtigst muligt.<br>
+        <br>
         Med venlig hilsen<br>
-        Amager Isenkram
-        </p>
-        <div style="float:none; margin-left:10px;" class="bnt-gohome">
-        <a href="index.php">TIL FORSIDEN</a>
-        </div>
-	    </div><!--#w-signup-page-->
+        Scheel-Larsen </p>
+    </div>
 </div>
 <?php } else {?>
-<script language="javascript" src="templates/amager/js/jquery.validate.js"></script>
-<script language="javascript">
-jQuery(document).ready(function()
-{
-	jQuery.validator.addMethod("requireDefault", function(value, element) 
-	{	
-		return !(element.value == element.defaultValue);
-	});
-	
-	jQuery("#contactForm").validate({
-		rules: {
-			email: {
-				requireDefault: true,
-				required: true,
-				email: true
-			},
-			name: {
-				requireDefault: true,
-				required: true,
-			},
-			phone: {
-				requireDefault: true,
-				required: true,
-				number: true
-			}
-		},
-		messages: {
-			email: "",
-			name: "",
-			phone: ""
-		}
-	});
-});// JavaScript Document
-</script>
-<div id="contact-page">
-    <div class="contact-title">
-        <h2><?php echo $contact->title;?></h2>
-        <?php echo $contact->introtext;?>
-    </div><!--.contact-title-->
-    <div class="contact-info">
-        <ul>
-        	<?php foreach($shops as $shop){?>
-            <li>
-                <h2><?php echo $shop->name;?></h2>
-                <?php echo $shop->information;?>
-            </li>
-            <?php }?>
-        </ul>
-    </div><!--.contact-info-->
-    <form class="contact-frm" name="contactForm" action="<?php echo JRoute::_('index.php'); ?>" method="post" id="contactForm">
-        <fieldset>
-            <p>Kontakt formular</p>
-            <div>
-                <input type="text" value="Navn *" name="name" />
+<style>
+.invalid {
+border-color: red !important;
+}
+</style>
+<div class="template">
+    <div class="contact_page"> {module Breadcrumbs}
+        <h2>Kontakt</h2>
+        <div class="w375 fl">
+            <div class="w71 fl mr30 mt10"> <img alt="" src="templates/scheellarsen/img/logo2.png"> </div>
+            {article 9}{introtext}{/article} </div>
+        <div class="w300 fr">
+            <p>Felter markeret med * skal udfyldes</p>
+            <div class="frm_contact clearfix">
+                <form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate">
+                    <input type="text" placeholder="Navn *" class="required" name="jform[contact_name]">
+                    <input type="text" placeholder="Email *" class="required validate-email" name="jform[contact_email]">
+                    <input type="text" placeholder="Telefon *" class="required" name="jform[contact_phone]">
+                    <textarea placeholder="Din besked" name="jform[contact_message]"></textarea>
+                    <button type="submit" class="btn2 btnSend validate" style="border:none; cursor:pointer;">Send</button>
+                    <button type="reset" class="btn2 btnNustil" style="border:none; cursor:pointer;">Nulstil</button>
+                    <input type="hidden" name="option" value="com_contact" />
+                    <input type="hidden" name="task" value="contact.submit" />
+                    <input type="hidden" name="return" value="<?php echo $this->return_page;?>" />
+                    <input type="hidden" name="id" value="<?php echo $this->contact->slug; ?>" />
+                    <?php echo JHtml::_( 'form.token' ); ?>
+                </form>
             </div>
-            <div>
-                <input type="text" value="Telefon *" name="phone" />
-            </div>
-            <div>
-                <input type="text" value="Email *" name="email" />
-            </div>
-            <div>
-                <textarea cols="" rows="" name="message" onfocus="this.value=''">Besked</textarea>
-            </div>
-            <span>* Skal udfyldes</span><br />
-            <!--<div class="bnt-send">
-                <a href="#">Send</a>-->
-                <button class="button validate bnt-send" type="submit" style="border:none; cursor:pointer;"> </button>
-            <!--</div>--><!--.bnt-send-->
-            <!--<div class="bnt-reset">
-                <a href="#">Nulstil</a>-->
-                <button class="button validate bnt-reset" type="reset" style="border:none; cursor:pointer;"> </button>
-            <!--</div>--><!--.bnt-reset-->
-            
-            <input type="hidden" name="option" value="com_contact" />
-            <input type="hidden" name="task" value="contact.submit" />
-            <input type="hidden" name="return" value="<?php echo $this->return_page;?>" />
-            <input type="hidden" name="id" value="<?php echo $this->contact->slug; ?>" />
-            <?php echo JHtml::_( 'form.token' ); ?>      
-        </fieldset>
-    </form>
-</div><!--#contact-page-->
+        </div>
+        <div class="clear"></div>
+        <div class="map clearfix">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4470.661793324947!2d12.43221850034413!3d55.92630137101223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652478c58c6b30d%3A0x882207eeab2b9c27!2zSGVzc2VscsO4ZHZlaiAyNiwgMjk4MCBLb2trZWRhbCwgxJBhbiBN4bqhY2g!5e0!3m2!1svi!2s!4v1407383222950" width="721" height="472" frameborder="0" style="border:0"></iframe>
+        </div>
+    </div>
+</div>
 <?php }?>

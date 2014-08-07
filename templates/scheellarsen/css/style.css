@@ -377,8 +377,8 @@ a.btnPrint2 {background: url(../img/btnPrint2.jpg) no-repeat !important;}
 .w375 {width: 375px;} .w71 {width: 71px;} .w300 {width: 300px;} .mr30 {margin-right: 30px;} .w260 {width: 260px;}
 .frm_contact input {width: 300px; height: 30px; line-height: 30px; border: 1px solid #c5c5c5; display: block; margin-bottom: 10px; padding: 0 10px;}
 .frm_contact textarea {width: 300px; height: 128px; border: 1px solid #c5c5c5; display: block; margin-bottom: 10px; padding: 10px;}
-a.btnSend {padding: 5px 56px; text-transform: uppercase; margin-right: 5px;}
-a.btnNustil {padding: 5px 55px; text-transform: uppercase; }
+.btnSend {padding: 5px 56px; text-transform: uppercase; margin-right: 5px;}
+.btnNustil {padding: 5px 52px; text-transform: uppercase; }
 .contact_page h4 {font-size: 15px; text-transform: none;}
 .map {padding: 3px; background: #fff; border: 1px solid #dcd6c0; margin-top: 40px;}
 .product_page h4 {text-transform: none; color: #A08262; font-size: 15px; font-family: 'Myriad Pro Regular';}
