@@ -35,9 +35,9 @@ class VirtueMartControllerVirtuemart extends JController
 		if (VmConfig::get('shop_is_offline') == '1') {
 		    JRequest::setVar( 'layout', 'off_line' );
 	    }
-	    else {
+	    /*else {
 		    JRequest::setVar( 'layout', 'default' );
-	    }
+	    }*/
 	}
 
 	/**
@@ -50,7 +50,7 @@ class VirtueMartControllerVirtuemart extends JController
 		$document = JFactory::getDocument();
 		$viewType = $document->getType();
 		$viewName = JRequest::getCmd('view', $this->default_view);
-		$viewLayout = JRequest::getCmd('layout', 'default');
+		$viewLayout = JRequest::getVar('layout', 'default');
 
 		$view = $this->getView($viewName, $viewType, '', array('base_path' => $this->basePath, 'layout' => $viewLayout));
 		$view->assignRef('document', $document);
@@ -64,6 +64,20 @@ class VirtueMartControllerVirtuemart extends JController
         $session = JFactory::getSession();
         $session->set('notify', 1);
         die(true);
+    }
+    
+    function subscribe(){
+        require_once "Mailchimp.php";
+        
+        $email = JRequest::getVar('email');
+        
+        $apikey  ='c509d65e9f5cbaac8931600cf4908240-us8';
+        $mailchimp  = new Mailchimp($apikey);
+        $list_id ='f5d21986fc';
+        $data  = array('email'=>$email);
+        $result = $mailchimp->mailchimp_subcriber($data, $mailchimp, $list_id);
+   
+        $this->setRedirect(JRoute::_("index.php?option=com_contact&view=contact&id=1&success=1&layout=subscribe&Itemid=133"));
     }
 
 }

@@ -21,11 +21,6 @@ if(JRequest::getVar('success')){?>
     </div>
 </div>
 <?php } else {?>
-<style>
-.invalid {
-border-color: red !important;
-}
-</style>
 <div class="template">
     <div class="contact_page"> {module Breadcrumbs}
         <h2>Kontakt</h2>

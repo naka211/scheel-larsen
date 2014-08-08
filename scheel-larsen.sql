@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2014 at 05:27 AM
+-- Generation Time: Aug 08, 2014 at 11:58 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -1951,7 +1951,7 @@ INSERT INTO `i63il_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (121, 'topmenu', 'Kontakt', 'kontakt', '', 'kontakt', 'index.php?option=com_contact&view=contact&id=1', 'component', 1, 1, 1, 8, 6, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"presentation_style":"","show_contact_category":"","show_contact_list":"0","show_name":"","show_position":"","show_email":"","show_street_address":"","show_suburb":"","show_state":"","show_postcode":"","show_country":"","show_telephone":"","show_mobile":"","show_fax":"","show_webpage":"","show_misc":"","show_image":"","allow_vcard":"","show_articles":"","show_links":"","linka_name":"","linkb_name":"","linkc_name":"","linkd_name":"","linke_name":"","show_email_form":"","show_email_copy":"","banned_email":"","banned_subject":"","banned_text":"","validate_session":"","custom_reply":"","redirect":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 83, 84, 0, '*', 0),
 (131, 'bottommenu', 'Handelsbetingelser', 'handelsbetingelser', '', 'handelsbetingelser', 'index.php?option=com_content&view=article&id=8', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 89, 90, 0, '*', 0),
 (132, 'topmenu', 'Find os her', '2014-08-05-09-50-43', '', '2014-08-05-09-50-43', '#', 'url', 1, 1, 1, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 79, 80, 0, '*', 0),
-(133, 'topmenu', 'Nyhedsbrev tilmelding', '2014-08-05-09-51-50', '', '2014-08-05-09-51-50', '', 'url', 1, 1, 1, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 81, 82, 0, '*', 0),
+(133, 'topmenu', 'Nyhedsbrev tilmelding', 'nyhedsbrev-tilmelding', '', 'nyhedsbrev-tilmelding', 'index.php?option=com_contact&view=contact&layout=subscribe&id=1', 'component', 1, 1, 1, 8, 0, 62, '2014-08-08 02:02:05', 0, 1, '', 0, '{"presentation_style":"","show_contact_category":"","show_contact_list":"","show_name":"","show_position":"","show_email":"","show_street_address":"","show_suburb":"","show_state":"","show_postcode":"","show_country":"","show_telephone":"","show_mobile":"","show_fax":"","show_webpage":"","show_misc":"","show_image":"","allow_vcard":"","show_articles":"","show_links":"","linka_name":"","linkb_name":"","linkc_name":"","linkd_name":"","linke_name":"","show_email_form":"","show_email_copy":"","banned_email":"","banned_subject":"","banned_text":"","validate_session":"","custom_reply":"","redirect":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 81, 82, 0, '*', 0),
 (134, 'bottommenu', 'Kontakt', 'kontakt1', '', 'kontakt1', 'index.php?option=com_contact&view=contact&id=1&Itemid=121', 'url', 1, 1, 1, 8, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 85, 86, 0, '*', 0);
 
 -- --------------------------------------------------------
@@ -3546,8 +3546,8 @@ CREATE TABLE IF NOT EXISTS `i63il_session` (
 --
 
 INSERT INTO `i63il_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`, `usertype`) VALUES
-('02b00mfuq6qivlv1e6qfmq5ak2', 1, 0, '1407467824', '__default|a:8:{s:15:"session.counter";i:10;s:19:"session.timer.start";i:1407465797;s:18:"session.timer.last";i:1407467822;s:17:"session.timer.now";i:1407467823;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":3:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:21:"info@scheel-larsen.dk";s:8:"password";s:32:"21232f297a57a5a743894a0e4a801fc3";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2011-08-18 15:03:38";s:13:"lastvisitDate";s:19:"2014-08-07 07:51:08";s:10:"activation";s:0:"";s:6:"params";s:75:"{"admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":5:{s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"f7587b0583a3098d696f32778b7b2429";}', 62, 'admin', ''),
-('3kj3tuk9n84ff0063go80ui424', 0, 1, '1407468382', '__default|a:8:{s:15:"session.counter";i:8;s:19:"session.timer.start";i:1407465737;s:18:"session.timer.last";i:1407466477;s:17:"session.timer.now";i:1407468381;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:6:"notify";i:1;}__vm|a:1:{s:6:"vmcart";s:645:"O:8:"stdClass":24:{s:8:"products";a:0:{}s:8:"vendorId";i:1;s:21:"lastVisitedCategoryId";i:0;s:28:"virtuemart_shipmentmethod_id";i:0;s:27:"virtuemart_paymentmethod_id";i:0;s:25:"automaticSelectedShipment";b:0;s:24:"automaticSelectedPayment";b:0;s:12:"order_number";N;s:2:"BT";i:0;s:2:"ST";i:0;s:11:"tosAccepted";N;s:16:"customer_comment";s:0:"";s:10:"couponCode";s:0:"";s:20:"_triesValidateCoupon";a:0:{}s:14:"order_language";s:0:"";s:8:"cartData";N;s:5:"lists";N;s:14:"pricesCurrency";N;s:15:"paymentCurrency";N;s:11:"_inCheckOut";b:0;s:14:"_dataValidated";b:0;s:12:"_confirmDone";b:0;s:10:"STsameAsBT";b:1;s:15:"customer_number";s:7:"nonreg_";}";}', 0, '', '');
+('02b00mfuq6qivlv1e6qfmq5ak2', 1, 0, '1407488526', '__default|a:8:{s:15:"session.counter";i:43;s:19:"session.timer.start";i:1407465797;s:18:"session.timer.last";i:1407488525;s:17:"session.timer.now";i:1407488526;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":4:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:9:"com_menus";O:8:"stdClass":2:{s:5:"items";O:8:"stdClass":2:{s:6:"filter";O:8:"stdClass":1:{s:8:"menutype";s:7:"topmenu";}s:10:"limitstart";i:0;}s:4:"edit";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":4:{s:2:"id";a:1:{i:0;i:133;}s:4:"data";N;s:4:"type";N;s:4:"link";N;}}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:21:"info@scheel-larsen.dk";s:8:"password";s:32:"21232f297a57a5a743894a0e4a801fc3";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2011-08-18 15:03:38";s:13:"lastvisitDate";s:19:"2014-08-07 07:51:08";s:10:"activation";s:0:"";s:6:"params";s:75:"{"admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":5:{s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"f7587b0583a3098d696f32778b7b2429";}', 62, 'admin', ''),
+('3kj3tuk9n84ff0063go80ui424', 0, 1, '1407488732', '__default|a:9:{s:15:"session.counter";i:67;s:19:"session.timer.start";i:1407465737;s:18:"session.timer.last";i:1407488730;s:17:"session.timer.now";i:1407488732;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:6:"notify";i:1;s:13:"session.token";s:32:"5446a6c914d395df261aaf45807f8fc4";}__vm|a:1:{s:6:"vmcart";s:645:"O:8:"stdClass":24:{s:8:"products";a:0:{}s:8:"vendorId";i:1;s:21:"lastVisitedCategoryId";i:0;s:28:"virtuemart_shipmentmethod_id";i:0;s:27:"virtuemart_paymentmethod_id";i:0;s:25:"automaticSelectedShipment";b:0;s:24:"automaticSelectedPayment";b:0;s:12:"order_number";N;s:2:"BT";i:0;s:2:"ST";i:0;s:11:"tosAccepted";N;s:16:"customer_comment";s:0:"";s:10:"couponCode";s:0:"";s:20:"_triesValidateCoupon";a:0:{}s:14:"order_language";s:0:"";s:8:"cartData";N;s:5:"lists";N;s:14:"pricesCurrency";N;s:15:"paymentCurrency";N;s:11:"_inCheckOut";b:0;s:14:"_dataValidated";b:0;s:12:"_confirmDone";b:0;s:10:"STsameAsBT";b:1;s:15:"customer_number";s:7:"nonreg_";}";}', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -3601,7 +3601,7 @@ CREATE TABLE IF NOT EXISTS `i63il_updates` (
   `detailsurl` text NOT NULL,
   `infourl` text NOT NULL,
   PRIMARY KEY (`update_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=236 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=250 ;
 
 --
 -- Dumping data for table `i63il_updates`
@@ -3839,7 +3839,21 @@ INSERT INTO `i63il_updates` (`update_id`, `update_site_id`, `extension_id`, `cat
 (232, 3, 0, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ru-RU_details.xml', ''),
 (233, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
 (234, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
-(235, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', '');
+(235, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(236, 3, 0, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/fr-FR_details.xml', ''),
+(237, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(238, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(239, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(240, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(241, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(242, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(243, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(244, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(245, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(246, 3, 0, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ru-RU_details.xml', ''),
+(247, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
+(248, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(249, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', '');
 
 -- --------------------------------------------------------
 
@@ -3877,45 +3891,45 @@ CREATE TABLE IF NOT EXISTS `i63il_update_sites` (
 --
 
 INSERT INTO `i63il_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
-(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1407466302),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1407466302),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 1, 1407466302),
-(4, 'VirtueMart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/virtuemart_update.xml', 1, 1407466304),
-(5, 'VirtueMart plg_vmpayment_standard Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_standard_update.xml', 1, 1407466304),
-(6, 'VirtueMart plg_vmpayment_klarna Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_klarna_update.xml', 1, 1407466304),
-(7, 'VirtueMart plg_vmpayment_klarnacheckout Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_klarnacheckout_update.xml', 1, 1407466304),
-(8, 'VirtueMart plg_vmpayment_sofort Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_sofort_update.xml', 1, 1407466304),
-(9, 'VirtueMart plg_vmpayment_paypal Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_paypal_update.xml', 1, 1407466304),
-(10, 'VirtueMart plg_vmpayment_heidelpay Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_heidelpay_update.xml', 1, 1407466304),
-(11, 'VirtueMart plg_vmpayment_paybox Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_paybox_update.xml', 1, 1407466304),
-(12, 'VirtueMart plg_vmpayment_moneybookers Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_update.xml', 1, 1407466304),
-(13, 'VirtueMart plg_vmpayment_moneybookers_acc Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_acc_update.xml', 1, 1407466304),
-(14, 'VirtueMart plg_vmpayment_moneybookers_did Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_did_update.xml', 1, 1407466304),
-(15, 'VirtueMart plg_vmpayment_moneybookers_idl Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_idl_update.xml', 1, 1407466304),
-(16, 'VirtueMart plg_vmpayment_moneybookers_gir Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_gir_update.xml', 1, 1407466304),
-(17, 'VirtueMart plg_vmpayment_moneybookers_sft Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_sft_update.xml', 1, 1407466304),
-(18, 'VirtueMart plg_vmpayment_moneybookers_pwy Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_pwy_update.xml', 1, 1407466304),
-(19, 'VirtueMart plg_vmpayment_moneybookers_obt Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_obt_update.xml', 1, 1407466304),
-(20, 'VirtueMart plg_vmpayment_moneybookers_wlt Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_wlt_update.xml', 1, 1407466304),
-(21, 'VirtueMart plg_vmpayment_authorisenet Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_authorisenet_update.xml', 1, 1407466304),
-(22, 'VirtueMart plg_vmpayment_sofort_ideal Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_sofort_ideal_update.xml', 1, 1407466304),
-(23, 'VirtueMart plg_vmshipment_weight_countries Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmshipment_weight_countries_update.xml', 1, 1407466304),
-(24, 'VirtueMart plg_vmcustom_textinput Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_textinput_update.xml', 1, 1407466304),
-(25, 'VirtueMart plg_vmcustom_specification Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_specification_update.xml', 1, 1407466304),
-(26, 'VirtueMart plg_vmcustom_stockable Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_stockable_update.xml', 1, 1407466304),
-(27, 'VirtueMart plg_vmcalculation_avalara Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcalculation_avalara_update.xml', 1, 1407466304),
-(28, 'VirtueMart plg_search_virtuemart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_search_virtuemart_update.xml', 1, 1407466304),
-(29, 'VirtueMart MOD_VMENU Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_vmmenu_update.xml', 1, 1407466304),
-(30, 'VirtueMart mod_virtuemart_currencies Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_currencies_update.xml', 1, 1407466304),
-(31, 'VirtueMart mod_virtuemart_product Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_product_update.xml', 1, 1407466304),
-(32, 'VirtueMart mod_virtuemart_search Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_search_update.xml', 1, 1407466304),
-(33, 'VirtueMart mod_virtuemart_manufacturer Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_manufacturer_update.xml', 1, 1407466304),
-(34, 'VirtueMart mod_virtuemart_cart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_cart_update.xml', 1, 1407466304),
-(35, 'VirtueMart mod_virtuemart_category Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_category_update.xml', 1, 1407466304),
-(36, 'VirtueMart AIO Update Site', 'extension', 'http://virtuemart.net/releases/vm2/virtuemart_aio_update.xml', 1, 1407466304),
+(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1407485940),
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1407485940),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 1, 1407485940),
+(4, 'VirtueMart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/virtuemart_update.xml', 1, 1407485940),
+(5, 'VirtueMart plg_vmpayment_standard Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_standard_update.xml', 1, 1407485940),
+(6, 'VirtueMart plg_vmpayment_klarna Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_klarna_update.xml', 1, 1407485940),
+(7, 'VirtueMart plg_vmpayment_klarnacheckout Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_klarnacheckout_update.xml', 1, 1407485940),
+(8, 'VirtueMart plg_vmpayment_sofort Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_sofort_update.xml', 1, 1407485940),
+(9, 'VirtueMart plg_vmpayment_paypal Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_paypal_update.xml', 1, 1407485940),
+(10, 'VirtueMart plg_vmpayment_heidelpay Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_heidelpay_update.xml', 1, 1407485940),
+(11, 'VirtueMart plg_vmpayment_paybox Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_paybox_update.xml', 1, 1407485940),
+(12, 'VirtueMart plg_vmpayment_moneybookers Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_update.xml', 1, 1407485940),
+(13, 'VirtueMart plg_vmpayment_moneybookers_acc Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_acc_update.xml', 1, 1407485940),
+(14, 'VirtueMart plg_vmpayment_moneybookers_did Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_did_update.xml', 1, 1407485940),
+(15, 'VirtueMart plg_vmpayment_moneybookers_idl Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_idl_update.xml', 1, 1407485940),
+(16, 'VirtueMart plg_vmpayment_moneybookers_gir Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_gir_update.xml', 1, 1407485940),
+(17, 'VirtueMart plg_vmpayment_moneybookers_sft Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_sft_update.xml', 1, 1407485940),
+(18, 'VirtueMart plg_vmpayment_moneybookers_pwy Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_pwy_update.xml', 1, 1407485940),
+(19, 'VirtueMart plg_vmpayment_moneybookers_obt Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_obt_update.xml', 1, 1407485940),
+(20, 'VirtueMart plg_vmpayment_moneybookers_wlt Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_wlt_update.xml', 1, 1407485940),
+(21, 'VirtueMart plg_vmpayment_authorisenet Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_authorisenet_update.xml', 1, 1407485940),
+(22, 'VirtueMart plg_vmpayment_sofort_ideal Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_sofort_ideal_update.xml', 1, 1407485940),
+(23, 'VirtueMart plg_vmshipment_weight_countries Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmshipment_weight_countries_update.xml', 1, 1407485940),
+(24, 'VirtueMart plg_vmcustom_textinput Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_textinput_update.xml', 1, 1407485940),
+(25, 'VirtueMart plg_vmcustom_specification Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_specification_update.xml', 1, 1407485940),
+(26, 'VirtueMart plg_vmcustom_stockable Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_stockable_update.xml', 1, 1407485940),
+(27, 'VirtueMart plg_vmcalculation_avalara Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcalculation_avalara_update.xml', 1, 1407485940),
+(28, 'VirtueMart plg_search_virtuemart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_search_virtuemart_update.xml', 1, 1407485940),
+(29, 'VirtueMart MOD_VMENU Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_vmmenu_update.xml', 1, 1407485940),
+(30, 'VirtueMart mod_virtuemart_currencies Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_currencies_update.xml', 1, 1407485940),
+(31, 'VirtueMart mod_virtuemart_product Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_product_update.xml', 1, 1407485940),
+(32, 'VirtueMart mod_virtuemart_search Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_search_update.xml', 1, 1407485940),
+(33, 'VirtueMart mod_virtuemart_manufacturer Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_manufacturer_update.xml', 1, 1407485940),
+(34, 'VirtueMart mod_virtuemart_cart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_cart_update.xml', 1, 1407485940),
+(35, 'VirtueMart mod_virtuemart_category Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_category_update.xml', 1, 1407485940),
+(36, 'VirtueMart AIO Update Site', 'extension', 'http://virtuemart.net/releases/vm2/virtuemart_aio_update.xml', 1, 1407485940),
 (37, 'Virtuemart Migrator Updater', 'extension', 'http://www.daycounts.com/index.php?option=com_versions&catid=33&task=updateserver.xml', 0, 1406079690),
-(38, 'NoNumber Articles Anywhere', 'extension', 'http://download.nonumber.nl/updates.php?e=articlesanywhere&type=.zip', 1, 1407466304),
-(39, 'NoNumber Modules Anywhere', 'extension', 'http://download.nonumber.nl/updates.php?e=modulesanywhere&type=.zip', 1, 1407466304);
+(38, 'NoNumber Articles Anywhere', 'extension', 'http://download.nonumber.nl/updates.php?e=articlesanywhere&type=.zip', 1, 1407485940),
+(39, 'NoNumber Modules Anywhere', 'extension', 'http://download.nonumber.nl/updates.php?e=modulesanywhere&type=.zip', 1, 1407485940);
 
 -- --------------------------------------------------------
 
