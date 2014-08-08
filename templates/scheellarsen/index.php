@@ -292,67 +292,8 @@ $session = JFactory::getSession();
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="container">
+                    {module Menu Category}
                     {module Top Menu}
-                <!--<ul class="nav navbar-nav">
-                  <li class="active"><a href="index.php">Forside</a></li>
-                  <li><a href="product.php">Produkter</a>
-                    <div class="sub clearfix">
-                      <ul>
-                        <h4>• 1000 KRUKKER</h4>
-                        <li><a href="#">Italienske</a></li>
-                        <li><a href="#">Krukker antique</a></li>
-                        <li><a href="#">Krukker romantic</a></li>
-                        <li><a href="#">Krukker classic</a></li>
-                        <li><a href="#">Beton & terrazzo</a></li>
-                        <li><a href="#">Afrikanske potter</a></li>
-                        <li><a href="#">Pynt til haven</a></li>
-                      </ul>
-                      <ul>
-                        <h4>• PARASOL/PAVILLION ETC.</h4>
-                        <li><a href="#">Parasoller</a></li>
-                        <li><a href="#">Pavillioner</a></li>
-                        <li><a href="#">Parasolfødder</a></li>
-                        <li><a href="#">Parasol cover</a></li>
-                      </ul>
-                      <ul>
-                        <h4>• HAVEMØBLER</h4>
-                        <li><a href="#">Havemøbelsæt </a></li>
-                        <li><a href="#">Bænke </a></li>
-                        <li><a href="#">Stole & chaiselong's </a></li>
-                        <li><a href="#">Borde </a></li>
-                        <li><a href="#">Loungemøbler </a></li>
-                        <li><a href="#">Solvogne & dækstole </a></li>
-                        <li><a href="#">Hyndebokse </a></li>
-                        <li><a href="#">Hynder </a></li>
-                        <li><a href="#">Cover</a></li>
-                      </ul>
-                      <ul>
-                        <h4>• CANE-LINE</h4>
-                        <li><a href="#">Diningsæt </a></li>
-                        <li><a href="#">Borde </a></li>
-                        <li><a href="#">Stole </a></li>
-                        <li><a href="#">Loungesæt </a></li>
-                        <li><a href="#">Sunlounge </a></li>
-                        <li><a href="#">Accessories </a></li>
-                        <li><a href="#">Hynder </a></li>
-                        <li><a href="#">Parasoller & cover</a></li>
-                      </ul>
-                      <ul>
-                        <h4>• MOSAIK & SMEDEJERN</h4>
-                        <h4>• ACCESSORIES TIL HAVEN</h4>
-                        <li><a href="#">Lanterner og lys </a></li>
-                        <li><a href="#">Bålfade etc</a></li>
-                        <h4>• SKIND</h4>
-                        <h4>• HAVEBEHOLDERE</h4>
-                        <h4>• GAVEKORT</h4>
-                      </ul>
-                    </div>
-                  </li>
-                  <li><a href="about.php">om scheel-larsen</a></li>
-                  <li><a href="info.php">info</a></li>
-                  <li><a href="terms.php">Handelsbetingelser</a></li>
-                  <li><a href="contact.php">kontakt</a></li>
-                </ul>-->
               </div>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
@@ -541,8 +482,11 @@ $session = JFactory::getSession();
                             VI UDSENDER NYHEDSBREV 1-2 GANGE OM MÅNEDEN!</p>
                     </div>
                     <div class="w430 fr mt5">
-                        <input type="text" placeholder="Indtast din e-mail" class="fl">
-                        <a class="btnSubscribe btn2 fl ml5" href="#">Tilmeld</a> </div>
+                        <form action="index.php" method="post">
+                            <input type="text" placeholder="Indtast din e-mail" class="fl">
+                            <button type="submit" class="btnSubscribe btn2 fl ml5" style="cursor:pointer; border:none;">Tilmeld</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

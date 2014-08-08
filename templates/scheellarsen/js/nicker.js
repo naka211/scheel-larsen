@@ -172,6 +172,7 @@ $(document).ready(function() {
     changeThumnail();
     
     $(".item-132 a").attr("data-reveal-id","f_map");
+    jQuery('.item-118').append(jQuery('#add_menu').html());
 });
 
    function changeThumnail(){
