@@ -3,27 +3,21 @@ defined('_JEXEC') or die('Restricted access');
 $i=1;
 ?>
 <span id="add_menu" style="display:none;">
-<ul class="main-sub">
-	<div>
+	<div class="sub clearfix">
 <?php foreach($categories as $category){
-	if($i==7){
-		$i==1;
-		echo "<div>";
-	}
+    $caturl = JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$child->virtuemart_category_id);
 ?>
-	<ul class="sub-menu">
-		<h3><?php echo $category->category_name;?></h3>
+    <div class="sub_col">
+		<h4><a href="<?php echo $caturl;?>">• <?php echo $category->category_name;?></a></h4>
+        <ul>
 <?php	foreach($category->childs as $child){
-		  $caturl = JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$child->virtuemart_category_id);
+		  $caturl1 = JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$child->virtuemart_category_id);
 		?>
-	<li><a href="<?php echo $caturl;?>"><?php echo $child->category_name;?></a></li>
-<?php }?>
-	</ul>
+	    <li><a href="<?php echo $caturl1;?>"><?php echo $child->category_name;?></a></li>
+    <?php }?>
+	    </ul>
+    </div>
 <?php
-		if($i==6)
-			echo '<div class="clear"></div></div>';
-		$i++;
 	}?>
-	<div class="clear"></div></div>
-</ul>
+	</div>
 </span>
