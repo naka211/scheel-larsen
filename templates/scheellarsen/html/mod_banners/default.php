@@ -12,25 +12,22 @@ defined('_JEXEC') or die;
 //require_once JPATH_ROOT . '/components/com_banners/helpers/banner.php';
 $baseurl = JURI::base();
 ?>
-
-
 <div class="banner">
-  <div class="html_carousel">
-    <div id="foo3">
-    	<?php foreach($list as $item):
-		$imageurl = $item->params->get('imageurl');
-		?>
-      <div class="slide"> <img src="<?php echo $baseurl . $imageurl;?>" />
-        <div>
-          <h4><?php echo $item->name;?></h4>
-          <p><?php echo $item->description;?></p>
+    <div class="html_carousel">
+        <div class="shawdow-banner"></div>
+        <div id="foo1">
+            <?php foreach($list as $item){
+                $imageurl = $item->params->get('imageurl');
+            ?>
+            <div class="slide"> <a href="<?php echo $item->clickurl;?>"><img src="<?php echo $baseurl . $imageurl;?>" alt="" /></a>
+                <div class="title">
+                    <h3><?php echo $item->name;?></h3>
+                    <p><?php echo $item->description;?></p>
+                </div>
+            </div>
+            <?php } ?>
         </div>
-      </div>
-      <!--.slide-->
-      	<?php endforeach; ?>
+        <div class="clearfix"></div>
+        <div class="pagination" id="block1_pag"></div>
     </div>
-    <!--#foo3-->
-    <div class="clear"></div>
-  </div>
-  <!--.html_carousel--> 
 </div>
