@@ -1188,8 +1188,11 @@ class VmMediaHandler {
 			if(!Permissions::getInstance()->check('admin') ) $readonly='readonly'; else $readonly ='';
 			$html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_TITLE','file_title');
 			$html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_DESCRIPTION','file_description');
+                        // Trieu Nguyen add
+                        $html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_CUSTOM_TEXT_HEAD','file_custom_text_head');
+                        $html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_CUSTOM_TEXT_CONTENT','file_custom_text_content');
+                        $html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_CUSTOM_LINK','file_custom_link');
 			$html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_META','file_meta');
-
 			$html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_URL','file_url',$readonly);
 
 			//remove the file_url_thumb in case it is standard
@@ -1288,7 +1291,18 @@ class VmMediaHandler {
 	</tr>';
 			return $html;
 		}
-
+                
+                /**
+                 * Trieu Nguyen add displayTextarea() function
+                 */
+                private function displayTextarea($descr, $name,$readonly=''){
+			$html = '<tr>
+		<td class="labelcell">'.JText::_($descr).'</td>
+		<td> <textarea '.$readonly.' name="'.$name.'"  class="inputboxattrib" rows="5" cols="40">'.$this->$name.'</textarea>
+	</tr>';
+			return $html;
+		}
+                
 		/**
 		 * renders the hiddenfields added in the layout before (used to make the displayFileHandle reusable)
 		 * @author Max Milbers

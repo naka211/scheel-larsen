@@ -42,6 +42,11 @@ class TableMedias extends VmTable {
 	var $file_description = '';
 	/** @var string File Meta or alt  */
 	var $file_meta = '';
+        //Trieu Nguyen add
+	/** @var string File Meta URL or alt URL */
+	var $file_custom_text_head = '';
+	var $file_custom_text_content = '';
+	var $file_custom_link = '';
 
 	/** @var string File mime type */
 	var $file_mimetype = '';
@@ -184,7 +189,22 @@ class TableMedias extends VmTable {
 				vmError (JText::sprintf ('COM_VIRTUEMART_DESCRIPTION_TOO_LONG', strlen ($this->file_description)));
 			}
 		}
-
+                //Trieu Nguyen add
+                if (!empty($this->file_custom_text_head)) {
+			if (strlen ($this->file_custom_text_head) > 254) {
+				vmError (JText::sprintf ('COM_VIRTUEMART_DESCRIPTION_TOO_LONG', strlen ($this->file_custom_text_head)));
+			}
+		}
+                if (!empty($this->file_custom_text_content)) {
+			if (strlen ($this->file_custom_text_content) > 254) {
+				vmError (JText::sprintf ('COM_VIRTUEMART_DESCRIPTION_TOO_LONG', strlen ($this->file_custom_text_content)));
+			}
+		}
+                if (!empty($this->file_custom_link)) {
+			if (strlen ($this->file_custom_link) > 254) {
+				vmError (JText::sprintf ('COM_VIRTUEMART_DESCRIPTION_TOO_LONG', strlen ($this->file_custom_link)));
+			}
+		}
 //		$app = JFactory::getApplication();
 
 		//vmError('Checking '.$this->file_url);

@@ -314,6 +314,10 @@
                             }
                             jQuery("#adminForm [name=file_title]").val(datas.file_title);
                             jQuery("#adminForm [name=file_description]").val(datas.file_description);
+                            // Trieu Nguyen add
+                            jQuery("#adminForm [name=file_custom_text_head]").val(datas.file_custom_text_head);
+                            jQuery("#adminForm [name=file_custom_text_content]").val(datas.file_custom_text_content);
+                            jQuery("#adminForm [name=file_custom_link]").val(datas.file_custom_link);
                             jQuery("#adminForm [name=file_meta]").val(datas.file_meta);
                             jQuery("#adminForm [name=file_url]").val(datas.file_url);
                             jQuery("#adminForm [name=file_url_thumb]").val(datas.file_url_thumb);

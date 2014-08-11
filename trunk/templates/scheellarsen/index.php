@@ -3,7 +3,6 @@
 defined('_JEXEC') or die;
 $tmpl = JURI::base().'templates/'.$this->template."/";
 $session = JFactory::getSession();
-JHtml::_('behavior.formvalidation');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +11,7 @@ JHtml::_('behavior.formvalidation');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <jdoc:include type="head" />
-
+    
     <!-- Bootstrap -->
     <link href="<?php echo $tmpl;?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $tmpl;?>css/animate.css" rel="stylesheet">
@@ -483,12 +482,9 @@ JHtml::_('behavior.formvalidation');
                             VI UDSENDER NYHEDSBREV 1-2 GANGE OM MÅNEDEN!</p>
                     </div>
                     <div class="w430 fr mt5">
-                        <form action="index.php" method="post" class="form-validate">
-                            <input type="text" placeholder="Indtast din e-mail" class="fl required" name="email">
-                            <button type="submit" class="btnSubscribe btn2 fl ml5 validate" style="cursor:pointer; border:none;">Tilmeld</button>
-                            <input type="hidden" name="option" value="com_virtuemart" />
-                            <input type="hidden" name="controller" value="virtuemart" />
-                            <input type="hidden" name="task" value="subscribe" />
+                        <form action="index.php" method="post">
+                            <input type="text" placeholder="Indtast din e-mail" class="fl">
+                            <button type="submit" class="btnSubscribe btn2 fl ml5" style="cursor:pointer; border:none;">Tilmeld</button>
                         </form>
                     </div>
                 </div>
