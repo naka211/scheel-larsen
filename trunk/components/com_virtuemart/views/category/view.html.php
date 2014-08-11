@@ -190,7 +190,7 @@ class VirtuemartViewCategory extends VmView {
 				}
 			}
 
-			$categoryModel->addImages($category,1);
+			$categoryModel->addImages($category);
 
 			if($category->category_layout == 'categories' or ($categoryId >0 and $virtuemart_manufacturer_id <1)){
 				$category->children = $categoryModel->getChildCategoryList( $vendorId, $categoryId, $categoryModel->getDefaultOrdering(), $categoryModel->_selectedOrderingDir );
