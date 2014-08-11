@@ -67,6 +67,10 @@ class VirtuemartControllerMedia extends VmController {
 
 		//$data['file_title'] = JRequest::getVar('file_title','','post','STRING',JREQUEST_ALLOWHTML);
 		$data['file_description'] = JRequest::getVar('file_description','','post','STRING',JREQUEST_ALLOWHTML);
+                //Trieu Nguyen add
+		$data['file_custom_text_head'] = JRequest::getVar('file_custom_text_head','','post','STRING',JREQUEST_ALLOWHTML);
+		$data['file_custom_text_content'] = JRequest::getVar('file_custom_text_content','','post','STRING',JREQUEST_ALLOWHTML);
+		$data['file_custom_link'] = JRequest::getVar('file_custom_link','','post','STRING',JREQUEST_ALLOWHTML);
 
 		$data['media_attributes'] = JRequest::getWord('media_attributes');
 		$data['file_type'] = JRequest::getWord('file_type');

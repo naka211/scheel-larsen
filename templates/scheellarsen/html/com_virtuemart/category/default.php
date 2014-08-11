@@ -14,16 +14,33 @@ if (Permissions::getInstance()->check("admin,storeadmin")) {
 echo $edit_link; */
 if (empty($this->keyword)){
 	?>
-<div id="callout" class="banner-item">
-	<div class="banner-item-img">
-	<?php echo $this->category->images[0]->displayMediaFull ('width="336" height="212"', FALSE);?>
-	</div><!--.banner-item-img-->
-	<div class="banner-item-content">
-		<h2><?php echo $this->category->category_name?></h2>
-		<?php echo $this->category->category_description; ?>
-	</div><!--.banner-item-content-->
-	<a href="#"><span class="close"></span></a>
+<div class="banner">
+    <div class="html_carousel">
+      <div class="shawdow-banner"></div>
+      <div id="foo1">
+	<?php foreach ($this->category->images as $pimage) { ?>
+        <div class="slide">
+          <a href="<?php echo $pimage->file_custom_link ?>"><?php echo $pimage->displayMediaFull ('width="715" height="334"', FALSE); ?></a>
+          <div class="title"><h3><?php echo ($pimage->file_custom_text_head)? $pimage->file_custom_text_head : '';?></h3><p><?php echo $pimage->file_custom_text_content ?></p>
+          </div>
+        </div>
+        <?php } ?>
+      </div>
+      <div class="clearfix"></div>
+      <div class="pagination" id="block1_pag"></div>
+    </div>
 </div>
+<?php echo $this->category->category_description; ?>
+<!--<div id="callout" class="banner-item">
+	<div class="banner-item-img">
+	<?php //echo $this->category->images[0]->displayMediaFull ('width="336" height="212"', FALSE);?>
+	</div>
+	<div class="banner-item-content">
+		<h2><?php //echo $this->category->category_name?></h2>
+		<?php //echo $this->category->category_description; ?>
+	</div>
+	<a href="#"><span class="close"></span></a>
+</div>-->
 <?php
 }
 

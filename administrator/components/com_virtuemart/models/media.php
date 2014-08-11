@@ -145,6 +145,10 @@ class VirtueMartModelMedia extends VmModel {
 			$data->virtuemart_vendor_id = 0;
 			$data->file_title = '';
 			$data->file_description = '';
+                        // Trieu Nguyen add
+			$data->file_custom_text_head = '';
+			$data->file_custom_text_content = '';
+			$data->file_custom_link = '';
 			$data->file_meta = '';
 			$data->file_mimetype = '';
 			$data->file_type = '';

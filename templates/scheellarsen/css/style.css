@@ -454,10 +454,6 @@ ul.option li input {width: 10px; height: 8px; -moz-appearance:none; -o-appearanc
 
 a.btnseemore {color: #A08262; margin-left: 65px; float: left;}
 
-.invalid {
-border-color: red !important;
-}
-
 /* Black themes*/
 /*.navbar-default2 {background: #fff; border: none; background: #fff url(../img/border_top2.jpg) repeat-x top center !important;}
 .cart_content2 {background-color: #f1f1f1 !important;}
@@ -466,4 +462,3 @@ border-color: red !important;
 .footer_top2 {background: #f1f1f1 !important;}
 .c505050 {color: #505050 !important; font-weight: bold;}
 */
-/*.navbar-nav > li .sub {background-color: #f0a830; background-image: -webkit-linear-gradient(top, #535353, #787878 31%, #9e9e9e 70%, #989898 94%); background-image: -moz-linear-gradient(top, #535353, #787878 31%, #9e9e9e 70%, #989898 94%); background-image: -o-linear-gradient(top, #535353, #787878 31%, #9e9e9e 70%, #989898 94%); background-image: linear-gradient(to bottom, #535353, #787878 31%, #9e9e9e 70%, #989898 94%);} */
