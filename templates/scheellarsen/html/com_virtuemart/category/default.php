@@ -12,25 +12,54 @@ if (Permissions::getInstance()->check("admin,storeadmin")) {
 }
 
 echo $edit_link; */
+$app = JFactory::getApplication();
+$tmpl = JURI::base().'templates/'.$app->getTemplate()."/";
 if (empty($this->keyword)){
+    $clcat = 29;
+    $q = 'SELECT `category_parent_id` FROM `#__virtuemart_category_categories` WHERE `category_child_id`=' . $this->category->virtuemart_category_id;
+    $db = JFactory::getDbo();
+    $db->setQuery($q);
+    $parentCategoryID = $db->loadResult();
+    $parent = 0;
+    if ($parentCategoryID != '0') {
+       $categoryModel = VmModel::getModel('category');
+       $parentCategory = $categoryModel->getCategory($parentCategoryID);
+
+       $parent = $parentCategory->virtuemart_category_id;
+    }
+
 	?>
-<div class="banner">
-    <div class="html_carousel">
-      <div class="shawdow-banner"></div>
-      <div id="foo1">
-	<?php foreach ($this->category->images as $pimage) { ?>
-        <div class="slide">
-          <a href="<?php echo $pimage->file_custom_link ?>"><?php echo $pimage->displayMediaFull ('width="715" height="334"', FALSE); ?></a>
-          <div class="title"><h3><?php echo ($pimage->file_custom_text_head)? $pimage->file_custom_text_head : '';?></h3><p><?php echo $pimage->file_custom_text_content ?></p>
-          </div>
+<?php if($this->category->virtuemart_category_id == $clcat || $parent == $clcat) { ?>
+<script type="text/javascript">
+    $('head').append('<link href="<?php echo $tmpl;?>css/black_style.css" rel="stylesheet" />');
+</script>
+<?php } ?>
+<div class="template">
+    <div class="product_page">
+        
+        <ul class="breadcrumb">
+            <li><a href="index.php">Forside</a></li>
+            <li><a href="product.php">CANE-LINE</a></li>
+        </ul>
+        <h2 class="c505050"><?php echo $this->category->category_name?></h2>
+        <div class="banner">
+            <div class="html_carousel">
+              <div class="shawdow-banner"></div>
+              <div id="foo1">
+                <?php foreach ($this->category->images as $pimage) { ?>
+                <div class="slide">
+                  <a href="<?php echo $pimage->file_custom_link ?>"><?php echo $pimage->displayMediaFull ('width="715" height="334"', FALSE); ?></a>
+                  <div class="title"><h3><?php echo ($pimage->file_custom_text_head)? $pimage->file_custom_text_head : '';?></h3><p><?php echo $pimage->file_custom_text_content ?></p>
+                  </div>
+                </div>
+                <?php } ?>
+              </div>
+              <div class="clearfix"></div>
+              <div class="pagination" id="block1_pag"></div>
+            </div>
         </div>
-        <?php } ?>
-      </div>
-      <div class="clearfix"></div>
-      <div class="pagination" id="block1_pag"></div>
-    </div>
-</div>
-<?php echo $this->category->category_description; ?>
+        <h4 class="c505050"><?php echo $this->category->category_description; ?></h4>
+        <p></p>
 <!--<div id="callout" class="banner-item">
 	<div class="banner-item-img">
 	<?php //echo $this->category->images[0]->displayMediaFull ('width="336" height="212"', FALSE);?>
@@ -235,5 +264,8 @@ if($iBrowseCol != 1)
 	<?php
 		}
 	}
-}
+        ?>
+    </div>
+</div>
+<?php }
 ?>

@@ -20,6 +20,7 @@ $session = JFactory::getSession();
     <link href="<?php echo $tmpl;?>css/reveal.css" rel="stylesheet">
     <link href="<?php echo $tmpl;?>css/prettyPhoto.css" rel="stylesheet">
     <link href="<?php echo $tmpl;?>css/tinyscrollbar.css" rel="stylesheet">
+    
     <link href="<?php echo $tmpl;?>css/style.css" rel="stylesheet">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
