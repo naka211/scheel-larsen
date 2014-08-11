@@ -1,0 +1,2 @@
+/* On i63il_virtuemart_medias table */
+ALTER TABLE `i63il_virtuemart_medias` ADD `file_custom_text_head` VARCHAR(255) NULL AFTER `file_description`, ADD `file_custom_text_content` VARCHAR(255) NULL AFTER `file_custom_text_head`, ADD `file_custom_link` VARCHAR(255) NULL AFTER `file_custom_text_content`;
