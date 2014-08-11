@@ -1,10 +1,9 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access');
-
 $ID = str_replace('.', '_', substr(microtime(true), -8, 8));
 function subrender($categories, $level=1, $chaindata=array()){
 	?>
-	<ul class="<?php echo $chaindata[0].$level; ?>">
+	<ul>
 	<?php
 		foreach ($categories as $category){
 			$parent_mark='';
@@ -12,19 +11,19 @@ function subrender($categories, $level=1, $chaindata=array()){
 			$cattext = $category->category_name;
 
 			if($chaindata[3]==$category->virtuemart_category_id):
-				echo '<li class="active-sub'.$level.'">';
+				echo '<li class="active">';
 			else:
 				if(in_array( $category->virtuemart_category_id, $chaindata[4]))
-					$parent_mark = ' class="active-sub'.$level.'"';
+					$parent_mark = ' class="active"';
 				?>
 				<li<?php echo $parent_mark?>>
 				<?php
 			endif;
 
 			echo JHTML::link($caturl, $cattext);
-			$category->childs = $chaindata[1]->call( array( 'VirtueMartModelCategory', 'getChildCategoryList' ),$chaindata[2], $category->virtuemart_category_id );
+			/*$category->childs = $chaindata[1]->call( array( 'VirtueMartModelCategory', 'getChildCategoryList' ),$chaindata[2], $category->virtuemart_category_id );
 			if($category->childs)
-				subrender($category->childs, $level+1, $chaindata);
+				subrender($category->childs, $level+1, $chaindata);*/
 				?>
 			</li>
 			<?php
@@ -34,14 +33,15 @@ function subrender($categories, $level=1, $chaindata=array()){
 <?php
 }
 ?>
-<div class="cate">
-<ul class="VMmenu<?php echo $class_sfx ?>" id="<?php echo "VMmenu".$ID ?>" >
+<div class="category clearfix">
+<h2>Produkter</h2>
+<ul class="VMmenu<?php echo $class_sfx ?> cate" id="<?php echo "VMmenu".$ID ?>" >
 <?php foreach ($categories as $category) {
 		$active_menu = ' class="VmClose"';
 		$caturl = JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$category->virtuemart_category_id);
 		$cattext = $category->category_name;
 		if (in_array( $category->virtuemart_category_id, $parentCategories))
-			$active_menu = ' class="active-cate"';
+			$active_menu = ' class="active"';
 		?>
 <li<?php echo $active_menu ?>>
 		<?php

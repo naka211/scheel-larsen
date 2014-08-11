@@ -303,22 +303,7 @@ $session = JFactory::getSession();
     <section class="main mt190">
         <div class="container">
             <div class="main_left clearfix">
-            
-            
-                <div class="category clearfix">
-                    <h2>Produkter</h2>
-                    <ul class="cate">
-                        <li><a href="product.php">1000 KRUKKER</a></li>
-                        <li><a href="#">PARASOL/PAVILLION ETC.</a></li>
-                        <li><a href="#">HAVEMØBLER</a></li>
-                        <li><a href="product_.php">CANE-LINE</a></li>
-                        <li><a href="#">MOSAIK & SMEDEJERN</a></li>
-                        <li><a href="#">ACCESSORIES TIL HAVEN</a></li>
-                        <li><a href="#">SKIND</a></li>
-                        <li><a href="#">HAVEBEHOLDERE</a></li>
-                        <li><a href="#">GAVEKORT</a></li>
-                    </ul>
-                </div>
+                {module Menu Category Left}
                 {modulepos left}
                 <div class="fb-like-box" data-href="https://www.facebook.com/ScheelLarsen" data-width="220" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
                 
@@ -326,43 +311,8 @@ $session = JFactory::getSession();
             </div>
             <div class="main_right">
                 <jdoc:include type="component" />
-                <!--<div class="banner">
-                    <div class="html_carousel">
-                        <div class="shawdow-banner"></div>
-                        <div id="foo1">
-                            <div class="slide"> <a href="#"><img src="<?php echo $tmpl;?>img/slider01.jpg" alt="" /></a>
-                                <div class="title">
-                                    <h3>Cras ornare tristique elit 1</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis... 1</p>
-                                </div>
-                            </div>
-                            <div class="slide"> <a href="#"><img src="<?php echo $tmpl;?>img/slider02.jpg" alt="" /></a>
-                                <div class="title">
-                                    <h3>Cras ornare tristique elit 2</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis... 1</p>
-                                </div>
-                            </div>
-                            <div class="slide"> <a href="#"><img src="<?php echo $tmpl;?>img/slider03.jpg" alt="" /></a>
-                                <div class="title">
-                                    <h3>Cras ornare tristique elit 3</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis... 1</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="pagination" id="block1_pag"></div>
-                    </div>
-                </div>
+                <!--
 
-                <div class="news">
-                    <h1> Vi holder Ferielukket<br>
-                        fra lørdag d. 7. til mandag d. 22. september 2013</h1>
-                    <p>(vi kan selvfølgelig træffes på email: info@scheel-larsen.dk)<br>
-                        Loungemøbler, Luksus stole i polyrattan, Haveborde, Parasoller, flere hundrede Frostsikre Krukker, Lamme- og<br>
-                        Renskind og meget mere (5.000 kvm. udendørsudstilling)</p>
-                    <p>Åbent: Tirsdag-fredag, kl. 14.00-20.00 - lørdag, søn- og helligdage, kl. 10.00-16.00.<br>
-                        (Ferielukket fra 7. september - 22. september 2013)</p>
-                </div>
                 <div class="products">
                     <h2><img src="<?php echo $tmpl;?>img/title_product.png" alt=""></h2>
                     <a class="btn_seeAll" href="product2.php"><span class="fl">Se alle</span> <b class="icon_right"></b></a>
