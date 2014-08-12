@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <?php require_once('head.php'); ?>
+    <link rel="stylesheet" href="css/black_style.css">
   </head>
   <body>
     <div id="page" class="bg_black">
-      <?php require_once('header_black.php'); ?>
+      <?php require_once('header.php'); ?>
       <section class="main mt190">
         <div class="container">
             <div class="template">
@@ -96,7 +97,7 @@
                 </div>
                 
                 <div class="related_product">
-                  <h2><img src="img/title_relateproduct.png" alt=""></h2>
+                  <h2>Relaterede Producker</h2>
                   <div class="products">
                     <ul class="clearfix">
                       <li>
@@ -189,7 +190,7 @@
 
       </section>
       <?php require_once('delivery.php'); ?>
-      <?php require_once('footer_black.php'); ?>
+      <?php require_once('footer.php'); ?>
     </div>
 
    <?php require_once('js-footer.php'); ?>

@@ -1,5 +1,5 @@
 <div class="category clearfix">
-  <h2><img src="img/title_cate.png" alt=""></h2>
+  <h2>Produkter</h2>
   <ul class="cate">
     <li class="active"><a href="#">1000 KRUKKER</a>
       <ul>
@@ -23,7 +23,7 @@
   </ul>
 </div>
 <div class="havebeholder clearfix">
-  <h2><img src="img/title_haveb.png" alt=""></h2>
+  <h2>havebeholder</h2>
   <h4>• Ved køb af 1stk.</h4>
   <p>190 liter – 750 kr.<br>
   240 liter – 850 kr.<br>
@@ -34,16 +34,10 @@
   <a class="btnseemore" href="#"><span class="fl">SE MERE</span> <b class="icon_right"></b></a>
 </div>
 <div class="cane">
-  <h2><img src="img/title_cane.png" alt=""></h2>
-  <div class="cane_img">
-    <a href="#"><img src="img/img03.jpg" alt=""></a>
-  </div>
+  <a href="#"><img src="img/img03.jpg" alt=""></a>
 </div>
 <div class="nature">
-  <h2><img src="img/title_natures.png" alt=""></h2>
-  <div class="nature_img">
-    <a href="#"><img src="img/img05.jpg" alt=""></a>
-  </div>
+  <a href="#"><img src="img/img05.jpg" alt=""></a>
 </div>
 <div class="face_dev">
   <img src="img/face_dev.jpg" alt="">

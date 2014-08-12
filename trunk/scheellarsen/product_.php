@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <?php require_once('head.php'); ?>
+    <link rel="stylesheet" href="css/black_style.css">
   </head>
   <body>
     <div id="page" class="bg_black">
-      <?php require_once('header_black.php'); ?>
+      <?php require_once('header.php'); ?>
       <section class="main mt190">
         <div class="container">
            <div class="main_left clearfix">
@@ -16,11 +17,10 @@
               <div class="product_page">
                 <ul class="breadcrumb">
                   <li><a href="index.php">Forside</a></li>
-                  <li><a href="product.php">CANE-LINE</a></li>
+                  <li><a href="product.php">1000 krukker</a></li>
                 </ul>
-                <h2 class="c505050">CANE-LINE</h2>
-                <?php require_once('banner.php'); ?>
-                <h4 class="c505050">Generelt for alle Krukker, der gerne vil have et langt liv....!</h4>
+                <h2>1000 krukker</h2>
+                <h4>Generelt for alle Krukker, der gerne vil have et langt liv....!</h4>
                 <p>Husk altid 1/3 Leca i bunden af krukken og endnu vigtigere, altid op på krukkefødder når vi når oktober måned, hvor frosten snart vil sætte ind. Dette giver et rigtig godt dræn i krukken, således at den ikke frostspringes.</p>
                 <ul class="list_product clearfix">
                   <li>
@@ -72,7 +72,7 @@
         </div>
       </section>
       <?php require_once('delivery.php'); ?>
-      <?php require_once('footer_black.php'); ?>
+      <?php require_once('footer.php'); ?>
     </div>
 
    <?php require_once('js-footer.php'); ?>

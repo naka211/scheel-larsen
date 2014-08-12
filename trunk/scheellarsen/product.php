@@ -4,7 +4,7 @@
     <?php require_once('head.php'); ?>
   </head>
   <body>
-    <div id="page">
+    <div id="page" class="bg_black">
       <?php require_once('header.php'); ?>
       <section class="main mt190">
         <div class="container">

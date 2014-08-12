@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <?php require_once('head.php'); ?>
+    <link rel="stylesheet" href="css/black_style.css">
   </head>
   <body>
     <div id="page" class="bg_black">
-      <?php require_once('header_black.php'); ?>
+      <?php require_once('header.php'); ?>
       <section class="main mt190">
         <div class="container">
            <div class="main_left clearfix">
@@ -41,7 +42,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -61,7 +62,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -81,7 +82,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -101,7 +102,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -121,7 +122,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -141,7 +142,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -161,7 +162,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -181,7 +182,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -201,7 +202,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -221,7 +222,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -241,7 +242,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                     <li>
@@ -261,7 +262,7 @@
                         <p class="price_before">Førpris: 529 DKK</p>
                         <p class="price_sale">(De sparer: 50 DKK) </p>
                         <h4 class="c505050">479 DKK</h4>
-                        <a class="btnMore btn2 btn_black" href="product_detail_black.php">Vis detaljer</a>
+                        <a class="btnMore btn2" href="product_detail_black.php">Vis detaljer</a>
                       </div>
                     </li>
                   </ul>
