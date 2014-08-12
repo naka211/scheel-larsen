@@ -48,7 +48,7 @@ $session = JFactory::getSession();
     <script src="<?php echo $tmpl;?>js/nicker.js"></script>
 </head>
 <body>
-<div id="page">
+<div id="page" class="bg_black">
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -65,13 +65,8 @@ $session = JFactory::getSession();
             <div class="w_info clearfix">
             
               {module Information}
+              {module Search product}
               
-              <form class="navbar-form navbar-left relative" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Hvad søger du efter ...">
-                </div>
-                <button type="submit" class="btnSearch">Submit</button>
-              </form>
             </div>
     
             <div class="w_cart">
@@ -395,7 +390,7 @@ $session = JFactory::getSession();
             <div class="container">
                 <div class="footer_top_content clearfix">
                     <div class="contact_info">
-                        <h3 class="bor_bottom0"><a data-reveal-id="f_map" href="javascript:void(0);"><img src="<?php echo $tmpl;?>img/title_find_os.png" alt=""></a></h3>
+                        <h3 class="bor_bottom0"><a data-reveal-id="f_map" href="javascript:void(0);" class="btn_Findos"></a></h3>
                         {module Footer Information 2}
                     </div>
                     <div class="cate_list">

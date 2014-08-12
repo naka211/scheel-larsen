@@ -126,7 +126,7 @@ div.terms-of-service{ margin:10px 0 0;padding:10px 0 15px; display : inline;}
 .vm-button-correct,.vm-button-correct:link,.vm-button-correct:visited{background:#e8e8e8 url(../images/vmgeneral/backgrounds.png) top repeat-x;background-position:0 -160px;color:#fff;border:solid #00a000 1px;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;font-size:12px;cursor:pointer;text-align:center;letter-spacing:1px;display:inline-block;text-decoration:none;padding:6px 12px 3px;}
 .vm-button-correct:hover{background-position:0 -200px;color:#f2f2f2;text-decoration:none;}
 .VmArrowdown{background:top right no-repeat url(../images/vmgeneral/arrow_down.png);cursor:pointer;float:right;width:16px;height:16px;padding:0 12px;}
-ul.VMmenu,.VMmenu ul,.VMmenu li{list-style-type:none!important;background-image:none!important;padding:2px;}
+/*ul.VMmenu,.VMmenu ul,.VMmenu li{list-style-type:none!important;background-image:none!important;padding:2px;}*/
 #ui-tabs ul#tabs{list-style-type:none;overflow:hidden;margin:0;padding:20px 20px 0;}
 #ui-tabs ul#tabs li{display:inline-block;cursor:pointer;background:#f2f2f2;padding:10px 20px 7px;}
 #ui-tabs ul#tabs li.current{display:inline-block;background:#ccc;color:#444;}
