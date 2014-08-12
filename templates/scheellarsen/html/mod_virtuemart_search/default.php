@@ -1,11 +1,14 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access');
-$text=JRequest::getVar("keyword","Hvad søger du efter…");
+$text = JRequest::getVar("keyword", "Hvad søger du efter…");
+if(!$text){
+    $text = "Hvad søger du efter…";
+}
 ?>
 <!--BEGIN Search Box -->
-<form id="vm_mod_search" class="search2" action="<?php echo JRoute::_('index.php?option=com_virtuemart&view=search&search=true&limitstart=0&virtuemart_category_id='.$category_id ); ?>" method="get">
-<div>
-<?php $output = '<input name="keyword" id="mod_virtuemart_search" alt="'.$button_text.'" class="inputbox'.$moduleclass_sfx.'" type="text" size="'.$width.'" value="'.$text.'"  onblur="if(this.value==\'\') this.value=\''.$text.'\';" onfocus="if(this.value==\''.$text.'\') this.value=\'\';" />';
+<form id="vm_mod_search" class="navbar-form navbar-left relative" role="search" action="<?php echo JRoute::_('index.php?option=com_virtuemart&view=search&search=true&limitstart=0&virtuemart_category_id='.$category_id ); ?>" method="get">
+<div class="form-group">
+<?php $output = '<input name="keyword" id="mod_virtuemart_search" alt="'.$button_text.'" class="form-control" type="text" size="'.$width.'" value="'.$text.'"  onblur="if(this.value==\'\') this.value=\''.$text.'\';" onfocus="if(this.value==\''.$text.'\') this.value=\'\';" />';
  $image = JURI::base().'components/com_virtuemart/assets/images/vmgeneral/search.png' ;
 
 			if ($button) :
@@ -41,9 +44,9 @@ $text=JRequest::getVar("keyword","Hvad søger du efter…");
 			echo $output;
 ?>
 </div>
-<div class="bnt-go btn"><a href="javascript:document.getElementById('vm_mod_search').submit()">go&gt;</a></div>
+<button type="submit" class="btnSearch">Submit</button>
 		<input type="hidden" name="limitstart" value="0" />
 		<input type="hidden" name="option" value="com_virtuemart" />
-		<input type="hidden" name="view" value="search" />
+		<input type="hidden" name="view" value="category" />
 	</form>
 <!-- End Search Box -->
