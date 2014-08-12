@@ -41,8 +41,29 @@ jQuery(document).ready(function()
 	<?php }?>
 });// JavaScript Document
 </script>
-<div id="produkter-page" class="productdetails-view productdetails">
+<div class="productdetail_page clearfix">
+    <div class="main_content frame clearfix">
 	{module Breadcrumbs}
+        <div class="product_img">
+                    <div class="img_larg">
+                      <a id="btnLargeImage" class="imgZoom" href="img/thumnail/img_larg.jpg"><img width="430" height="318" src="img/thumnail/img_larg.jpg" alt=""></a>
+                    </div>
+
+                    <a id="btnZoomIcon" class="imgZoom btnZoom" href="img/thumnail/img_larg.jpg"><img src="img/icon_zoom.png" alt=""></a>
+                    
+                    <!--<ul id="thumblist" class="thumail clearfix gallery">
+                      <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
+                      <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
+                      <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
+                    </ul>-->                    
+                    <hr>
+                    <a href="#"><img src="img/icon_face.png" alt=""></a>
+                    <div class="clear mb10"></div>
+                    <div class="video clearfix">
+                      <a class="fl imgZoom" href="https://www.youtube.com/watch?v=-1gQDlgrAQk"><img src="img/thumnail/img_small2.jpg" alt=""></a>
+                    </div>
+                  </div>
+        
 	<div class="w-tell-friend reveal-modal" id="myModal2">
 	<a href="#" class="close-reveal-modal"></a>
 	<form class="tell-friend" action="<?php echo JRoute::_('index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id='.$this->product->virtuemart_product_id.'&virtuemart_category_id='.$this->product->virtuemart_category_id.'&tmpl=component') ; ?>" method="post" id="mailForm">
@@ -318,6 +339,7 @@ if (VmConfig::get('ask_question', 1) == 1){
 		echo $this->loadTemplate('customfields');
 	} // Product Custom ontop end
 	?>
+    </div>
 </div>
 <?php if($this->product->product_delivery){
 	$db = JFactory::getDBO();
