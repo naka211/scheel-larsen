@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2014 at 11:12 AM
+-- Generation Time: Aug 12, 2014 at 11:56 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -41,14 +41,14 @@ CREATE TABLE IF NOT EXISTS `i63il_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
 
 --
 -- Dumping data for table `i63il_assets`
 --
 
 INSERT INTO `i63il_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 1, 87, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 1, 89, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 8, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 9, 10, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
@@ -91,7 +91,8 @@ INSERT INTO `i63il_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (42, 40, 27, 28, 3, 'com_content.article.8', 'Handelsbetingelser', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (43, 27, 23, 24, 3, 'com_content.article.9', 'Contact page text', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (44, 3, 6, 7, 2, 'com_banners.category.10002', 'Home banners', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(45, 1, 85, 86, 1, 'com_content.article.14', 'Home article', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}');
+(45, 1, 85, 86, 1, 'com_content.article.14', 'Home article', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(46, 1, 87, 88, 1, 'com_jmsvmcustom', 'com_jmsvmcustom', '{}');
 
 -- --------------------------------------------------------
 
@@ -474,7 +475,7 @@ CREATE TABLE IF NOT EXISTS `i63il_extensions` (
   KEY `element_clientid` (`element`,`client_id`),
   KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
   KEY `extension` (`type`,`element`,`folder`,`client_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10054 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10056 ;
 
 --
 -- Dumping data for table `i63il_extensions`
@@ -657,7 +658,9 @@ INSERT INTO `i63il_extensions` (`extension_id`, `name`, `type`, `element`, `fold
 (10050, 'PLG_SYSTEM_MODULESANYWHERE', 'plugin', 'modulesanywhere', 'system', 0, 1, 1, 0, '{"legacy":false,"name":"PLG_SYSTEM_MODULESANYWHERE","type":"plugin","creationDate":"April 2014","author":"NoNumber (Peter van Westen)","copyright":"Copyright \\u00a9 2014 NoNumber All Rights Reserved","authorEmail":"peter@nonumber.nl","authorUrl":"http:\\/\\/www.nonumber.nl","version":"3.4.3FREE","description":"PLG_SYSTEM_MODULESANYWHERE_DESC","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10051, 'PLG_EDITORS-XTD_MODULESANYWHERE', 'plugin', 'modulesanywhere', 'editors-xtd', 0, 1, 1, 0, '{"legacy":false,"name":"PLG_EDITORS-XTD_MODULESANYWHERE","type":"plugin","creationDate":"April 2014","author":"NoNumber (Peter van Westen)","copyright":"Copyright \\u00a9 2014 NoNumber All Rights Reserved","authorEmail":"peter@nonumber.nl","authorUrl":"http:\\/\\/www.nonumber.nl","version":"3.4.3FREE","description":"PLG_EDITORS-XTD_MODULESANYWHERE_DESC","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10052, 'PLG_SYSTEM_NNFRAMEWORK', 'plugin', 'nnframework', 'system', 0, 1, 1, 0, '{"legacy":false,"name":"PLG_SYSTEM_NNFRAMEWORK","type":"plugin","creationDate":"May 2014","author":"NoNumber (Peter van Westen)","copyright":"Copyright \\u00a9 2014 NoNumber All Rights Reserved","authorEmail":"peter@nonumber.nl","authorUrl":"http:\\/\\/www.nonumber.nl","version":"14.5.17","description":"PLG_SYSTEM_NNFRAMEWORK_DESC","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10053, 'Schellarsen', 'template', 'scheellarsen', '', 0, 1, 1, 0, '{"legacy":false,"name":"Schellarsen","type":"template","creationDate":"01\\/08\\/2014","author":"T.Trung","copyright":"Copyright (C) 2013 Open Source Matters, Inc. All rights reserved.","authorEmail":"thanh.trung@mwc.vn","authorUrl":"","version":"2.5.0","description":"Schellarsen","group":""}', '{"wrapperSmall":"53","wrapperLarge":"72","sitetitle":"","sitedescription":"","navposition":"center","templatecolor":"nature"}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
+(10053, 'Schellarsen', 'template', 'scheellarsen', '', 0, 1, 1, 0, '{"legacy":false,"name":"Schellarsen","type":"template","creationDate":"01\\/08\\/2014","author":"T.Trung","copyright":"Copyright (C) 2013 Open Source Matters, Inc. All rights reserved.","authorEmail":"thanh.trung@mwc.vn","authorUrl":"","version":"2.5.0","description":"Schellarsen","group":""}', '{"wrapperSmall":"53","wrapperLarge":"72","sitetitle":"","sitedescription":"","navposition":"center","templatecolor":"nature"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10054, 'com_jmsvmcustom', 'component', 'com_jmsvmcustom', '', 1, 1, 0, 0, '{"legacy":false,"name":"com_jmsvmcustom","type":"component","creationDate":"Sep 2013","author":"www.joommasters.com","copyright":"All rights reserved.","authorEmail":"info@joommasters.com","authorUrl":"www.joommasters.com","version":"1.0","description":"JMS customize color component for Virtuemart","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10055, 'VMCustom - JmsColor', 'plugin', 'jmscolor', 'vmcustom', 0, 0, 1, 0, '{"legacy":true,"name":"VMCustom - JmsColor","type":"plugin","creationDate":"September 03 2013","author":"Joommasters","copyright":"Copyright (C) 2009-2013 Joommasters. All rights reserved.","authorEmail":"","authorUrl":"http:\\/\\/www.joommasters.com","version":"1.0","description":"customize color plugin for Virtuemart product","group":""}', '{"display_type":"1"}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1206,6 +1209,47 @@ CREATE TABLE IF NOT EXISTS `i63il_finder_types` (
   `mime` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `i63il_jmsvm_colors`
+--
+
+CREATE TABLE IF NOT EXISTS `i63il_jmsvm_colors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `color_title` varchar(100) NOT NULL,
+  `color_icon` varchar(50) NOT NULL,
+  `ordering` int(11) NOT NULL,
+  `published` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `i63il_jmsvm_colors`
+--
+
+INSERT INTO `i63il_jmsvm_colors` (`id`, `color_title`, `color_icon`, `ordering`, `published`) VALUES
+(2, 'red', 'red.png', 0, 1),
+(3, 'Pink', 'pink.png', 0, 1),
+(4, 'green', 'green.png', 0, 1),
+(5, 'Purple', 'purple.png', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `i63il_jmsvm_product_colors`
+--
+
+CREATE TABLE IF NOT EXISTS `i63il_jmsvm_product_colors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `color_id` int(11) NOT NULL,
+  `price` float NOT NULL,
+  `color_imgs` varchar(400) NOT NULL,
+  `published` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -1913,14 +1957,14 @@ CREATE TABLE IF NOT EXISTS `i63il_menu` (
   KEY `idx_alias` (`alias`),
   KEY `idx_path` (`path`(255)),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=135 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=138 ;
 
 --
 -- Dumping data for table `i63il_menu`
 --
 
 INSERT INTO `i63il_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `ordering`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 91, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 97, 0, '*', 0),
 (2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'menu', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -1965,7 +2009,10 @@ INSERT INTO `i63il_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (131, 'bottommenu', 'Handelsbetingelser', 'handelsbetingelser', '', 'handelsbetingelser', 'index.php?option=com_content&view=article&id=8', 'component', 1, 1, 1, 22, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"","link_titles":"","show_intro":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_noauth":"","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 89, 90, 0, '*', 0),
 (132, 'topmenu', 'Find os her', '2014-08-05-09-50-43', '', '2014-08-05-09-50-43', '#', 'url', 1, 1, 1, 0, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 79, 80, 0, '*', 0),
 (133, 'topmenu', 'Nyhedsbrev tilmelding', 'nyhedsbrev-tilmelding', '', 'nyhedsbrev-tilmelding', 'index.php?option=com_contact&view=contact&layout=subscribe&id=1', 'component', 1, 1, 1, 8, 0, 62, '2014-08-08 02:02:05', 0, 1, '', 0, '{"presentation_style":"","show_contact_category":"","show_contact_list":"","show_name":"","show_position":"","show_email":"","show_street_address":"","show_suburb":"","show_state":"","show_postcode":"","show_country":"","show_telephone":"","show_mobile":"","show_fax":"","show_webpage":"","show_misc":"","show_image":"","allow_vcard":"","show_articles":"","show_links":"","linka_name":"","linkb_name":"","linkc_name":"","linkd_name":"","linke_name":"","show_email_form":"","show_email_copy":"","banned_email":"","banned_subject":"","banned_text":"","validate_session":"","custom_reply":"","redirect":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 81, 82, 0, '*', 0),
-(134, 'bottommenu', 'Kontakt', 'kontakt1', '', 'kontakt1', 'index.php?option=com_contact&view=contact&id=1&Itemid=121', 'url', 1, 1, 1, 8, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 85, 86, 0, '*', 0);
+(134, 'bottommenu', 'Kontakt', 'kontakt1', '', 'kontakt1', 'index.php?option=com_contact&view=contact&id=1&Itemid=121', 'url', 1, 1, 1, 8, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 85, 86, 0, '*', 0),
+(135, 'main', 'JMS VM Customize', 'jms-vm-customize', '', 'jms-vm-customize', 'index.php?option=com_jmsvmcustom', 'component', 0, 1, 1, 10054, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '', 91, 96, 0, '', 1),
+(136, 'main', 'Colors', 'colors', '', 'jms-vm-customize/colors', 'index.php?option=com_jmsvmcustom&controller=colors', 'component', 0, 135, 2, 10054, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '', 92, 93, 0, '', 1),
+(137, 'main', 'Products', 'products', '', 'jms-vm-customize/products', 'index.php?option=com_jmsvmcustom&controller=products', 'component', 0, 135, 2, 10054, 0, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '', 94, 95, 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -2077,7 +2124,7 @@ INSERT INTO `i63il_modules` (`id`, `title`, `note`, `content`, `ordering`, `posi
 (87, 'VM - Administrator Module', '', '', 5, 'menu', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_vmmenu', 3, 1, '', 1, '*'),
 (88, 'VM - Currencies Selector', '', '', 5, 'position-4', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_virtuemart_currencies', 1, 1, '', 0, '*'),
 (89, 'VM - Featured products', '', '', 3, 'position-4', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_virtuemart_product', 1, 1, '', 0, '*'),
-(90, 'Search product', '', '', 2, 'position-4', 62, '2014-08-12 07:43:52', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_virtuemart_search', 1, 1, '{"width":"20","text":"Hvad s\\u00f8ger du efter ...","filter_category":"0","button":"0","button_pos":"right","imagebutton":"0","button_text":"","set_itemid":"","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
+(90, 'Search product', '', '', 2, 'position-4', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_virtuemart_search', 1, 1, '{"width":"20","text":"Hvad s\\u00f8ger du efter ...","filter_category":"0","button":"0","button_pos":"right","imagebutton":"0","button_text":"","set_itemid":"","moduleclass_sfx":"","cache":"1","cache_time":"900"}', 0, '*'),
 (91, 'VM - Manufacturer', '', '', 8, 'position-4', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_virtuemart_manufacturer', 1, 1, '', 0, '*'),
 (92, 'VM - Shopping cart', '', '', 0, 'position-4', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_virtuemart_cart', 1, 1, '', 0, '*'),
 (93, 'Menu Category', '', '', 4, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_virtuemart_category', 1, 1, '{"Parent_Category_id":"0","layout":"default","cache":"1","moduleclass_sfx":"","class_sfx":""}', 0, '*'),
@@ -3563,7 +3610,7 @@ CREATE TABLE IF NOT EXISTS `i63il_session` (
 --
 
 INSERT INTO `i63il_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`, `usertype`) VALUES
-('gck2vp9kl347j20chivblghvs3', 1, 0, '1407829432', '__default|a:8:{s:15:"session.counter";i:13;s:19:"session.timer.start";i:1407829198;s:18:"session.timer.last";i:1407829432;s:17:"session.timer.now";i:1407829432;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":2:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:1:{i:0;i:90;}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:21:"info@scheel-larsen.dk";s:8:"password";s:32:"21232f297a57a5a743894a0e4a801fc3";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2011-08-18 15:03:38";s:13:"lastvisitDate";s:19:"2014-08-12 03:50:29";s:10:"activation";s:0:"";s:6:"params";s:75:"{"admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":5:{s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"e3eb9739c40ca4695f32a8873310c353";}', 62, 'admin', ''),
+('gck2vp9kl347j20chivblghvs3', 1, 0, '1407837362', '__default|a:8:{s:15:"session.counter";i:20;s:19:"session.timer.start";i:1407829198;s:18:"session.timer.last";i:1407837362;s:17:"session.timer.now";i:1407837362;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":3:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:13:"com_installer";O:8:"stdClass":3:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";s:12:"redirect_url";N;}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:21:"info@scheel-larsen.dk";s:8:"password";s:32:"21232f297a57a5a743894a0e4a801fc3";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2011-08-18 15:03:38";s:13:"lastvisitDate";s:19:"2014-08-12 03:50:29";s:10:"activation";s:0:"";s:6:"params";s:75:"{"admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":5:{s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"e3eb9739c40ca4695f32a8873310c353";}', 62, 'admin', ''),
 ('prjl6ckpnoh6aj0hind0tf1jn5', 0, 1, '1407834272', '__default|a:9:{s:15:"session.counter";i:45;s:19:"session.timer.start";i:1407815432;s:18:"session.timer.last";i:1407834265;s:17:"session.timer.now";i:1407834271;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":1:{s:14:"com_virtuemart";O:8:"stdClass":11:{s:14:"productdetails";O:8:"stdClass":2:{s:5:"limit";s:3:"int";s:10:"limitstart";i:0;}s:8:"category";O:8:"stdClass":2:{s:5:"limit";s:3:"int";s:10:"limitstart";i:0;}s:11:"categoryc21";O:8:"stdClass":1:{s:5:"limit";s:3:"int";}s:11:"categoryc32";O:8:"stdClass":1:{s:5:"limit";s:3:"int";}s:11:"categoryc29";O:8:"stdClass":1:{s:5:"limit";s:3:"int";}s:11:"categoryc56";O:8:"stdClass":1:{s:5:"limit";s:3:"int";}s:13:"categoryc21m0";O:8:"stdClass":1:{s:10:"limitstart";i:0;}s:10:"categoryc0";O:8:"stdClass":1:{s:5:"limit";s:3:"int";}s:12:"categoryc0m0";O:8:"stdClass":1:{s:10:"limitstart";i:0;}s:13:"categoryc32m0";O:8:"stdClass":1:{s:10:"limitstart";i:0;}s:13:"categoryc29m0";O:8:"stdClass":1:{s:10:"limitstart";i:0;}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:6:"notify";i:1;s:13:"session.token";s:32:"56ac0d2b0d3a719463e536c933a1d363";}__vm|a:4:{s:6:"vmcart";s:645:"O:8:"stdClass":24:{s:8:"products";a:0:{}s:8:"vendorId";i:1;s:21:"lastVisitedCategoryId";i:0;s:28:"virtuemart_shipmentmethod_id";i:0;s:27:"virtuemart_paymentmethod_id";i:0;s:25:"automaticSelectedShipment";b:0;s:24:"automaticSelectedPayment";b:0;s:12:"order_number";N;s:2:"BT";i:0;s:2:"ST";i:0;s:11:"tosAccepted";N;s:16:"customer_comment";s:0:"";s:10:"couponCode";s:0:"";s:20:"_triesValidateCoupon";a:0:{}s:14:"order_language";s:0:"";s:8:"cartData";N;s:5:"lists";N;s:14:"pricesCurrency";N;s:15:"paymentCurrency";N;s:11:"_inCheckOut";b:0;s:14:"_dataValidated";b:0;s:12:"_confirmDone";b:0;s:10:"STsameAsBT";b:1;s:15:"customer_number";s:7:"nonreg_";}";s:23:"vmlastvisitedcategoryid";i:29;s:23:"vmlastvisitedproductids";a:1:{i:0;i:116;}s:19:"vmlastvisitedmanuid";i:-1;}', 0, '', '');
 
 -- --------------------------------------------------------
