@@ -238,7 +238,7 @@
             <ul class="nav navbar-nav">
               <li><a href="product.php">Produkter</a>
                 <div class="sub clearfix">
-                  <div class="sub_col w178">
+                  <div class="sub_col">
                     <h4><a href="product.php">• 1000 KRUKKER</a></h4>
                     <ul>
                       <li><a href="#">Italienske</a></li>
@@ -250,7 +250,7 @@
                       <li><a href="#">Pynt til haven</a></li>
                     </ul>
                   </div>
-                  <div class="sub_col w178">
+                  <div class="sub_col">
                     <h4><a href="product.php">• PARASOL/PAVILLION ETC.</a></h4>
                     <ul>
                       <li><a href="#">Parasoller</a></li>
@@ -259,7 +259,7 @@
                       <li><a href="#">Parasol cover</a></li>
                     </ul>
                   </div>
-                  <div class="sub_col w178">
+                  <div class="sub_col">
                     <h4><a href="product.php">• HAVEMØBLER</a></h4>
                     <ul>
                       <li><a href="#">Havemøbelsæt </a></li>
@@ -273,7 +273,7 @@
                       <li><a href="#">Cover</a></li>
                     </ul>
                   </div>
-                  <div class="sub_col w178">
+                  <div class="sub_col">
                     <h4><a href="product_.php">• CANE-LINE</a></h4>
                     <ul>
                       <li><a href="#">Diningsæt </a></li>
@@ -287,25 +287,25 @@
                     </ul>
                   </div>
 
-                  <div class="sub_col w178 mr0">
+                  <div class="sub_col">
                     <h4><a href="product.php">• MOSAIK & SMEDEJERN</a></h4>
                   </div>
-                  <div class="sub_col mr0">
+                  <div class="sub_col">
                     <h4><a href="product.php">• ACCESSORIES TIL HAVEN</a></h4>
                   </div>
-                  <div class="sub_col mr0">
+                  <div class="sub_col">
                     <ul>
                       <li><a href="#">Lanterner og lys </a></li>
                       <li><a href="#">Bålfade etc</a></li>
                     </ul>
                   </div>
-                  <div class="sub_col mr0">
+                  <div class="sub_col">
                     <h4><a href="product.php">• SKIND</a></h4>
                   </div>
-                  <div class="sub_col mr0">
+                  <div class="sub_col">
                     <h4><a href="product.php">• HAVEBEHOLDERE</a></h4>
                   </div>
-                  <div class="sub_col mr0">
+                  <div class="sub_col">
                     <h4><a href="product.php">• GAVEKORT</a></h4>
                   </div>
                 </div>

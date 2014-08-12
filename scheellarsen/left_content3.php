@@ -4,9 +4,9 @@
     <li><a href="#">1000 KRUKKER</a></li>
     <li><a href="#">PARASOL/PAVILLION ETC.</a></li>
     <li><a href="#">HAVEMØBLER</a></li>
-    <li class="active"><a class="c505050" href="product_.php">CANE-LINE</a>
+    <li class="active"><a href="product_.php">CANE-LINE</a>
       <ul>
-        <li class="active"><a class="c505050" href="product2_black.php">DININGSÆT</a></li>
+        <li class="active"><a href="product2_black.php">DININGSÆT</a></li>
         <li><a href="product2_black.php">BORDE</a></li>
         <li><a href="product2_black.php">STOLE</a></li>
         <li><a href="product2_black.php">LOUNGESÆT</a></li>
@@ -35,16 +35,10 @@
   <a class="btnseemore c505050" href="#"><span class="fl">SE MERE</span> <b class="icon_right"></b></a>
 </div>
 <div class="cane">
-  <h2><img src="img/title_cane.png" alt=""></h2>
-  <div class="cane_img">
-    <a href="#"><img src="img/img03.jpg" alt=""></a>
-  </div>
+  <a href="#"><img src="img/img03.jpg" alt=""></a>
 </div>
 <div class="nature">
-  <h2><img src="img/title_natures.png" alt=""></h2>
-  <div class="nature_img">
-    <a href="#"><img src="img/img05.jpg" alt=""></a>
-  </div>
+  <a href="#"><img src="img/img05.jpg" alt=""></a>
 </div>
 <div class="face_dev">
   <img src="img/face_dev.jpg" alt="">

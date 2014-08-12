@@ -11,7 +11,7 @@
     <div class="container">
       <div class="footer_top_content clearfix">
         <div class="contact_info">
-          <h3 class="bor_bottom0"><a data-reveal-id="f_map" href="#"><img src="img/title_find_os.png" alt=""></a></h3>
+          <h3 class="bor_bottom0"><a class=" btn_Findos" data-reveal-id="f_map" href="#">Find_os</a></h3>
           <p>Have- & Havemøbler ApS<br>
           Hesselrødvej 26, Karlebo<br>
           2980 Kokkedal<br>
