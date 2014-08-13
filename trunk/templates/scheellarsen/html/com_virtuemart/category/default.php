@@ -150,24 +150,10 @@ if (VmConfig::get ('showCategory', 1) and empty($this->keyword)) {
 <div class="products">
     <ul class="clearfix">
 <?php
-	// Category and Columns Counter
-	$iBrowseCol = 1;
-
-	// Calculating Products Per Row
-	$ppr = $this->perRow;
 
 	// Start the Output
 	foreach($this->products as $product){
 		$link=JRoute::_ ( 'index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $product->virtuemart_product_id . '&virtuemart_category_id=' . $product->virtuemart_category_id );
-		if($iBrowseCol == 1)
-//			echo '<div>';
-
-		// Show the horizontal seperator
-		if ($iBrowseCol == $ppr)
-			$row_class=' class="no-mar"';
-		else
-				$row_class="";
-
 		// Show Products
 		?>
 		<li<?php echo $row_class?>>
@@ -208,47 +194,8 @@ if (VmConfig::get ('showCategory', 1) and empty($this->keyword)) {
                             ?>
                             </h4>
                             <a class="btnMore btn2" href="<?php echo $link?>">Vis detaljer</a>
-                        <!--	<a href="<?php echo $link?>">
-                                                                        <div class="img-pro-larg"><?php echo $product->images[0]->displayMediaThumb( 'border="0"', false, '' )?></div>
-
-                                                                        <p class="title"><?php echo $product->product_name?></p>
-                                                                        <p class="num">Varenr. <?php echo $product->product_sku?></p>
-                        <?php if($product->product_delivery) echo "<p>VAREN KAN KUN AFHENTES!</p>"?>
-                                                                        <div class="price">
-                                                                <?php if(!empty($product->prices['discountAmount'])){?>
-                                                                        <p class="old-price-larg"><?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
-
-                                                                        <span class="sale">(SPAR <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>)</span>
-                                                                <?php }?>
-
-                                                                        <p class="price-red"><?php echo $this->currency->priceDisplay($product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );?></p>
-
-                                                                        <p class="v-detail">Vis detaljer</p>
-                                                                        </div>
-                                                                        <div class="add-cart"><?php if($product->product_in_stock - $product->product_ordered < 1){?>
-                                                                        <span style="color: #F33;text-transform: uppercase;text-decoration: none;font-weight: bold;font-size: 16px;">UDSOLGT</span>-->
-                        <?php }else{?>
-                                <?php if(!$product->product_delivery){?>
-                                <!--<a rel="<?php //echo $product->virtuemart_product_id?>">Læg i Kurv</a>-->
-                            <?php }?>
-                        <?php }?>
-                        <!--</div>-->
-                        <!--					<?php //if(!empty($product->prices['discountAmount'])){?>
-                                                                        <div class="sale-off"><img src="templates/<?php //echo $template?>/img/tilbud.png" width="67" height="67" alt=""></div>
-                                                                <?php //}?>
-                                </a>-->
-                        </div>
-		</li> <!-- end of product -->
+                        
 		<?php
-
-		// Do we need to close the current row now?
-		if ($iBrowseCol == $ppr){
-			$iBrowseCol = 1;
-//			echo '<div class="clear"></div></div>';
-		} else {
-			$iBrowseCol++;
-		}
-
 	} // end of foreach ( $this->products as $product )
 if($iBrowseCol != 1)
 	echo '<div class="clear"></div></div>';
@@ -287,4 +234,66 @@ if($iBrowseCol != 1)
     </div>
 </div>
 <?php }
+
+
+if (!empty($this->keyword)){
+    if (!empty($this->products)){
 ?>
+<div class="products">
+    <ul class="clearfix">
+<?php
+
+	// Start the Output
+	foreach($this->products as $product){
+		$link=JRoute::_ ( 'index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $product->virtuemart_product_id . '&virtuemart_category_id=' . $product->virtuemart_category_id );
+		// Show Products
+		?>
+		<li<?php echo $row_class?>>
+			<div class="img_main">
+<?php // Product Image
+			if ($product->images) 
+				echo $product->images[0]->displayMediaThumb( null, false );
+?>
+			</div>
+			<h3>
+				<?php echo (mb_strlen($product->product_name,"UTF-8") < 62) ? $product->product_name : mb_substr($product->product_name, 0, 61, "UTF-8")."…"?>
+			</h3>
+                        <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
+                        <?php if(!empty($product->prices['discountAmount'])){?>
+                        <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] ); ?>
+                            <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+                        <?php }?>
+                        <h4>
+                            <?php
+				if (VmConfig::get ( 'show_prices' ))
+					echo $this->currency->priceDisplay($product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );
+                            ?>
+                        </h4>
+                        <div class="pro-larg animated clearfix">
+                            <div class="img_main">
+                                <a href="<?php echo $link?>"><?php echo $product->images[0]->displayMediaThumb( 'border="0"', false, '' )?></a>
+                            </div>
+                            <h3><?php echo $product->product_name?></h3>
+                            <p class="no_number">Vare-nummer: <?php echo $product->product_sku?></p>
+                            <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
+                            <?php if(!empty($product->prices['discountAmount'])){?>
+                                <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+                            <?php } ?>   
+                            <h4>
+                            <?php
+                                if (VmConfig::get ( 'show_prices' ))
+                                        echo $this->currency->priceDisplay($product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );
+                            ?>
+                            </h4>
+                            <a class="btnMore btn2" href="<?php echo $link?>">Vis detaljer</a>
+                        
+		<?php
+	} // end of foreach ( $this->products as $product )
+?>
+    </ul>
+</div>  
+<?php
+    } else {
+        echo 'Intet resultat' . ($this->keyword ? ' : (' . $this->keyword . ')' : '');
+    }
+}?>

@@ -22,14 +22,14 @@ JHTML::_( 'behavior.modal' );
         <?php
 foreach ($this->products as $type => $productList ) {
 // Calculating Products Per Row
-$products_per_row = VmConfig::get ( 'homepage_products_per_row', 3 ) ;
-$cellwidth = ' width'.floor ( 100 / $products_per_row );
+/*$products_per_row = VmConfig::get ( 'homepage_products_per_row', 3 ) ;
+$cellwidth = ' width'.floor ( 100 / $products_per_row );*/
 
 // Category and Columns Counter
 
 // Start the Output
 
-foreach ( $productList as $product ) {
+foreach ( $productList as $product ) { //print_r($product);exit;
 
 	$link=JRoute::_ ( 'index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $product->virtuemart_product_id . '&virtuemart_category_id=' . $product->virtuemart_category_id );
 
@@ -48,8 +48,10 @@ foreach ( $productList as $product ) {
                 <?php // Product Name
 					echo $product->product_name?>
             </h3>
+            <?php if(!empty($product->prices['discountAmount'])){?>
             <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
             <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+            <?php }?>
             <h4><?php
 					if (VmConfig::get ( 'show_prices' ) == '1') {
 						echo $this->currency->priceDisplay($product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );
@@ -60,9 +62,11 @@ foreach ( $productList as $product ) {
                 <div class="img_main"> <a href="<?php echo $link;?>"><?php echo $product->images[0]->displayMediaThumb( 'border="0"', false, '' )?></a> </div>
                 <h3><?php echo $product->product_name?></h3>
                 <p class="no_number">Vare-nummer: <?php echo $product->product_sku?></p>
-                <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?> DKK</p>
-                <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?> DKK) </p>
-                <h4><?php echo $this->currency->priceDisplay($product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );?> DKK</h4>
+                <?php if(!empty($product->prices['discountAmount'])){?>
+                <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
+                <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+                <?php }?>
+                <h4><?php echo $this->currency->priceDisplay($product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );?></h4>
                 <a class="btnMore btn2" href="<?php echo $link;?>">Vis detaljer</a>
             </div>            
         </li>

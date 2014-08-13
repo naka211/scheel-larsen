@@ -188,7 +188,7 @@ ul.w_item li:hover a {color: #fff; background: transparent;}
 #featured .ui-tabs-hide {display:none;}
 
 .face_dev {width: 220px; height: 20px;}
-.main_left {width: 220px; float: left;}
+.main_left {width: 220px; float: left; margin-bottom:20px;}
 .main_right {width: 730px; float: right;}
 .category {border: solid 1px #dcd6c0; padding: 16px; background: #fff;}
 .main_left h2 {color: #916429; font-weight: bold; background-image: -webkit-gradient(linear,left top, left bottom, from(#d1ab64), to(#815822)); -webkit-background-clip: text;	-webkit-text-fill-color: transparent;}
@@ -229,8 +229,8 @@ ul.cate li:hover ul li a {color: #505050;}
 .products {padding: 15px 0; position: relative;}
 .products h2 {margin-top: 0; border-bottom: 1px solid #d9d9d9; padding-bottom: 5px; margin-bottom: 15px;}
 .products h2 span {font-size: 13px; font-family: 'Myriad Pro Regular'; text-transform: none; font-style: italic;}
-.products ul li {float: left; margin-right: 15px; margin-bottom: 12px; padding: 7px; width: 233px; min-height: 300px; background-color: #fff; border: solid 1px #dcd6c0; text-align: center; position: relative;}
-.products ul:nth-child(n+2) li {min-height: 220px;}
+.products ul li {float: left; margin-right: 15px; margin-bottom: 12px; padding: 7px; width: 233px; min-height: 280px; background-color: #fff; border: solid 1px #dcd6c0; text-align: center; position: relative;}
+/*.products ul:nth-child(n+2) li {min-height: 220px;}*/
 .products ul:nth-child(n+2) li:hover {background: url(../img/hover_li.png) no-repeat bottom center;}
 .products ul li h3 {margin: 10px 0 0;}
 .products ul li h4 {margin: 10px 0 0; font-size: 18px; color: #A08262;}

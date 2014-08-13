@@ -288,7 +288,7 @@ $session = JFactory::getSession();
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="container">
-                    {module Menu Category}
+                    {module Category Menu}
                     {module Top Menu}
               </div>
             </div><!-- /.navbar-collapse -->
@@ -298,7 +298,7 @@ $session = JFactory::getSession();
     <section class="main mt190">
         <div class="container">
             <div class="main_left clearfix">
-                {module Menu Category Left}
+                {module Left Category Menu}
                 {modulepos left}
                 <div class="fb-like-box" data-href="https://www.facebook.com/ScheelLarsen" data-width="220" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
                 
@@ -395,7 +395,8 @@ $session = JFactory::getSession();
                     </div>
                     <div class="cate_list">
                         <h3>Kategorier</h3>
-                        <ul>
+                        {module Footer Category Menu}
+                        <!--<ul>
                             <li><a href="#">Potter fra italien</a></li>
                             <li><a href="#">Lam - Og rensdyrskind</a></li>
                             <li><a href="#">Design fra nardi</a></li>
@@ -413,7 +414,7 @@ $session = JFactory::getSession();
                             <li><a href="#">Covers</a></li>
                             <li><a href="#">Lanterner, bålfade...</a></li>
                             <li><a href="#">Muubs havemøbler MV.</a></li>
-                        </ul>
+                        </ul>-->
                     </div>
                     
                     <div class="sitemap_list">
