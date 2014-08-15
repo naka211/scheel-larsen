@@ -1,27 +1,27 @@
 <?php
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
+$app = JFactory::getApplication();
+$tmpl = JURI::base().'templates/'.$app->getTemplate()."/";
 if (!empty($this->product->images)) {
 	$image = $this->product->images[0];
 	?>
-<div class="img-main">
+    <div class="img_larg">
 	<a class="imgZoom" id="btnLargeImage" href="<?php echo $image->file_url?>">
 	<?php
-		echo $image->displayMediaFull('width="329"',false,'');
+		echo $image->displayMediaFull('width="430"',false,'');
 	?>
 	</a>
-</div>
-<div class="enlarge">
-	<a class="imgZoom" id="btnZoomIcon" href="<?php echo $image->file_url?>">Forstør</a>
-</div>
+    </div>
+    <a id="btnZoomIcon" class="imgZoom btnZoom" href="<?php echo $image->file_url?>"><img src="<?php echo $tmpl; ?>img/icon_zoom.png" alt=""></a>
 <?php
 	// Showing The Additional Images
 	$count_images = count ($this->product->images);
 		?>
-	<div class="list-item">
+<!--	<div class="list-item">
 	<ul id="thumblist" class="gallery">
 		<?php
-		for ($i = 0; $i < $count_images; $i++) {
+		/*for ($i = 0; $i < $count_images; $i++) {
 			$image = $this->product->images[$i];
 			if($i==$count_images-1):
 			?>
@@ -36,11 +36,11 @@ if (!empty($this->product->images)) {
 			?>
 			</a></li>
 			<?php
-		}
+		}*/
 		?>
 		<div class="clear"></div>
 	</ul>
-	</div>
+	</div>-->
 <?php
 }
 ?>

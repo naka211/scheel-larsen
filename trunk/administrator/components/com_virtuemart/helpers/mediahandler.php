@@ -1137,7 +1137,6 @@ class VmMediaHandler {
 		 * @param string $imageArgs html atttributes, Just for displaying the fullsized image
 		 */
 		public function displayFileHandler(){
-
 			VmConfig::loadJLang('com_virtuemart_media');
 			$identify = ''; // ':'.$this->virtuemart_media_id;
 
@@ -1189,9 +1188,11 @@ class VmMediaHandler {
 			$html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_TITLE','file_title');
 			$html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_DESCRIPTION','file_description');
                         // Trieu Nguyen add
+                        if($this->file_type == 'category'){
                         $html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_CUSTOM_TEXT_HEAD','file_custom_text_head');
                         $html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_CUSTOM_TEXT_CONTENT','file_custom_text_content');
                         $html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_CUSTOM_LINK','file_custom_link');
+                        }
 			$html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_META','file_meta');
 			$html .= $this->displayRow('COM_VIRTUEMART_FILES_FORM_FILE_URL','file_url',$readonly);
 
