@@ -1,27 +1,47 @@
 <?php
 // Check to ensure this file is included in Joomla!
 defined ('_JEXEC') or die('Restricted access');
+if (isset($this->product->step_order_level))
+	$step=$this->product->step_order_level;
+else
+	$step=1;
+if($step==0)
+	$step=1;
+$alert=JText::sprintf ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED', $step);
 ?>
 <div class="addtocart-area">
 	<form method="post" class="quantity product js-recalculate" action="<?php echo JRoute::_ ('index.php'); ?>">
 		<?php // Product custom_fields
 		if (!empty($this->product->customfieldsCart)) {
 			?>
-			<div class="product-fields">
-				<?php foreach ($this->product->customfieldsCart as $field) { ?>
-				<div class="product-field product-field-type-<?php echo $field->field_type ?>">
-					<span class="product-fields-title-wrapper"><span class="product-fields-title"><strong><?php echo JText::_ ($field->custom_title) ?></strong></span>
-					<?php if ($field->custom_tip) {
-					echo JHTML::tooltip ($field->custom_tip, JText::_ ($field->custom_title), 'tooltip.png');
-				} ?></span>
-					<span class="product-field-display"><?php echo $field->display ?></span>
+                            <?php foreach ($this->product->customfieldsCart as $field) { ?>
+                        <ul class="option clearfix">
+            
+                            <!--<div class="product-field product-field-type-<?php //echo $field->field_type ?>">-->
+                                    <!--<span class="product-fields-title-wrapper"><span class="product-fields-title"><strong><?php //echo JText::_ ($field->custom_title) ?></strong></span>-->
+                                    <?php if ($field->custom_tip) {
+                                    echo JHTML::tooltip ($field->custom_tip, JText::_ ($field->custom_title), 'tooltip.png');
+                            } ?>
+                                    <?php echo $field->display ?>
 
-					<span class="product-field-desc"><?php echo $field->custom_field_desc ?></span>
-				</div><br/>
-				<?php
-			}
-				?>
-			</div>
+                                    <!--<span class="product-field-desc"><?php //echo $field->custom_field_desc ?></span>-->
+                            <!--</div><br/>-->
+                        </ul>
+                            <?php
+                            }
+                            ?>
+
+<!--                        <ul class="option clearfix bb1 mb20">
+                          <li>
+                            <input id="c4" type="radio" name="cc2" checked>
+                            <label for="c4">Share sidebordunderstel 60 cm</label>
+                          </li>
+                          <li>
+                            <input id="c5" type="radio" name="cc2" checked>
+                            <label for="c5">Bordplade 50x60 cm, Hvid matteret hærdet glas</label>
+                          </li>
+                        </ul>-->
+			
 			<?php
 		}
 		/* Product custom Childs
@@ -45,46 +65,38 @@ defined ('_JEXEC') or die('Restricted access');
 
 		if (!VmConfig::get('use_as_catalog', 0) and !empty($this->product->prices['salesPrice'])) {
 		?>
-
-		<div class="addtocart-bar">
-
-			<?php // Display the quantity box
-
-			$stockhandle = VmConfig::get ('stockhandle', 'none');
-			if (($stockhandle == 'disableit' or $stockhandle == 'disableadd') and ($this->product->product_in_stock - $this->product->product_ordered) < 1) {
-				?>
-				<a href="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=productdetails&layout=notify&virtuemart_product_id=' . $this->product->virtuemart_product_id); ?>" class="notify"><?php echo JText::_ ('COM_VIRTUEMART_CART_NOTIFY') ?></a>
-
-				<?php } else { ?>
-				<label>Antal: 
-		<input type="text" class="quantity-input js-recalculate" name="quantity[]" value="<?php if (isset($this->product->min_order_level) && (int)$this->product->min_order_level > 0) {
-			echo $this->product->min_order_level;
-		} else {
-			echo '1';
-		} ?>"/>
-				</label>
-<?php	// Display the add to cart button?>
-			<div class="bnt-add-basket">
-			<a href="javascript:void(0);" onclick="document.getElementById(this.id+'Input').click()" id="btnAddItem1">Læg i indkøbskurv</a>
 <?php echo '<input type="submit" id="btnAddItem1Input" name="addtocart" class="addtocart-button" style="display:none" value="'.JText::_('COM_VIRTUEMART_CART_ADD_TO') .'" title="'.JText::_('COM_VIRTUEMART_CART_ADD_TO') .'" />' ?>
 			<a href="#" id="btnAddItem" style="display:none;"></a>
+                <?php echo shopFunctionsF::getAddToCartButton ($this->product->orderable); ?>
+		<input type="submit" name="addtocart" id="btnAddcart" class="btnAddcart hover" value="Tilføj indkøbskurven"/>	
+            <!--<a id="btnAddcart" class="btnAddcart hover" href="#">Tilføj indkøbskurven</a>-->
+
 <script type="text/javascript">
+    function check(obj) {
+    // use the modulus operator '%' to see if there is a remainder
+    remainder=obj.value % <?php echo $step?>;
+    quantity=obj.value;
+    if (remainder  != 0) {
+            alert('<?php echo $alert?>!');
+            obj.value = quantity-remainder;
+            return false;
+            }
+    return true;
+    }
 jQuery("form.js-recalculate").submit(function(){
 	jQuery.ajax( {
 	type: "POST",
 	url: "index.php",
 	data: jQuery(this).serialize(),
 	success: function( response ){
+//            alert(response);
 		cart_update();
-		jQuery("#btnAddItem").click();
+//		jQuery("#btnAddItem").click();
 	}
 	} );
 return false;
 });
 </script>
-			</div>
-				<?php } ?>
-		</div>
 		<?php }
 		 // Display the add to cart button END  ?>
 		<input type="hidden" class="pname" value="<?php echo htmlentities($this->product->product_name, ENT_QUOTES, 'utf-8') ?>"/>

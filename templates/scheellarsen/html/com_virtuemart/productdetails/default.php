@@ -1,7 +1,8 @@
 <?php
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
-
+$app = JFactory::getApplication();
+$tmpl = JURI::base().'templates/'.$app->getTemplate()."/";
 /* Let's see if we found the product */
 if (empty($this->product)) {
 	echo JText::_('COM_VIRTUEMART_PRODUCT_NOT_FOUND');
@@ -9,97 +10,217 @@ if (empty($this->product)) {
 	return;
 }
 ?>
-<script language="javascript" src="templates/amager/js/jquery.validate.js"></script>
-<script language="javascript">
-jQuery(document).ready(function()
-{
-	jQuery.validator.addMethod("requireDefault", function(value, element) 
-	{	
-		return !(element.value == element.defaultValue);
+<script type="text/javascript">
+function cart_update(){
+		var mod = jQuery("#vmCartModule");
+		jQuery.ajaxSetup({ cache: false })
+		jQuery.getJSON(window.vmSiteurl+"index.php?option=com_virtuemart&nosef=1&view=cart&task=viewJS&format=json"+window.vmLang,
+			function(datas, textStatus){
+				//console.log(datas);
+				//if (datas.totalProduct){
+					mod.find("#list-item").html("");
+					jQuery.each(datas.products, function(key, val) {
+						jQuery("#hiddencontainer .container").clone().appendTo(".vmCartModule #list-item");
+						jQuery.each(val, function(key, val) {
+							if (jQuery("#hiddencontainer .container .v"+key)) mod.find("#list-item .v"+key+":last").html(val) ;
+							if(key=="no")
+							mod.find(".list-cart-close:last").on("click", function(){
+								jQuery.ajax( {
+								type: "POST",
+								url: "index.php",
+								data: "option=com_virtuemart&view=cart&cart_virtuemart_product_id="+val+"&task=delete",
+								success: function( response ){cart_update()}
+								});
+							});
+						});
+					});
+					mod.find(".billtotal").html(datas.billTotal);
+					mod.find(".s_billtotal").html(datas.totalProductTxt+datas.billTotal);
+				//}
+			}
+		);
+	}
+	
+	
+jQuery(document).ready( function(){
+	var mod = jQuery("#vmCartModule");
+	
+	
+	mod.find(".list-cart-close").on("click", function(){
+		var id = jQuery(this).attr("rel");
+		jQuery.ajax( {
+		type: "POST",
+		url: "index.php",
+		data: "option=com_virtuemart&view=cart&cart_virtuemart_product_id="+id+"&task=delete",
+		success: function(){cart_update()}
+		});
 	});
 	
-	jQuery("#mailForm").validate({
-		rules: {
-			uremail: {
-				requireDefault: true,
-				required: true,
-				email: true
-			},
-			urfriendemail: {
-				requireDefault: true,
-				required: true,
-				email: true
-			}
-		},
-		messages: {
-			uremail: "",
-			urfriendemail: ""
-		}
-	});
-	<?php if($this->product->product_delivery){?>
-		jQuery('#myModal1').reveal();
-	<?php }?>
-});// JavaScript Document
+	
+});
 </script>
-<div class="productdetail_page clearfix">
+<!--<script language="javascript" src="<?php echo $tmpl ;?>js/jquery.validate.js"></script>-->
+<script language="javascript">
+//jQuery(document).ready(function()
+//{
+//	jQuery.validator.addMethod("requireDefault", function(value, element) 
+//	{	
+//		return !(element.value == element.defaultValue);
+//	});
+//	
+//	jQuery("#mailForm").validate({
+//		rules: {
+//			uremail: {
+//				requireDefault: true,
+//				required: true,
+//				email: true
+//			},
+//			urfriendemail: {
+//				requireDefault: true,
+//				required: true,
+//				email: true
+//			}
+//		},
+//		messages: {
+//			uremail: "",
+//			urfriendemail: ""
+//		}
+//	});
+//	<?php if($this->product->product_delivery){?>
+//		jQuery('#myModal1').reveal();
+//	<?php }?>
+//});// JavaScript Document
+</script>
+<?php 
+    if (!empty($this->product->customfieldsSorted['ontop'])) {
+    $this->position = 'ontop';
+    echo $this->loadTemplate('customfields');
+    } // Product Custom ontop end
+
+    // event onContentBeforeDisplay
+    echo $this->product->event->beforeDisplayContent;
+?>
+<div class="template">
+  <div class="productdetail_page clearfix">
     <div class="main_content frame clearfix">
 	{module Breadcrumbs}
         <div class="product_img">
-                    <div class="img_larg">
-                      <a id="btnLargeImage" class="imgZoom" href="img/thumnail/img_larg.jpg"><img width="430" height="318" src="img/thumnail/img_larg.jpg" alt=""></a>
-                    </div>
+            <?php
+            echo $this->loadTemplate('images');
+            ?>
 
-                    <a id="btnZoomIcon" class="imgZoom btnZoom" href="img/thumnail/img_larg.jpg"><img src="img/icon_zoom.png" alt=""></a>
-                    
-                    <!--<ul id="thumblist" class="thumail clearfix gallery">
-                      <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
-                      <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
-                      <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
-                    </ul>-->                    
-                    <hr>
-                    <a href="#"><img src="img/icon_face.png" alt=""></a>
-                    <div class="clear mb10"></div>
-                    <div class="video clearfix">
-                      <a class="fl imgZoom" href="https://www.youtube.com/watch?v=-1gQDlgrAQk"><img src="img/thumnail/img_small2.jpg" alt=""></a>
-                    </div>
+            <!--<ul id="thumblist" class="thumail clearfix gallery">
+              <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
+              <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
+              <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
+            </ul>-->                    
+            <hr>
+            <a href="#"><img src="<?php echo $tmpl?>img/icon_face.png" alt=""></a>
+            <div class="clear mb10"></div>
+            <div class="video clearfix">
+              <a class="fl imgZoom" href="https://www.youtube.com/watch?v=-1gQDlgrAQk"><img src="<?php echo $tmpl?>img/thumnail/img_small2.jpg" alt=""></a>
+            </div>
+        </div>
+        <div class="product_content">
+            <h2><?php echo $this->product->product_name ?></h2>
+            <?php // afterDisplayTitle Event
+                echo $this->product->event->afterDisplayTitle 
+            ?>
+            <p><strong>Vare-nummer: <?php echo $this->product->product_sku?></strong></p>
+             <div id="scrollbar2">
+              <div class="scrollbar">
+                <div class="track">
+                  <div class="thumb">
+                    <div class="end"></div>
                   </div>
+                </div>
+              </div>
+              <div class="viewport">
+                <div class="overview">
+                    <?php
+                    if (!empty($this->product->product_desc)) {
+                        echo $this->product->product_desc;
+                    }
+                    ?>
+                </div>
+              </div>
+            </div>
+            <h3><?php if(!empty($this->product->prices['discountAmount'])){?>
+                <span class="price_old">Førpris: <?php echo $this->currency->priceDisplay($this->product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></span> 
+                <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($this->product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+                <?php }?></h3>
+            <div class="number">
+              <label for="">Antal:</label>
+              <input type="text" name="quantity[]" value="<?php if (isset($this->product->min_order_level) && (int)$this->product->min_order_level > 0) {
+			echo $this->product->min_order_level;
+		} else {
+			echo '1';
+		} ?>" onblur="check(this);"/>
+              <h2 class="price">
+            <?php if ($this->show_prices and (empty($this->product->images[0]) or $this->product->images[0]->file_is_downloadable == 0)) {
+    echo $this->loadTemplate('showprices');
+            } 
+            ?>
+                <?php
+//                    if (VmConfig::get ( 'show_prices' ))
+//                            echo $this->currency->priceDisplay($this->product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );
+                ?>
+              </h2>
+            </div>
+            <div class="fr mt10">
+                <?php $stockhandle = VmConfig::get ('stockhandle', 'none');
+                if (($stockhandle == 'disableit' or $stockhandle == 'disableadd') and ($this->product->product_in_stock - $this->product->product_ordered) < 1) {
+                    ?>
+                <img src="<?php echo $tmpl?>img/icon_del.png" alt="">
+                <?php }else{ ?>
+                <img src="<?php echo $tmpl?>img/icon_checkgreen.png" alt="">
+                <?php } ?>
+            </div>
+            <div class="clear mb20"></div>
+            <?php 
+            if (!empty($this->product->customfieldsSorted['normal'])){
+            $this->position = 'normal';
+            echo $this->loadTemplate('customfields');
+            }
+            ?>
+            
+            <?php 
+            if((($this->product->product_in_stock - $this->product->product_ordered) > 0) && (!$this->product->product_delivery))
+			echo $this->loadTemplate('addtocart');
+            ?>
+            
+	<?php
+	// Product Edit Link
+	echo $this->edit_link;
+	// Product Edit Link END
+	?>
+        <?php
+	// PDF - Print - Email Icon
+	if (VmConfig::get('show_emailfriend') || VmConfig::get('show_printicon') || VmConfig::get('pdf_button_enable')) {
+	?>
+		<div class="icons">
+		<?php
+		//$link = (JVM_VERSION===1) ? 'index2.php' : 'index.php';
+		$link = 'index.php?tmpl=component&option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $this->product->virtuemart_product_id;
+		$MailLink = 'index.php?option=com_virtuemart&view=productdetails&task=recommend&virtuemart_product_id=' . $this->product->virtuemart_product_id . '&virtuemart_category_id=' . $this->product->virtuemart_category_id . '&tmpl=component';
+
+		if (VmConfig::get('pdf_icon', 1) == '1') {
+		echo $this->linkIcon($link . '&format=pdf', 'COM_VIRTUEMART_PDF', 'pdf_button', 'pdf_button_enable', false);
+		}
+		echo $this->linkIcon($link . '&print=1', 'COM_VIRTUEMART_PRINT', 'printButton', 'show_printicon');
+		echo $this->linkIcon($MailLink, 'COM_VIRTUEMART_EMAIL', 'emailButton', 'show_emailfriend');
+		?>
+		<div class="clear"></div>
+		</div>
+	<?php } ?>
+            
+        </div>
         
-	<div class="w-tell-friend reveal-modal" id="myModal2">
-	<a href="#" class="close-reveal-modal"></a>
-	<form class="tell-friend" action="<?php echo JRoute::_('index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id='.$this->product->virtuemart_product_id.'&virtuemart_category_id='.$this->product->virtuemart_category_id.'&tmpl=component') ; ?>" method="post" id="mailForm">
-		<fieldset>
-		<h2>Tip en ven</h2>
-		<form action="" method="post">
-			<div>
-			<label>Din e-mail <span>*</span></label>
-			<input name="uremail" type="text" value="" />
-			</div>
-			<div>
-			<label>Din ven’s e-mail<span>*</span></label>
-			<input name="urfriendemail" type="text" value="" />
-			</div>
-			<div>
-			<label>Besked</label>
-			<textarea name="msg" cols="" rows=""><?php echo JURI::current()?></textarea>
-			</div>
-			<div class="bnt-send3">
-			<a onclick="nextSibling.click()">SEND</a><input type="submit" value="SEND" style="display: none"/>
-			</div><!--.bnt-send3-->
-			<div class="bnt-reset">
-			<a onclick="nextSibling.click()">nulstil</a><input type="reset" value="nulstil" style="display: none"/>
-			</div><!--.bnt-reset-->
-			<input type="hidden" name="virtuemart_product_id" value="<?php echo $this->product->virtuemart_product_id ?>" />
-			<input type="hidden" name="tmpl" value="component" />
-			<input type="hidden" name="view" value="productdetails" />
-			<input type="hidden" name="option" value="com_virtuemart" />
-			<input type="hidden" name="virtuemart_category_id" value="<?php echo $this->product->virtuemart_category_id ?>" />
-			<input type="hidden" name="task" value="mailTellafriend" />
-			<?php echo JHTML::_( 'form.token' ); ?>
-		</form>
-		</fieldset>
-	</form>
-	</div>
-	<div class="w-pro">
+        
+        
+        
+        
+        
 	<?php
 	// Product Navigation
 	if (VmConfig::get('product_navigation', 1)) {
@@ -134,64 +255,7 @@ jQuery(document).ready(function()
 		<a href="<?php echo $catURL ?>" class="product-details" title="<?php echo $categoryName ?>"><?php echo JText::sprintf('COM_VIRTUEMART_CATEGORY_BACK_TO',$categoryName) ?></a>
 	</div>*/
 ?>
-	<?php // Product Title ?>
-<div class="pro-title">
-	<h2 style="margin-bottom:6px"><?php echo $this->product->product_name ?></h2>
-	<div class="share-pro-onface">
-		<a href="javascript:void(0);">Del Produkt på facebook</a>
-	</div>
-	<div class="tell">
-		<a href="#" data-reveal-id="myModal2">Tip en ven</a>
-	</div>
-</div>
 
-	<?php // afterDisplayTitle Event
-	echo $this->product->event->afterDisplayTitle ?>
-
-	<?php
-	// Product Edit Link
-	echo $this->edit_link;
-	// Product Edit Link END
-	?>
-
-	<?php
-	// PDF - Print - Email Icon
-	if (VmConfig::get('show_emailfriend') || VmConfig::get('show_printicon') || VmConfig::get('pdf_button_enable')) {
-	?>
-		<div class="icons">
-		<?php
-		//$link = (JVM_VERSION===1) ? 'index2.php' : 'index.php';
-		$link = 'index.php?tmpl=component&option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $this->product->virtuemart_product_id;
-		$MailLink = 'index.php?option=com_virtuemart&view=productdetails&task=recommend&virtuemart_product_id=' . $this->product->virtuemart_product_id . '&virtuemart_category_id=' . $this->product->virtuemart_category_id . '&tmpl=component';
-
-		if (VmConfig::get('pdf_icon', 1) == '1') {
-		echo $this->linkIcon($link . '&format=pdf', 'COM_VIRTUEMART_PDF', 'pdf_button', 'pdf_button_enable', false);
-		}
-		echo $this->linkIcon($link . '&print=1', 'COM_VIRTUEMART_PRINT', 'printButton', 'show_printicon');
-		echo $this->linkIcon($MailLink, 'COM_VIRTUEMART_EMAIL', 'emailButton', 'show_emailfriend');
-		?>
-		<div class="clear"></div>
-		</div>
-	<?php }
-
-	if (!empty($this->product->customfieldsSorted['ontop'])) {
-	$this->position = 'ontop';
-	echo $this->loadTemplate('customfields');
-	} // Product Custom ontop end
-
-	// event onContentBeforeDisplay
-	echo $this->product->event->beforeDisplayContent;
-	?>
-
-	<div class="pro-content">
-	<div class="pro-content-left">
-<?php
-echo $this->loadTemplate('images');
-?>
-	</div>
-
-	<div class="pro-content-right">
-		<h3>Varenr. <?php echo $this->product->product_sku?></h3>
 <?php
 		// TODO in Multi-Vendor not needed at the moment and just would lead to confusion
 		/* $link = JRoute::_('index2.php?option=com_virtuemart&view=virtuemart&task=vendorinfo&virtuemart_vendor_id='.$this->product->virtuemart_vendor_id);
@@ -230,10 +294,6 @@ echo $this->loadTemplate('images');
 			}
 		}
 
-	// Product Description
-	if (!empty($this->product->product_desc)) {
-		echo $this->product->product_desc;
-	}
 
     if($this->product->price_of_number && $this->product->price_quantity_start){
         echo '<br /><br />Ved køb af '.$this->product->price_quantity_start.' eller flere er prisen '.str_replace('.', ',', number_format($this->product->price_of_number,2)).' kr. pr. stk.';
@@ -251,35 +311,23 @@ echo $this->loadTemplate('images');
 		}
 
 	// Product Price?>
-<div class="w-price">
 	<div class="w-price-left">
 <?php
-			// the test is done in show_prices
-		//if ($this->show_prices and (empty($this->product->images[0]) or $this->product->images[0]->file_is_downloadable == 0)) {
-			echo $this->loadTemplate('showprices');
-		//}
+if ($this->show_prices and (empty($this->product->images[0]) or $this->product->images[0]->file_is_downloadable == 0)) {
+//    echo $this->loadTemplate('showprices');
+}
 
 $model		= VmModel::getModel("shipmentmethod");
 $shipment	= $model->getShipments();
 $shipment = $shipment[1];
 ?>
 	</div>
-	<div class="w-price-right">
-		<div class="bnt-see-price">
-			<a href="#" class="tooltip">
-			<span>Du får gratis forsendelse, hvis din samlede bestilling er på mere end 500 DKK.<br />
-Hvis din bestilling er under 500 DKK, vil fragten være 39 DKK uden omdeling og 49 DKK med omdeling.<br />
-BEKMÆRK! Varer leveres kun i Danmark med undtagelse af Grønland og Færøerne
-</span></a>
-		</div><!--.bnt-see-price-->
-	</div>
-</div>
 <?php
 		// Add To Cart Button
 // 			if (!empty($this->product->prices) and !empty($this->product->images[0]) and $this->product->images[0]->file_is_downloadable==0 ) {
 //		if (!VmConfig::get('use_as_catalog', 0) and !empty($this->product->prices['salesPrice'])) {
-		if((($this->product->product_in_stock - $this->product->product_ordered) > 0) && (!$this->product->product_delivery))
-			echo $this->loadTemplate('addtocart');
+//		if((($this->product->product_in_stock - $this->product->product_ordered) > 0) && (!$this->product->product_delivery))
+//			echo $this->loadTemplate('addtocart');
 //		}
 
 // Ask a question about this product
@@ -296,13 +344,11 @@ if (VmConfig::get('ask_question', 1) == 1){
 			//echo $this->loadTemplate('manufacturer');
 		}
 		?>
-	</div>
-	</div>
 	<?php
-	if (!empty($this->product->customfieldsSorted['normal'])){
-	$this->position = 'normal';
-	echo $this->loadTemplate('customfields');
-	}
+//	if (!empty($this->product->customfieldsSorted['normal'])){
+//	$this->position = 'normal';
+//	echo $this->loadTemplate('customfields');
+//	}
 	// Product Packaging
 	$product_packaging = '';
 	if ($this->product->product_box) {
@@ -314,10 +360,20 @@ if (VmConfig::get('ask_question', 1) == 1){
 		</div>
 	<?php } // Product Packaging END
 	?>
+<?php if($this->product->product_delivery){
+	$db = JFactory::getDBO();
+	$db->setQuery("SELECT introtext FROM #__content WHERE id = 16");	
+	$text = $db->loadResult();
+?>
+<div class="w-frm-login reveal-modal" id="myModal1">
+	<a class="close-reveal-modal" href="javascript:void(0);"></a>	
+	<div class="frm-login"><div class="logo2" style="text-align:left;border-bottom: none"><?php echo $text;?></div></div>
+</div>
+<?php }?>
+    </div>
 <?php
 	// onContentAfterDisplay event
 	echo $this->product->event->afterDisplayContent; ?>
-	</div>
 	<?php
 	// Product Files
 	// foreach ($this->product->images as $fkey => $file) {
@@ -339,15 +395,5 @@ if (VmConfig::get('ask_question', 1) == 1){
 		echo $this->loadTemplate('customfields');
 	} // Product Custom ontop end
 	?>
-    </div>
+  </div>
 </div>
-<?php if($this->product->product_delivery){
-	$db = JFactory::getDBO();
-	$db->setQuery("SELECT introtext FROM #__content WHERE id = 16");	
-	$text = $db->loadResult();
-?>
-<div class="w-frm-login reveal-modal" id="myModal1">
-	<a class="close-reveal-modal" href="javascript:void(0);"></a>	
-	<div class="frm-login"><div class="logo2" style="text-align:left;border-bottom: none"><?php echo $text;?></div></div>
-</div>
-<?php }?>
