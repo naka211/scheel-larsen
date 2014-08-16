@@ -402,8 +402,8 @@ ul.list_product li:hover {background: url(../img/hover_li.png) no-repeat bottom 
 .product_content ul.option li {text-transform: uppercase; margin: 5px 0;}
 .product_content ul.option li:last-child {margin-bottom: 0;}
 .product_content ul.option li label {margin-bottom: 0;}
-a.btnAddcart {background: url(../img/btnAddcart.jpg) no-repeat; width: 434px; height: 44px; display: block; text-indent: -9999px;}
-a.btnAddcart2 {background: url(../img/btnAddcart2.jpg) no-repeat !important;}
+input[type="submit"].btnAddcart {background: url(../img/btnAddcart.jpg) no-repeat; width: 434px; height: 44px; display: block; text-indent: -9999px; border:0px;}
+input[type="submit"].btnAddcart2 {background: url(../img/btnAddcart2.jpg) no-repeat !important;}
 a.btnZoom {margin: 12px 0; text-align: center; display: block;}
 .related_product {margin-bottom: 20px;}
 .related_product h2 {border-bottom: 1px solid #dcd6c0; margin: 0; padding-bottom: 5px;}

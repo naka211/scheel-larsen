@@ -10,6 +10,9 @@ $session = JFactory::getSession();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="<?php echo $tmpl;?>js/jquery-1.9.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <jdoc:include type="head" />
     
     <!-- Bootstrap -->
@@ -32,9 +35,6 @@ $session = JFactory::getSession();
     <link rel="icon" href="<?php echo $tmpl;?>favicon.ico">
     
     
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="<?php echo $tmpl;?>js/jquery-1.9.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo $tmpl;?>js/jquery.js"></script>
     <script src="<?php echo $tmpl;?>js/bootstrap.min.js"></script>
     <script src="<?php echo $tmpl;?>js/jquery.carouFredSel-6.2.1-packed.js"></script>
@@ -98,144 +98,7 @@ $session = JFactory::getSession();
                     <div class="viewport">
                       <div class="overview">
                         <ul id="list-item" class="clearfix">
-                          <li class="clearfix">
-                            <div class="list-cart-img"><a href="#"><img src="<?php echo $tmpl;?>img/img04.jpg" alt=""/></a></div>
-                            <div class="list-cart-content">
-                              <h4>LUCIE ANTIQUE TERRACOTTA</h4>
-                              <p>Vare-nummer: 30283</p>
-                              <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div>
-                            <div class="count">
-                               <p>1</p>
-                            </div>
-                            <p class="price">479 DKK</p>
-                            <p class="price3">479 DKK</p>
-                            <a class="btnClose" href="#">close</a>
-                          </li>
-                           <li class="clearfix">
-                            <div class="list-cart-img"><a href="#"><img src="<?php echo $tmpl;?>img/img04.jpg" alt=""/></a></div>
-                            <div class="list-cart-content">
-                              <h4>LUCIE ANTIQUE TERRACOTTA</h4>
-                              <p>Vare-nummer: 30283</p>
-                              <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div>
-                            <div class="count">
-                               <p>1</p>
-                            </div>
-                            <p class="price">479 DKK</p>
-                            <p class="price3">479 DKK</p>
-                            <a class="btnClose" href="#">close</a>
-                          </li>
-                          <li class="clearfix">
-                            <div class="list-cart-img"><a href="#"><img src="<?php echo $tmpl;?>img/img04.jpg" alt=""/></a></div>
-                            <div class="list-cart-content">
-                              <h4>LUCIE ANTIQUE TERRACOTTA</h4>
-                              <p>Vare-nummer: 30283</p>
-                              <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div>
-                            <div class="count">
-                               <p>1</p>
-                            </div>
-                            <p class="price">479 DKK</p>
-                            <p class="price3">479 DKK</p>
-                            <a class="btnClose" href="#">close</a>
-                          </li>
-                          <li class="clearfix">
-                            <div class="list-cart-img"><a href="#"><img src="<?php echo $tmpl;?>img/img04.jpg" alt=""/></a></div>
-                            <div class="list-cart-content">
-                              <h4>LUCIE ANTIQUE TERRACOTTA</h4>
-                              <p>Vare-nummer: 30283</p>
-                               <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div>
-                            <div class="count">
-                               <p>1</p>
-                            </div>
-                            <p class="price">479 DKK</p>
-                            <p class="price3">479 DKK</p>
-                            <a class="btnClose" href="#">close</a>
-                          </li>
-                          <li class="clearfix">
-                            <div class="list-cart-img"><a href="#"><img src="<?php echo $tmpl;?>img/img04.jpg" alt=""/></a></div>
-                            <div class="list-cart-content">
-                              <h4>LUCIE ANTIQUE TERRACOTTA</h4>
-                              <p>Vare-nummer: 30283</p>
-                               <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div>
-                            <div class="count">
-                               <p>1</p>
-                            </div>
-                            <p class="price">479 DKK</p>
-                            <p class="price3">479 DKK</p>
-                            <a class="btnClose" href="#">close</a>
-                          </li>
-                          <li class="clearfix">
-                            <div class="list-cart-img"><a href="#"><img src="<?php echo $tmpl;?>img/img04.jpg" alt=""/></a></div>
-                            <div class="list-cart-content">
-                              <h4>LUCIE ANTIQUE TERRACOTTA</h4>
-                              <p>Vare-nummer: 30283</p>
-                               <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div>
-                            <div class="count">
-                               <p>1</p>
-                            </div>
-                            <p class="price">479 DKK</p>
-                            <p class="price3">479 DKK</p>
-                            <a class="btnClose" href="#">close</a>
-                          </li>
-                          <li class="clearfix">
-                            <div class="list-cart-img"><a href="#"><img src="<?php echo $tmpl;?>img/img04.jpg" alt=""/></a></div>
-                            <div class="list-cart-content">
-                              <h4>LUCIE ANTIQUE TERRACOTTA</h4>
-                              <p>Vare-nummer: 30283</p>
-                               <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div>
-                            <div class="count">
-                               <p>1</p>
-                            </div>
-                            <p class="price">479 DKK</p>
-                            <p class="price3">479 DKK</p>
-                            <a class="btnClose" href="#">close</a>
-                          </li>
-                          <li class="clearfix">
-                            <div class="list-cart-img"><a href="#"><img src="<?php echo $tmpl;?>img/img04.jpg" alt=""/></a></div>
-                            <div class="list-cart-content">
-                              <h4>LUCIE ANTIQUE TERRACOTTA</h4>
-                              <p>Vare-nummer: 30283</p>
-                               <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div>
-                            <div class="count">
-                              <p>1</p>
-                            </div>
-                            <p class="price">479 DKK</p>
-                            <p class="price3">479 DKK</p>
-                            <a class="btnClose" href="#">close</a>
-                          </li>
-                          <li class="clearfix">
-                            <div class="list-cart-img"><a href="#"><img src="<?php echo $tmpl;?>img/img04.jpg" alt=""/></a></div>
-                            <div class="list-cart-content">
-                              <h4>LUCIE ANTIQUE TERRACOTTA</h4>
-                              <p>Vare-nummer: 30283</p>
-                               <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div>
-                            <div class="count">
-                              <!--<input type="text" placeholder="1">
-                              <a class="btnAdd" href="#"><img src="img/icon_add.jpg" alt=""></a>
-                              <a class="btnSub" href="#"><img src="img/icon_sub.jpg" alt=""></a>-->
-                               <p>1</p>
-                            </div>
-                            <p class="price">479 DKK</p>
-                            <p class="price3">479 DKK</p>
-                            <a class="btnClose" href="#">close</a>
-                          </li>
+                            {modulepos cart}
                         </ul>
                       </div>
                     </div>
@@ -297,6 +160,10 @@ $session = JFactory::getSession();
     </header>
     <section class="main mt190">
         <div class="container">
+            <?php 
+                $appInput = Jfactory::getApplication()->input;
+                if($appInput->getCmd('view') != "productdetails"){
+            ?>
             <div class="main_left clearfix">
                 {module Left Category Menu}
                 {modulepos left}
@@ -305,6 +172,9 @@ $session = JFactory::getSession();
 
             </div>
             <div class="main_right">
+            <?php 
+                }
+            ?>
                 <jdoc:include type="component" />
                 <!--
 
@@ -374,7 +244,13 @@ $session = JFactory::getSession();
                         </li>
                     </ul>
                 </div>-->
+            <?php 
+                if($appInput->getCmd('view') == "category"){
+            ?>
             </div>
+            <?php 
+                }
+            ?>
         </div>
     </section>
     <section class="delivery">

@@ -6,6 +6,11 @@ $tmpl = JURI::base().'templates/'.$app->getTemplate()."/";
 if (!empty($this->product->images)) {
 	$image = $this->product->images[0];
 	?>
+
+<?php 
+
+?>
+
     <div class="img_larg">
 	<a class="imgZoom" id="btnLargeImage" href="<?php echo $image->file_url?>">
 	<?php

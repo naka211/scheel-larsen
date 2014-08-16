@@ -18,21 +18,21 @@
  */
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
+
+if ($this->layoutName!='default') {
 ?>
-
-
- <div class="graris">
-	<p>Har du en værdikode?</p>
-	<div class="frm_coupon clearfix">
-		<form method="post" id="userForm" name="enterCouponCode" action="<?php echo JRoute::_('index.php'); ?>">
-			<input type="text" name="coupon_code" maxlength="50" class="coupon" value="<?php echo $this->coupon_text; ?>" />
-			<a href="#" onclick="document.getElementById('Send').click();">Aktiver</a>
-			<input type="submit" value="Send" id="Send" name="Send" style="display:none">
-			<input type="hidden" name="option" value="com_virtuemart" />
-		    <input type="hidden" name="view" value="cart" />
-		    <input type="hidden" name="task" value="setcoupon" />
-		    <input type="hidden" name="controller" value="cart" />
-		</form>
-	</div>                
-</div>         
-        
+<form method="post" id="userForm" name="enterCouponCode" action="<?php echo JRoute::_('index.php'); ?>">
+<?php } ?>
+    <input type="text" name="coupon_code" size="20" maxlength="50" class="coupon" alt="<?php echo $this->coupon_text ?>" value="<?php echo $this->coupon_text; ?>" onblur="if(this.value=='') this.value='<?php echo $this->coupon_text; ?>';" onfocus="if(this.value=='<?php echo $this->coupon_text; ?>') this.value='';" />
+    <span class="details-button">
+    <input class="details-button" type="submit" name="setcoupon" title="<?php echo JText::_('COM_VIRTUEMART_SAVE'); ?>" value="<?php echo JText::_('COM_VIRTUEMART_SAVE'); ?>"/>
+    </span>
+<?php
+if ($this->layoutName!='default') {
+?>
+    <input type="hidden" name="option" value="com_virtuemart" />
+    <input type="hidden" name="view" value="cart" />
+    <input type="hidden" name="task" value="setcoupon" />
+    <input type="hidden" name="controller" value="cart" />
+</form>
+<?php } ?>

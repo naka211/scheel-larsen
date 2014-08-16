@@ -1,12 +1,44 @@
 <?php
+/**
+ *
+ * Layout for the shopping cart
+ *
+ * @package    VirtueMart
+ * @subpackage Cart
+ * @author Max Milbers
+ *
+ * @link http://www.virtuemart.net
+ * @copyright Copyright (c) 2004 - 2010 VirtueMart Team. All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
+ * VirtueMart is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * @version $Id: cart.php 2551 2010-09-30 18:52:40Z milbo $
+ */
+
 // Check to ensure this file is included in Joomla!
 defined ('_JEXEC') or die('Restricted access');
-//vmJsApi::js ('facebox');
-//vmJsApi::css ('facebox');
-JHtml::_ ('behavior.formvalidation');
-//$document = JFactory::getDocument ();
-/*$document->addScriptDeclaration ("
+if(VmConfig::get('usefancy',1)){
+	vmJsApi::js( 'fancybox/jquery.fancybox-1.3.4.pack');
+	vmJsApi::css('jquery.fancybox-1.3.4');
+	$box = "
+//<![CDATA[
+	jQuery(document).ready(function($) {
+		$('div#full-tos').hide();
+		var con = $('div#full-tos').html();
+		$('a#terms-of-service').click(function(event) {
+			event.preventDefault();
+			$.fancybox ({ div: '#full-tos', content: con });
+		});
+	});
 
+//]]>
+";
+} else {
+	vmJsApi::js ('facebox');
+	vmJsApi::css ('facebox');
+	$box = "
 //<![CDATA[
 	jQuery(document).ready(function($) {
 		$('div#full-tos').hide();
@@ -17,8 +49,13 @@ JHtml::_ ('behavior.formvalidation');
 	});
 
 //]]>
-");*/
-/*$document->addScriptDeclaration ("
+";
+}
+
+JHtml::_ ('behavior.formvalidation');
+$document = JFactory::getDocument ();
+$document->addScriptDeclaration ($box);
+$document->addScriptDeclaration ("
 
 //<![CDATA[
 	jQuery(document).ready(function($) {
@@ -40,119 +77,139 @@ JHtml::_ ('behavior.formvalidation');
 
 //]]>
 
-");*/
-//$document->addStyleDeclaration ('#facebox .content {display: block !important; height: 480px !important; overflow: auto; width: 560px !important; }');
+");
 
-//vmdebug('car7t pricesUnformatted',$this->cart->pricesUnformatted);
-//vmdebug('cart cart',$this->cart->pricesUnformatted );
-$tmplURL=JURI::base()."templates/".$template;
+
+$document->addScriptDeclaration ("
+
+//<![CDATA[
+	jQuery(document).ready(function($) {
+	$('#checkoutFormSubmit').click(function(e){
+    $(this).attr('disabled', 'true');
+    $(this).fadeIn( 400 );
+    $('#checkoutForm').submit();
+});
+	});
+
+//]]>
+
+");
+
+$document->addStyleDeclaration ('#facebox .content {display: block !important; height: 480px !important; overflow: auto; width: 560px !important; }');
+
 ?>
-<div id="cart-page">
-<div class="w-cart-page">
-	<div class="title-cart">
-		<h2><?php echo JText::_ ('COM_VIRTUEMART_CART_TITLE'); ?></h2>
-		<?php if(!$this->cart->products) echo '<a href="javascript:history.back()" style="display:block;float:right">Tilbage</a>';
-		else{?>
-		<div class="bnt-secure-payment m-t">
-        	<a href="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=user&layout=editaddresscheckoutBT')?>">Gå til sikker betaling</a>
-		<?php
-			//echo $this->checkout_link_html;
-		?>
+
+<div class="cart-view">
+	<div>
+		<div class="width50 floatleft">
+			<h1><?php echo JText::_ ('COM_VIRTUEMART_CART_TITLE'); ?></h1>
 		</div>
-		<?php }?>
+		<?php if (VmConfig::get ('oncheckout_show_steps', 1) && $this->checkout_task === 'confirm') {
+		vmdebug ('checkout_task', $this->checkout_task);
+		echo '<div class="checkoutStep" id="checkoutStep4">' . JText::_ ('COM_VIRTUEMART_USER_FORM_CART_STEP4') . '</div>';
+	} ?>
+		<div class="width50 floatleft right">
+			<?php // Continue Shopping Button
+			if (!empty($this->continue_link_html)) {
+				echo $this->continue_link_html;
+			} ?>
+		</div>
+		<div class="clear"></div>
 	</div>
-	<?php // Continue Shopping Button
-	/*if ($this->continue_link_html != '') {
-		echo $this->continue_link_html;
-	}*/
 
-	//echo shopFunctionsF::getLoginForm ($this->cart, FALSE);
+	<?php echo shopFunctionsF::getLoginForm ($this->cart, FALSE);
 
-	// This displays the pricelist MUST be done with tables, because it is also used for the emails
-	echo $this->loadTemplate ('pricelist');
+	// This displays the form to change the current shopper
+	$adminID = JFactory::getSession()->get('vmAdminID');
+	if ((JFactory::getUser()->authorise('core.admin', 'com_virtuemart') || JFactory::getUser($adminID)->authorise('core.admin', 'com_virtuemart')) && (VmConfig::get ('oncheckout_change_shopper', 0))) { 
+		echo $this->loadTemplate ('shopperform');
+	}
+
 	if ($this->checkout_task) {
 		$taskRoute = '&task=' . $this->checkout_task;
 	}
 	else {
 		$taskRoute = '';
 	}
-	?>
-	<div class="info-payment">
-		<div class="info-payment-top">
-		<div class="func">
-		<div class="w-135"> <img src="<?php echo $tmplURL?>/img/phone.png" width="17" height="16" alt=""> <span>3250 3611</span> </div>
-		<div class="w-135"> <img src="<?php echo $tmplURL?>/img/times.png" width="14" height="17" alt=""> <span>Hurtig levering</span> </div>
-		<div class="w-135" style="width:235px;"> <img src="<?php echo $tmplURL?>/img/truck.png" width="17" height="14" alt=""> <span>Gratis fragt ved køb over 500 DKK</span> </div>
-		<div class="clear"></div>
-		<div class="w-135"> <img src="<?php echo $tmplURL?>/img/sticker.png" width="15" height="16" alt=""> <span>Sikker betaling</span> </div>
-		<div class="w-135"> <img src="<?php echo $tmplURL?>/img/star.png" width="13" height="16" alt=""> <span>14 dages returret</span> </div>
-		<div class="w-135" style="width:235px;"> <img src="<?php echo $tmplURL?>/img/sitting.png" width="17" height="16" alt=""> <span>2 års reklamationsret</span> </div>
-		</div>
-		</div>
-		<div class="info-payment-bot">
-		<h3>Du kan betale med følgende betalingskort: </h3>
-		<ul>
-		<li><a href="#"><img src="<?php echo $tmplURL?>/img/icon-dk.png" width="37" height="19" alt=""></a></li>
-		<li><a href="#"><img src="<?php echo $tmplURL?>/img/icon-mastercard.png" width="37" height="19" alt=""></a></li>
-		<li><a href="#"><img src="<?php echo $tmplURL?>/img/icon-card2.png" width="37" height="19" alt=""></a></li>
-		<li><a href="#"><img src="<?php echo $tmplURL?>/img/icon-visa.png" width="37" height="19" alt=""></a></li>
-		<li><a href="#"><img src="<?php echo $tmplURL?>/img/visa2.png" width="37" height="19" alt=""></a></li>
-		<li><a href="#"><img src="<?php echo $tmplURL?>/img/icon-ean.png" width="95" height="19" alt=""></a></li>
-		</ul>
-		</div>
-	</div>
 
-	<div class="total-vat">
-	<?php
-	$salesPrice=$this->currencyDisplay->priceDisplay($this->cart->pricesUnformatted['salesPrice'],0,1.0,false,2);
-	$finalprice= $this->currencyDisplay->priceDisplay($this->cart->pricesUnformatted['billTotal'],0,1.0,false,2);
-	
-	//var_dump($this->cart);
 	?>
-		<div>
-		<label>Subtotal inkl. moms:</label><span><?php echo $salesPrice?></span>
-		</div>
-		<div>
-		<label>Heraf moms:</label><span><?php echo $this->currencyDisplay->priceDisplay($this->cart->pricesUnformatted['salesPrice']*.2,0,1.0,false,2)?></span>
-		</div>
-		
-		
-		<?php if (!empty($this->cart->cartData['couponCode'])) { ?>
-		<div>
-      	<label><?php echo JText::_('COM_VIRTUEMART_COUPON_DISCOUNT');?>:</label><span><?php echo $this->currencyDisplay->priceDisplay ($this->cart->pricesUnformatted['salesPriceCoupon'])?></span>
-      	</div>
-      	<?php } ?>
-		
-		
-		<div class="n-b-b2">
-		<label class="black">TOTAL INKL. MOMS:</label><span class="black"><?php echo $finalprice?></span>
-		</div>
-	</div>
 	<form method="post" id="checkoutForm" name="checkoutForm" action="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=cart' . $taskRoute, $this->useXHTML, $this->useSSL); ?>">
+	<?php
 
+
+	// This displays the pricelist MUST be done with tables, because it is also used for the emails
+	echo $this->loadTemplate ('pricelist');
+
+	// added in 2.0.8
+	?>
+	<div id="checkout-advertise-box">
+		<?php
+		if (!empty($this->checkoutAdvertise)) {
+			foreach ($this->checkoutAdvertise as $checkoutAdvertise) {
+				?>
+				<div class="checkout-advertise">
+					<?php echo $checkoutAdvertise; ?>
+				</div>
+				<?php
+			}
+		}
+		?>
+	</div>
+
+	<?php // Leave A Comment Field ?>
+		<div class="customer-comment marginbottom15">
+			<span class="comment"><?php echo JText::_ ('COM_VIRTUEMART_COMMENT_CART'); ?></span><br/>
+			<textarea class="customer-comment" name="customer_comment" cols="60" rows="1"><?php echo $this->cart->customer_comment; ?></textarea>
+		</div>
+		<?php // Leave A Comment Field END ?>
+
+
+
+		<?php // Continue and Checkout Button ?>
+		<div class="checkout-button-top">
+
+			<?php // Terms Of Service Checkbox
+			if (!class_exists ('VirtueMartModelUserfields')) {
+				require(JPATH_VM_ADMINISTRATOR . DS . 'models' . DS . 'userfields.php');
+			}
+			$userFieldsModel = VmModel::getModel ('userfields');
+			if ($userFieldsModel->getIfRequired ('agreed')) {
+					if (!class_exists ('VmHtml')) {
+						require(JPATH_VM_ADMINISTRATOR . DS . 'helpers' . DS . 'html.php');
+					}
+					echo VmHtml::checkbox ('tosAccepted', $this->cart->tosAccepted, 1, 0, 'class="terms-of-service"');
+
+					if (VmConfig::get ('oncheckout_show_legal_info', 1)) {
+						?>
+						<div class="terms-of-service">
+
+							<label for="tosAccepted">
+								<a href="<?php JRoute::_ ('index.php?option=com_virtuemart&view=vendor&layout=tos&virtuemart_vendor_id=1', FALSE) ?>" class="terms-of-service" id="terms-of-service" rel="facebox"
+							  	 target="_blank">
+									<span class="vmicon vm2-termsofservice-icon"></span>
+									<?php echo JText::_ ('COM_VIRTUEMART_CART_TOS_READ_AND_ACCEPTED'); ?>
+								</a>
+							</label>
+
+							<div id="full-tos">
+								<h2><?php echo JText::_ ('COM_VIRTUEMART_CART_TOS'); ?></h2>
+								<?php echo $this->cart->vendor->vendor_terms_of_service; ?>
+							</div>
+
+						</div>
+						<?php
+					}
+			}
+			echo $this->checkout_link_html;
+			?>
+		</div>
+		<?php // Continue and Checkout Button END ?>
+		<input type='hidden' name='order_language' value='<?php echo $this->order_language; ?>'/>
 		<input type='hidden' id='STsameAsBT' name='STsameAsBT' value='<?php echo $this->cart->STsameAsBT; ?>'/>
 		<input type='hidden' name='task' value='<?php echo $this->checkout_task; ?>'/>
 		<input type='hidden' name='option' value='com_virtuemart'/>
 		<input type='hidden' name='view' value='cart'/>
 	</form>
 </div>
-		<?php if($this->cart->products){?>
-		<?php if (empty($this->cart->cartData['couponCode'])) { ?>
-	
-	        <?php
-					if (VmConfig::get ('coupons_enable')) {
-						if (!empty($this->layoutName) && $this->layoutName == 'default') {
-							echo $this->loadTemplate ('coupon');
-						} 
-					}
-			?>
-						
-        <?php }?>
-	<div class="bnt-secure-payment">
-    	<a href="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=user&layout=editaddresscheckoutBT')?>">Gå til sikker betaling</a>
-<?php
-	//echo $this->checkout_link_html;
-?>
-	</div>
-	<?php }?>
-</div>
+
+<?php vmTime('Cart view Finished task ','Start'); ?>
