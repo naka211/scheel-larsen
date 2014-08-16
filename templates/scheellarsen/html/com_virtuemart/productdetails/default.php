@@ -10,87 +10,6 @@ if (empty($this->product)) {
 	return;
 }
 ?>
-<script type="text/javascript">
-function cart_update(){
-		var mod = jQuery("#vmCartModule");
-		jQuery.ajaxSetup({ cache: false })
-		jQuery.getJSON(window.vmSiteurl+"index.php?option=com_virtuemart&nosef=1&view=cart&task=viewJS&format=json"+window.vmLang,
-			function(datas, textStatus){
-				//console.log(datas);
-				//if (datas.totalProduct){
-					mod.find("#list-item").html("");
-					jQuery.each(datas.products, function(key, val) {
-						jQuery("#hiddencontainer .container").clone().appendTo(".vmCartModule #list-item");
-						jQuery.each(val, function(key, val) {
-							if (jQuery("#hiddencontainer .container .v"+key)) mod.find("#list-item .v"+key+":last").html(val) ;
-							if(key=="no")
-							mod.find(".list-cart-close:last").on("click", function(){
-								jQuery.ajax( {
-								type: "POST",
-								url: "index.php",
-								data: "option=com_virtuemart&view=cart&cart_virtuemart_product_id="+val+"&task=delete",
-								success: function( response ){cart_update()}
-								});
-							});
-						});
-					});
-					mod.find(".billtotal").html(datas.billTotal);
-					mod.find(".s_billtotal").html(datas.totalProductTxt+datas.billTotal);
-				//}
-			}
-		);
-	}
-	
-	
-jQuery(document).ready( function(){
-	var mod = jQuery("#vmCartModule");
-	
-	
-	mod.find(".list-cart-close").on("click", function(){
-		var id = jQuery(this).attr("rel");
-		jQuery.ajax( {
-		type: "POST",
-		url: "index.php",
-		data: "option=com_virtuemart&view=cart&cart_virtuemart_product_id="+id+"&task=delete",
-		success: function(){cart_update()}
-		});
-	});
-	
-	
-});
-</script>
-<!--<script language="javascript" src="<?php echo $tmpl ;?>js/jquery.validate.js"></script>-->
-<script language="javascript">
-//jQuery(document).ready(function()
-//{
-//	jQuery.validator.addMethod("requireDefault", function(value, element) 
-//	{	
-//		return !(element.value == element.defaultValue);
-//	});
-//	
-//	jQuery("#mailForm").validate({
-//		rules: {
-//			uremail: {
-//				requireDefault: true,
-//				required: true,
-//				email: true
-//			},
-//			urfriendemail: {
-//				requireDefault: true,
-//				required: true,
-//				email: true
-//			}
-//		},
-//		messages: {
-//			uremail: "",
-//			urfriendemail: ""
-//		}
-//	});
-//	<?php if($this->product->product_delivery){?>
-//		jQuery('#myModal1').reveal();
-//	<?php }?>
-//});// JavaScript Document
-</script>
 <?php 
     if (!empty($this->product->customfieldsSorted['ontop'])) {
     $this->position = 'ontop';
@@ -151,11 +70,11 @@ jQuery(document).ready( function(){
                 <?php }?></h3>
             <div class="number">
               <label for="">Antal:</label>
-              <input type="text" name="quantity[]" value="<?php if (isset($this->product->min_order_level) && (int)$this->product->min_order_level > 0) {
+              <input type="text" name="qtytmp" id="qtytmp" value="<?php if (isset($this->product->min_order_level) && (int)$this->product->min_order_level > 0) {
 			echo $this->product->min_order_level;
 		} else {
 			echo '1';
-		} ?>" onblur="check(this);"/>
+		} ?>" onblur="syncQty(this);"/>
               <h2 class="price">
             <?php if ($this->show_prices and (empty($this->product->images[0]) or $this->product->images[0]->file_is_downloadable == 0)) {
     echo $this->loadTemplate('showprices');
