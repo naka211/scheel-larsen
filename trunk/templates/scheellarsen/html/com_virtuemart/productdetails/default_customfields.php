@@ -1,0 +1,75 @@
+<?php
+/**
+ *
+ * Show the product details page
+ *
+ * @package	VirtueMart
+ * @subpackage
+ * @author Max Milbers, Valerie Isaksen
+
+ * @link http://www.virtuemart.net
+ * @copyright Copyright (c) 2004 - 2010 VirtueMart Team. All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
+ * VirtueMart is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * @version $Id: default_customfields.php 5699 2012-03-22 08:26:48Z ondrejspilka $
+ */
+
+// Check to ensure this file is included in Joomla!
+defined ( '_JEXEC' ) or die ( 'Restricted access' );
+?>
+<div class="product-fields">
+	    <?php
+	    $custom_title = null;
+            $int = 0;
+	    foreach ($this->product->customfieldsSorted[$this->position] as $field) {
+	    	if ( $field->is_hidden ) //OSP http://forum.virtuemart.net/index.php?topic=99320.0
+	    		continue;
+			if ($field->display) {
+                            if($field->field_type == "P")
+                                continue;
+	    ?>
+    <div class="image<?php echo $int;?>" style="display: none;"><?php echo $field->display ?></div>
+<!--    <div class="product-field product-field-type-<?php //echo $field->field_type ?>">
+		    <?php // if ($field->custom_title != $custom_title && $field->show_title) { ?>
+			    <span class="product-fields-title" ><?php // echo JText::_($field->custom_title); ?></span>
+			    <?php
+//			    if ($field->custom_tip)
+//				echo JHTML::tooltip($field->custom_tip, JText::_($field->custom_title), 'tooltip.png');
+			}
+			?>
+                            <?php // echo $field->display ?>
+	    	    <span class="product-field-display"><?php // echo $field->display ?></span>
+	    	    <span class="product-field-desc"><?php // echo jText::_($field->custom_field_desc) ?></span>
+	    	</div>-->
+		    <?php
+//		    $custom_title = $field->custom_title;
+//			}
+	    $int++;
+                    
+$url = "http://scheel.local/images/stories/virtuemart/category/resized/Accessories_til__52f72759da103_190x125.jpg";
+$url = str_replace('resized/', '', $url);
+$url = str_replace(strrchr($url, '_'),'.jpg',$url);
+
+
+                }
+	    ?>
+        </div>
+<script type="text/javascript">
+jQuery(document).ready( function(){
+    var items = jQuery(".option.clearfix li");
+    jQuery(".option.clearfix li").click(function() {
+        var index = items.index(this);
+        var newurl = jQuery(".product-fields .image"+index+" img").attr("src");
+        newurl = newurl.replace("resized/", "");
+        newurl = newurl.substr(0, newurl.lastIndexOf("_"))+newurl.substr(newurl.lastIndexOf("."));
+//        alert(newurl);
+//        alert(jQuery(".product-fields .image"+index+" img").attr("src"));
+        jQuery(".product_img .img_larg .imgZoom").attr("href",newurl);
+        jQuery(".product_img #btnZoomIcon").attr("href",newurl);
+        jQuery(".product_img .img_larg .imgZoom img").attr("src",newurl);
+    });    
+});
+</script>
