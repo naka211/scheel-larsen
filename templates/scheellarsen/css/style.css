@@ -319,7 +319,7 @@ ul.levering li ul li {margin-right: 5px;}
 .order_Summary table.sub_order_Summary tr td h3 {margin: 0;}
 .nextto {padding: 20px 0 0; border-top: 1px solid #dcd6c0; margin-top: 30px;}
 a.btnVarekurv {background: url(../img/btnVarekurv.jpg) no-repeat; width: 212px; height: 37px; display: block; text-indent: -9999px;}
-a.btnBetaling {background: url(../img/btnBetaling.jpg) no-repeat; width: 300px; height: 37px; display: block; text-indent: -9999px;}
+.btnBetaling {background: url(../img/btnBetaling.jpg) no-repeat; width: 300px; height: 37px; display: block; text-indent: -9999px;}
 a.btnBetaling2 {background: url(../img/btnBetaling2.jpg) no-repeat !important;}
 .accetp {margin-bottom: 0; line-height: 1.3em;}
 .accetp input[type="checkbox"] {margin-top: 0;}
@@ -450,6 +450,10 @@ a.btnseemore {color: #A08262; margin-left: 65px; float: left;}
 input[type="radio"], input[type="checkbox"] {
     line-height: normal;
     margin: 4px 4px 0 0;
+}
+.invalid {
+    border-color: red !important;
+	border-width: 2px !important;
 }
 
 /* Black themes*/

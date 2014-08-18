@@ -47,64 +47,22 @@ foreach($cart->products as $item)
 <script type="text/javascript">
 jQuery(document).ready(function(){
 
-	var private = '';
-	var company = '<div><input type="text" value="Firmanavn" name="company" id="company" /></div><div><input type="text" value="CVR-nr." name="cvr" id="cvr" /></div>';
-	var public = '<div><input type="text" value="EAN-nr. *" name="ean" id="ean" maxlength="13" /></div><div><input type="text" value="Myndighed/Institution *" name="authority" id="authority" /></div><div><input type="text" value="Ordre- el. rekvisitionsnr. *" name="order" id="order" /></div><div><input type="text" value="Personreference *" name="person" id="person" />';
+	var company = '<input class="input required" type="text" placeholder="Firmanavn *" name="company" id="company"><input class="input required" type="text" placeholder="CVR-nr. *" name="cvr" id="cvr" style="margin-bottom:10px;">';
+	var public = '<input class="input required" type="text" placeholder="EAN-nr. *" name="ean" id="ean" maxlength="13"><input class="input required" type="text" placeholder="Myndighed/Institution *" name="authority" id="authority"><input class="input required" type="text" placeholder="Ordre- el. rekvisitionsnr. *" name="order1" id="order1"><input class="input required" type="text" placeholder="Personreference *" name="person" id="person" style="margin-bottom:10px;">';
 	jQuery("#choicemaker").change(function () {
 
 		value = jQuery("#choicemaker").val();
-		  // You can also use $("#ChoiceMaker").val(); and change the case 0,1,2: to the values of the html select options elements
 
 		if(value == 1){
-			if(jQuery("#ean").val()){
-				jQuery("#ean").rules("remove");
-				jQuery("#authority").rules("remove");
-				jQuery("#order").rules("remove");
-				jQuery("#person").rules("remove");
-			}
-			jQuery("#companyadd").html('');
-			jQuery("#publicadd").html('');
-			focusInput();
-
-
+			jQuery("#addInfo").html('');
 		} else if(value == 2){
-			if(jQuery("#ean").val()){
-				jQuery("#ean").rules("remove");
-				jQuery("#authority").rules("remove");
-				jQuery("#order").rules("remove");
-				jQuery("#person").rules("remove");
-			}
-			jQuery("#companyadd").html(company);
-			jQuery("#publicadd").html('');
-			focusInput();
-
-
+			jQuery("#addInfo").html(company);
 		} else {
-			jQuery("#companyadd").html('');
-			jQuery("#publicadd").html(public);
-			focusInput();
-
-			var newRule = {
-				requireDefault: true,
-				required: true,
-				messages: {
-					requireDefault: "",
-					required: ""
-				}
-			};
-			jQuery("#ean").rules("add", newRule);
-			jQuery("#authority").rules("add", newRule);
-			jQuery("#order").rules("add", newRule);
-			jQuery("#person").rules("add", newRule);
+			jQuery("#addInfo").html(public);
 		}
 
 	});
-	jQuery("#email").bind("blur",function(){
-		jQuery("#username1").val(jQuery("#email").val());
-	});
-	jQuery("#lastname").bind("blur",function(){
-		jQuery("#name").val(jQuery("#firstname").val()+' '+jQuery("#lastname").val());
-	});
+	
 	jQuery('.bnt-create-acc').click(function(){
 		jQuery(".w-create-acc").slideToggle();
 	});
@@ -148,10 +106,18 @@ jQuery(document).ready(function(){
 	}
 	//isST process
     
-    jQuery("#zipcode").blur(function(){
-        if(jQuery("#ship3").prop("checked")) {
-            generatePickup(jQuery("#zipcode").val());
-        }
+    jQuery("#zip").blur(function(){
+		var zip = jQuery("#zip").val();
+		jQuery.ajax({
+            type: "POST",
+            url: "<?php echo JURI::base();?>index.php?option=com_virtuemart&controller=cart&task=requestCity",
+            data: {zip: zip}
+        }).done(function(result) {
+			jQuery("#city").val(result);
+			/*if(jQuery("#ship3").prop("checked")) {
+				generatePickup(jQuery("#zipcode").val());
+			}*/
+		})
     });
     
     generateShop = function(){
@@ -202,7 +168,7 @@ jQuery(document).ready(function(){
 <?php
 if(!$nodelivery){
 ?>
-	STo = function(){
+	/*STo = function(){
 		var newRule = {
 				requireDefault: true,
 				required: true,
@@ -257,7 +223,7 @@ if(!$nodelivery){
 			jQuery("#ship2").attr("checked", "checked");
 			jQuery("#ship1").attr("disabled", "disabled");
 		}
-	});
+	});*/
 <?php
 }else echo 'jQuery("#ship1").click();';
 ///
@@ -274,6 +240,7 @@ if(!$nodelivery){
 	});
 });
 </script>
+<form method="post" id="checkoutForm" name="userForm" class="form-validate" style="padding:0;border-top:none">
 <div class="template2 mb70">
     <div class="checkout_page clearfix">
         <div class="w285 fl">
@@ -282,21 +249,21 @@ if(!$nodelivery){
                 <h3>INDTAST OPLYSNINGER:</h3>
                 <label for="">Vælg kundetype *</label>
                 <select id="choicemaker" name="choicemaker" class="input select">
-                    <option value="privat">Privat</option>
-                    <option value="erhverv">Erhverv</option>
-                    <option value="offentlig">Offentlig instans</option>
+                    <option value="1">Privat</option>
+                    <option value="2">Erhverv</option>
+                    <option value="3">Offentlig instans</option>
                 </select>
                 <div id="w_privat" class="clearfix">
-                    <div id="addInfo"></div>
-                    <input class="input" type="text" placeholder="Fornavn*">
-                    <input class="input" type="text" placeholder="Efternavn*">
-                    <input class="input" type="text" placeholder="Vejnavn*">
-                    <input class="input" type="text" placeholder="Hus/gade nr.*">
-                    <input class="w75 fl input2" type="text" placeholder="Postnr.*">
-                    <input class="w203 fr input2" type="text" placeholder="Bynavn*">
-                    <input class="input" type="text" placeholder="Telefon*">
-                    <input class="input" type="text" placeholder="E-mail adresse*">
-                    <textarea class="textarea" placeholder="Evt. din besked"></textarea>
+                    <span id="addInfo"></span>
+                    <input class="input required" type="text" placeholder="Fornavn *" name="first_name" id="first_name">
+                    <input class="input required" type="text" placeholder="Efternavn *" name="last_name" id="last_name">
+                    <input class="input required" type="text" placeholder="Vejnavn *" name="street_name" id="street_name">
+                    <input class="input required" type="text" placeholder="Hus/gade nr. *" name="street_number" id="street_number">
+                    <input class="w75 fl input2 required" type="text" placeholder="Postnr. *" name="zip" id="zip">
+                    <input class="w203 fr input2 required" type="text" placeholder="Bynavn *" name="city" id="city">
+                    <input class="input required" type="text" placeholder="Telefon *" name="phone_1" id="phone_1">
+                    <input class="input validate-email" type="text" placeholder="E-mail adresse *" name="email" id="email">
+                    <textarea class="textarea" placeholder="Evt. din besked" name="message1"></textarea>
                     <p>(Felter markeret med * skal udfyldes)</p>
                     <a class="btnLevering hover" href="javascript:void(0);">Levering til anden adresse</a>
                     <div class="w_Address clearfix">
@@ -309,56 +276,6 @@ if(!$nodelivery){
                         <input class="input" type="text" placeholder="Telefon*">
                     </div>
                 </div>
-                <!--<div id="w_erhverv" class="clearfix">
-                    <input class="input" type="text" placeholder="Firmanavn">
-                    <input class="input" type="text" placeholder="CVR-nr.*">
-                    <input class="input" type="text" placeholder="Fornavn*">
-                    <input class="input" type="text" placeholder="Efternavn*">
-                    <input class="input" type="text" placeholder="Vejnavn*">
-                    <input class="input" type="text" placeholder="Hus/gade nr.*">
-                    <input class="w75 fl input2" type="text" placeholder="Postnr.*">
-                    <input class="w203 fr input2" type="text" placeholder="Bynavn*">
-                    <input class="input" type="text" placeholder="Telefon*">
-                    <input class="input" type="text" placeholder="E-mail adresse*">
-                    <textarea class="textarea" placeholder="Evt. din besked"></textarea>
-                    <p>(Felter markeret med * skal udfyldes)</p>
-                    <a class="btnLevering hover" href="#">Levering til anden adresse</a>
-                    <div class="w_Address clearfix">
-                        <input class="input" type="text" placeholder="Fornavn*">
-                        <input class="input" type="text" placeholder="Efternavn*">
-                        <input class="input" type="text" placeholder="Vejnavn*">
-                        <input class="input" type="text" placeholder="Hus/gade nr.*">
-                        <input class="w75 fl input2" type="text" placeholder="Postnr.*">
-                        <input class="w203 fr input2" type="text" placeholder="Bynavn*">
-                        <input class="input" type="text" placeholder="Telefon*">
-                    </div>
-                </div>
-                <div id="w_offentlig" class="clearfix">
-                    <input class="input" type="text" placeholder="EAN-nr.*">
-                    <input class="input" type="text" placeholder="Myndighed/Institution*">
-                    <input class="input" type="text" placeholder="Ordre- el. rekvisitionsnr.*">
-                    <input class="input" type="text" placeholder="Personreference*">
-                    <input class="input" type="text" placeholder="Fornavn*">
-                    <input class="input" type="text" placeholder="Efternavn*">
-                    <input class="input" type="text" placeholder="Vejnavn*">
-                    <input class="input" type="text" placeholder="Hus/gade nr.*">
-                    <input class="w75 fl input2" type="text" placeholder="Postnr.*">
-                    <input class="w203 fr input2" type="text" placeholder="Bynavn*">
-                    <input class="input" type="text" placeholder="Telefon*">
-                    <input class="input" type="text" placeholder="E-mail adresse*">
-                    <textarea class="textarea" placeholder="Evt. din besked"></textarea>
-                    <p>(Felter markeret med * skal udfyldes)</p>
-                    <a class="btnLevering hover" href="#">Levering til anden adresse</a>
-                    <div class="w_Address clearfix">
-                        <input class="input" type="text" placeholder="Fornavn*">
-                        <input class="input" type="text" placeholder="Efternavn*">
-                        <input class="input" type="text" placeholder="Vejnavn*">
-                        <input class="input" type="text" placeholder="Hus/gade nr.*">
-                        <input class="w75 fl input2" type="text" placeholder="Postnr.*">
-                        <input class="w203 fr input2" type="text" placeholder="Bynavn*">
-                        <input class="input" type="text" placeholder="Telefon*">
-                    </div>
-                </div>-->
             </div>
         </div>
         <div class="w605 fr">
@@ -455,9 +372,14 @@ if(!$nodelivery){
                 Jeg bekræfter hermed at mine data er korrekte, samt at kurven indeholder de varer jeg ønsker. </p>
             <a class="conditions" href="terms.php">Jeg accepterer Handelsbetingelser.</a> </div>
         <div class="clear"></div>
-        <div class="nextto clearfix"> <a class="fl btnVarekurv hover" href="cart.php">Til Varekurv</a> <a class="fr btnBetaling hover" href="thanks.php">til Betaling</a> </div>
+        <div class="nextto clearfix">
+        <a class="fl btnVarekurv hover" href="cart.php">Til Varekurv</a> 
+        <!--<a class="fr btnBetaling hover" href="thanks.php">til Betaling</a>-->
+        <button type="submit" class="validate fr btnBetaling hover" style="cursor:pointer; border:none;">Til Betaling</button>
+        </div>
     </div>
 </div>
+</form>
 <?php return;?>
 <div id="checkout-page">
     <form method="post" id="checkoutForm" name="userForm" class="form-validate" style="padding:0;border-top:none">
