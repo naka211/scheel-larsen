@@ -3,6 +3,16 @@
 defined('_JEXEC') or die;
 $tmpl = JURI::base().'templates/'.$this->template."/";
 $session = JFactory::getSession();
+$option = JRequest::getVar('option');
+$view = JRequest::getVar('view');
+$optview = $option.$view;
+$haveLeft = true;
+if($optview != "com_virtuemartuser"){
+    $haveLeft = false;
+}
+if($optview != "com_virtuemartproductdetails"){
+    $haveLeft = false;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -161,8 +171,7 @@ $session = JFactory::getSession();
     <section class="main mt190">
         <div class="container">
             <?php 
-                $appInput = Jfactory::getApplication()->input;
-                if($appInput->getCmd('view') != "productdetails"){
+                if($haveLeft){
             ?>
             <div class="main_left clearfix">
                 {module Left Category Menu}
@@ -176,76 +185,8 @@ $session = JFactory::getSession();
                 }
             ?>
                 <jdoc:include type="component" />
-                <!--
-
-                <div class="products">
-                    <h2><img src="<?php echo $tmpl;?>img/title_product.png" alt=""></h2>
-                    <a class="btn_seeAll" href="product2.php"><span class="fl">Se alle</span> <b class="icon_right"></b></a>
-                    <ul class="clearfix">
-                        <li>
-                            <div class="img_main"> <a href="#"><img src="<?php echo $tmpl;?>img/img01.jpg" alt=""></a> </div>
-                            <h3>Diamond Loungestol Hvid Tex®</h3>
-                            <p class="price_before">Førpris: 529 DKK</p>
-                            <p class="price_sale">(De sparer: 50 DKK) </p>
-                            <h4>479 DKK</h4>
-                            <div class="pro-larg animated clearfix">
-                                <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $tmpl;?>img/img01.jpg" alt=""></a> </div>
-                                <h3>Diamond Loungestol Hvid Tex®</h3>
-                                <p class="no_number">Vare-nummer: 30283</p>
-                                <p class="price_before">Førpris: 529 DKK</p>
-                                <p class="price_sale">(De sparer: 50 DKK) </p>
-                                <h4>479 DKK</h4>
-                                <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </div>
-                        </li>
-                        <li>
-                            <div class="img_main"> <a href="#"><img src="<?php echo $tmpl;?>img/img02.jpg" alt=""></a> </div>
-                            <h3>Diamond 2-pers. sofa Hvid Tex®</h3>
-                            <p class="price_before">Førpris: 529 DKK</p>
-                            <p class="price_sale">(De sparer: 50 DKK) </p>
-                            <h4>479 DKK</h4>
-                            <div class="pro-larg animated clearfix">
-                                <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $tmpl;?>img/img01.jpg" alt=""></a> </div>
-                                <h3>Diamond 2-pers. sofa Hvid Tex®</h3>
-                                <p class="no_number">Vare-nummer: 30283</p>
-                                <p class="price_before">Førpris: 529 DKK</p>
-                                <p class="price_sale">(De sparer: 50 DKK) </p>
-                                <h4>479 DKK</h4>
-                                <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </div>
-                        </li>
-                        <li>
-                            <div class="img_main"> <a href="#"><img src="<?php echo $tmpl;?>img/img01.jpg" alt=""></a> </div>
-                            <h3>Diamond 3-pers. sofa Hvid Tex®</h3>
-                            <p class="price_before">Førpris: 529 DKK</p>
-                            <p class="price_sale">(De sparer: 50 DKK) </p>
-                            <h4>479 DKK</h4>
-                            <div class="pro-larg animated clearfix">
-                                <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $tmpl;?>img/img01.jpg" alt=""></a> </div>
-                                <h3>Diamond 3-pers. sofa Hvid Tex®</h3>
-                                <p class="no_number">Vare-nummer: 30283</p>
-                                <p class="price_before">Førpris: 529 DKK</p>
-                                <p class="price_sale">(De sparer: 50 DKK) </p>
-                                <h4>479 DKK</h4>
-                                <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </div>
-                        </li>
-                    </ul>
-                    <h2><img src="<?php echo $tmpl;?>img/title_design.png" alt=""> <span>-  Feinsmeckeri i et usnobbet enkelt design af interiør og møbler. </span></h2>
-                    <ul class="clearfix">
-                        <li>
-                            <div class="img_main"> <a href="product2.php"><img src="<?php echo $tmpl;?>img/img01.jpg" alt=""></a> </div>
-                            <h3>ROCKEFELLER BORD</h3>
-                        </li>
-                        <li>
-                            <div class="img_main"> <a href="product2.php"><img src="<?php echo $tmpl;?>img/img02.jpg" alt=""></a> </div>
-                            <h3>OSAKA RECYCLED TEAK</h3>
-                        </li>
-                        <li>
-                            <div class="img_main"> <a href="product2.php"><img src="<?php echo $tmpl;?>img/img01.jpg" alt=""></a> </div>
-                            <h3>RECYCLED TEAK</h3>
-                        </li>
-                    </ul>
-                </div>-->
             <?php 
-                if($appInput->getCmd('view') == "category"){
+                if($haveLeft){
             ?>
             </div>
             <?php 
@@ -272,25 +213,6 @@ $session = JFactory::getSession();
                     <div class="cate_list">
                         <h3>Kategorier</h3>
                         {module Footer Category Menu}
-                        <!--<ul>
-                            <li><a href="#">Potter fra italien</a></li>
-                            <li><a href="#">Lam - Og rensdyrskind</a></li>
-                            <li><a href="#">Design fra nardi</a></li>
-                            <li><a href="#">Kruikker antique</a></li>
-                            <li><a href="#">Havemøbelsæt</a></li>
-                            <li><a href="#">Solvogne/Dækstole</a></li>
-                            <li><a href="#">Kruikker romatic</a></li>
-                            <li><a href="#">Den lille have/Altan</a></li>
-                            <li><a href="#">Parasoller-/Fødder</a></li>
-                            <li><a href="#">Kruikker classic</a></li>
-                            <li><a href="#">Havestole og bænke</a></li>
-                            <li><a href="#">Hynder/Hyndebokse</a></li>
-                            <li><a href="#">Let beton/terrazzo</a></li>
-                            <li><a href="#">Loungemøbler</a></li>
-                            <li><a href="#">Covers</a></li>
-                            <li><a href="#">Lanterner, bålfade...</a></li>
-                            <li><a href="#">Muubs havemøbler MV.</a></li>
-                        </ul>-->
                     </div>
                     
                     <div class="sitemap_list">
