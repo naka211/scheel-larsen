@@ -428,7 +428,7 @@ input[type="radio"], input[type="checkbox"] {margin: 4px 3px 0;}*/
 
 ul.option li input {width: 10px; height: 8px; -moz-appearance:none; -o-appearance:none;}
 #f_map {width: 980px; padding: 20px; background: #fff; margin-left: -490px;}
-#ppCartcredit {width: 440px; padding: 20px; background: #fff; margin-left: -10%; margin-top: -100px;}
+#ppCartcredit {width: 440px; padding: 20px; background: #fff; margin-left: -10%;}
 
 .info_ {width: 585px; padding-left: 20px; margin-top: 10px; }
 .info_ ul li {font-size: 13px; color: #505050; background: url(../img/icon_check.png) no-repeat left center; padding-left: 20px; margin-bottom: 5px;}
@@ -447,6 +447,10 @@ ul.option li input {width: 10px; height: 8px; -moz-appearance:none; -o-appearanc
 
 a.btnseemore {color: #A08262; margin-left: 65px; float: left;}
 .btn_Findos {background: url(../img/title_find_os.png) no-repeat; width: 187px; height: 28px; text-indent: -9999px; display: block;}
+input[type="radio"], input[type="checkbox"] {
+    line-height: normal;
+    margin: 4px 4px 0 0;
+}
 
 /* Black themes*/
 /*.navbar-default {background: #fff; border: none; background: #fff url(../img/border_top2.jpg) repeat-x top center !important;}
