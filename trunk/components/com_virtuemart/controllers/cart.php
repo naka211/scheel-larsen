@@ -516,6 +516,13 @@ class VirtueMartControllerCart extends JController {
 		$mainframe = JFactory::getApplication();
 		$mainframe->redirect(JRoute::_('index.php?option=com_virtuemart&view=cart', FALSE), 'Cancelled');
 	}
+	
+	function requestCity(){
+		$zip = JRequest::getVar('zip');
+		$db = JFactory::getDBO();
+		$db->setQuery('SELECT city FROM #__postnumber WHERE number = '.$zip);
+		die($db->loadResult());
+	}
 
 }
 

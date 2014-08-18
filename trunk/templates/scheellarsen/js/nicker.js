@@ -138,28 +138,6 @@ $(document).ready(function() {
     $("#w_offentlig").hide();
 
     // How it all works
-    $("#choicemaker").change(function () {
-      $value = $("#choicemaker")[0].selectedIndex;
-      // You can also use $("#ChoiceMaker").val(); and change the case 0,1,2: to the values of the html select options elements
-      switch ($value)
-      {
-        case 0:
-            $("#w_privat").show();
-            $("#w_erhverv").hide();
-            $("#w_offentlig").hide();
-        break;
-        case 1:
-            $("#w_erhverv").show();
-            $("#w_privat").hide();
-            $("#w_offentlig").hide();
-        break;
-        case 2:
-            $("#w_offentlig").show();
-            $("#w_privat").hide();
-            $("#w_erhverv").hide();
-        break;
-      }
-    });
 
     //Product detail zoom
     $('.imgZoom').prettyPhoto({

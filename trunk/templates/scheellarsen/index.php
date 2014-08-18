@@ -7,10 +7,10 @@ $option = JRequest::getVar('option');
 $view = JRequest::getVar('view');
 $optview = $option.$view;
 $haveLeft = true;
-if($optview != "com_virtuemartuser"){
+if($optview == "com_virtuemartuser"){
     $haveLeft = false;
 }
-if($optview != "com_virtuemartproductdetails"){
+if($optview == "com_virtuemartproductdetails"){
     $haveLeft = false;
 }
 ?>
