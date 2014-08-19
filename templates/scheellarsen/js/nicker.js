@@ -125,17 +125,8 @@ $(document).ready(function() {
 
     //check out
 
-    $(".w_Address").hide();
-    $(".btnLevering").show();
     
-    $('.btnLevering').click(function(event){
-       event.preventDefault();
-      $(".w_Address").slideToggle();
-    });
 
-    $("#w_privat").show;
-    $("#w_erhverv").hide();
-    $("#w_offentlig").hide();
 
     // How it all works
 

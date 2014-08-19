@@ -12,25 +12,10 @@ else {
 	$rtask = 'registercheckoutuser';
 	$url = JRoute::_ ('index.php?option=com_virtuemart&view=cart&task=checkout', $this->useXHTML, $this->useSSL);
 }
-$user = JFactory::getUser();
-$user = JUser::getInstance($user->id);
-$cart = VirtueMartCart::getCart();
+
+$cart = VirtueMartCart::getCart(); 
 $cart->prepareCartViewData();
-//Shipping cost rule
-if($cart->pricesUnformatted['salesPrice'] <= 500){
-    $fee = 49;
-    $fee1 = 39;
-} else {
-    $fee = 0;
-    $fee1 = 0;
-}
-//[V] check if nodelivery att exists
-$nodelivery=false;
-foreach($cart->products as $item)
-	if(isset($item->nodelivery)){
-		$nodelivery=true;break;
-	}
-///
+print_r($cart);exit; 
 ?>
 
 <div id="ppCartcredit" class="reveal-modal">
@@ -106,6 +91,17 @@ jQuery(document).ready(function(){
 	}
 	//isST process
     
+    jQuery("#st_zip").blur(function(){
+		var st_zip = jQuery("#st_zip").val();
+		jQuery.ajax({
+            type: "POST",
+            url: "<?php echo JURI::base();?>index.php?option=com_virtuemart&controller=cart&task=requestCity",
+            data: {zip: st_zip}
+        }).done(function(result) {
+			jQuery("#st_city").val(result);
+		})
+    });
+    
     jQuery("#zip").blur(function(){
 		var zip = jQuery("#zip").val();
 		jQuery.ajax({
@@ -113,122 +109,47 @@ jQuery(document).ready(function(){
             url: "<?php echo JURI::base();?>index.php?option=com_virtuemart&controller=cart&task=requestCity",
             data: {zip: zip}
         }).done(function(result) {
-			jQuery("#city").val(result);
-			/*if(jQuery("#ship3").prop("checked")) {
-				generatePickup(jQuery("#zipcode").val());
-			}*/
+            if(result){
+                jQuery("#city").val(result);
+                if(zip < 4000) {
+                    jQuery("#ship1").val(2);
+                    var cartPrice = Number(jQuery("#cartPrice").val());
+                    if(cartPrice <= 1000){
+                        var fee = 0;
+                    } else {
+                        var fee = 150;
+                    }
+                } else {
+                    jQuery("#ship1").val(3);
+                    var fee = 350;
+                }
+                
+                jQuery("#shipPriceLabel").html(fee+" DKK");
+            }
 		})
     });
     
-    generateShop = function(){
-        html = '<input name="location" type="radio" value="Amager Isenkram - Amager Centret butik 139, Reberbanegade 3, 2300 København S" checked /><span> Amager Isenkram - Amager Centret butik 139, Reberbanegade 3, 2300 København S</span><br/><input name="location" type="radio" value="Gør Det Selv Shop - Amager Centret butik 132, Reberbanegade 3, 2300 København S" /><span> Gør Det Selv Shop - Amager Centret butik 132, Reberbanegade 3, 2300 København S</span><br/><input name="location" type="radio" value="Tårnby Torv Isenkram - Tårnby torv 9, 2770 Kastrup" /><span> Tårnby Torv Isenkram - Tårnby torv 9, 2770 Kastrup</span><br/><input name="location" type="radio" value="Spinderiet Isenkram - Valby Torvegade 18, 2500 Valby" /><span> Spinderiet Isenkram - Valby Torvegade 18, 2500 Valby</span><br/><input name="location" type="radio" value="City 2 Isenkram - Plan 2, City 2, 2630 Taastrup" /><span> City 2 Isenkram - Plan 2, City 2, 2630 Taastrup</span>';
-        jQuery("#location_area1").html(html);
+    shipTo = function(){
+        if(jQuery(".w_Address").css("display")=="none"){
+            jQuery(".w_Address").html("");
+            jQuery("#STsameAsBT").val("1");
+        } else {
+            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone">';
+            jQuery(".w_Address").html(st_html);
+            jQuery("#STsameAsBT").val("0");
+        }
     }
     
-    generatePickup = function(postcode){
-        var loader = '<img src="<?php echo JURI::base() ;?>/images/zoomloader.gif"/>';
-		jQuery('#location_area').html(loader);
-        var html = '';
-       
-        jQuery.ajax({
-            type: "POST",
-            url: "<?php echo JURI::base();?>index.php?option=com_virtuemart&controller=cart&task=requestPostdanmark",
-            data: {post: postcode}
-        }).done(function(result) {
-            if(result){
-                var data = jQuery.parseJSON(result);
-                var shops = data.servicePointInformationResponse.servicePoints;
-                var length = shops.length;
-                for(var i =0; i<length; i++){
-                    var servicePointId = shops[i].servicePointId;
-                    if(i==0){
-                        var check = 'checked';
-                        setShopId(servicePointId);
-                    } else {
-                        check = 'servicePointId';
-                    }
-                 
-                    var company = shops[i].name;
-                    var streetNumber = shops[i].deliveryAddress.streetNumber;
-                    var streetName = shops[i].deliveryAddress.streetName;
-                    var zipcode = shops[i].deliveryAddress.postalCode;
-                    var city = shops[i].deliveryAddress.city;
-                    var txt = company +' - '+ streetNumber + ' ' + streetName + ', ' + zipcode + ' ' + city;
-                    html += '<input name="location" type="radio" value="'+txt+'" '+check+' onclick=setShopId('+servicePointId+') /><span> '+txt+'</span><br/>';
-                }
-            }
-            jQuery("#location_area").html(html);
+    jQuery(".w_Address").hide();
+    shipTo();
+    
+    jQuery('.btnLevering').click(function(event){
+        event.preventDefault();
+        jQuery(".w_Address").slideToggle("500","swing", function(){
+            shipTo();
         });
-        
-    }
+    });
     
-    setShopId = function(shopid){
-        jQuery('#shop_id').val(shopid);
-    }
-<?php
-if(!$nodelivery){
-?>
-	/*STo = function(){
-		var newRule = {
-				requireDefault: true,
-				required: true,
-				messages: {
-					requireDefault: "",
-					required: ""
-				}
-			};
-		jQuery("#firstname2").rules("add", newRule);
-		jQuery("#lastname2").rules("add", newRule);
-		jQuery("#zipcode2").rules("add", {
-				requireDefault: true,
-				required: true,
-				number: true,
-				maxlength: 4,
-				messages: {
-					requireDefault: "",
-					required: "",
-					number: "",
-					maxlength: ""
-				}
-			});
-		jQuery("#address2").rules("add", newRule);
-		jQuery("#city2").rules("add", newRule);
-		jQuery("#phone2").rules("add", newRule);
-	}
-	STx = function(){
-		jQuery("#firstname2").rules("remove");
-		jQuery("#lastname2").rules("remove");
-		jQuery("#zipcode2").rules("remove");
-		jQuery("#address2").rules("remove");
-		jQuery("#city2").rules("remove");
-		jQuery("#phone2").rules("remove");
-	}
-
-	if(jQuery(".w-another-add").css("display")!="none")
-		STo();
-
-	jQuery('.bnt-another-add').click(function(){
-		if(jQuery(".w-another-add").css("display")=="block"){
-			STx();
-			jQuery(".w-another-add").slideToggle();
-			jQuery("#STsameAsBT").val("1");
-
-
-			jQuery("#ship1").removeAttr("disabled");
-		}else{
-			jQuery(".w-another-add").slideToggle();
-			STo();
-			jQuery("#STsameAsBT").val("0");
-
-			jQuery("#ship2").attr("checked", "checked");
-			jQuery("#ship1").attr("disabled", "disabled");
-		}
-	});*/
-<?php
-}else echo 'jQuery("#ship1").click();';
-///
-?>
-
 	jQuery("#checkoutBtn").bind("click",function(){
 		if(jQuery("#tosAccepted").is(':checked')){
 			jQuery("#checkoutForm").submit();
@@ -240,7 +161,7 @@ if(!$nodelivery){
 	});
 });
 </script>
-<form method="post" id="checkoutForm" name="userForm" class="form-validate" style="padding:0;border-top:none">
+<form method="post" id="checkoutForm" name="userForm" class="form-validate" style="padding:0;border-top:none" action="index.php">
 <div class="template2 mb70">
     <div class="checkout_page clearfix">
         <div class="w285 fl">
@@ -260,20 +181,14 @@ if(!$nodelivery){
                     <input class="input required" type="text" placeholder="Vejnavn *" name="street_name" id="street_name">
                     <input class="input required" type="text" placeholder="Hus/gade nr. *" name="street_number" id="street_number">
                     <input class="w75 fl input2 required" type="text" placeholder="Postnr. *" name="zip" id="zip">
-                    <input class="w203 fr input2 required" type="text" placeholder="Bynavn *" name="city" id="city">
+                    <input class="w203 fr input2 required" type="text" placeholder="Bynavn *" name="city" id="city" readonly>
                     <input class="input required" type="text" placeholder="Telefon *" name="phone_1" id="phone_1">
-                    <input class="input validate-email" type="text" placeholder="E-mail adresse *" name="email" id="email">
+                    <input class="input required validate-email" type="text" placeholder="E-mail adresse *" name="email" id="email">
                     <textarea class="textarea" placeholder="Evt. din besked" name="message1"></textarea>
                     <p>(Felter markeret med * skal udfyldes)</p>
                     <a class="btnLevering hover" href="javascript:void(0);">Levering til anden adresse</a>
                     <div class="w_Address clearfix">
-                        <input class="input" type="text" placeholder="Fornavn*">
-                        <input class="input" type="text" placeholder="Efternavn*">
-                        <input class="input" type="text" placeholder="Vejnavn*">
-                        <input class="input" type="text" placeholder="Hus/gade nr.*">
-                        <input class="w75 fl input2" type="text" placeholder="Postnr.*">
-                        <input class="w203 fr input2" type="text" placeholder="Bynavn*">
-                        <input class="input" type="text" placeholder="Telefon*">
+                        
                     </div>
                 </div>
             </div>
@@ -282,22 +197,22 @@ if(!$nodelivery){
             <ul class="levering clearfix">
                 <h2><span>2</span>Levering</h2>
                 <li>
-                    <input id="r2" name="one" value="1" type="radio" checked>
-                    <label for="r2">Leveret til døren for andre postnumre: 350 DKK</label>
+                    <input id="ship1" name="virtuemart_shipmentmethod_id" value="0" type="radio" checked>
+                    Leveret til døren for andre postnumre: <span id="shipPriceLabel"></span>
                 </li>
                 <li>
-                    <input id="r3" name="one" value="1" type="radio">
-                    <label for="r3">Afhentning: 0,00 DKK (spar 10% som vil blive fratrukket automatisk)</label>
+                    <input id="ship2" name="virtuemart_shipmentmethod_id" value="1" type="radio">
+                    Afhentning: 0,00 DKK (spar 10% som vil blive fratrukket automatisk)
                 </li>
             </ul>
             <div class="payment_Method clearfix">
                 <h2><span>3</span>Betalingsmetode</h2>
                 <p>Du kan betale med følgende betalingskort:</p>
                 <p> <span>
-                    <input id="r4" name="three" value="3" type="radio" checked>
+                    <input name="method_id" value="1" type="radio" checked>
                     </span> <img src="templates/scheellarsen/img/cart2.png" alt=""> </p>
                 <p> <span>
-                    <input class="mt5" name="three" value="3" type="radio">
+                    <input class="mt5" name="method_id" value="2" type="radio">
                     </span> <a href="#" data-reveal-id="ppCartcredit"><img src="templates/scheellarsen/img/icon_via.png" alt=""></a> </p>
             </div>
             <div class="order_Summary clearfix">
@@ -309,8 +224,9 @@ if(!$nodelivery){
                         <th>Pris pr stk.</th>
                         <th>Pris i alt</th>
                     </tr>
+                    <?php foreach($cart->products as $product){?>
                     <tr>
-                        <td><div class="img_pro"> <img src="img/img04.jpg" alt=""> </div>
+                        <td><div class="img_pro"> <img width="90" src="<?php echo $item->image->file_url_thumb;?>"> </div>
                             <div class="content_pro">
                                 <h4>Filippa Grå Terracotta 38 cm</h4>
                                 <p>Vare-nummer: 30283</p>
@@ -321,30 +237,7 @@ if(!$nodelivery){
                         <td><p>479 DKK </p></td>
                         <td><p>479 DKK </p></td>
                     </tr>
-                    <tr>
-                        <td><div class="img_pro"> <img src="img/img04.jpg" alt=""> </div>
-                            <div class="content_pro">
-                                <h4>Filippa Grå Terracotta 38 cm</h4>
-                                <p>Vare-nummer: 30283</p>
-                                <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                                <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div></td>
-                        <td><p>1</p></td>
-                        <td><p>479 DKK </p></td>
-                        <td><p>479 DKK </p></td>
-                    </tr>
-                    <tr>
-                        <td><div class="img_pro"> <img src="img/img04.jpg" alt=""> </div>
-                            <div class="content_pro">
-                                <h4>Filippa Grå Terracotta 38 cm</h4>
-                                <p>Vare-nummer: 30283</p>
-                                <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                                <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-                            </div></td>
-                        <td><p>1</p></td>
-                        <td><p>479 DKK </p></td>
-                        <td><p>479 DKK </p></td>
-                    </tr>
+                    <?php }?>
                     <tr>
                         <td colspan="4" class="cf9f7f3"><table class="sub_order_Summary">
                                 <tr>
@@ -376,6 +269,18 @@ if(!$nodelivery){
         <a class="fl btnVarekurv hover" href="cart.php">Til Varekurv</a> 
         <!--<a class="fr btnBetaling hover" href="thanks.php">til Betaling</a>-->
         <button type="submit" class="validate fr btnBetaling hover" style="cursor:pointer; border:none;">Til Betaling</button>
+        
+        <input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['salesPrice']?>" />
+        <input type="hidden" id="shipFee" value=""/>
+        <input type="hidden" id="cartPrice" value="<?php echo $cart->pricesUnformatted['salesPrice']?>"/>
+        
+        <input type="hidden" name="option" value="com_virtuemart"/>
+        <input type="hidden" name="view" value="cart"/>
+        <input type="hidden" name="task" value="confirm"/>
+        <input type='hidden' id='STsameAsBT' name='STsameAsBT' value=''/>
+        <?php
+        echo JHTML::_ ('form.token');
+        ?>
         </div>
     </div>
 </div>

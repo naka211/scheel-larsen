@@ -139,7 +139,7 @@ if($optview == "com_virtuemartproductdetails"){
                         </table>
                     </div>
                   </div>
-                  <a class="bntCheckout btn2" href="checkout.php">GÅ TIL KASSEN</a>
+                  <a class="bntCheckout btn2" href="<?php echo JURI::base().'user/editaddresscheckoutBT.html'?>">GÅ TIL KASSEN</a>
                   <a class="bntBasket btn2" href="cart.php">SE VAREKURV</a>
                 </div>
                 <!--.list-cart--> 

@@ -27,11 +27,13 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 	    foreach ($this->product->customfieldsSorted[$this->position] as $field) {
 	    	if ( $field->is_hidden ) //OSP http://forum.virtuemart.net/index.php?topic=99320.0
 	    		continue;
-			if ($field->display) {
+			if ($field->display) {print_r($field->field_type);
                             if($field->field_type == "P")
                                 continue;
+                            if($field->field_type == "M"){
 	    ?>
     <div class="image<?php echo $int;?>" style="display: none;"><?php echo $field->display ?></div>
+    <?php } ?>
 <!--    <div class="product-field product-field-type-<?php //echo $field->field_type ?>">
 		    <?php // if ($field->custom_title != $custom_title && $field->show_title) { ?>
 			    <span class="product-fields-title" ><?php // echo JText::_($field->custom_title); ?></span>
@@ -48,10 +50,6 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 //		    $custom_title = $field->custom_title;
 //			}
 	    $int++;
-                    
-$url = "http://scheel.local/images/stories/virtuemart/category/resized/Accessories_til__52f72759da103_190x125.jpg";
-$url = str_replace('resized/', '', $url);
-$url = str_replace(strrchr($url, '_'),'.jpg',$url);
 
 
                 }

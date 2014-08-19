@@ -478,7 +478,7 @@ class VirtueMartControllerCart extends JController {
 	 *
 	 */
 	public function confirm() {
-
+die('ok');
 		vmdebug('confirm my post, get and so on',$_POST,$_GET);
 		$cart = VirtueMartCart::getCart();
 		$cart->getFilterCustomerComment();
