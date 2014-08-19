@@ -167,7 +167,7 @@ jQuery(document).ready(function(){
         <div class="w285 fl">
             <h2><span>1</span>Kundeoplysninger</h2>
             <div class="entryInfo">
-                <h3>INDTAST OPLYSNINGER:</h3>
+                <h3>INDTAST DINE OPLYSNINGER</h3>
                 <label for="">Vælg kundetype *</label>
                 <select id="choicemaker" name="choicemaker" class="input select">
                     <option value="1">Privat</option>
@@ -198,11 +198,11 @@ jQuery(document).ready(function(){
                 <h2><span>2</span>Levering</h2>
                 <li>
                     <input id="ship1" name="virtuemart_shipmentmethod_id" value="0" type="radio" checked>
-                    Leveret til døren for andre postnumre: <span id="shipPriceLabel"></span>
+                    Leveret til døren for Fyn og Jylland: <span id="shipPriceLabel"></span>
                 </li>
                 <li>
                     <input id="ship2" name="virtuemart_shipmentmethod_id" value="1" type="radio">
-                    Afhentning: 0,00 DKK (spar 10% som vil blive fratrukket automatisk)
+                    Ved afhentning på Hesselrødvej 26, 2980 Kokkedal, sparer du 10%, som vil blive fratrukket automatisk
                 </li>
             </ul>
             <div class="payment_Method clearfix">
