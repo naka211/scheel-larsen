@@ -23,11 +23,11 @@ if(JRequest::getVar('success')){?>
 <div class="template">
     <div class="conditions_page">
         {module Breadcrumbs}
-        <h2>NYHEDSBREV TILMELDING</h2>
+        <!--<h2>NYHEDSBREV TILMELDING</h2>-->
         <div class="newsletter clearfix pt0">
             <div class="w485 fl">
-                <p>TILMELD DIG VORES NYHEDSBREV OG FÅ GODE TILBUD OG NYHEDER <br>
-                    VI UDSENDER NYHEDSBREV 1-2 GANGE OM MÅNEDEN!</p>
+                <p>TILMELD DIG VORES NYHEDSBREV OG FÅ GODE TILBUD OG NYHEDER. <br>
+                    VI UDSENDER NYHEDSBREVE 1-2 GANGE OM MÅNEDEN!</p>
             </div>
             <div class="w430 fl mt10">
                 <form action="index.php" method="post" class="form-validate">

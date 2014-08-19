@@ -85,7 +85,7 @@ if($optview == "com_virtuemartproductdetails"){
               <div class="cart_content clearfix">
                 <a class="img-cart clearfix hover" href="#">
                   <img src="<?php echo $tmpl;?>img/icon_cart.png" alt="">
-                  <p class="fl"><span>3 STK =</span><span>Total: 1.916 DKK</span></p>
+                  <p class="fl"><span>3 VARE(R) =</span><span>Total: 1.916 DKK</span></p>
                   <p class="icon_down"></p>
                 </a>
                 <div class="list-cart"> 
@@ -119,7 +119,7 @@ if($optview == "com_virtuemartproductdetails"){
                       <ul>
                         <li>Ved køb af varer over 1.000 Dkk. hos Scheel-Larsen.dk leverer og samler vi GRATIS..! på hele Sjælland.</li>
                         <li>Ved køb under 1.000 kr. pålægges et fragtgebyr på 150 DKK.</li>
-                        <li>Fragt til Jylland 350 DKK.</li>
+                        <li>Fragt til Jylland og Fyn 350 kr.</li>
                       </ul>
                     </div>
                     <div class="w345 fr">
@@ -211,7 +211,7 @@ if($optview == "com_virtuemartproductdetails"){
                         {module Footer Information 2}
                     </div>
                     <div class="cate_list">
-                        <h3>Kategorier</h3>
+                        <h3>Produkter</h3>
                         {module Footer Category Menu}
                     </div>
                     
