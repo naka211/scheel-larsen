@@ -478,7 +478,7 @@ class VirtueMartControllerCart extends JController {
 	 *
 	 */
 	public function confirm() {
-print_r($_POST);exit;
+
 		vmdebug('confirm my post, get and so on',$_POST,$_GET);
 		$cart = VirtueMartCart::getCart();
 		$cart->getFilterCustomerComment();
@@ -499,7 +499,65 @@ print_r($_POST);exit;
 		} else if(isset($_POST['setpayment']) or $task=='setpayment'){
 			$this->setpayment();
 		} else if($task=='confirm'){
+			//T.Trung
+			$cart = VirtueMartCart::getCart();
+			
+			$cart->BT = array();
+			
+			$cart->BT['ean'] = JRequest::getVar('ean');
+			$cart->BT['authority'] = JRequest::getVar('authority');
+			$cart->BT['order1'] = JRequest::getVar('order');
+			$cart->BT['person'] = JRequest::getVar('person');
+			
+			$cart->BT['company'] = JRequest::getVar('company');
+			$cart->BT['cvr'] = JRequest::getVar('cvr');
+				
+			$cart->BT['email'] = JRequest::getVar('email');
+			$cart->BT['address_type_name'] = JRequest::getVar('mwctype');
+			$cart->BT['first_name'] = JRequest::getVar('first_name');
+			$cart->BT['last_name'] = JRequest::getVar('last_name');
+			$cart->BT['street_name'] = JRequest::getVar('street_name');
+			$cart->BT['street_number'] = JRequest::getVar('street_number');
+			$cart->BT['zip'] = JRequest::getVar('zip');
+			$cart->BT['city'] = JRequest::getVar('city');
+			$cart->BT['phone_1'] = JRequest::getVar('phone_1');
+			
+			$cart->BT['type'] = JRequest::getVar('type');
+			$cart->virtuemart_shipmentmethod_id = JRequest::getVar('virtuemart_shipmentmethod_id');
+			$cart->STsameAsBT = JRequest::getVar('STsameAsBT');
+			$cart->tosAccepted = 1;
+			
+			if(JRequest::getVar('STsameAsBT')){
+				$cart->ST = array();
+				$cart->ST['first_name'] = $cart->BT['first_name'];
+				$cart->ST['last_name'] = $cart->BT['last_name'];
+				$cart->ST['street_name'] = $cart->BT['street_name'];
+				$cart->ST['street_number'] = $cart->BT['street_number'];
+				$cart->ST['zip'] = $cart->BT['zip'];
+				$cart->ST['city'] = $cart->BT['city'];
+				$cart->ST['phone_1'] = $cart->BT['phone_1'];
+			} else {
+				$cart->ST = array();
+				$cart->ST['first_name'] = JRequest::getVar('st_first_name');
+				$cart->ST['last_name'] = JRequest::getVar('st_last_name');
+				$cart->ST['street_name'] = JRequest::getVar('st_street_name');
+				$cart->ST['street_number'] = JRequest::getVar('st_street_number');
+				$cart->ST['zip'] = JRequest::getVar('st_zip');
+				$cart->ST['city'] = JRequest::getVar('st_city');
+				$cart->ST['phone_1'] = JRequest::getVar('st_phone');
+			}
+			
+			//T.Trung end
+			
 			$cart->confirmDone();
+			//T.Trung
+			$siteURL = JURI::base();
+            if(JRequest::getVar('mwctype') == 3){
+                $this->setRedirect( $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done1');
+            } else {
+                //$this->setRedirect('https://relay.ditonlinebetalingssystem.dk/relay/v2/relay.cgi/'. $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done&tmpl=component&forcerelay=1&HTTP_COOKIE='.getenv("HTTP_COOKIE"));
+            }
+			//T.Trung end
 			$view = $this->getView('cart', 'html');
 			$view->setLayout('order_done');
 			$view->display();
