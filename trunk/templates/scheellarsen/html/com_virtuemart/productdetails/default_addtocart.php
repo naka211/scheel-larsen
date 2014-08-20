@@ -36,9 +36,9 @@ $alert=JText::sprintf ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED', $step);
 			?>
 			<div class="product-fields">
 				<?php foreach ($this->product->customfieldsCart as $field) { ?>
-                                <ul class="option clearfix">
+                <?php //if($field->field_type != "M"){?>
+                <ul class="option clearfix">
 				<div class="product-field product-field-type-<?php echo $field->field_type ?>">
-                <?php if($field->field_type != "M"){?>
 					<?php if ($field->show_title) { ?>
 						<span class="product-fields-title-wrapper"><span class="product-fields-title"><strong><?php echo vmText::_ ($field->custom_title) ?></strong></span>
 					<?php }
@@ -50,7 +50,7 @@ $alert=JText::sprintf ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED', $step);
 				</div>
                                 </ul>
                             <br/>
-				<?php } }?>
+				<?php } //}?>
 			</div>
 			<?php
 		}

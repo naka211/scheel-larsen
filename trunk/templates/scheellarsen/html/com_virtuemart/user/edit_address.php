@@ -15,7 +15,7 @@ else {
 
 $cart = VirtueMartCart::getCart(); 
 $cart->prepareCartViewData();
-print_r($cart);exit; 
+//print_r($cart);exit;
 ?>
 
 <div id="ppCartcredit" class="reveal-modal">
@@ -51,35 +51,18 @@ jQuery(document).ready(function(){
 	jQuery('.bnt-create-acc').click(function(){
 		jQuery(".w-create-acc").slideToggle();
 	});
-
+    
 	changeDelivery = function(val){
 		if(val == 1){
-			jQuery("#shipPrice").html("0,00 DKK");
-			var total = formatMoney(parseFloat(jQuery("#subtotal").val()));
+			jQuery("#shipPriceLabel1").html("0,00 DKK");
+			var total = formatMoney(parseFloat((jQuery("#subtotal").val())*0.9));
 			jQuery("#payTotal").html(total+" DKK");
-			jQuery("#shippingfee").val(0);
-			jQuery("#location").removeAttr("disabled", "disabled");
-
-            jQuery("#location_area").html("");
-            generateShop();
-		} else if(val == 2){
-			jQuery("#shipPrice").html("<?php echo $fee;?>,00 DKK");
-			var total = formatMoney(parseFloat(Number(jQuery("#subtotal").val()) + Number(<?php echo $fee;?>)));
-			jQuery("#payTotal").html(total+" DKK");
-			jQuery("#shippingfee").val(<?php echo $fee;?>);
-			jQuery("#location").attr( "disabled", "disabled" );
-            
-            jQuery("#location_area").html("");
-            jQuery("#location_area1").html("");
+            jQuery("#deduct").show();
 		} else {
-            jQuery("#shipPrice").html("<?php echo $fee1;?>,00 DKK");
-			var total = formatMoney(parseFloat(Number(jQuery("#subtotal").val()) + Number(<?php echo $fee1;?>)));
+            jQuery("#shipPriceLabel1").html(jQuery("#shipFee").val() + ",00 DKK");
+			var total = formatMoney(parseFloat(Number(jQuery("#subtotal").val()) + Number(jQuery("#shipFee").val())));
 			jQuery("#payTotal").html(total+" DKK");
-			jQuery("#shippingfee").val(<?php echo $fee1;?>);
-			jQuery("#location").attr( "disabled", "disabled" );
-            
-            jQuery("#location_area1").html("");
-            generatePickup(jQuery("#zipcode").val());
+            jQuery("#deduct").hide();
         }
 	}
 
@@ -102,6 +85,23 @@ jQuery(document).ready(function(){
 		})
     });
     
+    var zip = jQuery("#city").val();
+    if(zip < 4000) {
+        jQuery("#ship1").val(2);
+        var subtotal = Number(jQuery("#subtotal").val());
+        if(subtotal <= 1000){
+            var fee = 0;
+        } else {
+            var fee = 150;
+        }
+    } else {
+        jQuery("#ship1").val(3);
+        var fee = 350;
+    }
+    jQuery("#shipPriceLabel").html(fee+" DKK");
+    jQuery("#shipFee").val(fee);
+    changeDelivery(jQuery('input[name=virtuemart_shipmentmethod_id]:checked', '#checkoutForm').val());
+    
     jQuery("#zip").blur(function(){
 		var zip = jQuery("#zip").val();
 		jQuery.ajax({
@@ -113,8 +113,8 @@ jQuery(document).ready(function(){
                 jQuery("#city").val(result);
                 if(zip < 4000) {
                     jQuery("#ship1").val(2);
-                    var cartPrice = Number(jQuery("#cartPrice").val());
-                    if(cartPrice <= 1000){
+                    var subtotal = Number(jQuery("#subtotal").val());
+                    if(subtotal <= 1000){
                         var fee = 0;
                     } else {
                         var fee = 150;
@@ -123,8 +123,9 @@ jQuery(document).ready(function(){
                     jQuery("#ship1").val(3);
                     var fee = 350;
                 }
-                
+                jQuery("#shipFee").val(fee);
                 jQuery("#shipPriceLabel").html(fee+" DKK");
+                jQuery("#shipPriceLabel1").html(fee+" DKK");
             }
 		})
     });
@@ -197,11 +198,11 @@ jQuery(document).ready(function(){
             <ul class="levering clearfix">
                 <h2><span>2</span>Levering</h2>
                 <li>
-                    <input id="ship1" name="virtuemart_shipmentmethod_id" value="0" type="radio" checked>
+                    <input id="ship1" name="virtuemart_shipmentmethod_id" value="0" type="radio" checked onChange="changeDelivery(this.value)">
                     Leveret til døren for Fyn og Jylland: <span id="shipPriceLabel"></span>
                 </li>
                 <li>
-                    <input id="ship2" name="virtuemart_shipmentmethod_id" value="1" type="radio">
+                    <input id="ship2" name="virtuemart_shipmentmethod_id" value="1" type="radio" onChange="changeDelivery(this.value)">
                     Ved afhentning på Hesselrødvej 26, 2980 Kokkedal, sparer du 10%, som vil blive fratrukket automatisk
                 </li>
             </ul>
@@ -224,46 +225,55 @@ jQuery(document).ready(function(){
                         <th>Pris pr stk.</th>
                         <th>Pris i alt</th>
                     </tr>
-                    <?php foreach($cart->products as $product){?>
+                    <?php foreach($cart->products as $product){
+                        preg_match_all("#<span class=\"product-field-type-S\"> ([\w\W]*?)</span>#", $product->customfields, $tmp);
+                        $select1 = $tmp[1][0];
+                        $select2 = $tmp[1][1];
+                        preg_match("#src=\"([\w\W]*?)\" alt#", $product->customfields, $tmp1);
+                        $img = $tmp1[1];
+                    ?>
                     <tr>
-                        <td><div class="img_pro"> <img width="90" src="<?php echo $item->image->file_url_thumb;?>"> </div>
+                        <td><div class="img_pro"> <img width="90" src="<?php echo $img;?>"> </div>
                             <div class="content_pro">
-                                <h4>Filippa Grå Terracotta 38 cm</h4>
-                                <p>Vare-nummer: 30283</p>
-                                <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-                                <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
+                                <h4><?php echo $product->product_name;?></h4>
+                                <p>Vare-nummer: <?php echo $product->product_sku;?></p>
+                                <?php if($select1){?><p><?php echo $select1;?></p><?php }?>
+                                <?php if($select2){?><p><?php echo $select2;?></p><?php }?>
                             </div></td>
-                        <td><p>1</p></td>
-                        <td><p>479 DKK </p></td>
-                        <td><p>479 DKK </p></td>
+                        <td><p><?php echo $product->quantity;?></p></td>
+                        <td><p><?php echo $product->prices['salesPrice'];?> DKK </p></td>
+                        <td><p><?php echo $product->prices['salesPrice']*$product->quantity;?> DKK </p></td>
                     </tr>
                     <?php }?>
                     <tr>
                         <td colspan="4" class="cf9f7f3"><table class="sub_order_Summary">
                                 <tr>
                                     <td colspan="2">Subtotal: </td>
-                                    <td colspan="2" width="30%"> 1.916 DKK </td>
+                                    <td colspan="2" width="30%"> <?php echo number_format($cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?> </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">Heraf moms: </td>
-                                    <td colspan="2">383,20 DKK</td>
+                                    <td colspan="2"><?php echo number_format($cart->pricesUnformatted['billTotal']*0.2,2,',','.');?> DKK</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">FRAGT: </td>
-                                    <td>150 DKK</td>
+                                    <td colspan="2"><span id="shipPriceLabel1"></span></td>
+                                </tr>
+                                <tr id="deduct">
+                                    <td colspan="4">Rabat 10% ved afhentning</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><h4>total:</h4></td>
-                                    <td colspan="2"><h4>1.955 DKK</h4></td>
+                                    <td colspan="2"><h4>TOTAL:</h4></td>
+                                    <td colspan="2"><h4><span id="payTotal"><?php echo number_format($cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?></span></h4></td>
                                 </tr>
                             </table></td>
                     </tr>
                 </table>
             </div>
             <p class="accetp">
-                <input type="checkbox" checked>
+                <input name="tosAccepted" id="tosAccepted" type="checkbox" value="1" class="required">
                 Jeg bekræfter hermed at mine data er korrekte, samt at kurven indeholder de varer jeg ønsker. </p>
-            <a class="conditions" href="terms.php">Jeg accepterer Handelsbetingelser.</a> </div>
+            <a class="conditions" href="index.php?option=com_content&view=article&id=8&Itemid=131" target="_blank">Jeg accepterer Handelsbetingelser.</a> </div>
         <div class="clear"></div>
         <div class="nextto clearfix">
         <a class="fl btnVarekurv hover" href="cart.php">Til Varekurv</a> 
@@ -272,7 +282,6 @@ jQuery(document).ready(function(){
         
         <input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['salesPrice']?>" />
         <input type="hidden" id="shipFee" value=""/>
-        <input type="hidden" id="cartPrice" value="<?php echo $cart->pricesUnformatted['salesPrice']?>"/>
         
         <input type="hidden" name="option" value="com_virtuemart"/>
         <input type="hidden" name="view" value="cart"/>
