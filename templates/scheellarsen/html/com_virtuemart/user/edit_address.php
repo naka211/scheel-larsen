@@ -58,11 +58,13 @@ jQuery(document).ready(function(){
 			var total = formatMoney(parseFloat((jQuery("#subtotal").val())*0.9));
 			jQuery("#payTotal").html(total+" DKK");
             jQuery("#deduct").show();
+			jQuery("#type").val(1);
 		} else {
             jQuery("#shipPriceLabel1").html(jQuery("#shipFee").val() + ",00 DKK");
 			var total = formatMoney(parseFloat(Number(jQuery("#subtotal").val()) + Number(jQuery("#shipFee").val())));
 			jQuery("#payTotal").html(total+" DKK");
             jQuery("#deduct").hide();
+			jQuery("#type").val(2);
         }
 	}
 
@@ -170,7 +172,7 @@ jQuery(document).ready(function(){
             <div class="entryInfo">
                 <h3>INDTAST DINE OPLYSNINGER</h3>
                 <label for="">Vælg kundetype *</label>
-                <select id="choicemaker" name="choicemaker" class="input select">
+                <select id="choicemaker" name="mwctype" class="input select">
                     <option value="1">Privat</option>
                     <option value="2">Erhverv</option>
                     <option value="3">Offentlig instans</option>
@@ -282,6 +284,7 @@ jQuery(document).ready(function(){
         
         <input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['salesPrice']?>" />
         <input type="hidden" id="shipFee" value=""/>
+        <input type="hidden" id="type" value=""/>
         
         <input type="hidden" name="option" value="com_virtuemart"/>
         <input type="hidden" name="view" value="cart"/>
