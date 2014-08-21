@@ -40,10 +40,25 @@ jQuery(document).ready(function(){
 
 		if(value == 1){
 			jQuery("#addInfo").html('');
+            jQuery("#pay1").attr("disabled", false);
+            jQuery("#pay2").attr("disabled", false);
+            
+            jQuery("#pay3").attr("name", "");
+            jQuery("#pay3").val(0);
 		} else if(value == 2){
 			jQuery("#addInfo").html(company);
+            jQuery("#pay1").attr("disabled", false);
+            jQuery("#pay2").attr("disabled", false);
+            
+            jQuery("#pay3").attr("name", "");
+            jQuery("#pay3").val(0);
 		} else {
 			jQuery("#addInfo").html(public);
+            jQuery("#pay1").attr("disabled", "disabled");
+            jQuery("#pay2").attr("disabled", "disabled");
+            
+            jQuery("#pay3").attr("name", "virtuemart_paymentmethod_id");
+            jQuery("#pay3").val(3);
 		}
 
 	});
@@ -128,6 +143,7 @@ jQuery(document).ready(function(){
                 jQuery("#shipFee").val(fee);
                 jQuery("#shipPriceLabel").html(fee+" DKK");
                 jQuery("#shipPriceLabel1").html(fee+" DKK");
+                changeDelivery(jQuery('input[name=virtuemart_shipmentmethod_id]:checked', '#checkoutForm').val());
             }
 		})
     });
@@ -212,10 +228,10 @@ jQuery(document).ready(function(){
                 <h2><span>3</span>Betalingsmetode</h2>
                 <p>Du kan betale med følgende betalingskort:</p>
                 <p> <span>
-                    <input name="method_id" value="1" type="radio" checked>
+                    <input name="virtuemart_paymentmethod_id" value="1" type="radio" id="pay1" checked>
                     </span> <img src="templates/scheellarsen/img/cart2.png" alt=""> </p>
                 <p> <span>
-                    <input class="mt5" name="method_id" value="2" type="radio">
+                    <input class="mt5" name="virtuemart_paymentmethod_id" value="2" type="radio" id="pay2">
                     </span> <a href="#" data-reveal-id="ppCartcredit"><img src="templates/scheellarsen/img/icon_via.png" alt=""></a> </p>
             </div>
             <div class="order_Summary clearfix">
@@ -251,7 +267,7 @@ jQuery(document).ready(function(){
                         <td colspan="4" class="cf9f7f3"><table class="sub_order_Summary">
                                 <tr>
                                     <td colspan="2">Subtotal: </td>
-                                    <td colspan="2" width="30%"> <?php echo number_format($cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?> </td>
+                                    <td colspan="2" width="30%"> <?php echo number_format($cart->pricesUnformatted['salesPrice'],2,',','.').' DKK'; ?> </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">Heraf moms: </td>
@@ -284,7 +300,8 @@ jQuery(document).ready(function(){
         
         <input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['salesPrice']?>" />
         <input type="hidden" id="shipFee" value=""/>
-        <input type="hidden" id="type" value=""/>
+        <input type="hidden" id="type" name="type" value=""/>
+        <input type="hidden" id="pay3" name="" value=""/>
         
         <input type="hidden" name="option" value="com_virtuemart"/>
         <input type="hidden" name="view" value="cart"/>

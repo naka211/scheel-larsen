@@ -506,7 +506,7 @@ class VirtueMartControllerCart extends JController {
 			
 			$cart->BT['ean'] = JRequest::getVar('ean');
 			$cart->BT['authority'] = JRequest::getVar('authority');
-			$cart->BT['order1'] = JRequest::getVar('order');
+			$cart->BT['order1'] = JRequest::getVar('order1');
 			$cart->BT['person'] = JRequest::getVar('person');
 			
 			$cart->BT['company'] = JRequest::getVar('company');
@@ -521,9 +521,11 @@ class VirtueMartControllerCart extends JController {
 			$cart->BT['zip'] = JRequest::getVar('zip');
 			$cart->BT['city'] = JRequest::getVar('city');
 			$cart->BT['phone_1'] = JRequest::getVar('phone_1');
+            $cart->BT['message1'] = JRequest::getVar('message1');
 			
 			$cart->BT['type'] = JRequest::getVar('type');
 			$cart->virtuemart_shipmentmethod_id = JRequest::getVar('virtuemart_shipmentmethod_id');
+            $cart->virtuemart_paymentmethod_id = JRequest::getVar('virtuemart_paymentmethod_id');
 			$cart->STsameAsBT = JRequest::getVar('STsameAsBT');
 			$cart->tosAccepted = 1;
 			
@@ -548,12 +550,12 @@ class VirtueMartControllerCart extends JController {
 			}
 			
 			//T.Trung end
-			
+
 			$cart->confirmDone();
 			//T.Trung
 			$siteURL = JURI::base();
             if(JRequest::getVar('mwctype') == 3){
-                $this->setRedirect( $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done1');
+                $this->setRedirect( $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done&virtuemart_order_id='.$cart->virtuemart_order_id);
             } else {
                 //$this->setRedirect('https://relay.ditonlinebetalingssystem.dk/relay/v2/relay.cgi/'. $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done&tmpl=component&forcerelay=1&HTTP_COOKIE='.getenv("HTTP_COOKIE"));
             }
