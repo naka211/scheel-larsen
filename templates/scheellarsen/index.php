@@ -1,11 +1,13 @@
 <?php
 // No direct access.
-defined('_JEXEC') or die;
+defined('_JEXEC') or die; 
 $tmpl = JURI::base().'templates/'.$this->template."/";
 $session = JFactory::getSession();
 $option = JRequest::getVar('option');
 $view = JRequest::getVar('view');
+$layout = JRequest::getVar('layout');
 $optview = $option.$view;
+$viewlayout = $view.$layout;
 $haveLeft = true;
 if($optview == "com_virtuemartuser"){
     $haveLeft = false;
@@ -13,6 +15,10 @@ if($optview == "com_virtuemartuser"){
 if($optview == "com_virtuemartproductdetails"){
     $haveLeft = false;
 }
+if($viewlayout == "cartorder_done"){
+    $haveLeft = false;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -242,7 +248,7 @@ if($optview == "com_virtuemartproductdetails"){
             </div>
         </div>
     </footer>
-    
+
 <?php if($session->get('notify') != 1){?>
 <script language="javascript">
 $(document).ready(function() {

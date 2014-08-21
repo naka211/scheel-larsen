@@ -26,6 +26,7 @@ defined('_JEXEC') or die('');
 
 $admin = JFactory::getUser('252');
 $cart = $this->cart;
+//print_r($cart);
 if(!class_exists('shopFunctionsF')) require(JPATH_VM_SITE.DS.'helpers'.DS.'shopfunctionsf.php');
 $config =& JFactory::getConfig();
 $fromName = $config->getValue( 'config.sitename' );
@@ -34,19 +35,19 @@ $vars['user'] = array('name' => $fromName, 'email' => $fromMail);
 $vars['vendor'] = array('vendor_store_name' => $fromName );
 
 $db = JFactory::getDBO();
-$orderid = $cart->order_number;
+$orderid = JRequest::getVar('virtuemart_order_id');
 
-$query = "SELECT virtuemart_order_id, order_shipment, order_total, order_salesPrice, order_number FROM #__virtuemart_orders WHERE order_number = '".$orderid."'";
+$query = "SELECT virtuemart_order_id, order_shipment, order_total, order_salesPrice, order_number FROM #__virtuemart_orders WHERE virtuemart_order_id = ".$orderid;
 $db->setQuery($query);
 $order_info = $db->loadObject();
 
 if(!class_exists('VmModel'))require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'vmmodel.php');
 $orderModel=VmModel::getModel('orders');
-$order = $orderModel->getOrder($order_info->virtuemart_order_id);
-
+$order = $orderModel->getOrder($orderid);
+//print_r($order);exit;
 $vars['orderDetails']=$order;
 shopFunctionsF::renderMail('invoice', $admin->email, $vars);
-shopFunctionsF::renderMail('invoice', $cart->BT['email'], $vars);
+shopFunctionsF::renderMail('invoice', $order->email, $vars);
 
 $query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'BT' AND virtuemart_order_id = ".$order_info->virtuemart_order_id;
 $db->setQuery($query);
@@ -55,6 +56,10 @@ $BT_info = $db->loadObject();
 $query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'ST' AND virtuemart_order_id = ".$order_info->virtuemart_order_id;
 $db->setQuery($query);
 $ST_info = $db->loadObject();
+
+if(!$ST_info){
+    $ST_info = $BT_info;
+}
 
 $query = "SELECT * FROM #__virtuemart_order_items WHERE virtuemart_order_id = ".$order_info->virtuemart_order_id;
 $db->setQuery($query);
@@ -73,7 +78,7 @@ if($BT_info->address_type_name == 1 ){
   <div class="thanks_page clearfix">
     <h2 class="c669903">Indkøbskurven</h2>
     <div class="top_info">
-      <p><strong>Ordrenummer: <?php echo $orderid;?></strong><br>
+      <p><strong>Ordrenummer: <?php echo $order['details']['BT']->order_number;?></strong><br>
         En ordrebekræftelse vil blive sendt til <strong><a href="mailto:<?php echo $email;?>"><?php echo $email;?></a></strong><br>
         Har du spørgsmål, kan du kontakte os på +45 4162 8001</p>
     </div>
@@ -168,60 +173,42 @@ if($BT_info->address_type_name == 1 ){
           <th>Pris pr stk.</th>
           <th>Pris i alt</th>
         </tr>
+        <?php foreach($order['items'] as $item){
+            //$attr = json_decode($item->product_attribute);
+            //preg_match_all("#\">[\w\W]*?</span>#", $item->product_attribute, $tmp);
+            //print_r($item);exit;
+        ?>
         <tr>
-          <td><div class="img_pro"> <img alt="" src="img/img04.jpg"> </div>
+          <td><div class="img_pro"> <img width="90" src="<?php echo $img;?>"> </div>
             <div class="content_pro">
-              <h4>Filippa Grå Terracotta 38 cm</h4>
-              <p>Vare-nummer: 30283</p>
+              <h4><?php echo $item->order_item_name;?></h4>
+              <p>Vare-nummer: <?php echo $item->order_item_sku;?></p>
               <p>Størrelse: Højde 21 cm-Ø27 cm</p>
               <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
             </div></td>
-          <td><p>1</p></td>
-          <td><p>479 DKK </p></td>
-          <td><p>479 DKK </p></td>
+          <td><p><?php echo $item->product_quantity;?></p></td>
+          <td><p><?php echo number_format($item->product_item_price,2,',','.').' DKK'; ?></p></td>
+          <td><p><?php echo number_format($item->product_final_price,2,',','.').' DKK'; ?></p></td>
         </tr>
-        <tr>
-          <td><div class="img_pro"> <img alt="" src="img/img04.jpg"> </div>
-            <div class="content_pro">
-              <h4>Filippa Grå Terracotta 38 cm</h4>
-              <p>Vare-nummer: 30283</p>
-              <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-            </div></td>
-          <td><p>1</p></td>
-          <td><p>479 DKK </p></td>
-          <td><p>479 DKK </p></td>
-        </tr>
-        <tr>
-          <td><div class="img_pro"> <img alt="" src="img/img04.jpg"> </div>
-            <div class="content_pro">
-              <h4>Filippa Grå Terracotta 38 cm</h4>
-              <p>Vare-nummer: 30283</p>
-              <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
-            </div></td>
-          <td><p>1</p></td>
-          <td><p>479 DKK </p></td>
-          <td><p>479 DKK </p></td>
-        </tr>
+        <?php }?>
         <tr>
           <td class="cf9f7f3" colspan="4"><table class="sub_order_Summary">
               <tbody>
                 <tr>
                   <td colspan="2">Subtotal: </td>
-                  <td width="25%" colspan="2"> 1.916 DKK </td>
+                  <td width="25%" colspan="2"><?php echo number_format($order['details']['BT']->order_subtotal,2,',','.').' DKK'; ?></td>
                 </tr>
                 <tr>
                   <td colspan="2">Heraf moms: </td>
-                  <td colspan="2">383,20 DKK</td>
+                  <td colspan="2"><?php echo number_format($order['details']['BT']->order_subtotal*0.2,2,',','.').' DKK'; ?></td>
                 </tr>
                 <tr>
                   <td colspan="2">FRAGT: </td>
-                  <td>150 DKK</td>
+                  <td><?php echo number_format($order['details']['BT']->order_shipment,2,',','.').' DKK'; ?></td>
                 </tr>
                 <tr>
                   <td colspan="2"><h4>total:</h4></td>
-                  <td colspan="2"><h4>1.955 DKK</h4></td>
+                  <td colspan="2"><h4><?php echo number_format($order['details']['BT']->order_total,2,',','.').' DKK'; ?></h4></td>
                 </tr>
               </tbody>
             </table></td>
@@ -234,7 +221,7 @@ if($BT_info->address_type_name == 1 ){
     <p><strong>Har du brug for hjælp?</strong><br>
       Se vores Almindelige Spørgsmål. Her finder du svar på spørgsmål om vores onlineshop.</p>
     <p>Tak for din bestilling.<br>
-      Helle Scheel-Larsen<br>
+      Krukker & Havemøbler ApS<br>
       Hesselrødvej 26, Karlebo<br>
       2980 Kokkedal<br>
       Mobil: 41628001<br>
