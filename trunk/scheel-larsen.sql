@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2014 at 12:48 PM
+-- Generation Time: Aug 22, 2014 at 01:03 PM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -157,9 +157,9 @@ CREATE TABLE IF NOT EXISTS `i63il_banners` (
 --
 
 INSERT INTO `i63il_banners` (`id`, `cid`, `type`, `name`, `alias`, `imptotal`, `impmade`, `clicks`, `clickurl`, `state`, `catid`, `description`, `custombannercode`, `sticky`, `ordering`, `metakey`, `params`, `own_prefix`, `metakey_prefix`, `purchase_type`, `track_clicks`, `track_impressions`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `reset`, `created`, `language`) VALUES
-(1, 0, 0, 'Cras ornare tristique elit 1', 'cras-ornare-tristique-elit-1', 0, 257, 0, '', 1, 10002, 'Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis', '', 0, 1, '', '{"imageurl":"images\\/banners\\/slider01.jpg","width":"","height":"","alt":""}', 0, '', -1, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2014-08-11 09:36:28', '*'),
-(2, 0, 0, 'Cras ornare tristique elit 2', 'cras-ornare-tristique-elit-2', 0, 257, 0, '', 1, 10002, 'Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis', '', 0, 2, '', '{"imageurl":"images\\/banners\\/slider02.jpg","width":"","height":"","alt":""}', 0, '', -1, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2014-08-11 09:36:28', '*'),
-(3, 0, 0, 'Cras ornare tristique elit 3', 'cras-ornare-tristique-elit-3', 0, 257, 0, '', 1, 10002, 'Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis', '', 0, 3, '', '{"imageurl":"images\\/banners\\/slider03.jpg","width":"","height":"","alt":""}', 0, '', -1, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2014-08-11 09:36:28', '*');
+(1, 0, 0, 'Cras ornare tristique elit 1', 'cras-ornare-tristique-elit-1', 0, 285, 0, '', 1, 10002, 'Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis', '', 0, 1, '', '{"imageurl":"images\\/banners\\/slider01.jpg","width":"","height":"","alt":""}', 0, '', -1, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2014-08-11 09:36:28', '*'),
+(2, 0, 0, 'Cras ornare tristique elit 2', 'cras-ornare-tristique-elit-2', 0, 285, 0, '', 1, 10002, 'Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis', '', 0, 2, '', '{"imageurl":"images\\/banners\\/slider02.jpg","width":"","height":"","alt":""}', 0, '', -1, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2014-08-11 09:36:28', '*'),
+(3, 0, 0, 'Cras ornare tristique elit 3', 'cras-ornare-tristique-elit-3', 0, 285, 0, '', 1, 10002, 'Lorem ipsum dolor sit amet, consectetuer adipisc ing elit donec odio quisque volutpat mattis eros nullam malesuada erat ut turpis', '', 0, 3, '', '{"imageurl":"images\\/banners\\/slider03.jpg","width":"","height":"","alt":""}', 0, '', -1, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2014-08-11 09:36:28', '*');
 
 -- --------------------------------------------------------
 
@@ -3614,8 +3614,8 @@ CREATE TABLE IF NOT EXISTS `i63il_session` (
 --
 
 INSERT INTO `i63il_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`, `usertype`) VALUES
-('inole4bmprd51qrp9u0j7i4364', 0, 1, '1408617981', '__default|a:10:{s:15:"session.counter";i:208;s:19:"session.timer.start";i:1408603887;s:18:"session.timer.last";i:1408617968;s:17:"session.timer.now";i:1408617981;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":1:{s:14:"com_virtuemart";O:8:"stdClass":5:{s:11:"categoryc52";O:8:"stdClass":1:{s:5:"limit";s:3:"int";}s:13:"categoryc52m0";O:8:"stdClass":1:{s:10:"limitstart";i:0;}s:8:"category";O:8:"stdClass":2:{s:5:"limit";s:3:"int";s:10:"limitstart";i:0;}s:14:"productdetails";O:8:"stdClass":2:{s:5:"limit";s:3:"int";s:10:"limitstart";i:0;}s:4:"cart";O:8:"stdClass":2:{s:5:"limit";s:3:"int";s:10:"limitstart";i:0;}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:6:"notify";i:1;s:13:"session.token";s:32:"e0d0be10a8b6ce53e64adb98b93768a5";s:17:"application.queue";a:2:{i:0;a:2:{s:7:"message";s:35:"There are no products in your cart.";s:4:"type";s:7:"message";}i:1;a:2:{s:7:"message";s:35:"There are no products in your cart.";s:4:"type";s:7:"message";}}}__vm|a:4:{s:6:"vmcart";s:3096:"O:8:"stdClass":24:{s:8:"products";a:1:{s:29:"776::1295:37;1296:38;1300:39;";O:8:"stdClass":42:{s:26:"virtuemart_manufacturer_id";s:1:"1";s:4:"slug";s:34:"sa-let-som-ingenting-parasol-3x4-m";s:9:"published";s:1:"1";s:27:"virtuemart_product_price_id";s:3:"676";s:21:"virtuemart_product_id";s:3:"776";s:26:"virtuemart_shoppergroup_id";N;s:13:"product_price";s:10:"2799.00000";s:8:"override";s:1:"0";s:22:"product_override_price";s:7:"0.00000";s:14:"product_tax_id";s:1:"0";s:19:"product_discount_id";s:1:"0";s:16:"product_currency";s:2:"40";s:20:"virtuemart_vendor_id";s:1:"1";s:17:"product_parent_id";s:1:"0";s:11:"product_sku";s:8:"8842-7-8";s:12:"product_name";s:37:""Så let som ingenting" Parasol 3x4 m";s:14:"product_s_desc";s:37:""Så let som ingenting" Parasol 3x4 m";s:14:"product_weight";s:6:"0.0000";s:18:"product_weight_uom";s:2:"KG";s:14:"product_length";s:6:"0.0000";s:13:"product_width";s:6:"0.0000";s:14:"product_height";s:6:"0.0000";s:15:"product_lwh_uom";s:2:"CM";s:16:"product_in_stock";s:2:"98";s:15:"product_ordered";s:2:"11";s:22:"product_available_date";s:19:"2014-02-02 00:00:00";s:20:"product_availability";s:0:"";s:13:"product_sales";s:1:"2";s:12:"product_unit";s:2:"KG";s:17:"product_packaging";s:6:"0.0000";s:15:"min_order_level";s:0:"";s:15:"max_order_level";s:0:"";s:19:"virtuemart_media_id";a:1:{i:0;s:3:"705";}s:16:"step_order_level";s:0:"";s:10:"categories";a:1:{i:0;s:2:"52";}s:22:"virtuemart_category_id";s:2:"52";s:13:"category_name";s:10:"Parasoller";s:4:"link";s:94:"/scheel-larsen/parasol-pavillion-etc/parasoller/sa-let-som-ingenting-parasol-3x4-m-detail.html";s:9:"packaging";i:0;s:16:"customfieldsCart";b:1;s:12:"customPrices";a:3:{i:0;a:1:{i:37;s:4:"1295";}i:1;a:1:{i:38;s:4:"1296";}i:2;a:1:{i:39;s:4:"1300";}}s:8:"quantity";i:1;}}s:8:"vendorId";i:1;s:21:"lastVisitedCategoryId";i:0;s:28:"virtuemart_shipmentmethod_id";s:1:"1";s:27:"virtuemart_paymentmethod_id";s:1:"3";s:25:"automaticSelectedShipment";b:0;s:24:"automaticSelectedPayment";b:0;s:12:"order_number";N;s:2:"BT";a:17:{s:3:"ean";s:5:"11111";s:9:"authority";s:5:"22222";s:6:"order1";s:6:"333333";s:6:"person";s:11:"asd asd asd";s:7:"company";N;s:3:"cvr";N;s:5:"email";s:18:"thanh.trung@mwc.vn";s:17:"address_type_name";s:1:"3";s:10:"first_name";s:5:"trung";s:9:"last_name";s:6:"nguyen";s:11:"street_name";s:3:"aaa";s:13:"street_number";s:3:"123";s:3:"zip";s:4:"3000";s:4:"city";s:10:"Helsingør";s:7:"phone_1";s:9:"123123213";s:8:"message1";s:14:"asd asd asd ad";s:4:"type";s:1:"1";}s:2:"ST";a:7:{s:10:"first_name";s:5:"trung";s:9:"last_name";s:6:"nguyen";s:11:"street_name";s:3:"aaa";s:13:"street_number";s:3:"123";s:3:"zip";s:4:"3000";s:4:"city";s:10:"Helsingør";s:7:"phone_1";s:9:"123123213";}s:11:"tosAccepted";i:1;s:16:"customer_comment";s:0:"";s:10:"couponCode";s:0:"";s:20:"_triesValidateCoupon";a:0:{}s:14:"order_language";s:0:"";s:8:"cartData";N;s:5:"lists";N;s:14:"pricesCurrency";i:40;s:15:"paymentCurrency";s:2:"40";s:11:"_inCheckOut";b:1;s:14:"_dataValidated";b:0;s:12:"_confirmDone";b:0;s:10:"STsameAsBT";s:1:"1";s:15:"customer_number";s:36:"nonreg_trungnguyenthanh.trung@mwc.vn";}";s:23:"vmlastvisitedcategoryid";i:52;s:19:"vmlastvisitedmanuid";i:-1;s:23:"vmlastvisitedproductids";a:1:{i:0;i:776;}}', 0, '', ''),
-('rqtfoor1qls1r719gc9367ok20', 1, 0, '1408617884', '__default|a:8:{s:15:"session.counter";i:57;s:19:"session.timer.start";i:1408603881;s:18:"session.timer.last";i:1408617216;s:17:"session.timer.now";i:1408617884;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":4:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:14:"com_virtuemart";O:8:"stdClass":3:{s:7:"product";O:8:"stdClass":4:{s:16:"filter_order_Dir";s:4:"DESC";s:12:"filter_order";s:10:"created_on";s:6:"filter";O:8:"stdClass":2:{s:22:"virtuemart_category_id";i:52;s:26:"virtuemart_manufacturer_id";i:0;}s:10:"limitstart";i:0;}s:10:"productc52";O:8:"stdClass":1:{s:5:"limit";s:2:"20";}s:13:"paymentmethod";O:8:"stdClass":4:{s:12:"filter_order";s:27:"virtuemart_paymentmethod_id";s:16:"filter_order_Dir";s:3:"asc";s:5:"limit";s:2:"20";s:10:"limitstart";i:0;}}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:21:"info@scheel-larsen.dk";s:8:"password";s:32:"21232f297a57a5a743894a0e4a801fc3";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2011-08-18 15:03:38";s:13:"lastvisitDate";s:19:"2014-08-21 04:28:17";s:10:"activation";s:0:"";s:6:"params";s:75:"{"admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":5:{s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"f780cbda355d3a4e207583a677339a9d";}', 62, 'admin', '');
+('410f4a3f9adff6a2cbc8a69424252f09', 0, 1, '1408704567', '__default|a:9:{s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:15:"session.counter";i:79;s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":1:{s:14:"com_virtuemart";O:8:"stdClass":5:{s:14:"productdetails";O:8:"stdClass":2:{s:5:"limit";s:3:"int";s:10:"limitstart";i:0;}s:11:"categoryc52";O:8:"stdClass":1:{s:5:"limit";s:3:"int";}s:8:"category";O:8:"stdClass":2:{s:5:"limit";s:3:"int";s:10:"limitstart";i:0;}s:11:"categoryc29";O:8:"stdClass":1:{s:5:"limit";s:3:"int";}s:11:"categoryc56";O:8:"stdClass":1:{s:5:"limit";s:3:"int";}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:0:{}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":0:{}}s:14:"\0*\0_authGroups";a:1:{i:0;i:1;}s:14:"\0*\0_authLevels";a:2:{i:0;i:1;i:1;i:1;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:19:"session.timer.start";i:1408691123;s:18:"session.timer.last";i:1408704394;s:17:"session.timer.now";i:1408704567;s:6:"notify";i:1;s:13:"session.token";s:32:"be84e81d4076b75db3061fd8d180b2cb";}__vm|a:4:{s:6:"vmcart";s:1095:"O:8:"stdClass":24:{s:8:"products";a:0:{}s:8:"vendorId";i:1;s:21:"lastVisitedCategoryId";i:0;s:28:"virtuemart_shipmentmethod_id";i:0;s:27:"virtuemart_paymentmethod_id";i:0;s:25:"automaticSelectedShipment";b:0;s:24:"automaticSelectedPayment";b:0;s:12:"order_number";N;s:2:"BT";a:17:{s:3:"ean";N;s:9:"authority";N;s:6:"order1";N;s:6:"person";N;s:7:"company";N;s:3:"cvr";N;s:5:"email";s:18:"thanh.trung@mwc.vn";s:17:"address_type_name";s:1:"1";s:10:"first_name";s:5:"trung";s:9:"last_name";s:6:"nguyen";s:11:"street_name";s:3:"aaa";s:13:"street_number";s:3:"123";s:3:"zip";s:4:"4200";s:4:"city";s:8:"Slagelse";s:7:"phone_1";s:9:"123123213";s:8:"message1";s:16:"sdasd asd asda s";s:4:"type";N;}s:2:"ST";i:0;s:11:"tosAccepted";N;s:16:"customer_comment";s:0:"";s:10:"couponCode";s:0:"";s:20:"_triesValidateCoupon";a:0:{}s:14:"order_language";s:0:"";s:8:"cartData";N;s:5:"lists";N;s:14:"pricesCurrency";i:40;s:15:"paymentCurrency";s:2:"40";s:11:"_inCheckOut";b:0;s:14:"_dataValidated";b:0;s:12:"_confirmDone";b:0;s:10:"STsameAsBT";i:1;s:15:"customer_number";s:36:"nonreg_trungnguyenthanh.trung@mwc.vn";}";s:23:"vmlastvisitedcategoryid";i:35;s:23:"vmlastvisitedproductids";a:3:{i:0;i:236;i:1;i:776;i:2;i:571;}s:19:"vmlastvisitedmanuid";i:-1;}', 0, '', ''),
+('b3crv027cgpnhc4r6nuktm9pd6', 1, 0, '1408704914', '__default|a:8:{s:15:"session.counter";i:70;s:19:"session.timer.start";i:1408691693;s:18:"session.timer.last";i:1408704910;s:17:"session.timer.now";i:1408704911;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":2:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:14:"com_virtuemart";O:8:"stdClass":4:{s:6:"orders";O:8:"stdClass":1:{s:16:"filter_order_Dir";s:4:"DESC";}s:7:"product";O:8:"stdClass":4:{s:16:"filter_order_Dir";s:4:"DESC";s:12:"filter_order";s:10:"created_on";s:6:"filter";O:8:"stdClass":2:{s:22:"virtuemart_category_id";i:52;s:26:"virtuemart_manufacturer_id";i:0;}s:10:"limitstart";i:0;}s:10:"productc52";O:8:"stdClass":1:{s:5:"limit";s:2:"20";}s:6:"custom";O:8:"stdClass":4:{s:12:"filter_order";s:0:"";s:16:"filter_order_Dir";s:4:"DESC";s:5:"limit";s:2:"50";s:10:"limitstart";i:0;}}}}s:4:"user";O:5:"JUser":25:{s:9:"\0*\0isRoot";b:1;s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:21:"info@scheel-larsen.dk";s:8:"password";s:32:"21232f297a57a5a743894a0e4a801fc3";s:14:"password_clear";s:0:"";s:8:"usertype";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2011-08-18 15:03:38";s:13:"lastvisitDate";s:19:"2014-08-22 02:18:17";s:10:"activation";s:0:"";s:6:"params";s:75:"{"admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:10:"\0*\0_params";O:9:"JRegistry":1:{s:7:"\0*\0data";O:8:"stdClass":5:{s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\0*\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\0*\0_authLevels";a:4:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;}s:15:"\0*\0_authActions";N;s:12:"\0*\0_errorMsg";N;s:10:"\0*\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"88578876e76689a0cfe843d49a236531";}', 62, 'admin', '');
 
 -- --------------------------------------------------------
 
@@ -3669,7 +3669,7 @@ CREATE TABLE IF NOT EXISTS `i63il_updates` (
   `detailsurl` text NOT NULL,
   `infourl` text NOT NULL,
   PRIMARY KEY (`update_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=669 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=705 ;
 
 --
 -- Dumping data for table `i63il_updates`
@@ -4341,7 +4341,44 @@ INSERT INTO `i63il_updates` (`update_id`, `update_site_id`, `extension_id`, `cat
 (665, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
 (666, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
 (667, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
-(668, 39, 0, 0, 'Modules Anywhere', '', 'modulesanywhere', 'plugin', 'system', 0, '3.5.1FREE', '', 'http://download.nonumber.nl/updates.php?e=modulesanywhere&type=.zip/extension.xml', 'http://www.nonumber.nl/extensions/modulesanywhere#download');
+(668, 39, 0, 0, 'Modules Anywhere', '', 'modulesanywhere', 'plugin', 'system', 0, '3.5.1FREE', '', 'http://download.nonumber.nl/updates.php?e=modulesanywhere&type=.zip/extension.xml', 'http://www.nonumber.nl/extensions/modulesanywhere#download'),
+(669, 3, 0, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/fr-FR_details.xml', ''),
+(670, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(671, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(672, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(673, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(674, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(675, 3, 0, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '2.5.20.2', '', 'http://update.joomla.org/language/details/sr-YU_details.xml', ''),
+(676, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(677, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(678, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(679, 3, 0, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/fa-IR_details.xml', ''),
+(680, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(681, 3, 0, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ru-RU_details.xml', ''),
+(682, 3, 0, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/bs-BA_details.xml', ''),
+(683, 3, 0, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/fr-FR_details.xml', ''),
+(684, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', '');
+INSERT INTO `i63il_updates` (`update_id`, `update_site_id`, `extension_id`, `categoryid`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`) VALUES
+(685, 3, 0, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/it-IT_details.xml', ''),
+(686, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(687, 3, 0, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/nl-NL_details.xml', ''),
+(688, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(689, 3, 0, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/lv-LV_details.xml', ''),
+(690, 3, 0, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/nl-BE_details.xml', ''),
+(691, 3, 0, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ja-JP_details.xml', ''),
+(692, 3, 0, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '2.5.20.2', '', 'http://update.joomla.org/language/details/sr-YU_details.xml', ''),
+(693, 3, 0, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/ar-AA_details.xml', ''),
+(694, 3, 0, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/de-DE_details.xml', ''),
+(695, 3, 0, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/cs-CZ_details.xml', ''),
+(696, 3, 0, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/fa-IR_details.xml', ''),
+(697, 3, 0, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/pl-PL_details.xml', ''),
+(698, 3, 0, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ru-RU_details.xml', ''),
+(699, 3, 0, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/bs-BA_details.xml', ''),
+(700, 3, 0, 0, 'Tamil India', '', 'pkg_ta-IN', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/ta-IN_details.xml', ''),
+(701, 3, 0, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '2.5.23.1', '', 'http://update.joomla.org/language/details/th-TH_details.xml', ''),
+(702, 3, 0, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '2.5.24.1', '', 'http://update.joomla.org/language/details/sw-KE_details.xml', ''),
+(703, 39, 0, 0, 'Modules Anywhere', '', 'modulesanywhere', 'plugin', 'system', 0, '3.5.1FREE', '', 'http://download.nonumber.nl/updates.php?e=modulesanywhere&type=.zip/extension.xml', 'http://www.nonumber.nl/extensions/modulesanywhere#download'),
+(704, 39, 0, 0, 'Modules Anywhere', '', 'modulesanywhere', 'plugin', 'system', 0, '3.5.1FREE', '', 'http://download.nonumber.nl/updates.php?e=modulesanywhere&type=.zip/extension.xml', 'http://www.nonumber.nl/extensions/modulesanywhere#download');
 
 -- --------------------------------------------------------
 
@@ -4379,45 +4416,45 @@ CREATE TABLE IF NOT EXISTS `i63il_update_sites` (
 --
 
 INSERT INTO `i63il_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`) VALUES
-(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1408603888),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1408603888),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 1, 1408603888),
-(4, 'VirtueMart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/virtuemart_update.xml', 1, 1408603888),
-(5, 'VirtueMart plg_vmpayment_standard Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_standard_update.xml', 1, 1408603888),
-(6, 'VirtueMart plg_vmpayment_klarna Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_klarna_update.xml', 1, 1408603888),
-(7, 'VirtueMart plg_vmpayment_klarnacheckout Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_klarnacheckout_update.xml', 1, 1408603888),
-(8, 'VirtueMart plg_vmpayment_sofort Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_sofort_update.xml', 1, 1408603888),
-(9, 'VirtueMart plg_vmpayment_paypal Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_paypal_update.xml', 1, 1408603888),
-(10, 'VirtueMart plg_vmpayment_heidelpay Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_heidelpay_update.xml', 1, 1408603888),
-(11, 'VirtueMart plg_vmpayment_paybox Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_paybox_update.xml', 1, 1408603888),
-(12, 'VirtueMart plg_vmpayment_moneybookers Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_update.xml', 1, 1408603888),
-(13, 'VirtueMart plg_vmpayment_moneybookers_acc Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_acc_update.xml', 1, 1408603888),
-(14, 'VirtueMart plg_vmpayment_moneybookers_did Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_did_update.xml', 1, 1408603888),
-(15, 'VirtueMart plg_vmpayment_moneybookers_idl Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_idl_update.xml', 1, 1408603888),
-(16, 'VirtueMart plg_vmpayment_moneybookers_gir Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_gir_update.xml', 1, 1408603888),
-(17, 'VirtueMart plg_vmpayment_moneybookers_sft Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_sft_update.xml', 1, 1408603888),
-(18, 'VirtueMart plg_vmpayment_moneybookers_pwy Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_pwy_update.xml', 1, 1408603888),
-(19, 'VirtueMart plg_vmpayment_moneybookers_obt Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_obt_update.xml', 1, 1408603888),
-(20, 'VirtueMart plg_vmpayment_moneybookers_wlt Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_wlt_update.xml', 1, 1408603888),
-(21, 'VirtueMart plg_vmpayment_authorisenet Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_authorisenet_update.xml', 1, 1408603888),
-(22, 'VirtueMart plg_vmpayment_sofort_ideal Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_sofort_ideal_update.xml', 1, 1408603888),
-(23, 'VirtueMart plg_vmshipment_weight_countries Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmshipment_weight_countries_update.xml', 1, 1408603888),
-(24, 'VirtueMart plg_vmcustom_textinput Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_textinput_update.xml', 1, 1408603888),
-(25, 'VirtueMart plg_vmcustom_specification Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_specification_update.xml', 1, 1408603888),
-(26, 'VirtueMart plg_vmcustom_stockable Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_stockable_update.xml', 1, 1408603888),
-(27, 'VirtueMart plg_vmcalculation_avalara Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcalculation_avalara_update.xml', 1, 1408603888),
-(28, 'VirtueMart plg_search_virtuemart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_search_virtuemart_update.xml', 1, 1408603888),
-(29, 'VirtueMart MOD_VMENU Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_vmmenu_update.xml', 1, 1408603888),
-(30, 'VirtueMart mod_virtuemart_currencies Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_currencies_update.xml', 1, 1408603888),
-(31, 'VirtueMart mod_virtuemart_product Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_product_update.xml', 1, 1408603888),
-(32, 'VirtueMart mod_virtuemart_search Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_search_update.xml', 1, 1408603888),
-(33, 'VirtueMart mod_virtuemart_manufacturer Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_manufacturer_update.xml', 1, 1408603888),
-(34, 'VirtueMart mod_virtuemart_cart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_cart_update.xml', 1, 1408603888),
-(35, 'VirtueMart mod_virtuemart_category Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_category_update.xml', 1, 1408603888),
-(36, 'VirtueMart AIO Update Site', 'extension', 'http://virtuemart.net/releases/vm2/virtuemart_aio_update.xml', 1, 1408603888),
+(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1408673899),
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1408673899),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist.xml', 1, 1408673901),
+(4, 'VirtueMart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/virtuemart_update.xml', 1, 1408673901),
+(5, 'VirtueMart plg_vmpayment_standard Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_standard_update.xml', 1, 1408673901),
+(6, 'VirtueMart plg_vmpayment_klarna Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_klarna_update.xml', 1, 1408673901),
+(7, 'VirtueMart plg_vmpayment_klarnacheckout Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_klarnacheckout_update.xml', 1, 1408673901),
+(8, 'VirtueMart plg_vmpayment_sofort Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_sofort_update.xml', 1, 1408673901),
+(9, 'VirtueMart plg_vmpayment_paypal Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_paypal_update.xml', 1, 1408673901),
+(10, 'VirtueMart plg_vmpayment_heidelpay Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_heidelpay_update.xml', 1, 1408673901),
+(11, 'VirtueMart plg_vmpayment_paybox Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_paybox_update.xml', 1, 1408673901),
+(12, 'VirtueMart plg_vmpayment_moneybookers Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_update.xml', 1, 1408673901),
+(13, 'VirtueMart plg_vmpayment_moneybookers_acc Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_acc_update.xml', 1, 1408673901),
+(14, 'VirtueMart plg_vmpayment_moneybookers_did Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_did_update.xml', 1, 1408673901),
+(15, 'VirtueMart plg_vmpayment_moneybookers_idl Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_idl_update.xml', 1, 1408673901),
+(16, 'VirtueMart plg_vmpayment_moneybookers_gir Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_gir_update.xml', 1, 1408673901),
+(17, 'VirtueMart plg_vmpayment_moneybookers_sft Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_sft_update.xml', 1, 1408673901),
+(18, 'VirtueMart plg_vmpayment_moneybookers_pwy Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_pwy_update.xml', 1, 1408673901),
+(19, 'VirtueMart plg_vmpayment_moneybookers_obt Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_obt_update.xml', 1, 1408673901),
+(20, 'VirtueMart plg_vmpayment_moneybookers_wlt Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_moneybookers_wlt_update.xml', 1, 1408673901),
+(21, 'VirtueMart plg_vmpayment_authorisenet Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_authorisenet_update.xml', 1, 1408673901),
+(22, 'VirtueMart plg_vmpayment_sofort_ideal Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmpayment_sofort_ideal_update.xml', 1, 1408673901),
+(23, 'VirtueMart plg_vmshipment_weight_countries Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmshipment_weight_countries_update.xml', 1, 1408673901),
+(24, 'VirtueMart plg_vmcustom_textinput Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_textinput_update.xml', 1, 1408673901),
+(25, 'VirtueMart plg_vmcustom_specification Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_specification_update.xml', 1, 1408673901),
+(26, 'VirtueMart plg_vmcustom_stockable Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcustom_stockable_update.xml', 1, 1408673901),
+(27, 'VirtueMart plg_vmcalculation_avalara Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_vmcalculation_avalara_update.xml', 1, 1408673901),
+(28, 'VirtueMart plg_search_virtuemart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/plg_search_virtuemart_update.xml', 1, 1408673901),
+(29, 'VirtueMart MOD_VMENU Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_vmmenu_update.xml', 1, 1408673901),
+(30, 'VirtueMart mod_virtuemart_currencies Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_currencies_update.xml', 1, 1408673901),
+(31, 'VirtueMart mod_virtuemart_product Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_product_update.xml', 1, 1408673901),
+(32, 'VirtueMart mod_virtuemart_search Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_search_update.xml', 1, 1408673901),
+(33, 'VirtueMart mod_virtuemart_manufacturer Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_manufacturer_update.xml', 1, 1408673901),
+(34, 'VirtueMart mod_virtuemart_cart Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_cart_update.xml', 1, 1408673901),
+(35, 'VirtueMart mod_virtuemart_category Update Site', 'extension', 'http://virtuemart.net/releases/vm2/mod_virtuemart_category_update.xml', 1, 1408673901),
+(36, 'VirtueMart AIO Update Site', 'extension', 'http://virtuemart.net/releases/vm2/virtuemart_aio_update.xml', 1, 1408673901),
 (37, 'Virtuemart Migrator Updater', 'extension', 'http://www.daycounts.com/index.php?option=com_versions&catid=33&task=updateserver.xml', 0, 1406079690),
-(38, 'NoNumber Articles Anywhere', 'extension', 'http://download.nonumber.nl/updates.php?e=articlesanywhere&type=.zip', 1, 1408603888),
-(39, 'NoNumber Modules Anywhere', 'extension', 'http://download.nonumber.nl/updates.php?e=modulesanywhere&type=.zip', 1, 1408603888);
+(38, 'NoNumber Articles Anywhere', 'extension', 'http://download.nonumber.nl/updates.php?e=articlesanywhere&type=.zip', 1, 1408673901),
+(39, 'NoNumber Modules Anywhere', 'extension', 'http://download.nonumber.nl/updates.php?e=modulesanywhere&type=.zip', 1, 1408673901);
 
 -- --------------------------------------------------------
 
@@ -4546,7 +4583,7 @@ CREATE TABLE IF NOT EXISTS `i63il_users` (
 --
 
 INSERT INTO `i63il_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`) VALUES
-(62, 'Administrator', 'admin', 'info@scheel-larsen.dk', '21232f297a57a5a743894a0e4a801fc3', '', 0, 1, '2011-08-18 15:03:38', '2014-08-21 06:51:25', '', '{"admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
+(62, 'Administrator', 'admin', 'info@scheel-larsen.dk', '21232f297a57a5a743894a0e4a801fc3', '', 0, 1, '2011-08-18 15:03:38', '2014-08-22 07:14:56', '', '{"admin_language":"","language":"","editor":"","helpsite":"","timezone":""}', '0000-00-00 00:00:00', 0),
 (252, 'Super User', 'admin', 'thanh.trung@mwc.vn', '$P$D.0Lof1rNtqXUa6/2Ihj24LlqLIFnl/', 'deprecated', 0, 1, '2014-07-22 07:05:29', '2014-07-22 08:42:58', '0', '', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
@@ -5185,7 +5222,7 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_configs` (
 --
 
 INSERT INTO `i63il_virtuemart_configs` (`virtuemart_config_id`, `config`, `created_on`, `created_by`, `modified_on`, `modified_by`, `locked_on`, `locked_by`) VALUES
-(1, 'shop_is_offline=s:1:"0";|offline_message=czo3MzoiT3VyIFNob3AgaXMgY3VycmVudGx5IGRvd24gZm9yIG1haW50ZW5hbmNlLiBQbGVhc2UgY2hlY2sgYmFjayBhZ2FpbiBzb29uLiI7|use_as_catalog=s:1:"0";|currency_converter_module=s:14:"convertECB.php";|order_mail_html=s:1:"1";|useSSL=s:1:"0";|useVendorEmail=s:1:"0";|dangeroustools=s:1:"0";|debug_enable=s:4:"none";|google_jquery=s:1:"0";|multix=s:4:"none";|usefancy=s:1:"0";|jchosen=s:1:"1";|enableEnglish=s:1:"1";|pdf_button_enable=s:1:"1";|show_emailfriend=s:1:"0";|show_printicon=s:1:"0";|show_out_of_stock_products=s:1:"1";|coupons_enable=s:1:"0";|show_uncat_child_products=s:1:"0";|coupons_default_expire=s:3:"1,D";|weight_unit_default=s:2:"KG";|lwh_unit_default=s:1:"M";|showReviewFor=s:4:"none";|reviewMode=s:4:"none";|showRatingFor=s:4:"none";|ratingMode=s:4:"none";|reviews_autopublish=s:1:"0";|reviews_minimum_comment_length=s:3:"100";|reviews_maximum_comment_length=s:4:"2000";|vmtemplate=s:7:"default";|categorytemplate=s:7:"default";|showCategory=s:1:"1";|categorylayout=s:1:"0";|categories_per_row=s:1:"3";|productlayout=s:1:"0";|products_per_row=s:1:"1";|vmlayout=s:1:"0";|show_store_desc=s:1:"1";|show_categories=s:1:"1";|homepage_categories_per_row=s:1:"3";|homepage_products_per_row=s:1:"3";|show_featured=s:1:"1";|featured_products_rows=s:1:"1";|show_topTen=s:1:"1";|topTen_products_rows=s:1:"1";|show_recent=s:1:"1";|recent_products_rows=s:1:"1";|show_latest=s:1:"1";|latest_products_rows=s:1:"1";|assets_general_path=s:33:"components/com_virtuemart/assets/";|media_category_path=s:35:"images/stories/virtuemart/category/";|media_product_path=s:34:"images/stories/virtuemart/product/";|media_manufacturer_path=s:39:"images/stories/virtuemart/manufacturer/";|media_vendor_path=s:33:"images/stories/virtuemart/vendor/";|forSale_path_thumb=s:42:"images/stories/virtuemart/forSale/resized/";|img_resize_enable=s:1:"1";|img_width=s:3:"190";|img_height=s:3:"125";|no_image_set=s:11:"noimage.gif";|no_image_found=s:11:"noimage.gif";|browse_orderby_field=s:12:"product_name";|browse_cat_orderby_field=s:10:"c.ordering";|browse_orderby_fields=a:5:{i:0;s:12:"product_name";i:1;s:15:"`p`.product_sku";i:2;s:13:"category_name";i:3;s:7:"mf_name";i:4;s:11:"pc.ordering";}|browse_search_fields=a:7:{i:0;s:12:"product_name";i:1;s:15:"`p`.product_sku";i:2;s:14:"product_s_desc";i:3;s:12:"product_desc";i:4;s:13:"category_name";i:5;s:20:"category_description";i:6;s:7:"mf_name";}|askprice=s:1:"1";|roundindig=s:1:"1";|show_prices=s:1:"1";|price_show_packaging_pricelabel=s:1:"0";|show_tax=s:1:"1";|basePrice=s:1:"1";|basePriceText=s:1:"1";|basePriceRounding=s:2:"-1";|variantModification=s:1:"1";|variantModificationText=s:1:"1";|variantModificationRounding=s:2:"-1";|basePriceVariant=s:1:"1";|basePriceVariantText=s:1:"1";|basePriceVariantRounding=s:2:"-1";|basePriceWithTax=s:1:"1";|basePriceWithTaxText=s:1:"1";|basePriceWithTaxRounding=s:2:"-1";|discountedPriceWithoutTax=s:1:"1";|discountedPriceWithoutTaxText=s:1:"1";|discountedPriceWithoutTaxRounding=s:2:"-1";|salesPriceWithDiscount=s:1:"1";|salesPriceWithDiscountText=s:1:"1";|salesPriceWithDiscountRounding=s:2:"-1";|salesPrice=s:1:"1";|salesPriceText=s:1:"1";|salesPriceRounding=s:2:"-1";|priceWithoutTax=s:1:"1";|priceWithoutTaxText=s:1:"1";|priceWithoutTaxRounding=s:2:"-1";|discountAmount=s:1:"1";|discountAmountText=s:1:"1";|discountAmountRounding=s:2:"-1";|taxAmount=s:1:"1";|taxAmountText=s:1:"1";|taxAmountRounding=s:2:"-1";|unitPrice=s:1:"1";|unitPriceText=s:1:"1";|unitPriceRounding=s:2:"-1";|addtocart_popup=s:1:"1";|check_stock=s:1:"0";|automatic_payment=s:1:"1";|automatic_shipment=s:1:"1";|agree_to_tos_onorder=s:1:"0";|oncheckout_show_legal_info=s:1:"0";|oncheckout_show_register=s:1:"1";|oncheckout_show_steps=s:1:"1";|oncheckout_show_register_text=s:47:"COM_VIRTUEMART_ONCHECKOUT_DEFAULT_TEXT_REGISTER";|inv_os=a:1:{i:0;s:1:"C";}|email_os_s=a:5:{i:0;s:1:"U";i:1;s:1:"C";i:2;s:1:"X";i:3;s:1:"R";i:4;s:1:"S";}|email_os_v=a:4:{i:0;s:1:"U";i:1;s:1:"C";i:2;s:1:"X";i:3;s:1:"R";}|seo_disabled=s:1:"0";|seo_translate=s:1:"0";|seo_use_id=s:1:"0";|sctime=d:1408330687.9161651134490966796875;|vmlang=s:5:"da_dk";|enable_content_plugin=s:1:"0";|reg_captcha=s:1:"0";|active_languages=a:1:{i:0;s:5:"da-DK";}|pdf_icon=s:1:"0";|recommend_unauth=s:1:"0";|ask_captcha=s:1:"0";|ask_question=s:1:"0";|asks_minimum_comment_length=s:2:"50";|asks_maximum_comment_length=s:4:"2000";|product_navigation=s:1:"0";|display_stock=s:1:"0";|handle_404=s:1:"1";|cp_rm=a:1:{i:0;s:1:"C";}|latest_products_days=s:1:"7";|latest_products_orderBy=s:10:"created_on";|lstockmail=s:1:"0";|stockhandle=s:4:"none";|rised_availability=s:0:"";|image=s:0:"";|rr_os=a:1:{i:0;s:1:"C";}|show_manufacturers=s:1:"1";|manufacturer_per_row=s:1:"3";|mediaLimit=s:2:"20";|llimit_init_BE=s:2:"20";|pagseq=s:0:"";|llimit_init_FE=s:2:"20";|pagseq_1=s:0:"";|pagseq_2=s:0:"";|pagseq_3=s:0:"";|pagseq_4=s:0:"";|pagseq_5=s:0:"";|feed_cat_published=s:1:"1";|feed_cat_show_images=s:1:"0";|feed_cat_show_prices=s:1:"0";|feed_cat_show_description=s:1:"0";|feed_cat_description_type=s:14:"product_s_desc";|feed_cat_max_text_length=s:3:"500";|forSale_path=s:76:"D:\\www\\htdocs\\scheel-larsen\\administrator\\components\\com_virtuemart\\vmfiles\\";|add_img_main=s:1:"1";|feed_latest_published=s:1:"0";|feed_latest_nb=s:1:"5";|feed_topten_published=s:1:"0";|feed_topten_nb=s:1:"5";|feed_featured_published=s:1:"0";|feed_featured_nb=s:1:"5";|feed_home_show_images=s:1:"0";|feed_home_show_prices=s:1:"0";|feed_home_show_description=s:1:"0";|feed_home_description_type=s:14:"product_s_desc";|feed_home_max_text_length=s:3:"500";|css=s:1:"0";|jquery=s:1:"0";|jprice=s:1:"1";|jsite=s:1:"1";|rappenrundung=s:1:"0";|cVarswT=s:1:"1";|popup_rel=s:1:"1";|oncheckout_opc=s:1:"1";|oncheckout_only_registered=s:1:"0";|oncheckout_change_shopper=s:1:"0";|oncheckout_show_images=s:1:"0";|del_date_type=s:1:"m";|vmlang_js=s:1:"0";|prd_brws_orderby_dir=s:3:"ASC";|cat_brws_orderby_dir=s:3:"ASC";|seo_sufix=s:7:"-detail";|task=s:4:"save";|option=s:14:"com_virtuemart";|view=s:6:"config";|244d1c29a61f17a2debe5e37d61a1806=s:1:"1";|order_items_status=s:1:"C";|53f30b8cf577e4fbf07d5af5b7787a6f=s:1:"1";', '0000-00-00 00:00:00', 0, '2014-08-18 02:58:07', 62, '0000-00-00 00:00:00', 0);
+(1, 'shop_is_offline=s:1:"0";|offline_message=czo3MzoiT3VyIFNob3AgaXMgY3VycmVudGx5IGRvd24gZm9yIG1haW50ZW5hbmNlLiBQbGVhc2UgY2hlY2sgYmFjayBhZ2FpbiBzb29uLiI7|use_as_catalog=s:1:"0";|currency_converter_module=s:14:"convertECB.php";|order_mail_html=s:1:"1";|useSSL=s:1:"0";|useVendorEmail=s:1:"0";|dangeroustools=s:1:"0";|debug_enable=s:4:"none";|google_jquery=s:1:"0";|multix=s:4:"none";|usefancy=s:1:"0";|jchosen=s:1:"1";|enableEnglish=s:1:"1";|pdf_button_enable=s:1:"1";|show_emailfriend=s:1:"0";|show_printicon=s:1:"0";|show_out_of_stock_products=s:1:"1";|coupons_enable=s:1:"0";|show_uncat_child_products=s:1:"0";|coupons_default_expire=s:3:"1,D";|weight_unit_default=s:2:"KG";|lwh_unit_default=s:1:"M";|showReviewFor=s:4:"none";|reviewMode=s:4:"none";|showRatingFor=s:4:"none";|ratingMode=s:4:"none";|reviews_autopublish=s:1:"0";|reviews_minimum_comment_length=s:3:"100";|reviews_maximum_comment_length=s:4:"2000";|vmtemplate=s:7:"default";|categorytemplate=s:7:"default";|showCategory=s:1:"1";|categorylayout=s:1:"0";|categories_per_row=s:1:"3";|productlayout=s:1:"0";|products_per_row=s:1:"1";|vmlayout=s:1:"0";|show_store_desc=s:1:"1";|show_categories=s:1:"1";|homepage_categories_per_row=s:1:"3";|homepage_products_per_row=s:1:"3";|show_featured=s:1:"1";|featured_products_rows=s:1:"1";|show_topTen=s:1:"1";|topTen_products_rows=s:1:"1";|show_recent=s:1:"1";|recent_products_rows=s:1:"1";|show_latest=s:1:"1";|latest_products_rows=s:1:"1";|assets_general_path=s:33:"components/com_virtuemart/assets/";|media_category_path=s:35:"images/stories/virtuemart/category/";|media_product_path=s:34:"images/stories/virtuemart/product/";|media_manufacturer_path=s:39:"images/stories/virtuemart/manufacturer/";|media_vendor_path=s:33:"images/stories/virtuemart/vendor/";|forSale_path_thumb=s:42:"images/stories/virtuemart/forSale/resized/";|img_resize_enable=s:1:"1";|img_width=s:3:"190";|img_height=s:3:"125";|no_image_set=s:11:"noimage.gif";|no_image_found=s:11:"noimage.gif";|browse_orderby_field=s:12:"product_name";|browse_cat_orderby_field=s:10:"c.ordering";|browse_orderby_fields=a:5:{i:0;s:12:"product_name";i:1;s:15:"`p`.product_sku";i:2;s:13:"category_name";i:3;s:7:"mf_name";i:4;s:11:"pc.ordering";}|browse_search_fields=a:7:{i:0;s:12:"product_name";i:1;s:15:"`p`.product_sku";i:2;s:14:"product_s_desc";i:3;s:12:"product_desc";i:4;s:13:"category_name";i:5;s:20:"category_description";i:6;s:7:"mf_name";}|askprice=s:1:"1";|roundindig=s:1:"1";|show_prices=s:1:"1";|price_show_packaging_pricelabel=s:1:"0";|show_tax=s:1:"1";|basePrice=s:1:"1";|basePriceText=s:1:"1";|basePriceRounding=s:2:"-1";|variantModification=s:1:"1";|variantModificationText=s:1:"1";|variantModificationRounding=s:2:"-1";|basePriceVariant=s:1:"1";|basePriceVariantText=s:1:"1";|basePriceVariantRounding=s:2:"-1";|basePriceWithTax=s:1:"1";|basePriceWithTaxText=s:1:"1";|basePriceWithTaxRounding=s:2:"-1";|discountedPriceWithoutTax=s:1:"1";|discountedPriceWithoutTaxText=s:1:"1";|discountedPriceWithoutTaxRounding=s:2:"-1";|salesPriceWithDiscount=s:1:"1";|salesPriceWithDiscountText=s:1:"1";|salesPriceWithDiscountRounding=s:2:"-1";|salesPrice=s:1:"1";|salesPriceText=s:1:"1";|salesPriceRounding=s:2:"-1";|priceWithoutTax=s:1:"1";|priceWithoutTaxText=s:1:"1";|priceWithoutTaxRounding=s:2:"-1";|discountAmount=s:1:"1";|discountAmountText=s:1:"1";|discountAmountRounding=s:2:"-1";|taxAmount=s:1:"1";|taxAmountText=s:1:"1";|taxAmountRounding=s:2:"-1";|unitPrice=s:1:"1";|unitPriceText=s:1:"1";|unitPriceRounding=s:2:"-1";|addtocart_popup=s:1:"1";|check_stock=s:1:"0";|automatic_payment=s:1:"1";|automatic_shipment=s:1:"1";|agree_to_tos_onorder=s:1:"0";|oncheckout_show_legal_info=s:1:"0";|oncheckout_show_register=s:1:"1";|oncheckout_show_steps=s:1:"1";|oncheckout_show_register_text=s:47:"COM_VIRTUEMART_ONCHECKOUT_DEFAULT_TEXT_REGISTER";|inv_os=a:2:{i:0;s:1:"P";i:1;s:1:"C";}|email_os_s=a:1:{i:0;s:1:"C";}|email_os_v=a:1:{i:0;s:1:"C";}|seo_disabled=s:1:"0";|seo_translate=s:1:"0";|seo_use_id=s:1:"0";|sctime=d:1408704910.1524550914764404296875;|vmlang=s:5:"da_dk";|enable_content_plugin=s:1:"0";|reg_captcha=s:1:"0";|active_languages=a:1:{i:0;s:5:"da-DK";}|pdf_icon=s:1:"0";|recommend_unauth=s:1:"0";|ask_captcha=s:1:"0";|ask_question=s:1:"0";|asks_minimum_comment_length=s:2:"50";|asks_maximum_comment_length=s:4:"2000";|product_navigation=s:1:"0";|display_stock=s:1:"0";|handle_404=s:1:"1";|cp_rm=a:1:{i:0;s:1:"C";}|latest_products_days=s:1:"7";|latest_products_orderBy=s:10:"created_on";|lstockmail=s:1:"0";|stockhandle=s:4:"none";|rised_availability=s:0:"";|image=s:0:"";|rr_os=a:1:{i:0;s:1:"C";}|show_manufacturers=s:1:"1";|manufacturer_per_row=s:1:"3";|mediaLimit=s:2:"20";|llimit_init_BE=s:2:"20";|pagseq=s:0:"";|llimit_init_FE=s:2:"20";|pagseq_1=s:0:"";|pagseq_2=s:0:"";|pagseq_3=s:0:"";|pagseq_4=s:0:"";|pagseq_5=s:0:"";|feed_cat_published=s:1:"1";|feed_cat_show_images=s:1:"0";|feed_cat_show_prices=s:1:"0";|feed_cat_show_description=s:1:"0";|feed_cat_description_type=s:14:"product_s_desc";|feed_cat_max_text_length=s:3:"500";|forSale_path=s:76:"D:\\www\\htdocs\\scheel-larsen\\administrator\\components\\com_virtuemart\\vmfiles\\";|add_img_main=s:1:"1";|feed_latest_published=s:1:"0";|feed_latest_nb=s:1:"5";|feed_topten_published=s:1:"0";|feed_topten_nb=s:1:"5";|feed_featured_published=s:1:"0";|feed_featured_nb=s:1:"5";|feed_home_show_images=s:1:"0";|feed_home_show_prices=s:1:"0";|feed_home_show_description=s:1:"0";|feed_home_description_type=s:14:"product_s_desc";|feed_home_max_text_length=s:3:"500";|css=s:1:"0";|jquery=s:1:"0";|jprice=s:1:"1";|jsite=s:1:"1";|rappenrundung=s:1:"0";|cVarswT=s:1:"1";|popup_rel=s:1:"1";|oncheckout_opc=s:1:"1";|oncheckout_only_registered=s:1:"0";|oncheckout_change_shopper=s:1:"0";|oncheckout_show_images=s:1:"1";|del_date_type=s:1:"m";|vmlang_js=s:1:"0";|prd_brws_orderby_dir=s:3:"ASC";|cat_brws_orderby_dir=s:3:"ASC";|seo_sufix=s:7:"-detail";|task=s:4:"save";|option=s:14:"com_virtuemart";|view=s:6:"config";|244d1c29a61f17a2debe5e37d61a1806=s:1:"1";|order_items_status=s:1:"C";|53f30b8cf577e4fbf07d5af5b7787a6f=s:1:"1";|379bf7900da8eb84aaa64b724e6a2488=s:1:"1";|0efeddd9ab72d2a70a0c511e67547d3a=s:1:"1";', '0000-00-00 00:00:00', 0, '2014-08-22 10:55:10', 62, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -5753,7 +5790,7 @@ INSERT INTO `i63il_virtuemart_customs` (`virtuemart_custom_id`, `custom_parent_i
 (2, 0, 1, 0, '', 0, 'COM_VIRTUEMART_RELATED_CATEGORIES', 1, 'COM_VIRTUEMART_RELATED_CATEGORIES_TIP', NULL, 'COM_VIRTUEMART_RELATED_CATEGORIES_DESC', 'Z', 0, 0, 0, NULL, NULL, 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
 (3, 0, 1, 0, '', 0, 'Vælg størrelse', 1, '', 'Vælg størrelse', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
 (4, 0, 1, 0, '', 0, 'vælg antal', 1, '', 'vælg antal', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
-(5, 0, 1, 0, '', 0, 'Vælg farve', 1, '', 'Vælg farve', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(5, 0, 1, 0, '0', 0, 'Vælg farve', 0, '', 'Vælg farve', '', 'V', 0, 0, 1, '', '0', 0, 1, '0000-00-00 00:00:00', 0, 0, '2014-08-22 07:24:44', 62, '0000-00-00 00:00:00', 0),
 (6, 0, 1, 0, '', 0, 'Vælg hyndefarve', 1, '', 'Vælg hyndefarve', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
 (7, 0, 1, 0, '', 0, 'Tilvalg', 1, '', 'Tilvalg', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
 (8, 0, 1, 0, '', 0, 'Vælg', 1, '', 'Vælg', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
@@ -5783,11 +5820,11 @@ INSERT INTO `i63il_virtuemart_customs` (`virtuemart_custom_id`, `custom_parent_i
 (32, 0, 1, 0, '', 0, 'Vælg med hynde', 1, '', 'Vælg med hynde', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
 (33, 0, 1, 0, '', 0, 'Vælg højre eller venstre vendt', 1, '', 'Vælg højre eller venstre vendt', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
 (34, 0, 1, 0, '', 0, 'Vælg m/u armlæn', 1, '', 'Vælg m/u armlæn', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
-(35, 0, 1, 0, '', 0, 'Vælg med eller uden hynde', 1, '', 'Vælg med eller uden hynde', '', 'V', 0, 0, 1, '', '', 0, 1, '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(35, 0, 1, 0, '0', 0, 'Vælg med eller uden hynde', 0, '', 'Vælg med eller uden hynde', '', 'V', 0, 0, 1, '', '0', 0, 1, '0000-00-00 00:00:00', 0, 0, '2014-08-22 07:23:50', 62, '0000-00-00 00:00:00', 0),
 (36, 0, 1, 0, '0', 0, 'Material option', 0, '', '', '', 'P', 0, 0, 0, '', '0', 0, 0, '2014-08-18 02:02:52', 62, 0, '2014-08-18 02:02:52', 62, '0000-00-00 00:00:00', 0),
-(37, 36, 1, 0, '0', 0, 'Material', 0, '', '', '', 'S', 0, 0, 1, '', '0', 0, 1, '2014-08-18 02:03:51', 62, 0, '2014-08-18 02:03:51', 62, '0000-00-00 00:00:00', 0),
+(37, 36, 1, 0, '0', 0, 'Material', 0, '', '', '', 'S', 0, 0, 1, '', '0', 0, 0, '2014-08-18 02:03:51', 62, 0, '2014-08-18 02:03:51', 62, '0000-00-00 00:00:00', 0),
 (38, 36, 1, 0, '0', 0, 'Material image', 0, '', '', '', 'M', 0, 0, 1, '', '0', 0, 0, '2014-08-18 02:04:14', 62, 0, '2014-08-19 09:20:27', 62, '0000-00-00 00:00:00', 0),
-(39, 0, 1, 0, '0', 0, 'More Options', 0, '', '', '', 'S', 0, 0, 1, '', '0', 0, 0, '2014-08-18 02:05:40', 62, 0, '2014-08-18 02:05:40', 62, '0000-00-00 00:00:00', 0);
+(39, 0, 1, 0, '0', 0, 'Height', 0, '', '', '', 'S', 0, 0, 1, '', '0', 0, 0, '2014-08-18 02:05:40', 62, 0, '2014-08-22 08:07:10', 62, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -6876,7 +6913,7 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_orders` (
   KEY `idx_orders_order_number` (`order_number`),
   KEY `idx_orders_virtuemart_paymentmethod_id` (`virtuemart_paymentmethod_id`),
   KEY `idx_orders_virtuemart_shipmentmethod_id` (`virtuemart_shipmentmethod_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Used to store all orders' AUTO_INCREMENT=1030 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Used to store all orders' AUTO_INCREMENT=1042 ;
 
 --
 -- Dumping data for table `i63il_virtuemart_orders`
@@ -7900,8 +7937,7 @@ INSERT INTO `i63il_virtuemart_orders` (`virtuemart_order_id`, `virtuemart_user_i
 (1018, 0, 1, '1018', 'nonreg_', 'p_6ca40', '3322.00000', '0.00000', '0.00000', '0', '0.00000', '0.00000', '3322.00000', '0.00000', '0.00', '0.00000', '0.00', '0.00000', '0.00', '', '0.00', 40, 'P', 40, '1.00000', 21, NULL, '', NULL, NULL, '93.161.134.130', '2014-07-17 21:58:00', -1072, '2014-07-17 21:58:38', -1072, '0000-00-00 00:00:00', 0),
 (1019, 0, 1, '1019', 'nonreg_', 'p_2679a', '4999.00000', '0.00000', '0.00000', '0', '0.00000', '0.00000', '4999.00000', '0.00000', '0.00', '0.00000', '0.00', '0.00000', '0.00', '', '0.00', 40, 'P', 40, '1.00000', 21, NULL, '', NULL, NULL, '93.161.94.32', '2014-07-18 07:33:36', -1073, '2014-07-18 07:34:55', -1073, '0000-00-00 00:00:00', 0),
 (1020, 0, 1, '1020', 'nonreg_', 'p_35799', '999.00000', '0.00000', '0.00000', '0', '0.00000', '0.00000', '999.00000', '0.00000', '0.00', '0.00000', '0.00', '0.00000', '0.00', '', '0.00', 40, 'P', 40, '1.00000', 21, NULL, '', NULL, NULL, '5.103.110.57', '2014-07-18 09:39:39', -1075, '2014-07-18 09:41:17', -1075, '0000-00-00 00:00:00', 0),
-(1028, 0, 1, '9f4601014', 'nonreg_trungnguyenthanh.trung@mw', 'p_ed98c', '3019.00000', '2869.00000', '0.00000', '0', '0.00000', '0.00000', '2869.00000', '0.00000', '150.00', '0.00000', '0.00', '0.00000', '0.00', NULL, '0.00', 40, 'P', 40, '1.00000', 3, 2, '', 'Same as invoice date', '', '::1', '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0),
-(1029, 0, 1, '8e3e01015', 'nonreg_trungnguyenthanh.trung@mw', 'p_1cedd', '3059.00000', '2909.00000', '0.00000', '0', '0.00000', '0.00000', '2909.00000', '0.00000', '150.00', '0.00000', '0.00', '0.00000', '0.00', NULL, '0.00', 40, 'P', 40, '1.00000', 3, 2, '', 'Same as invoice date', '', '::1', '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0);
+(1041, 0, 1, '03f201017', 'nonreg_trungnguyenthanh.trung@mw', 'p_1ecf8', '409.00000', '59.00000', '0.00000', '0', '0.00000', '0.00000', '59.00000', '0.00000', '350.00', '0.00000', '0.00', '0.00000', '0.00', NULL, '0.00', 40, 'P', 40, '1.00000', 1, 3, '', NULL, '', '::1', '2014-08-22 10:12:14', 0, '2014-08-22 10:12:14', 0, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -7969,7 +8005,7 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_order_calc_rules` (
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `locked_by` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`virtuemart_order_calc_rule_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Stores all calculation rules which are part of an order' AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Stores all calculation rules which are part of an order' AUTO_INCREMENT=43 ;
 
 --
 -- Dumping data for table `i63il_virtuemart_order_calc_rules`
@@ -7993,7 +8029,31 @@ INSERT INTO `i63il_virtuemart_order_calc_rules` (`virtuemart_order_calc_rule_id`
 (15, 0, 1028, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0),
 (16, 0, 1028, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0),
 (17, 0, 1029, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0),
-(18, 0, 1029, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0);
+(18, 0, 1029, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0),
+(19, 0, 1030, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 04:06:13', 0, '2014-08-22 04:06:13', 0, '0000-00-00 00:00:00', 0),
+(20, 0, 1030, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 04:06:13', 0, '2014-08-22 04:06:13', 0, '0000-00-00 00:00:00', 0),
+(21, 0, 1031, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 09:41:25', 0, '2014-08-22 09:41:25', 0, '0000-00-00 00:00:00', 0),
+(22, 0, 1031, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 09:41:25', 0, '2014-08-22 09:41:25', 0, '0000-00-00 00:00:00', 0),
+(23, 0, 1032, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 09:46:08', 0, '2014-08-22 09:46:08', 0, '0000-00-00 00:00:00', 0),
+(24, 0, 1032, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 09:46:08', 0, '2014-08-22 09:46:08', 0, '0000-00-00 00:00:00', 0),
+(25, 0, 1033, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 09:46:55', 0, '2014-08-22 09:46:55', 0, '0000-00-00 00:00:00', 0),
+(26, 0, 1033, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 09:46:55', 0, '2014-08-22 09:46:55', 0, '0000-00-00 00:00:00', 0),
+(27, 0, 1034, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:03:47', 0, '2014-08-22 10:03:47', 0, '0000-00-00 00:00:00', 0),
+(28, 0, 1034, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:03:47', 0, '2014-08-22 10:03:47', 0, '0000-00-00 00:00:00', 0),
+(29, 0, 1035, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:05:33', 0, '2014-08-22 10:05:33', 0, '0000-00-00 00:00:00', 0),
+(30, 0, 1035, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:05:33', 0, '2014-08-22 10:05:33', 0, '0000-00-00 00:00:00', 0),
+(31, 0, 1036, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:07:58', 0, '2014-08-22 10:07:58', 0, '0000-00-00 00:00:00', 0),
+(32, 0, 1036, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:07:58', 0, '2014-08-22 10:07:58', 0, '0000-00-00 00:00:00', 0),
+(33, 0, 1037, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:08:16', 0, '2014-08-22 10:08:16', 0, '0000-00-00 00:00:00', 0),
+(34, 0, 1037, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:08:16', 0, '2014-08-22 10:08:16', 0, '0000-00-00 00:00:00', 0),
+(35, 0, 1038, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:09:11', 0, '2014-08-22 10:09:11', 0, '0000-00-00 00:00:00', 0),
+(36, 0, 1038, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:09:11', 0, '2014-08-22 10:09:11', 0, '0000-00-00 00:00:00', 0),
+(37, 0, 1039, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:10:30', 0, '2014-08-22 10:10:30', 0, '0000-00-00 00:00:00', 0),
+(38, 0, 1039, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:10:30', 0, '2014-08-22 10:10:30', 0, '0000-00-00 00:00:00', 0),
+(39, 0, 1040, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:10:49', 0, '2014-08-22 10:10:49', 0, '0000-00-00 00:00:00', 0),
+(40, 0, 1040, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:10:49', 0, '2014-08-22 10:10:49', 0, '0000-00-00 00:00:00', 0),
+(41, 0, 1041, 1, NULL, '', 'payment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:12:14', 0, '2014-08-22 10:12:14', 0, '0000-00-00 00:00:00', 0),
+(42, 0, 1041, 1, NULL, '', 'shipment', '', '0.00000', '0.00000', '0.00000', 0, '', '2014-08-22 10:12:14', 0, '2014-08-22 10:12:14', 0, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -8015,7 +8075,7 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_order_histories` (
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `locked_by` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`virtuemart_order_history_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores all actions and changes that occur to an order' AUTO_INCREMENT=1946 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores all actions and changes that occur to an order' AUTO_INCREMENT=1972 ;
 
 --
 -- Dumping data for table `i63il_virtuemart_order_histories`
@@ -9970,7 +10030,33 @@ INSERT INTO `i63il_virtuemart_order_histories` (`virtuemart_order_history_id`, `
 (1942, 1028, 'P', 0, '', 1, '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0),
 (1943, 1028, 'P', 1, '', 1, '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0),
 (1944, 1029, 'P', 0, '', 1, '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0),
-(1945, 1029, 'P', 1, '', 1, '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0);
+(1945, 1029, 'P', 1, '', 1, '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0),
+(1946, 1029, '-', 0, 'Order deleted', 1, '2014-08-22 09:19:33', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1947, 1028, '-', 0, 'Order deleted', 1, '2014-08-22 09:19:33', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1948, 1030, 'P', 0, '', 1, '2014-08-22 04:06:13', 0, '2014-08-22 04:06:13', 0, '0000-00-00 00:00:00', 0),
+(1949, 1030, 'P', 1, '', 1, '2014-08-22 04:06:13', 0, '2014-08-22 04:06:13', 0, '0000-00-00 00:00:00', 0),
+(1950, 1031, 'P', 0, '', 1, '2014-08-22 09:41:25', 0, '2014-08-22 09:41:25', 0, '0000-00-00 00:00:00', 0),
+(1951, 1032, 'P', 0, '', 1, '2014-08-22 09:46:08', 0, '2014-08-22 09:46:08', 0, '0000-00-00 00:00:00', 0),
+(1952, 1033, 'P', 0, '', 1, '2014-08-22 09:46:55', 0, '2014-08-22 09:46:55', 0, '0000-00-00 00:00:00', 0),
+(1953, 1034, 'P', 0, '', 1, '2014-08-22 10:03:47', 0, '2014-08-22 10:03:47', 0, '0000-00-00 00:00:00', 0),
+(1954, 1034, '-', 0, 'Order deleted', 1, '2014-08-22 17:04:01', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1955, 1033, '-', 0, 'Order deleted', 1, '2014-08-22 17:04:01', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1956, 1032, '-', 0, 'Order deleted', 1, '2014-08-22 17:04:02', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1957, 1031, '-', 0, 'Order deleted', 1, '2014-08-22 17:04:02', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1958, 1030, '-', 0, 'Order deleted', 1, '2014-08-22 17:04:02', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1959, 1035, 'P', 0, '', 1, '2014-08-22 10:05:33', 0, '2014-08-22 10:05:33', 0, '0000-00-00 00:00:00', 0),
+(1960, 1036, 'P', 0, '', 1, '2014-08-22 10:07:58', 0, '2014-08-22 10:07:58', 0, '0000-00-00 00:00:00', 0),
+(1961, 1037, 'P', 0, '', 1, '2014-08-22 10:08:16', 0, '2014-08-22 10:08:16', 0, '0000-00-00 00:00:00', 0),
+(1962, 1037, '-', 0, 'Order deleted', 1, '2014-08-22 17:08:26', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1963, 1036, '-', 0, 'Order deleted', 1, '2014-08-22 17:08:27', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1964, 1035, '-', 0, 'Order deleted', 1, '2014-08-22 17:08:27', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1965, 1038, 'P', 0, '', 1, '2014-08-22 10:09:11', 0, '2014-08-22 10:09:11', 0, '0000-00-00 00:00:00', 0),
+(1966, 1039, 'P', 0, '', 1, '2014-08-22 10:10:30', 0, '2014-08-22 10:10:30', 0, '0000-00-00 00:00:00', 0),
+(1967, 1040, 'P', 0, '', 1, '2014-08-22 10:10:49', 0, '2014-08-22 10:10:49', 0, '0000-00-00 00:00:00', 0),
+(1968, 1041, 'P', 0, '', 1, '2014-08-22 10:12:14', 0, '2014-08-22 10:12:14', 0, '0000-00-00 00:00:00', 0),
+(1969, 1040, '-', 0, 'Order deleted', 1, '2014-08-22 17:21:49', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1970, 1039, '-', 0, 'Order deleted', 1, '2014-08-22 17:21:49', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0),
+(1971, 1038, '-', 0, 'Order deleted', 1, '2014-08-22 17:21:49', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -10009,7 +10095,7 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_order_items` (
   KEY `i_virtuemart_order_id` (`virtuemart_order_id`),
   KEY `i_virtuemart_vendor_id` (`virtuemart_vendor_id`),
   KEY `order_status` (`order_status`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores all items (products) which are part of an order' AUTO_INCREMENT=1545 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores all items (products) which are part of an order' AUTO_INCREMENT=1559 ;
 
 --
 -- Dumping data for table `i63il_virtuemart_order_items`
@@ -11560,8 +11646,7 @@ INSERT INTO `i63il_virtuemart_order_items` (`virtuemart_order_item_id`, `virtuem
 (1533, 1018, 1, 605, '12116', 'Lance Terrazzo Krukker 2014', 1, '449.00000', '449.00000', '0.00000', '449.00000', '449.00000', '449.00000', '0.00000', '449.00000', 40, 'P', '{"875":"H42 cm-\\u00d850 cm (+ DKK 310,-)"}', NULL, '2014-07-17 21:58:00', -1072, '2014-07-17 21:58:38', 0, '0000-00-00 00:00:00', 0),
 (1534, 1019, 1, 250, '100456/100449-ST', 'Bellevue Luksus Havesæt', 1, '4999.00000', '4999.00000', '0.00000', '4999.00000', '4999.00000', '4999.00000', '0.00000', '4999.00000', 40, 'P', NULL, NULL, '2014-07-18 07:33:36', -1073, '2014-07-18 07:34:55', 0, '0000-00-00 00:00:00', 0),
 (1535, 1020, 1, 774, '8846', 'Yves Parasol Ø2,5 m. tilt (5 farver)', 1, '999.00000', '999.00000', '0.00000', '999.00000', '999.00000', '999.00000', '0.00000', '999.00000', 40, 'P', '{"1185":"Natur"}', NULL, '2014-07-18 09:39:39', -1075, '2014-07-18 09:41:17', 0, '0000-00-00 00:00:00', 0),
-(1543, 1028, 1, 776, '8842-7-8', '"Så let som ingenting" Parasol 3x4 m', 1, '2869.00000', '2869.00000', '0.00000', '0.00000', '2869.00000', '2869.00000', '0.00000', '2869.00000', NULL, 'P', '{"1295":" <span class=\\"costumTitle\\">Material<\\/span><span class=\\"costumValue\\" >vai du<\\/span>","1296":" <span class=\\"costumTitle\\">Material image<\\/span><span class=\\"costumValue\\" >751<\\/span>","1300":" <span class=\\"costumTitle\\">More Options<\\/span><span class=\\"costumValue\\" >Texxt 1<\\/span>"}', NULL, '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0),
-(1544, 1029, 1, 776, '8842-7-8', '"Så let som ingenting" Parasol 3x4 m', 1, '2909.00000', '2909.00000', '0.00000', '0.00000', '2909.00000', '2909.00000', '0.00000', '2909.00000', NULL, 'P', '{"1298":" <span class=\\"costumTitle\\">Material<\\/span><span class=\\"costumValue\\" >Vai bat<\\/span>","1299":" <span class=\\"costumTitle\\">Material image<\\/span><span class=\\"costumValue\\" >10<\\/span>","1300":" <span class=\\"costumTitle\\">More Options<\\/span><span class=\\"costumValue\\" >Texxt 1<\\/span>"}', NULL, '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0);
+(1558, 1041, 1, 236, '16400', 'Ines Choco Terracotta Classic', 1, '59.00000', '59.00000', '0.00000', '0.00000', '59.00000', '59.00000', '0.00000', '59.00000', NULL, 'P', '{"585":" <span class=\\"costumTitle\\">V\\u00e6lg st\\u00f8rrelse<\\/span><span class=\\"costumValue\\" >H\\u00f8jde 18 cm-\\u00d820 cm<\\/span>"}', NULL, '2014-08-22 10:12:14', 0, '2014-08-22 10:12:14', 0, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -11619,7 +11704,7 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_order_userinfos` (
   KEY `i_virtuemart_order_id` (`virtuemart_order_id`),
   KEY `i_virtuemart_user_id` (`virtuemart_user_id`),
   KEY `idx_address_type` (`address_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores the BillTo and ShipTo Information at order time' AUTO_INCREMENT=1024 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores the BillTo and ShipTo Information at order time' AUTO_INCREMENT=1036 ;
 
 --
 -- Dumping data for table `i63il_virtuemart_order_userinfos`
@@ -12646,9 +12731,7 @@ INSERT INTO `i63il_virtuemart_order_userinfos` (`virtuemart_order_userinfo_id`, 
 (1011, 1018, 0, 'BT', NULL, 'Elisabeth linding', NULL, '', '', NULL, '30834984', NULL, NULL, 'Thorsvej 1', '', 'Lyngby', 0, 223, '2800', 'Eclinding@gmail.com', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '', '', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (1012, 1019, 0, 'BT', NULL, 'Margaret Campbell', NULL, '', '', NULL, '47724309', NULL, NULL, 'Torupgårdsvej 18', '', 'Hundested', 0, 223, '3390', 'mcampbell@privat.dk', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '', '', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (1013, 1020, 0, 'BT', NULL, 'Poul Nordtorp Jørgensen', NULL, '', '', NULL, '58382435', NULL, NULL, 'Bøgeparken 4', '', 'Vemmelev', 0, 223, '4241', 'poul.nordtorp@gmail.com', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '', '', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(1021, 1028, 0, 'BT', NULL, NULL, NULL, 'nguyen', 'trung', NULL, '123123213', NULL, NULL, '', NULL, 'Helsingør', 0, 0, '3000', 'thanh.trung@mwc.vn', 0, '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0, NULL, NULL, NULL, NULL, NULL, NULL, 'aaa', NULL, NULL, '123', NULL, NULL, 'wer ew wer wer wer', NULL, 'asd asd asd', '333333', '22222', '11111'),
-(1022, 1028, 0, 'ST', NULL, NULL, NULL, 'nguyen1', 'trung1', NULL, '13123123123', NULL, NULL, '', NULL, 'aaa', 0, 0, '3000', NULL, 0, '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0, NULL, NULL, NULL, NULL, NULL, NULL, '123', NULL, NULL, 'adasdasd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(1023, 1029, 0, 'BT', NULL, NULL, NULL, 'nguyen', 'trung', NULL, '123123213', NULL, NULL, '', NULL, 'Helsingør', 0, 0, '3000', 'thanh.trung@mwc.vn', 0, '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0, NULL, NULL, NULL, NULL, NULL, NULL, 'aaa', NULL, NULL, '123', NULL, NULL, 'sd asd asd asd', NULL, 'asd asd asd', '333333', '22222', '11111');
+(1035, 1041, 0, 'BT', NULL, NULL, NULL, 'nguyen', 'trung', NULL, '123123213', NULL, NULL, '', NULL, 'Slagelse', 0, 0, '4200', 'thanh.trung@mwc.vn', 0, '2014-08-22 10:12:14', 0, '2014-08-22 10:12:14', 0, '0000-00-00 00:00:00', 0, NULL, NULL, NULL, NULL, NULL, NULL, 'aaa', NULL, NULL, '123', NULL, NULL, 'sdasd asd asda s', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -12776,7 +12859,14 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_payment_plg_quickpay` (
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `locked_by` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Payment Quickpay Table' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Payment Quickpay Table' AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `i63il_virtuemart_payment_plg_quickpay`
+--
+
+INSERT INTO `i63il_virtuemart_payment_plg_quickpay` (`id`, `virtuemart_order_id`, `order_number`, `virtuemart_paymentmethod_id`, `payment_name`, `payment_order_total`, `payment_currency`, `cost_per_transaction`, `cost_percent_total`, `tax_id`, `quickpay_time`, `quickpay_state`, `quickpay_qpstat`, `quickpay_qpstatmsg`, `quickpay_chstat`, `quickpay_chstatmsg`, `quickpay_transaction`, `quickpay_cardtype`, `quickpay_cardnumber`, `quickpay_fraudprobability`, `quickpay_fraudremarks`, `quickpay_fraudreport`, `quickpay_fee`, `created_on`, `created_by`, `modified_on`, `modified_by`, `locked_on`, `locked_by`) VALUES
+(11, 1041, '03f201017', 1, '<span class="vmpayment_name">Quickpay</span>', '409.00000', '40', '0.00', '0.00', 0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2014-08-22 10:12:14', 0, '2014-08-22 10:12:14', 0, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -12803,15 +12893,7 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_payment_plg_standard` (
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `locked_by` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Payment Standard Table' AUTO_INCREMENT=10 ;
-
---
--- Dumping data for table `i63il_virtuemart_payment_plg_standard`
---
-
-INSERT INTO `i63il_virtuemart_payment_plg_standard` (`id`, `virtuemart_order_id`, `order_number`, `virtuemart_paymentmethod_id`, `payment_name`, `payment_order_total`, `payment_currency`, `email_currency`, `cost_per_transaction`, `cost_percent_total`, `tax_id`, `created_on`, `created_by`, `modified_on`, `modified_by`, `locked_on`, `locked_by`) VALUES
-(9, 1029, '8e3e01015', 3, '<span class="vmpayment_name">Efterbetalte</span><br />', '3059.00000', 'DKK', '40', '0.00', '0.00', -1, '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0),
-(8, 1028, '9f4601014', 3, '<span class="vmpayment_name">Efterbetalte</span><br />', '3019.00000', 'DKK', '40', '0.00', '0.00', -1, '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0);
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Payment Standard Table' AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -13017,7 +13099,7 @@ INSERT INTO `i63il_virtuemart_products` (`virtuemart_product_id`, `virtuemart_ve
 (113, 1, 0, '2000013', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 9, 2, 0, '2011-09-06 00:00:00', '', 0, 2, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 0, 0, '2011-09-06 07:37:19', 0, '2012-04-11 06:25:27', 0, '0000-00-00 00:00:00', 0),
 (114, 1, 0, 'Salerno Cafésæt', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 3, 0, 0, '2011-09-06 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 0, 0, '2011-09-06 08:47:04', 0, '2012-09-15 10:26:16', 0, '0000-00-00 00:00:00', 0),
 (115, 1, 0, '98580706', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 10, 0, 0, '2011-09-06 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 0, 0, '2011-09-06 10:52:38', 0, '2011-11-30 08:40:13', 0, '0000-00-00 00:00:00', 0),
-(116, 1, 0, 'Altan Parasol Ø160 Sort eller Natur', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 90, 58, 0, '2011-09-06 00:00:00', '', 0, 58, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2011-09-06 11:01:11', 0, '2014-06-01 07:07:56', 0, '0000-00-00 00:00:00', 0),
+(116, 1, 0, 'Altan Parasol Ø160 Sort eller Natur', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 90, 59, 0, '2011-09-06 00:00:00', '', 0, 58, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2011-09-06 11:01:11', 0, '2014-06-01 07:07:56', 0, '0000-00-00 00:00:00', 0),
 (117, 1, 0, 'Siena Skammel', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 997, 4, 0, '2011-09-06 00:00:00', 'På lager', 0, 4, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 0, 0, '2011-09-06 11:07:08', 0, '2012-03-17 16:53:12', 0, '0000-00-00 00:00:00', 0),
 (118, 1, 0, 'Konisk krukke', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 0, 0, 0, '2011-09-06 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 0, 0, '2011-09-06 11:17:03', 0, '2012-01-20 08:54:13', 0, '0000-00-00 00:00:00', 0),
 (119, 1, 0, '80210740454', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 2, 0, 0, '2011-09-07 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 0, 0, '2011-09-07 10:39:59', 0, '2012-01-20 08:53:40', 0, '0000-00-00 00:00:00', 0),
@@ -13303,7 +13385,7 @@ INSERT INTO `i63il_virtuemart_products` (`virtuemart_product_id`, `virtuemart_ve
 (233, 1, 0, '1212', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 6, 21, 0, '2013-02-20 00:00:00', '', 0, 21, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2012-03-08 07:53:12', 0, '2014-03-09 05:42:35', 0, '0000-00-00 00:00:00', 0),
 (251, 1, 0, '100454-H/100438', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 10, 0, 0, '2012-05-09 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2012-03-20 11:22:42', 0, '2014-02-09 08:18:01', 0, '0000-00-00 00:00:00', 0),
 (235, 1, 0, '16280', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 98, 25, 0, '2012-03-08 00:00:00', '', 0, 25, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2012-03-08 08:17:01', 0, '2014-03-09 05:33:40', 0, '0000-00-00 00:00:00', 0),
-(236, 1, 0, '16400', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 267, 111, 0, '2012-03-08 00:00:00', '', 0, 111, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2012-03-08 08:24:24', 0, '2014-03-09 05:32:36', 0, '0000-00-00 00:00:00', 0),
+(236, 1, 0, '16400', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 267, 122, 0, '2012-03-08 00:00:00', '', 0, 111, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2012-03-08 08:24:24', 0, '2014-03-09 05:32:36', 0, '0000-00-00 00:00:00', 0),
 (252, 1, 0, '201073-H/100165-HW', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 10, 0, 0, '2012-03-20 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 0, 0, '2012-03-20 14:12:35', 0, '2012-03-20 14:12:35', 0, '0000-00-00 00:00:00', 0),
 (237, 1, 0, 'TZ503120-01', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 19, 1, 0, '2012-03-08 00:00:00', '', 0, 1, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2012-03-08 08:29:07', 0, '2014-02-09 07:29:44', 0, '0000-00-00 00:00:00', 0),
 (238, 1, 0, '16407', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 100, 12, 0, '2012-03-08 00:00:00', '', 0, 12, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2012-03-08 08:34:45', 0, '2014-03-09 05:37:11', 0, '0000-00-00 00:00:00', 0),
@@ -13584,9 +13666,9 @@ INSERT INTO `i63il_virtuemart_products` (`virtuemart_product_id`, `virtuemart_ve
 (773, 1, 0, '8845', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 95, 5, 0, '2014-02-01 00:00:00', '', 0, 5, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2014-02-01 13:47:14', 0, '2014-02-10 08:46:16', 0, '0000-00-00 00:00:00', 0),
 (774, 1, 0, '8846', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 94, 6, 0, '2014-02-01 00:00:00', '', 0, 6, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2014-02-01 13:51:28', 0, '2014-02-10 08:46:24', 0, '0000-00-00 00:00:00', 0),
 (775, 1, 0, '8981', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 99, 1, 0, '2013-06-01 00:00:00', '', 0, 1, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2014-02-01 14:07:12', 0, '2014-02-10 08:45:38', 0, '0000-00-00 00:00:00', 0),
-(776, 1, 0, '8842-7-8', '', '', '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 98, 11, 0, '2014-02-02 00:00:00', '', 0, 2, 'KG', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""|', 0, '', '', '', '0', 1, 0, '2014-02-02 06:06:44', 0, '2014-08-18 02:28:35', 62, '0000-00-00 00:00:00', 0),
+(776, 1, 0, '8842-7-8', '', '', '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 98, 12, 0, '2014-02-02 00:00:00', '', 0, 2, 'KG', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""|', 0, '', '', '', '0', 1, 0, '2014-02-02 06:06:44', 0, '2014-08-18 02:28:35', 62, '0000-00-00 00:00:00', 0),
 (777, 1, 0, '8841-7-8', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 98, 2, 0, '2014-02-02 00:00:00', '', 0, 2, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2014-02-02 06:10:26', 0, '2014-02-10 08:45:59', 0, '0000-00-00 00:00:00', 0),
-(778, 1, 0, '8840-7-8', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 100, 0, 0, '2014-02-02 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2014-02-02 06:23:03', 0, '2014-02-10 08:46:06', 0, '0000-00-00 00:00:00', 0),
+(778, 1, 0, '8840-7-8', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 100, 1, 0, '2014-02-02 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2014-02-02 06:23:03', 0, '2014-02-10 08:46:06', 0, '0000-00-00 00:00:00', 0),
 (779, 1, 0, '7775-8', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 99, 1, 0, '2014-02-02 00:00:00', '', 0, 1, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2014-02-02 08:48:35', 0, '2014-02-10 08:44:42', 0, '0000-00-00 00:00:00', 0),
 (797, 1, 0, '3507-8', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 20, 0, 0, '2014-02-05 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2014-02-05 11:24:06', 0, '2014-02-09 12:50:34', 0, '0000-00-00 00:00:00', 0),
 (799, 1, 0, '3503-8-26', NULL, NULL, '0.0000', 'KG', '0.0000', '0.0000', '0.0000', 'CM', '', 20, 0, 0, '2014-02-05 00:00:00', '', 0, 0, '', '0.0000', 'min_order_level=""|max_order_level=""|step_order_level=""|product_box=""', 0, '', '', '', '0', 1, 0, '2014-02-05 12:30:38', 0, '2014-02-05 12:35:35', 0, '0000-00-00 00:00:00', 0),
@@ -19058,7 +19140,7 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_shipmentmethods` (
 --
 
 INSERT INTO `i63il_virtuemart_shipmentmethods` (`virtuemart_shipmentmethod_id`, `virtuemart_vendor_id`, `shipment_jplugin_id`, `shipment_element`, `shipment_params`, `ordering`, `shared`, `published`, `created_on`, `created_by`, `modified_on`, `modified_by`, `locked_on`, `locked_by`) VALUES
-(1, 1, 10057, 'rules_shipping', 'shipment_logos=""|weight_unit="KG"|length_unit="M"|countries1=""|tax_id1="-1"|rules1="-(Salesprice*0.1)"|countries2=""|tax_id2="-1"|rules2=""|countries3=""|tax_id3="-1"|rules3=""|countries4=""|tax_id4="-1"|rules4=""|countries5=""|tax_id5="-1"|rules5=""|countries6=""|tax_id6="-1"|rules6=""|countries7=""|tax_id7="-1"|rules7=""|countries8=""|tax_id8="-1"|rules8=""|', 0, 0, 1, '2014-08-18 07:46:20', 62, '2014-08-21 04:38:34', 62, '0000-00-00 00:00:00', 0),
+(1, 1, 10057, 'rules_shipping', 'shipment_logos=""|weight_unit="KG"|length_unit="M"|countries1=""|tax_id1="-1"|rules1="Shipping=-(Salesprice*0.1)"|countries2=""|tax_id2="-1"|rules2=""|countries3=""|tax_id3="-1"|rules3=""|countries4=""|tax_id4="-1"|rules4=""|countries5=""|tax_id5="-1"|rules5=""|countries6=""|tax_id6="-1"|rules6=""|countries7=""|tax_id7="-1"|rules7=""|countries8=""|tax_id8="-1"|rules8=""|', 0, 0, 1, '2014-08-18 07:46:20', 62, '2014-08-22 04:06:04', 62, '0000-00-00 00:00:00', 0),
 (2, 1, 10020, 'weight_countries', 'shipment_logos=""|countries=""|zip_start=""|zip_stop=""|weight_start=""|weight_stop=""|weight_unit="KG"|nbproducts_start=0|nbproducts_stop=0|orderamount_start=""|orderamount_stop=""|cost="150"|package_fee=""|tax_id="-1"|free_shipment=""|', 0, 0, 1, '2014-08-18 07:57:27', 62, '2014-08-21 07:41:30', 62, '0000-00-00 00:00:00', 0),
 (3, 1, 10020, 'weight_countries', 'shipment_logos=""|countries=""|zip_start=""|zip_stop=""|weight_start=""|weight_stop=""|weight_unit="KG"|nbproducts_start=0|nbproducts_stop=0|orderamount_start=""|orderamount_stop=""|cost="350"|package_fee=""|tax_id="-1"|free_shipment=""|', 0, 0, 1, '2014-08-18 07:59:10', 62, '2014-08-18 07:59:17', 62, '0000-00-00 00:00:00', 0);
 
@@ -19141,7 +19223,7 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_shipment_plg_rules_shipping` (
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `locked_by` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Shipment Rules Table' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Shipment Rules Table' AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -19167,15 +19249,14 @@ CREATE TABLE IF NOT EXISTS `i63il_virtuemart_shipment_plg_weight_countries` (
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `locked_by` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Shipment Weight Countries Table' AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Shipment Weight Countries Table' AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `i63il_virtuemart_shipment_plg_weight_countries`
 --
 
 INSERT INTO `i63il_virtuemart_shipment_plg_weight_countries` (`id`, `virtuemart_order_id`, `order_number`, `virtuemart_shipmentmethod_id`, `shipment_name`, `order_weight`, `shipment_weight_unit`, `shipment_cost`, `shipment_package_fee`, `tax_id`, `created_on`, `created_by`, `modified_on`, `modified_by`, `locked_on`, `locked_by`) VALUES
-(9, 1029, '8e3e01015', 2, '<span class="vmshipment_name">Levering 0-3999</span>', '0.0000', 'KG', '150.00', '0.00', -1, '2014-08-21 09:19:57', 0, '2014-08-21 09:19:57', 0, '0000-00-00 00:00:00', 0),
-(8, 1028, '9f4601014', 2, '<span class="vmshipment_name">Levering 0-3999</span>', '0.0000', 'KG', '150.00', '0.00', -1, '2014-08-21 09:17:31', 0, '2014-08-21 09:17:31', 0, '0000-00-00 00:00:00', 0);
+(20, 1041, '03f201017', 3, '<span class="vmshipment_name">Levering 4000 - 9999</span>', '0.0000', 'KG', '350.00', '0.00', -1, '2014-08-22 10:12:14', 0, '2014-08-22 10:12:14', 0, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 

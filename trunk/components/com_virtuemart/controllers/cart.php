@@ -549,7 +549,7 @@ class VirtueMartControllerCart extends JController {
 				$cart->ST['phone_1'] = JRequest::getVar('st_phone');
 			}
 			//T.Trung end
-
+            //print_r($cart);exit;
 			$cart->confirmDone();
 			//T.Trung
 			$siteURL = JURI::base();
@@ -560,12 +560,13 @@ class VirtueMartControllerCart extends JController {
                 if(JRequest::getVar('virtuemart_paymentmethod_id') == 2){
                     $viabill = "&viabill=1";
                 }
+                
                 $this->setRedirect($siteURL . 'index.php?option=com_virtuemart&view=cart&layout=payment&virtuemart_order_id='.$cart->virtuemart_order_id.$viabill);
             }
 			//T.Trung end
-			$view = $this->getView('cart', 'html');
+			/*$view = $this->getView('cart', 'html');
 			$view->setLayout('order_done');
-			$view->display();
+			$view->display();*/
 		}
 
 	}

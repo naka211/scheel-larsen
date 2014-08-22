@@ -18,6 +18,9 @@ if($optview == "com_virtuemartproductdetails"){
 if($viewlayout == "cartorder_done"){
     $haveLeft = false;
 }
+if($viewlayout == "cartpayment"){
+    $haveLeft = false;
+}
 
 ?>
 <!DOCTYPE html>
