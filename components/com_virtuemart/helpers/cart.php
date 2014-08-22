@@ -372,6 +372,7 @@ class VirtueMartCart {
 			if($quantityPost === 0) continue;
 
 			$tmpProduct = $pModel->getProduct($virtuemart_product_id, true, false,true,$quantityPost);
+            
 			$products[] = $tmpProduct;
 
 			if ( VmConfig::get('oncheckout_show_images')){
