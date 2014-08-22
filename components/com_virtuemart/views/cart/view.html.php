@@ -174,6 +174,7 @@ class VirtueMartViewCart extends VmView {
 			$order_language = $lang->getTag();
 			$this->assignRef('order_language',$order_language);
 		}
+        
 		//dump ($cart,'cart');
 		$useSSL = VmConfig::get('useSSL', 0);
 		$useXHTML = false;
