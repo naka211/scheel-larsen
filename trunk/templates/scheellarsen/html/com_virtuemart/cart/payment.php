@@ -30,6 +30,7 @@ if(!class_exists('VmModel'))require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'vmmo
 $orderModel=VmModel::getModel('orders');
 $order = $orderModel->getOrder($orderid);
 //print_r($order);exit;
+$pm = $order['details']['BT']->virtuemart_paymentmethod_id;
 
 $siteURL = JURI::base();
 
@@ -41,9 +42,9 @@ $ordernumber = $order['details']['BT']->order_number;
 $amount = $order['details']['BT']->order_total * 100;
 
 $currency = 'DKK';
-$continueurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&pm=1';
-$cancelurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginUserPaymentCancel&id='.$order['details']['BT']->virtuemart_order_id. '&pm=1';
-$callbackurl = $siteURL . 'index.php?callback=1&option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&pm=1';
+$continueurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&pm='.$pm;
+$cancelurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginUserPaymentCancel&on='.ordernumber;
+$callbackurl = $siteURL . 'index.php?callback=1&option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&pm='.$pm;
                 
 $autocapture = '0';
 //$cardtypelock = 'dankort, danske-dk, mastercard, mastercard-dk, american-express, american-express-dk, diners, diners-dk, edankort, fbg1886, jcb, mastercard-debet-dk, nordea-dk, visa, visa-dk, visa-electron, visa-electron-dk';
