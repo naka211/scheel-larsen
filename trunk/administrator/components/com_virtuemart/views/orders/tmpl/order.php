@@ -105,7 +105,11 @@ $document->addScriptDeclaration ( "
 		");
 
 ?>
-
+<style>
+.product-field-type-M{
+    display:none;
+}
+</style>
 <form name='adminForm' id="adminForm">
 		<input type="hidden" name="task" value="" />
 		<input type="hidden" name="option" value="com_virtuemart" />
@@ -663,7 +667,13 @@ $document->addScriptDeclaration ( "
 
 			<tr>
 				<td align="right" colspan="5"><strong><?php echo JText::_('COM_VIRTUEMART_ORDER_PRINT_SHIPPING') ?>:</strong></td>
-				<td  align="right" style="padding-right: 5px;"><?php echo $this->currency->priceDisplay($this->orderbt->order_shipment); ?>
+				<td  align="right" style="padding-right: 5px;"><?php 
+                    if($this->orderbt->order_shipment < 0){
+                        echo '0 DKK';
+                    } else {
+                        echo $this->currency->priceDisplay($this->orderbt->order_shipment); 
+                    }
+                ?>
 					<input class='orderedit' type="text" size="8" name="order_shipment" value="<?php echo $this->orderbt->order_shipment; ?>"/>
 				</td>
 				<td  align="right" style="padding-right: 5px;">&nbsp;</td>
@@ -672,9 +682,19 @@ $document->addScriptDeclaration ( "
 					<input class='orderedit' type="text" size="12" name="order_shipment_tax" value="<?php echo $this->orderbt->order_shipment_tax; ?>"/>
 				</td>
 				<td  align="right" style="padding-right: 5px;">&nbsp;</td>
-				<td  align="right" style="padding-right: 5px;"><?php echo $this->currency->priceDisplay($this->orderbt->order_shipment+$this->orderbt->order_shipment_tax); ?></td>
-
+				<td  align="right" style="padding-right: 5px;"><?php 
+                if($this->orderbt->order_shipment < 0){
+                    echo '0 DKK';
+                } else {
+                    echo $this->currency->priceDisplay($this->orderbt->order_shipment+$this->orderbt->order_shipment_tax); 
+                }
+                ?></td>
 			</tr>
+            <?php if($this->orderbt->order_shipment < 0){?>
+            <tr>
+                <td align="right" colspan="11"><strong>Rabat 10% ved afhentning</strong></td>
+            </tr>
+            <?php }?>
 			 <tr>
 				<td align="right" colspan="5"><strong><?php echo JText::_('COM_VIRTUEMART_ORDER_PRINT_PAYMENT') ?>:</strong></td>
 				<td  align="right" style="padding-right: 5px;"><?php echo $this->currency->priceDisplay($this->orderbt->order_payment); ?>

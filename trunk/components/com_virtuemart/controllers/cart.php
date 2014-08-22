@@ -548,7 +548,6 @@ class VirtueMartControllerCart extends JController {
 				$cart->ST['city'] = JRequest::getVar('st_city');
 				$cart->ST['phone_1'] = JRequest::getVar('st_phone');
 			}
-			
 			//T.Trung end
 
 			$cart->confirmDone();
@@ -557,7 +556,11 @@ class VirtueMartControllerCart extends JController {
             if(JRequest::getVar('mwctype') == 3){
                 $this->setRedirect( $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done&virtuemart_order_id='.$cart->virtuemart_order_id);
             } else {
-                //$this->setRedirect('https://relay.ditonlinebetalingssystem.dk/relay/v2/relay.cgi/'. $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done&tmpl=component&forcerelay=1&HTTP_COOKIE='.getenv("HTTP_COOKIE"));
+                $viabill = "";
+                if(JRequest::getVar('virtuemart_paymentmethod_id') == 2){
+                    $viabill = "&viabill=1";
+                }
+                $this->setRedirect($siteURL . 'index.php?option=com_virtuemart&view=cart&layout=payment&virtuemart_order_id='.$cart->virtuemart_order_id.$viabill);
             }
 			//T.Trung end
 			$view = $this->getView('cart', 'html');

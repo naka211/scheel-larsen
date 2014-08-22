@@ -73,13 +73,17 @@ if($BT_info->address_type_name == 1 ){
 	$type = "Offentlig instans";
 }
 ?>
-
+<style>
+.costumTitle{
+    display:none;
+}
+</style>
 <div class="template2">
   <div class="thanks_page clearfix">
     <h2 class="c669903">Indkøbskurven</h2>
     <div class="top_info">
       <p><strong>Ordrenummer: <?php echo $order['details']['BT']->order_number;?></strong><br>
-        En ordrebekræftelse vil blive sendt til <strong><a href="mailto:<?php echo $email;?>"><?php echo $email;?></a></strong><br>
+        En ordrebekræftelse vil blive sendt til <strong><a href="mailto:<?php echo $order['details']['BT']->email;?>"><?php echo $order['details']['BT']->email;?></a></strong><br>
         Har du spørgsmål, kan du kontakte os på +45 4162 8001</p>
     </div>
     <div class="thanks_info clearfix">
@@ -126,7 +130,13 @@ if($BT_info->address_type_name == 1 ){
           <span class="w320 fl"><?php echo $BT_info->message1;?></span> </p>
         <p>
           <label for=""><strong>Betalingsmetode:</strong></label>
-          Kortbetaling</p>
+        <?php if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
+        Efterbetalte
+        <?php } else {?>
+        Kortbetaling
+        <?php }?>
+          
+          </p>
         <p>
           <label for=""><strong>Levering:</strong></label>
         <?php if($BT_info->type == 1){?>
@@ -159,7 +169,7 @@ if($BT_info->address_type_name == 1 ){
         <p>
           <label for="">Telefonnummer:</label>
           <?php echo $ST_info->phone_1;?></p>
-        <?php if($BT_info->type == 1){?>
+        <?php if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
         <p class="red f18">Bemærk! Vi kontakter jer, når varen er klar afhentning</p>
         <?php }?>
       </div>
@@ -174,17 +184,24 @@ if($BT_info->address_type_name == 1 ){
           <th>Pris i alt</th>
         </tr>
         <?php foreach($order['items'] as $item){
-            //$attr = json_decode($item->product_attribute);
+            $attrs = json_decode($item->product_attribute);
             //preg_match_all("#\">[\w\W]*?</span>#", $item->product_attribute, $tmp);
-            //print_r($item);exit;
+            $attrs = (array)$attrs;
         ?>
         <tr>
-          <td><div class="img_pro"> <img width="90" src="<?php echo $img;?>"> </div>
+          <td><!--<div class="img_pro"> <img width="90" src="<?php echo $img;?>"> </div>-->
             <div class="content_pro">
               <h4><?php echo $item->order_item_name;?></h4>
               <p>Vare-nummer: <?php echo $item->order_item_sku;?></p>
-              <p>Størrelse: Højde 21 cm-Ø27 cm</p>
-              <p>BORDPLADE 50X60 CM, HVID MATTERET HÆRDET GLAS</p>
+              <?php 
+              $i = 1;
+              foreach($attrs as $attr){
+                  if($i != 2){
+              ?>
+              <p><?php echo $attr;?></p>
+              <?php }
+              $i++;
+              }?>
             </div></td>
           <td><p><?php echo $item->product_quantity;?></p></td>
           <td><p><?php echo number_format($item->product_item_price,2,',','.').' DKK'; ?></p></td>
@@ -204,8 +221,21 @@ if($BT_info->address_type_name == 1 ){
                 </tr>
                 <tr>
                   <td colspan="2">FRAGT: </td>
-                  <td><?php echo number_format($order['details']['BT']->order_shipment,2,',','.').' DKK'; ?></td>
+                  <td><?php 
+                    if($order['details']['BT']->virtuemart_shipmentmethod_id != 1)
+                        echo number_format($order['details']['BT']->order_shipment,2,',','.').' DKK'; 
+                    else
+                        echo 0 . ' DKK';
+                  ?>
+                  </td>
                 </tr>
+                <?php 
+                    if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){
+                ?>
+                <tr>
+                    <td colspan="4">Rabat 10% ved afhentning</td>
+                </tr>
+                <?php }?>
                 <tr>
                   <td colspan="2"><h4>total:</h4></td>
                   <td colspan="2"><h4><?php echo number_format($order['details']['BT']->order_total,2,',','.').' DKK'; ?></h4></td>
