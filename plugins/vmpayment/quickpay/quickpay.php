@@ -331,13 +331,11 @@ class plgVMPaymentQuickpay extends vmPSPlugin {
     	$this->storePSPluginInternalData($response_fields, 'virtuemart_order_id', true);
     
     	if ($callbackData['qpstat']=="000") {
-    		//$new_status = $method->status_success;
-			$new_status = "C";	   
+    		$new_status = $method->status_success;	   
     	    $this->logInfo('process OK, status', 'message');
     	} else {
     	    $this->logInfo('process ERROR' , 'ERROR');
-    	    //$new_status = $method->status_canceled;
-			$new_status = "X";
+    	    $new_status = $method->status_canceled;
         }
         
     	$this->logInfo('plgVmOnPaymentNotification return new_status:' . $new_status, 'message');
@@ -356,7 +354,7 @@ class plgVMPaymentQuickpay extends vmPSPlugin {
     	$order = array();		
     	$order['order_status'] = $new_status;
     	$order['customer_notified'] =1;
-		//error_log($new_status, 3, "error.log");
+		error_log($new_status."\n", 3, "error.log");
     	//$order['comments'] = JText::sprintf('VMPAYMENT_PAYPAL_PAYMENT_STATUS_CONFIRMED', $order_number);
     	$modelOrder->updateStatusForOneOrder($virtuemart_order_id, $order, true);
     
