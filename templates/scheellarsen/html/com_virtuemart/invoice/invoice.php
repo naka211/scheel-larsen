@@ -11,10 +11,6 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 	?>
 <table border="0" cellspacing="0" cellpadding="0" style="margin: 15px; background: #fff; border: 1px solid #646464;">
 	<tr>
-		<td style="text-align: center; border-bottom: 1px dotted #CACACA;" colspan="4"><img src="<?php echo JURI::base();?>templates/amager/img/logo2.png" alt="" width="196" height="97" /></td>
-	</tr>
-
-	<tr>
 		<td colspan="4"><h2 style="color: #00b2ea; border-bottom: 1px dotted #CACACA; padding: 10px; margin: 0;">FAKTURA</h2></td>
 	</tr>
 
