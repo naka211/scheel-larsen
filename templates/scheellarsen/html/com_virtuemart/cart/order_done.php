@@ -24,7 +24,7 @@ defined('_JEXEC') or die('');
 }
 	echo $this->html;*/
 
-$admin = JFactory::getUser('252');
+$admin = JFactory::getUser('62');
 $cart = $this->cart;
 //print_r($cart);
 if(!class_exists('shopFunctionsF')) require(JPATH_VM_SITE.DS.'helpers'.DS.'shopfunctionsf.php');
