@@ -105,9 +105,9 @@ jQuery(document).ready(function(){
         jQuery("#ship1").val(2);
         var subtotal = Number(jQuery("#subtotal").val());
         if(subtotal <= 1000){
-            var fee = 0;
-        } else {
             var fee = 150;
+        } else {
+            var fee = 0;
         }
     } else {
         jQuery("#ship1").val(3);
@@ -130,9 +130,9 @@ jQuery(document).ready(function(){
                     jQuery("#ship1").val(2);
                     var subtotal = Number(jQuery("#subtotal").val());
                     if(subtotal <= 1000){
-                        var fee = 0;
-                    } else {
                         var fee = 150;
+                    } else {
+                        var fee = 0;
                     }
                 } else {
                     jQuery("#ship1").val(3);

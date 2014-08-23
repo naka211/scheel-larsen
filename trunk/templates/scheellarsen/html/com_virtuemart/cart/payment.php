@@ -25,7 +25,7 @@ defined('_JEXEC') or die('');
 	echo $this->html;*/
 
 $orderid = JRequest::getVar('virtuemart_order_id');
-
+$session = JFactory::getSession();
 if(!class_exists('VmModel'))require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'vmmodel.php');
 $orderModel=VmModel::getModel('orders');
 $order = $orderModel->getOrder($orderid);
@@ -42,9 +42,9 @@ $ordernumber = $order['details']['BT']->order_number;
 $amount = $order['details']['BT']->order_total * 100;
 
 $currency = 'DKK';
-$continueurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&pm='.$pm;
-$cancelurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginUserPaymentCancel&on='.ordernumber;
-$callbackurl = $siteURL . 'index.php?callback=1&option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&pm='.$pm;
+$continueurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginResponseReceived&pm='.$pm.'&ordernumber='.$ordernumber;
+$cancelurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginUserPaymentCancel&on='.ordernumber.'&pm='.$pm;
+$callbackurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginNotification&tmpl=component&sessionid='.$session->getId();
                 
 $autocapture = '0';
 //$cardtypelock = 'dankort, danske-dk, mastercard, mastercard-dk, american-express, american-express-dk, diners, diners-dk, edankort, fbg1886, jcb, mastercard-debet-dk, nordea-dk, visa, visa-dk, visa-electron, visa-electron-dk';

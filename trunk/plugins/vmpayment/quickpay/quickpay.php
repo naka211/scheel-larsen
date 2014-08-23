@@ -157,7 +157,7 @@ class plgVMPaymentQuickpay extends vmPSPlugin {
     	    'currency' => $currency_code_3,
     	    'continueurl' => JROUTE::_(JURI::root() . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&pm=' . $order['details']['BT']->virtuemart_paymentmethod_id . '&ordernumber=' . $order['details']['BT']->order_number),
     	    'cancelurl' => JROUTE::_(JURI::root() . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginUserPaymentCancel&on=' . $order['details']['BT']->order_number . '&pm=' . $order['details']['BT']->virtuemart_paymentmethod_id),
-            'callbackurl' => JROUTE::_(JURI::root() . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginnotification&tmpl=component&sessionid=' . $session->getId()),
+            'callbackurl' => JROUTE::_(JURI::root() . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginNotification&tmpl=component&sessionid=' . $session->getId()),
             'autocapture' => $method->quickpay_autocapture,
     	    'autofee' => $method->quickpay_autofee,
     	    'cardtypelock' => $method->quickpay_cardtypelock,
@@ -287,7 +287,7 @@ class plgVMPaymentQuickpay extends vmPSPlugin {
     	    require( JPATH_VM_ADMINISTRATOR . DS . 'models' . DS . 'orders.php' );
     	$callbackData = JRequest::get('post');
     	$callbackDataGet = JRequest::get('get');
-    
+
     	//$this->_debug = true;
     	$order_number = $callbackData['ordernumber'];
     	$virtuemart_order_id = VirtueMartModelOrders::getOrderIdByOrderNumber($callbackData['ordernumber']);

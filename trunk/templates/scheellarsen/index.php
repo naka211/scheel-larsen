@@ -21,6 +21,9 @@ if($viewlayout == "cartorder_done"){
 if($viewlayout == "cartpayment"){
     $haveLeft = false;
 }
+if($optview == "com_virtuemartpluginresponse"){
+    $haveLeft = false;
+}
 
 ?>
 <!DOCTYPE html>
@@ -126,7 +129,7 @@ if($viewlayout == "cartpayment"){
                   <div class="total clearfix">
                     <div class="info_ fl">
                       <ul>
-                        <li>Ved køb af varer over 1.000 Dkk. hos Scheel-Larsen.dk leverer og samler vi GRATIS..! på hele Sjælland.</li>
+                        <li>Ved køb af varer over 1.000 DKK. hos Scheel-Larsen.dk leverer og samler vi GRATIS..! på hele Sjælland.</li>
                         <li>Ved køb under 1.000 kr. pålægges et fragtgebyr på 150 DKK.</li>
                         <li>Fragt til Jylland og Fyn 350 kr.</li>
                       </ul>
