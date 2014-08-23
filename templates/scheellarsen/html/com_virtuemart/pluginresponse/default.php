@@ -1,59 +1,50 @@
 <?php
-defined('_JEXEC') or die('');
 
 /**
-*
-* Template for the shopping cart
-*
-* @package	VirtueMart
-* @subpackage Cart
-* @author Max Milbers
-*
-* @link http://www.virtuemart.net
-* @copyright Copyright (c) 2004 - 2010 VirtueMart Team. All rights reserved.
-* @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
-* VirtueMart is free software. This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-*/
+ *
+ * Show Confirmation message from Offlien Payment
+ *
+ * @package	VirtueMart
+ * @subpackage
+ * @author Valerie Isaksen
+ * @link http://www.virtuemart.net
+ * @copyright Copyright (c) 2004 - 2010 VirtueMart Team. All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
+ * VirtueMart is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * @version $Id: default.php 3217 2011-05-12 15:51:19Z alatak $
+ */
+// Check to ensure this file is included in Joomla!
+defined('_JEXEC') or die('Restricted access');
+JHTML::_('behavior.modal');
 
 
-/*if ($this->display_title) {
-	echo "<h3>".JText::_('COM_VIRTUEMART_CART_ORDERDONE_THANK_YOU')."</h3>";
-}
-	echo $this->html;*/
+/*echo "<h3>" . $this->paymentResponse . "</h3>";
+if ($this->paymentResponseHtml) {
+    echo "<fieldset>";
+    echo $this->paymentResponseHtml;
+    echo "</fieldset>";
+}*/
 
-$admin = JFactory::getUser('252');
-$cart = $this->cart;
-//print_r($cart);
-if(!class_exists('shopFunctionsF')) require(JPATH_VM_SITE.DS.'helpers'.DS.'shopfunctionsf.php');
-$config =& JFactory::getConfig();
-$fromName = $config->getValue( 'config.sitename' );
-$fromMail = $config->getValue( 'config.mailfrom' );
-$vars['user'] = array('name' => $fromName, 'email' => $fromMail);
-$vars['vendor'] = array('vendor_store_name' => $fromName );
-
+// add something???
+$order_number = JRequest::getVar('ordernumber');
 $db = JFactory::getDBO();
-$orderid = JRequest::getVar('virtuemart_order_id');
 
-$query = "SELECT virtuemart_order_id, order_shipment, order_total, order_salesPrice, order_number FROM #__virtuemart_orders WHERE virtuemart_order_id = ".$orderid;
+$query = "SELECT virtuemart_order_id FROM #__virtuemart_orders WHERE order_number = '".$order_number."'";
 $db->setQuery($query);
-$order_info = $db->loadObject();
+$orderid = $db->loadResult();
 
 if(!class_exists('VmModel'))require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'vmmodel.php');
 $orderModel=VmModel::getModel('orders');
 $order = $orderModel->getOrder($orderid);
-//print_r($order);exit;
-$vars['orderDetails']=$order;
-shopFunctionsF::renderMail('invoice', $admin->email, $vars);
-shopFunctionsF::renderMail('invoice', $order->email, $vars);
 
-$query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'BT' AND virtuemart_order_id = ".$order_info->virtuemart_order_id;
+$query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'BT' AND virtuemart_order_id = ".$orderid;
 $db->setQuery($query);
 $BT_info = $db->loadObject();
 
-$query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'ST' AND virtuemart_order_id = ".$order_info->virtuemart_order_id;
+$query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'ST' AND virtuemart_order_id = ".$orderid;
 $db->setQuery($query);
 $ST_info = $db->loadObject();
 
