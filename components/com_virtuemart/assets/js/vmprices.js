@@ -35,6 +35,9 @@ if(typeof Virtuemart === "undefined")
                                         success: function (response) { 
                                             
                                             $('#list-item').html(response);
+                                            $('.mwc-tax').html($("div.my-tax").text());
+                                            $('.mwc-subtotal').html($("div.my-total").text());
+                                            $('.mwc-total-head').html($("div.my-total").text());
                                         },
 //                                        error: function (error){
 //                                            console.log(error);
@@ -44,20 +47,11 @@ if(typeof Virtuemart === "undefined")
 				$.getJSON(window.vmSiteurl+"index.php?option=com_virtuemart&nosef=1&view=cart&task=viewJS&format=json"+window.vmLang,
 					function(datas, textStatus) {
 						if (datas.totalProduct >0) { 
-                                                    console.log(datas);
+//                                                    console.log(datas);
                                                     var grandtotal = datas.billTotal;
                                                         grandtotal = grandtotal.replace(/<(?:.|\n)*?>/gm, '');
                                                         $('.img-cart p span').eq(0).text(datas.products.length+' VARE(R) =');
                                                         $('.img-cart p span').eq(1).text(grandtotal);
-                                                        
-                                                        
-                                                        var str = grandtotal.match(/\d+\.?\d*/g);
-                                                        var tax = parseInt(str);
-                                                        var re = parseFloat((tax*20)/100);
-                                                        alert(tax);
-                                                        $('.mwc-subtotal').html(str+',00 DKK');
-                                                        $('.mwc-tax').html(tax+',00 DKK');
-                                                        $('.mwc-total-head').html(str+',00 DKK');
                                                         
 //							mod.find(".vm_cart_products").html("");
 //							$.each(datas.products, function(key, val) {

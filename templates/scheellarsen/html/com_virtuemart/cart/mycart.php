@@ -66,3 +66,6 @@ $cart->prepareCartViewData();
     <a href="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=cart&task=delete&cart_virtuemart_product_id=' . $product->cart_item_id) ?>" rel="nofollow"" class="btnClose">close</a>
 </li>
 <?php } ?>
+<div class="my-tax" style="display: none"><?php echo number_format($cart->pricesUnformatted['salesPrice']*0.2,2,',','.');?> DKK</div>
+<div class="my-total" style="display: none"><?php echo number_format($cart->pricesUnformatted['salesPrice'],2,',','.');?> DKK</div>
+
