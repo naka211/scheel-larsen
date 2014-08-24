@@ -49,15 +49,12 @@ if(typeof Virtuemart === "undefined")
                                                         grandtotal = grandtotal.replace(/<(?:.|\n)*?>/gm, '');
                                                         $('.img-cart p span').eq(0).text(datas.products.length+' VARE(R) =');
                                                         $('.img-cart p span').eq(1).text(grandtotal);
-                                                        $.each(datas.products, function(key, val) {
-								$("#hiddencontainer .container").clone().appendTo(".vmCartModule .vm_cart_products");
-								$.each(val, function(key, val) {
-									if ($("#hiddencontainer .container ."+key)) mod.find(".vm_cart_products ."+key+":last").html(val) ;
-								});
-							});
+                                                        
                                                         
                                                         var str = grandtotal.match(/\d+\.?\d*/g);
-                                                        var tax = parseInt(str)*0.2;
+                                                        var tax = parseInt(str);
+                                                        var re = parseFloat((tax*20)/100);
+                                                        alert(tax);
                                                         $('.mwc-subtotal').html(str+',00 DKK');
                                                         $('.mwc-tax').html(tax+',00 DKK');
                                                         $('.mwc-total-head').html(str+',00 DKK');
