@@ -26,20 +26,54 @@ if(typeof Virtuemart === "undefined")
 
 				var $ = jQuery ;
 				$.ajaxSetup({ cache: false })
+                                $.ajax({
+                                        type: "GET",
+                                        contentType: "application/json; charset=utf-8",
+                                        url: "index.php",
+                                        data: { option: "com_virtuemart", view: "cart", layout: "mycart", format: "json" },
+                                        dataType: "html",
+                                        success: function (response) { 
+                                            
+                                            $('#list-item').html(response);
+                                        },
+//                                        error: function (error){
+//                                            console.log(error);
+//                                        }
+                                });
+                               
 				$.getJSON(window.vmSiteurl+"index.php?option=com_virtuemart&nosef=1&view=cart&task=viewJS&format=json"+window.vmLang,
 					function(datas, textStatus) {
-						if (datas.totalProduct >0) {
-							mod.find(".vm_cart_products").html("");
-							$.each(datas.products, function(key, val) {
+						if (datas.totalProduct >0) { 
+                                                    console.log(datas);
+                                                    var grandtotal = datas.billTotal;
+                                                        grandtotal = grandtotal.replace(/<(?:.|\n)*?>/gm, '');
+                                                        $('.img-cart p span').eq(0).text(datas.products.length+' VARE(R) =');
+                                                        $('.img-cart p span').eq(1).text(grandtotal);
+                                                        $.each(datas.products, function(key, val) {
 								$("#hiddencontainer .container").clone().appendTo(".vmCartModule .vm_cart_products");
 								$.each(val, function(key, val) {
 									if ($("#hiddencontainer .container ."+key)) mod.find(".vm_cart_products ."+key+":last").html(val) ;
 								});
 							});
-							mod.find(".total").html(datas.billTotal);
-							mod.find(".show_cart").html(datas.cart_show);
+                                                        
+                                                        var str = grandtotal.match(/\d+\.?\d*/g);
+                                                        var tax = parseInt(str)*0.2;
+                                                        $('.mwc-subtotal').html(str+',00 DKK');
+                                                        $('.mwc-tax').html(tax+',00 DKK');
+                                                        $('.mwc-total-head').html(str+',00 DKK');
+                                                        
+//							mod.find(".vm_cart_products").html("");
+//							$.each(datas.products, function(key, val) {
+//								$("#hiddencontainer .container").clone().appendTo(".vmCartModule .vm_cart_products");
+//								$.each(val, function(key, val) {
+//									if ($("#hiddencontainer .container ."+key)) mod.find(".vm_cart_products ."+key+":last").html(val) ;
+//								});
+//							});
+//                                                        
+//							mod.find(".total").html(datas.billTotal);
+//							mod.find(".show_cart").html(datas.cart_show);
 						}
-						mod.find(".total_products").html(datas.totalProductTxt);
+//						mod.find(".total_products").html(datas.totalProductTxt);
 					}
 				);
 			},
@@ -86,17 +120,19 @@ if(typeof Virtuemart === "undefined")
                             }
                         );
                     } else {
-                        $.facebox.settings.closeImage = closeImage;
-                        $.facebox.settings.loadingImage = loadingImage;
-                        //$.facebox.settings.faceboxHtml = faceboxHtml;
-                        $.facebox({ text: txt }, 'my-groovy-style');
+//                        $.facebox.settings.closeImage = closeImage;
+//                        $.facebox.settings.loadingImage = loadingImage;
+//                        //$.facebox.settings.faceboxHtml = faceboxHtml;
+//                        $.facebox({ text: txt }, 'my-groovy-style');
                     }
 
-                    if ($(".vmCartModule")[0]) {
-                        Virtuemart.productUpdate($(".vmCartModule"));
+                    if ($(".list-cart")[0]) {
+                        Virtuemart.productUpdate();
                     }
+                    $('.img-cart').trigger('click');
                 });
 
+                    
                 $.ajaxSetup({ cache: true });
 			},
 			product : function(carts) {

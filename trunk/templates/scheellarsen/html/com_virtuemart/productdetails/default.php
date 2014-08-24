@@ -86,9 +86,10 @@ if (empty($this->product)) {
                 ?>
               </h2>
             </div>
+                
             <div class="fr mt10">
                 <?php $stockhandle = VmConfig::get ('stockhandle', 'none');
-                if (($stockhandle == 'disableit' or $stockhandle == 'disableadd') and ($this->product->product_in_stock - $this->product->product_ordered) < 1) {
+                if (($stockhandle == 'disableit' or $stockhandle == 'disableadd') || ($this->product->product_in_stock - $this->product->product_ordered) < 1) {
                     ?>
                 <img src="<?php echo $tmpl?>img/icon_del.png" alt="">
                 <?php }else{ ?>
@@ -218,18 +219,8 @@ if (empty($this->product)) {
         echo '<br /><br />Ved køb af '.$this->product->price_quantity_start.' eller flere er prisen '.str_replace('.', ',', number_format($this->product->price_of_number,2)).' kr. pr. stk.';
     }
 	// Availability Image
-	$stockhandle = VmConfig::get('stockhandle', 'none');
-	if (($this->product->product_in_stock - $this->product->product_ordered) < 1){?>
-		<div class="bnt-outofstock" style="margin-top: 17px">
-<?php echo (file_exists(JPATH_BASE . DS . VmConfig::get('assets_general_path') . 'images/availability/' . VmConfig::get('rised_availability'))) ? JHTML::image(JURI::root() . VmConfig::get('assets_general_path') . 'images/availability/' . VmConfig::get('rised_availability', '7d.gif'), VmConfig::get('rised_availability', '7d.gif'), array('class' => 'availability')) : VmConfig::get('rised_availability'); ?>
-		</div>
-		<?php
-		}else{?>
-		<div class="bnt-ready-ship"></div>
-		<?php
-		}
-
-	// Product Price?>
+	
+	// Product Price ?>
 	<div class="w-price-left">
 <?php
 if ($this->show_prices and (empty($this->product->images[0]) or $this->product->images[0]->file_is_downloadable == 0)) {

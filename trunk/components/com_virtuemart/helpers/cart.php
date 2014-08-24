@@ -372,12 +372,12 @@ class VirtueMartCart {
 			if($quantityPost === 0) continue;
 
 			$tmpProduct = $pModel->getProduct($virtuemart_product_id, true, false,true,$quantityPost);
-            
 			$products[] = $tmpProduct;
 
-			if ( VmConfig::get('oncheckout_show_images')){
+                        //Trieu Nguyen add
+//			if ( VmConfig::get('oncheckout_show_images')){
 				$pModel->addImages($tmpProduct,1);
-			}
+//			}
 
 
 			// trying to save some space in the session table
@@ -844,7 +844,6 @@ class VirtueMartCart {
 	function confirmDone() {
 
 		$this->checkoutData();
-        
 		if ($this->_dataValidated) {
 			$this->_confirmDone = true;
 			$this->confirmedOrder();
@@ -922,7 +921,7 @@ class VirtueMartCart {
 			return $this->redirecter('index.php?option=com_virtuemart&view=cart' , $redirectMsg);
 		}
 
-		//$validUserDataBT = self::validateUserData();
+		$validUserDataBT = self::validateUserData();
 
 		if(!isset($this->tosAccepted)){
 			$userFieldsModel = VmModel::getModel('Userfields');
@@ -942,9 +941,9 @@ class VirtueMartCart {
 			}
 		}
 
-		/*if ($validUserDataBT!==true) {	//Important, we can have as result -1,false and true.
+		if ($validUserDataBT!==true) {	//Important, we can have as result -1,false and true.
 			return $this->redirecter('index.php?option=com_virtuemart&view=user&task=editaddresscheckout&addrtype=BT' , '');
-		}*/
+		}
 
 		if($this->STsameAsBT!==0){
 			if($this->_confirmDone){

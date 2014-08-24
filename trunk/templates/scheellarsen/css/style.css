@@ -152,7 +152,7 @@ ul#list-item li .price3 {float: left; margin-top: 20px; width: 105px;}
 ul#list-item li .price {float: left; margin-top: 20px; width: 105px;}
 ul#list-item li .count input {width: 30px; height: 20px; line-height: 20px; border: 1px solid #dcd6c0; text-align: center;}
 ul#list-item li h4 {font-size: 13px; font-family: 'Myriad Pro Regular'; margin: 0;}
-a.btnClose {background: url(../img/btnClose.png) no-repeat; width: 9px; height: 9px; text-indent: -99999px; display: block; position: absolute; top: 38px; right: 30px;}
+a.btnClose {background: url(../img/btnClose.png) no-repeat; width: 9px; height: 9px; text-indent: -99999px; display: block; position: absolute; top: 38px; right: 20px;}
 a.btnAdd {background: url(../img/icon_add.jpg) no-repeat; width: 9px; height: 9px; text-indent: -99999px; display: block; position: absolute; top: 0; right: 0;}
 a.btnSub {background: url(../img/icon_sub.jpg) no-repeat; width: 9px; height: 9px; text-indent: -99999px; display: block; position: absolute; bottom: 0; right: 0;}
 .total {padding: 13px 0; font-size: 16px; border-bottom: 1px solid #dcd6c0; border-top: 1px solid #dcd6c0; color: #000;}
@@ -351,8 +351,6 @@ table.list_item_cart tr td .content_pro p {margin: 0;}
 table.list_item_cart tr td .content_pro h4 {margin: 0; font-size: 13px; font-family: 'Myriad Pro Regular'; color: #000;}
 table.list_item_cart tr td .number {width: 42px;}
 table.list_item_cart tr td input {width: 30px; height: 20px; text-align: center;}
-.add {position: absolute; top: -7px; right: 0;}
-.sub {position: absolute; bottom: -2px; right: 0;}
 .cf9f7f3 {background: #f9f7f3;}
 table.list_item_cart tr.cf9f7f3 {background: #f9f7f3; padding: 15px 0;}
 table.list_item_cart tr.cf9f7f3 td {text-align: right; text-transform: uppercase; color: #000;  border-bottom: none; padding: 0 30px;}
@@ -457,7 +455,21 @@ input[type="radio"], input[type="checkbox"] {
     border-color: red !important;
 	border-width: 2px !important;
 }
+input.add{
+    border: none;
+    background-image: url(../img/icon_add.jpg);
+    width: 9px !important;
+    height: 9px !important;
+}
+input.sub{
+    border: none;
+    background-image: url(../img/icon_sub.jpg);
+    width: 9px !important;
+    height: 9px !important;
+}
 
+.add {position: absolute; right: 0;}
+.sub {position: absolute; bottom: -2px; right: 0;}
 /* Black themes*/
 /*.navbar-default {background: #fff; border: none; background: #fff url(../img/border_top2.jpg) repeat-x top center !important;}
 .cart_content {background-color: #f1f1f1 !important;}
