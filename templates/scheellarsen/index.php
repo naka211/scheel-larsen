@@ -15,6 +15,9 @@ if($optview == "com_virtuemartuser"){
 if($optview == "com_virtuemartproductdetails"){
     $haveLeft = false;
 }
+if($optview == "com_virtuemartcart"){
+    $haveLeft = false;
+}
 if($viewlayout == "cartorder_done"){
     $haveLeft = false;
 }
@@ -90,14 +93,18 @@ if($optview == "com_virtuemartpluginresponse"){
               {module Search product}
               
             </div>
-    
+<?php 
+$cart = VirtueMartCart::getCart(); 
+$cart->prepareCartViewData();
+
+?>
             <div class="w_cart">
               <img src="<?php echo $tmpl;?>img/cart.png" alt="">
               <div id="bg-cart"></div>
               <div class="cart_content clearfix">
                 <a class="img-cart clearfix hover" href="#">
                   <img src="<?php echo $tmpl;?>img/icon_cart.png" alt="">
-                  <p class="fl"><span>3 VARE(R) =</span><span>Total: 1.916 DKK</span></p>
+                  <p class="fl"><span><?php echo count($cart->products);?> VARE(R) =</span><span>Total : <?php echo number_format($cart->pricesUnformatted['billTotal'],0,',','.').' DKK'; ?></span></p>
                   <p class="icon_down"></p>
                 </a>
                 <div class="list-cart"> 
@@ -138,21 +145,21 @@ if($optview == "com_virtuemartpluginresponse"){
                       <table>
                           <tr>
                             <td>Subtotal:</td>
-                            <td width="40%">1.916 DKK</td>
+                            <td width="40%" class="mwc-subtotal"><?php echo number_format($cart->pricesUnformatted['salesPrice'],2,',','.').' DKK'; ?> </td>
                           </tr>
                           <tr>
                             <td>Heraf moms: </td>
-                            <td>383,20 DKK</td>
+                            <td class="mwc-tax"><?php echo number_format($cart->pricesUnformatted['salesPrice']*0.2,2,',','.').' DKK'; ?> </td>
                           </tr>
                           <tr>
                             <td><h4>total:</h4></td>
-                            <td><h4>1.916 DKK</h4></td>
+                            <td><h4 class="mwc-total-head"><?php echo number_format($cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?> </h4></td>
                           </tr>
                         </table>
                     </div>
                   </div>
-                  <a class="bntCheckout btn2" href="<?php echo JURI::base().'user/editaddresscheckoutBT.html'?>">GÅ TIL KASSEN</a>
-                  <a class="bntBasket btn2" href="cart.php">SE VAREKURV</a>
+                  <a class="bntCheckout btn2" href="index.php?option=com_virtuemart&view=checkout">GÅ TIL KASSEN</a>
+                  <a class="bntBasket btn2" href="index.php?option=com_virtuemart&view=cart">SE VAREKURV</a>
                 </div>
                 <!--.list-cart--> 
               </div>

@@ -57,19 +57,3 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
                 }
 	    ?>
         </div>
-<script type="text/javascript">
-jQuery(document).ready( function(){
-    var items = jQuery(".option.clearfix li");
-    jQuery(".option.clearfix li").click(function() {
-        var index = items.index(this);
-        var newurl = jQuery(".product-fields .image"+index+" img").attr("src");
-        newurl = newurl.replace("resized/", "");
-        newurl = newurl.substr(0, newurl.lastIndexOf("_"))+newurl.substr(newurl.lastIndexOf("."));
-//        alert(newurl);
-//        alert(jQuery(".product-fields .image"+index+" img").attr("src"));
-        jQuery(".product_img .img_larg .imgZoom").attr("href",newurl);
-        jQuery(".product_img #btnZoomIcon").attr("href",newurl);
-        jQuery(".product_img .img_larg .imgZoom img").attr("src",newurl);
-    });    
-});
-</script>

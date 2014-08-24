@@ -36,8 +36,7 @@ $alert=JText::sprintf ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED', $step);
 			?>
 			<div class="product-fields">
 				<?php foreach ($this->product->customfieldsCart as $field) { ?>
-                <?php //if($field->field_type != "M"){?>
-                <ul class="option clearfix">
+                                <ul class="option clearfix">
 				<div class="product-field product-field-type-<?php echo $field->field_type ?>">
 					<?php if ($field->show_title) { ?>
 						<span class="product-fields-title-wrapper"><span class="product-fields-title"><strong><?php echo vmText::_ ($field->custom_title) ?></strong></span>
@@ -49,8 +48,8 @@ $alert=JText::sprintf ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED', $step);
 					<span class="product-field-desc"><?php echo vmText::_($field->custom_field_desc) ?></span>
 				</div>
                                 </ul>
-                            <br/>
-				<?php } //}?>
+				<?php 
+                                } ?>
 			</div>
 			<?php
 		}
@@ -80,6 +79,25 @@ $alert=JText::sprintf ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED', $step);
 		<div class="addtocart-bar">
 
 <script type="text/javascript">
+    
+jQuery(document).ready( function(){
+    var items = jQuery(".option.clearfix .product-field-type-S li");
+    jQuery(".option.clearfix .product-field-type-S li").click(function() {
+        var parent = jQuery(this).attr('parent-id');
+        var index = items.index(this);
+        var newurl = jQuery(".product-field.product-field-type-M .product-field-display li[parent-id='" + parent + "']").eq(index).find("img").attr("src");
+        newurl = newurl.replace("resized/", "");
+        newurl = newurl.substr(0, newurl.lastIndexOf("_"))+newurl.substr(newurl.lastIndexOf("."));
+//        alert(newurl);
+//        alert(jQuery(".product-fields .image"+index+" img").attr("src"));
+        jQuery(".product_img .img_larg .imgZoom").attr("href",newurl);
+        jQuery(".product_img #btnZoomIcon").attr("href",newurl);
+        jQuery(".product_img .img_larg .imgZoom img").attr("src",newurl);
+        jQuery(".product-field.product-field-type-M .product-field-display li[parent-id='" + parent + "']").eq(index).find("input").attr("checked","checked");
+    });    
+});
+jQuery('.product-field-type-M').parent().hide();
+
     function syncQty(obj){
         jQuery(".quantity-input").val(obj.value);
     }
@@ -95,6 +113,7 @@ $alert=JText::sprintf ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED', $step);
  		return true;
  		}
 </script> 
+
 
 		<?php // Display the quantity box
 

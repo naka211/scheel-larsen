@@ -256,8 +256,17 @@ jQuery(document).ready(function(){
                         }
                     ?>
                     <tr>
-                        <td><div class="img_pro"> <img width="90" src="<?php echo $img;?>"> </div>
-                            <div class="content_pro">
+                        <td><div class="img_pro"> 
+                                <?php 
+                                if(strlen($img)>4){
+                                    echo '<img width="90" src="'.$img.'"> ';
+                                }else{
+                                    echo $product->image->displayMediaThumb ('', FALSE);
+                                }
+                                ?>
+                                
+                            </div>
+                            <div class="content_pro" style="float:none;">
                                 <h4><?php echo $product->product_name;?></h4>
                                 <p>Vare-nummer: <?php echo $product->product_sku;?></p>
                                 <?php if($select1){?><p><?php echo $select1;?></p><?php }?>
@@ -299,7 +308,7 @@ jQuery(document).ready(function(){
             <a class="conditions" href="index.php?option=com_content&view=article&id=8&Itemid=131" target="_blank">Jeg accepterer Handelsbetingelser.</a> </div>
         <div class="clear"></div>
         <div class="nextto clearfix">
-        <a class="fl btnVarekurv hover" href="cart.php">Til Varekurv</a> 
+        <a class="fl btnVarekurv hover" href="index.php?option=com_virtuemart&view=cart">Til Varekurv</a> 
         <!--<a class="fr btnBetaling hover" href="thanks.php">til Betaling</a>-->
         <button type="submit" class="validate fr btnBetaling hover" style="cursor:pointer; border:none;">Til Betaling</button>
         
