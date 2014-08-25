@@ -23,7 +23,6 @@ if(typeof Virtuemart === "undefined")
 				return false; // prevent reload
 			},
 			productUpdate : function(mod) {
-
 				var $ = jQuery ;
 				$.ajaxSetup({ cache: false })
                                 $.ajax({
@@ -38,6 +37,8 @@ if(typeof Virtuemart === "undefined")
                                             $('.mwc-tax').html($("div.my-tax").text());
                                             $('.mwc-subtotal').html($("div.my-total").text());
                                             $('.mwc-total-head').html($("div.my-total").text());
+                                            $('.img-cart p span').eq(1).text($("div.my-total").text());
+                                            $('.img-cart p span').eq(0).text($("div.my-quantity").text());
                                         },
 //                                        error: function (error){
 //                                            console.log(error);
@@ -47,11 +48,11 @@ if(typeof Virtuemart === "undefined")
 				$.getJSON(window.vmSiteurl+"index.php?option=com_virtuemart&nosef=1&view=cart&task=viewJS&format=json"+window.vmLang,
 					function(datas, textStatus) {
 						if (datas.totalProduct >0) { 
-//                                                    console.log(datas);
+                                                    console.log(datas);
                                                     var grandtotal = datas.billTotal;
                                                         grandtotal = grandtotal.replace(/<(?:.|\n)*?>/gm, '');
                                                         $('.img-cart p span').eq(0).text(datas.products.length+' VARE(R) =');
-                                                        $('.img-cart p span').eq(1).text(grandtotal);
+                                                        //$('.img-cart p span').eq(1).text(grandtotal);
                                                         
 //							mod.find(".vm_cart_products").html("");
 //							$.each(datas.products, function(key, val) {
@@ -187,5 +188,6 @@ if(typeof Virtuemart === "undefined")
 
 				}
 			});
+            
 		});
 	}

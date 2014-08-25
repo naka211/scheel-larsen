@@ -52,7 +52,7 @@ foreach ( $productList as $product ) { //print_r($product);exit;
             <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
             <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
             <?php }?>
-            <h4><?php
+            <h4 class="price_2"><?php
 					if (VmConfig::get ( 'show_prices' ) == '1') {
 						echo $this->currency->priceDisplay($product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );
 					} ?>

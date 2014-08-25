@@ -5,7 +5,7 @@ $i=1;
 <span id="add_menu" style="display:none;">
 	<div class="sub clearfix">
 <?php foreach($categories as $category){
-    $caturl = JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$child->virtuemart_category_id);
+    $caturl = JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$category->virtuemart_category_id);
 ?>
     <div class="sub_col">
 		<h4><a href="<?php echo $caturl;?>">• <?php echo $category->category_name;?></a></h4>

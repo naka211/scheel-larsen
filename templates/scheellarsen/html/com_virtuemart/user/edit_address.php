@@ -97,11 +97,11 @@ jQuery(document).ready(function(){
             data: {zip: st_zip}
         }).done(function(result) {
 			jQuery("#st_city").val(result);
-		})
+		});
     });
     
     var zip = jQuery("#city").val();
-    if(zip < 4000) {
+    if(zip < 5000) {
         jQuery("#ship1").val(2);
         var subtotal = Number(jQuery("#subtotal").val());
         if(subtotal <= 1000){
@@ -109,11 +109,13 @@ jQuery(document).ready(function(){
         } else {
             var fee = 0;
         }
+        var text = 'Leveret på Sjælland: ';
     } else {
         jQuery("#ship1").val(3);
         var fee = 350;
+        var text = 'Leveret til døren for Fyn og Jylland: ';
     }
-    jQuery("#shipPriceLabel").html(fee+" DKK");
+    jQuery("#shipPriceLabel").html(text+fee+" DKK");
     jQuery("#shipFee").val(fee);
     changeDelivery(jQuery('input[name=virtuemart_shipmentmethod_id]:checked', '#checkoutForm').val());
     
@@ -126,7 +128,7 @@ jQuery(document).ready(function(){
         }).done(function(result) {
             if(result){
                 jQuery("#city").val(result);
-                if(zip < 4000) {
+                if(zip < 5000) {
                     jQuery("#ship1").val(2);
                     var subtotal = Number(jQuery("#subtotal").val());
                     if(subtotal <= 1000){
@@ -134,16 +136,19 @@ jQuery(document).ready(function(){
                     } else {
                         var fee = 0;
                     }
+                    var text = 'Leveret på Sjælland: ';
                 } else {
                     jQuery("#ship1").val(3);
                     var fee = 350;
+                    var text = 'Leveret til døren for Fyn og Jylland: ';
                 }
                 jQuery("#shipFee").val(fee);
-                jQuery("#shipPriceLabel").html(fee+" DKK");
+                jQuery("#shipPriceLabel").html(text+fee+" DKK");
                 jQuery("#shipPriceLabel1").html(fee+" DKK");
+                jQuery("#shipMethod").show();
                 changeDelivery(jQuery('input[name=virtuemart_shipmentmethod_id]:checked', '#checkoutForm').val());
             }
-		})
+		});
     });
     
     shipTo = function(){
@@ -213,9 +218,9 @@ jQuery(document).ready(function(){
         <div class="w605 fr">
             <ul class="levering clearfix">
                 <h2><span>2</span>Levering</h2>
-                <li>
+                <li id="shipMethod" style="display:none;">
                     <input id="ship1" name="virtuemart_shipmentmethod_id" value="0" type="radio" checked onChange="changeDelivery(this.value)">
-                    Leveret til døren for Fyn og Jylland: <span id="shipPriceLabel"></span>
+                    <span id="shipPriceLabel"></span>
                 </li>
                 <li>
                     <input id="ship2" name="virtuemart_shipmentmethod_id" value="1" type="radio" onChange="changeDelivery(this.value)">

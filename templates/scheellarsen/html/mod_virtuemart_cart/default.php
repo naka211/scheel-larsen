@@ -33,7 +33,7 @@ $cart->prepareCartViewData();
         </a></div>
     <div class="list-cart-content">
       <h4><?php echo $product->product_name; ?></h4>
-      <p>Vare-nummer: <?php echo $product->sku; ?></p>
+      <p>Vare-nummer: <?php echo $product->product_sku; ?></p>
       <p><?php echo $cusfinal ?></p>
     </div>
     <div class="count">
@@ -48,6 +48,6 @@ $cart->prepareCartViewData();
         ?>
     </p>
     <p class="price3"><?php echo number_format($cart->pricesUnformatted[$pid]['salesPrice'], 2,',','.'). ' DKK' ?></p>
-    <a href="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=cart&task=delete&cart_virtuemart_product_id=' . $product->cart_item_id) ?>" rel="nofollow"" class="btnClose">close</a>
+    <a href="javascript:void(0);" onclick="deleteProduct(<?php echo $product->cart_item_id;?>)" rel="nofollow"" class="btnClose">close</a>
 </li>
 <?php } ?>

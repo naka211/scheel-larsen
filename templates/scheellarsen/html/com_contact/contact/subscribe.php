@@ -12,7 +12,7 @@ if(JRequest::getVar('success')){?>
 <div class="template">
     <div class="about_page">
         <h2>Kvittering</h2>
-        Din e-mail er tilmeldt i vores system.<br>
+        Du er hermed tilmeldt vores nyhedsbrev.<br>
         <br>
         Med venlig hilsen<br>
         Scheel-Larsen
@@ -31,7 +31,7 @@ if(JRequest::getVar('success')){?>
             </div>
             <div class="w430 fl mt10">
                 <form action="index.php" method="post" class="form-validate">
-                    <input type="text" placeholder="Indtast din e-mail" class="required" name="email">
+                    <input type="text" placeholder="Indtast din e-mail" class="required validate-email" name="email">
                     <button type="submit" class="btnSubscribe btn2 fl mt10 validate" style="cursor:pointer; border:none;">Tilmeld</button>
                     <input type="hidden" name="option" value="com_virtuemart" />
                     <input type="hidden" name="controller" value="virtuemart" />
