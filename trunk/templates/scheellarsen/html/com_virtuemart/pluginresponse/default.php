@@ -78,15 +78,15 @@ if($BT_info->company){
         <p class="bold">Kundeoplysninger:</p>
         <p>
           <label for="">Kundetype:</label>
-          <span><?php echo $type;?></p>
+          <?php echo $type;?></p>
 		<?php if($BT_info->company){?>
-        <label for="">Firmanavn:</label><span><?php echo $BT_info->company;?></span><br>
-        <label for="">CVR-nr.:</label><span><?php echo $BT_info->cvr;?></span><br>
+        <p><label for="">Firmanavn:</label><?php echo $BT_info->company;?></p>
+        <p><label for="">CVR-nr.:</label><?php echo $BT_info->cvr;?></p>
         <?php } else if($BT_info->ean == 3){?>
-        <label for="">EAN-nr.:</label><span><?php echo $BT_info->ean;?></span><br>
-        <label for="">Myndighed/Institution:</label><span><?php echo $BT_info->authority;?></span><br>
-        <label for="">Ordre- el. rekvisitionsnr.:</label><span><?php echo $BT_info->order1;?></span><br>
-        <label for="">Personreference:</label><span><?php echo $BT_info->person;?></span><br>
+        <p><label for="">EAN-nr.:</label><?php echo $BT_info->ean;?></p>
+        <p><label for="">Myndighed/Institution:</label><?php echo $BT_info->authority;?></p>
+        <p><label for="">Ordre- el. rekvisitionsnr.:</label><?php echo $BT_info->order1;?></p>
+        <p><label for="">Personreference:</label><?php echo $BT_info->person;?></p>
         <?php }?>
         <p>
           <label for="">Fornavn:</label>
