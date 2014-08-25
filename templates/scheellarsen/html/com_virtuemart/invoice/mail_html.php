@@ -129,7 +129,7 @@ table tr td table.top_info {
                 <td colspan="4"><h2>ORDREOVERSIGT</h2></td>
             </tr>
             <tr>
-                <td colspan="4"><strong>Ordrenummer: <?php echo $orderDetails->order_number;?></strong></td>
+                <td colspan="4"><strong>Ordrenummer: <?php echo $orderDetail->order_number;?></strong></td>
             </tr>
             <tr>
                 <td colspan="4"><table width="100%" class="top_info">
@@ -144,7 +144,7 @@ table tr td table.top_info {
                                                 <td width="30%">Kundetype:</td>
                                                 <td><?php echo $type;?></td>
                                             </tr>
-                                            <?php if($orderDetails->company){?>
+                                            <?php if($orderDetail->company){?>
                                             <tr>
                                                 <td width="30%">Firmanavn:</td>
                                                 <td><?php echo $BT_info->company;?></td>
@@ -154,7 +154,7 @@ table tr td table.top_info {
                                                 <td><?php echo $BT_info->cvr;?></td>
                                             </tr>
                                             <?php }?>
-                                            <?php if($orderDetails->ean){?>
+                                            <?php if($orderDetail->ean){?>
                                             <tr>
                                                 <td width="30%">EAN-nr.:</td>
                                                 <td><?php echo $BT_info->ean;?></td>
