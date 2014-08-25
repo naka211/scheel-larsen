@@ -52,12 +52,12 @@ if(!$ST_info){
     $ST_info = $BT_info;
 }
 
-if($BT_info->address_type_name == 1 ){
-	$type = "Privat";
-} else if($BT_info->address_type_name == 2 ){
-	$type = "Erhverv";
-} else {
+if($BT_info->company){
+    $type = "Erhverv";
+} else if($BT_info->ean){
 	$type = "Offentlig instans";
+} else {
+	$type = "Privat";
 }
 ?>
 <style>
@@ -79,10 +79,10 @@ if($BT_info->address_type_name == 1 ){
         <p>
           <label for="">Kundetype:</label>
           <span><?php echo $type;?></p>
-		<?php if($BT_info->address_type_name == 2){?>
+		<?php if($BT_info->company){?>
         <label for="">Firmanavn:</label><span><?php echo $BT_info->company;?></span><br>
         <label for="">CVR-nr.:</label><span><?php echo $BT_info->cvr;?></span><br>
-        <?php } else if($BT_info->address_type_name == 3){?>
+        <?php } else if($BT_info->ean == 3){?>
         <label for="">EAN-nr.:</label><span><?php echo $BT_info->ean;?></span><br>
         <label for="">Myndighed/Institution:</label><span><?php echo $BT_info->authority;?></span><br>
         <label for="">Ordre- el. rekvisitionsnr.:</label><span><?php echo $BT_info->order1;?></span><br>
