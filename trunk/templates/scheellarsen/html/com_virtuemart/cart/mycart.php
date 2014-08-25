@@ -62,10 +62,17 @@ $cart->prepareCartViewData();
         }
         ?>
     </p>
-    <p class="price3"><?php echo number_format($cart->pricesUnformatted[$pid]['salesPrice']*$product->quantity, 2,',','.'). ' DKK' ?></p>
-    <a href="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=cart&task=delete&cart_virtuemart_product_id=' . $product->cart_item_id) ?>" rel="nofollow"" class="btnClose">close</a>
+    <p class="price3"><?php echo number_format($cart->pricesUnformatted[$pid]['salesPrice']*$product->quantity, 2,',','.'). ' DKK'; ?></p>
+    <a href="javascript:void(0);" onclick="deleteProduct(<?php echo $product->cart_item_id;?>)" rel="nofollow"" class="btnClose">close</a>
 </li>
 <?php } ?>
+<?php if(count($cart)>0){
+    $pri = $cart->pricesUnformatted['salesPrice'];
+}
+else{
+    $pri = 0;
+}
+?>
 <div class="my-tax" style="display: none"><?php echo number_format($cart->pricesUnformatted['salesPrice']*0.2,2,',','.');?> DKK</div>
-<div class="my-total" style="display: none"><?php echo number_format($cart->pricesUnformatted['salesPrice'],2,',','.');?> DKK</div>
-
+<div class="my-total" style="display: none"><?php echo number_format($pri,2,',','.');?> DKK</div>
+<div class="my-quantity" style="display: none"><?php echo count($cart->products);?> VARE(R) =</div>

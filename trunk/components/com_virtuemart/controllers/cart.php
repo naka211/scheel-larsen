@@ -364,6 +364,17 @@ class VirtueMartControllerCart extends JController {
 
 		$mainframe->redirect(JRoute::_('index.php?option=com_virtuemart&view=cart', FALSE));
 	}
+    
+    public function deleteAjax() {
+		$mainframe = JFactory::getApplication();
+		/* Load the cart helper */
+		$cart = VirtueMartCart::getCart();
+		if ($cart->removeProductCart()){
+		    echo 1;exit;
+        } else {
+		    echo 0;exit;
+        }
+	}
 
 	/**
 	 * Delete a product from the cart

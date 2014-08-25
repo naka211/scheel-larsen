@@ -76,7 +76,7 @@ foreach ($this->cart->products as $pkey => $prow) {
         </div>
     </td>
     <td>
-        <div class="relative number">
+        <div class="relative number" style="margin-top:23px;">
         <?php
 //				$step=$prow->min_order_level;
                                 if ($prow->step_order_level)
@@ -132,7 +132,8 @@ foreach ($this->cart->products as $pkey => $prow) {
 			echo '<span class="line-through">' . $this->currencyDisplay->createPriceDiv ('basePriceVariant', '', $this->cart->pricesUnformatted[$pkey], TRUE, FALSE) . '</span><br />';
 		}*/
 		if ($this->cart->pricesUnformatted[$pkey]['discountedPriceWithoutTax']) {
-			echo $this->currencyDisplay->createPriceDiv ('discountedPriceWithoutTax', '', $this->cart->pricesUnformatted[$pkey], FALSE, FALSE);
+			//echo $this->currencyDisplay->createPriceDiv ('discountedPriceWithoutTax', '', $this->cart->pricesUnformatted[$pkey], FALSE, FALSE);
+            echo '<p style="margin-top:23px;">'.number_format($this->cart->pricesUnformatted[$pkey]['salesPrice'], 2,',','.'). ' DKK</p>';
 		} else {
 			echo $this->currencyDisplay->createPriceDiv ('basePriceVariant', '', $this->cart->pricesUnformatted[$pkey], FALSE, FALSE);
 		}
@@ -148,7 +149,10 @@ foreach ($this->cart->products as $pkey => $prow) {
 		elseif (VmConfig::get ('checkout_show_origprice', 1) && empty($this->cart->pricesUnformatted[$pkey]['basePriceWithTax']) && $this->cart->pricesUnformatted[$pkey]['basePriceVariant'] != $this->cart->pricesUnformatted[$pkey]['salesPrice']) {
 			echo '<span class="line-through">' . $this->currencyDisplay->createPriceDiv ('basePriceVariant', '', $this->cart->pricesUnformatted[$pkey], TRUE, FALSE, $prow->quantity) . '</span><br />';
 		}*/
-		echo $this->currencyDisplay->createPriceDiv ('salesPrice', '', $this->cart->pricesUnformatted[$pkey], FALSE, FALSE, $prow->quantity) ?></td>
+		//echo $this->currencyDisplay->createPriceDiv ('salesPrice', '', $this->cart->pricesUnformatted[$pkey], FALSE, FALSE, $prow->quantity);
+        echo '<p style="margin-top:23px;">'.number_format($this->cart->pricesUnformatted[$pkey]['salesPrice']*$prow->quantity, 2,',','.'). ' DKK</p>';
+        ?>
+        <a href="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=cart&task=delete&cart_virtuemart_product_id=' . $prow->cart_item_id) ?>" class="btnDel">Delete</a></td>
 </tr>
 	<?php
 	$i = ($i==1) ? 2 : 1;
@@ -160,8 +164,8 @@ foreach ($this->cart->products as $pkey => $prow) {
                       <tr>
                         <td colspan="2">
                           <ul>
-                            <li>Ved køb af varer over 1.000 Dkk. hos Scheel-Larsen.dk leverer og samler vi GRATIS..! på hele Sjælland.</li>
-                            <li>Ved køb under 1.000 kr. pålægges et fragtgebyr på 150 DKK.</li>
+                            <li>Ved køb af varer over 1.000 DKK. hos Scheel-Larsen.dk leverer og samler vi GRATIS..! på hele Sjælland.</li>
+                            <li>Ved køb under 1.000 DKK. pålægges et fragtgebyr på 150 DKK.</li>
                             <li>Fragt til Jylland 350 DKK.</li>
                           </ul>
                         </td>
