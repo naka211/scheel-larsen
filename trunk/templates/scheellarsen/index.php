@@ -86,7 +86,7 @@ if($optview == "com_virtuemartpluginresponse"){
     <header class="clearfix">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
           <div class="container relative">
-            <a class="navbar-brand" href=""><img src="<?php echo $tmpl;?>img/logo.png" alt="logo"></a>
+            <a class="navbar-brand" href="index.php"><img src="<?php echo $tmpl;?>img/logo.png" alt="logo"></a>
             <div class="w_info clearfix">
             
               {module Information}
@@ -94,7 +94,10 @@ if($optview == "com_virtuemartpluginresponse"){
               
             </div>
 <?php 
-$cart = VirtueMartCart::getCart(); 
+if (!class_exists( 'VmModel' )) require(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_virtuemart'.DS.'helpers'.DS.'vmmodel.php');
+ if (!class_exists( 'VmConfig' )) require(JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_virtuemart'.DS.'helpers'.DS.'config.php');
+    if(!class_exists('VirtueMartCart')) require(JPATH_VM_SITE.DS.'helpers'.DS.'cart.php');
+        $cart = VirtueMartCart::getCart(); 
 $cart->prepareCartViewData();
 
 ?>
