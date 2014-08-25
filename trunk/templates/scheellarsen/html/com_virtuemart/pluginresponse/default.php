@@ -117,7 +117,7 @@ if($BT_info->address_type_name == 1 ){
           <span class="w320 fl"><?php echo $BT_info->message1;?></span> </p>
         <p>
           <label for=""><strong>Betalingsmetode:</strong></label>
-        <?php if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
+        <?php if($order['details']['BT']->virtuemart_paymentmethod_id == 3){?>
         Efterbetalte
         <?php } else {?>
         Kortbetaling

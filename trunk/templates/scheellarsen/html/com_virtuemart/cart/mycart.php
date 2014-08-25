@@ -48,7 +48,7 @@ $cart->prepareCartViewData();
         </a></div>
     <div class="list-cart-content">
       <h4><?php echo $product->product_name; ?></h4>
-      <p>Vare-nummer: <?php echo $product->sku; ?></p>
+      <p>Vare-nummer: <?php echo $product->product_sku; ?></p>
       <p><?php echo $cusfinal ?></p>
     </div>
     <div class="count">
