@@ -98,7 +98,7 @@ $document->addScriptDeclaration ("
 $document->addStyleDeclaration ('#facebox .content {display: block !important; height: 480px !important; overflow: auto; width: 560px !important; }');
 
 ?>
-<div class="template2">
+<div class="template2" style="margin-top:-20px;">
     <div class="cart_page clearfix">
         <h2><?php echo JText::_ ('COM_VIRTUEMART_CART_TITLE'); ?></h2>
         <form method="post" id="checkoutForm" name="checkoutForm" action="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=cart' . $taskRoute, $this->useXHTML, $this->useSSL); ?>">
