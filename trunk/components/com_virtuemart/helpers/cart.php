@@ -941,9 +941,9 @@ class VirtueMartCart {
 			}
 		}
 
-		if ($validUserDataBT!==true) {	//Important, we can have as result -1,false and true.
+		/*if ($validUserDataBT!==true) {	//Important, we can have as result -1,false and true.
 			return $this->redirecter('index.php?option=com_virtuemart&view=user&task=editaddresscheckout&addrtype=BT' , '');
-		}
+		}*/
 
 		if($this->STsameAsBT!==0){
 			if($this->_confirmDone){
