@@ -335,7 +335,10 @@ table tr td table.top_info {
                                                 if($orderDetail->virtuemart_shipmentmethod_id == 1){
                                             ?>
                                             <tr>
-                                                <td colspan="2">Rabat 10% ved afhentning</td>
+                                                <td>Rabat 10% ved afhentning: </td>
+                                            </tr>
+                                            <tr>
+                                                <td><?php echo '-'.number_format($orderDetail->order_subtotal*0.1,2,',','.').' DKK'; ?></td>
                                             </tr>
                                             <?php }?>
                                             <tr>

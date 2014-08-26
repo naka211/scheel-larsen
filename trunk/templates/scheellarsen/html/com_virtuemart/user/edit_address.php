@@ -297,7 +297,8 @@ jQuery(document).ready(function(){
                                     <td colspan="2"><span id="shipPriceLabel1"></span></td>
                                 </tr>
                                 <tr id="deduct">
-                                    <td colspan="4">Rabat 10% ved afhentning</td>
+                                    <td colspan="2">Rabat 10% ved afhentning: </td>
+                                    <td colspan="2"><?php echo '-'.number_format($cart->pricesUnformatted['salesPrice']*0.1,2,',','.').' DKK'; ?></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><h4>TOTAL:</h4></td>
