@@ -220,7 +220,8 @@ if($BT_info->company){
                     if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){
                 ?>
                 <tr>
-                    <td colspan="4">Rabat 10% ved afhentning</td>
+                    <td colspan="2">Rabat 10% ved afhentning:</td>
+                    <td colspan="2"><?php echo number_format($order['details']['BT']->order_subtotal*0.1,2,',','.').' DKK'; ?></td>
                 </tr>
                 <?php }?>
                 <tr>
