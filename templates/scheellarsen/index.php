@@ -43,6 +43,34 @@ JHtml::_('behavior.formvalidation');
     <script src="<?php echo $tmpl;?>js/jquery-1.9.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <jdoc:include type="head" />
+    <?php if($optview=="com_virtuemartproductdetails"){
+        $db = JFactory::getDBO();
+        $query = 'SELECT product_desc, product_name FROM #__virtuemart_products_da_dk WHERE virtuemart_product_id = '.JRequest::getVar('virtuemart_product_id');	
+        $db->setQuery($query);
+        $pro = $db->loadObject();
+        
+        $query = 'SELECT file_url FROM #__virtuemart_medias WHERE virtuemart_media_id = (SELECT virtuemart_media_id FROM #__virtuemart_product_medias WHERE virtuemart_product_id = '.JRequest::getVar('virtuemart_product_id').' LIMIT 0,1)';	
+        $db->setQuery($query);
+        $img = $db->loadResult();
+        ?>
+    <meta name="productTitle" property="og:title" content="<?php echo $pro->product_name;?>">
+    <meta name="productImage" property="og:image" content="<?php echo JURI::base().$img;?>">
+    <meta property="og:url" content="<?php echo JRoute::_('http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]);?>" />
+    <meta property="og:description" content="<?php echo strip_tags($pro->product_desc);?>" />
+    <script>
+        jQuery(document).ready(function(){
+            jQuery("#facebookShare").click(function(){
+                postFacebookWallDetail("<?php echo urlencode(JURI::root()."index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=".JRequest::getVar('virtuemart_product_id')."&virtuemart_category_id=".JRequest::getVar('virtuemart_category_id')); ?>");
+            });
+            function postFacebookWallDetail(urlencode){
+                t=document.title; 
+                window.open('http://www.facebook.com/sharer.php?u='+urlencode+'&v=<?php echo time();?>','sharer','toolbar=0,status=0,width=626,height=436'); 
+                return false; 
+            }
+            
+        });
+    </script>
+    <?php }?>
     <script src="<?php echo JURI::base();?>components/com_virtuemart/assets/js/vmprices.js" type="text/javascript"></script>
     <!-- Bootstrap -->
     <link href="<?php echo $tmpl;?>css/bootstrap.min.css" rel="stylesheet">
@@ -73,15 +101,17 @@ JHtml::_('behavior.formvalidation');
     <script src="<?php echo $tmpl;?>js/jquery.tinyscrollbar.js"></script>
     <script src="<?php echo $tmpl;?>js/nicker.js"></script>
     <script>
-        deleteProduct = function(cart_item_id){
-            jQuery.ajax({
-                type: "POST",
-                url: "index.php?option=com_virtuemart&view=cart&task=deleteAjax&cart_virtuemart_product_id="+cart_item_id
-            }).done(function(result) {
-                if(result == 1)
-                    Virtuemart.productUpdate();
-            });
-        }
+        jQuery(document).ready(function(){
+            deleteProduct = function(cart_item_id){
+                jQuery.ajax({
+                    type: "POST",
+                    url: "index.php?option=com_virtuemart&view=cart&task=deleteAjax&cart_virtuemart_product_id="+cart_item_id
+                }).done(function(result) {
+                    if(result == 1)
+                        Virtuemart.productUpdate();
+                });
+            }            
+        });
     </script>
     </head>
     <body>

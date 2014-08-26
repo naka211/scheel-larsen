@@ -34,7 +34,7 @@ if (empty($this->product)) {
               <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
             </ul>-->                    
             <hr>
-            <a href="#"><img src="<?php echo $tmpl?>img/icon_face.png" alt=""></a>
+            <a href="javascript:void(0);" id="facebookShare"><img src="<?php echo $tmpl?>img/icon_face.png" alt=""></a>
             <div class="clear mb10"></div>
             <div class="video clearfix">
               <a class="fl imgZoom" href="https://www.youtube.com/watch?v=-1gQDlgrAQk"><img src="<?php echo $tmpl?>img/thumnail/img_small2.jpg" alt=""></a>
