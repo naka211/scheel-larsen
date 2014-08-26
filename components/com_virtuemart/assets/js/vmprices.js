@@ -48,7 +48,7 @@ if(typeof Virtuemart === "undefined")
 				$.getJSON(window.vmSiteurl+"index.php?option=com_virtuemart&nosef=1&view=cart&task=viewJS&format=json"+window.vmLang,
 					function(datas, textStatus) {
 						if (datas.totalProduct >0) { 
-                                                    console.log(datas);
+                                                    //console.log(datas);
                                                     var grandtotal = datas.billTotal;
                                                         grandtotal = grandtotal.replace(/<(?:.|\n)*?>/gm, '');
                                                         $('.img-cart p span').eq(0).text(datas.products.length+' VARE(R) =');
