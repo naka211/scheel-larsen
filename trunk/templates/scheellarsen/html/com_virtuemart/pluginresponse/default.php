@@ -116,7 +116,7 @@ if($BT_info->company){
           <label for="" class="fl">Besked:</label>
           <span class="w320 fl"><?php echo $BT_info->message1;?></span> </p>
         <p>
-          <label for=""><strong>Betalingsmetode:</strong></label>
+          <label for="">Betalingsmetode:</label>
         <?php if($order['details']['BT']->virtuemart_paymentmethod_id == 3){?>
         Efterbetalte
         <?php } else {?>
@@ -125,11 +125,13 @@ if($BT_info->company){
           
           </p>
         <p>
-          <label for=""><strong>Levering:</strong></label>
-        <?php if($BT_info->type == 1){?>
-        <span>Ved afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
+          <label for="">Levering:</label>
+        <?php if($BT_info->virtuemart_shipmentmethod_id == 1){?>
+        <span>Afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
+        <?php } else if($BT_info->virtuemart_shipmentmethod_id == 2){?>
+        <span>Leveret på Sjælland</span>
         <?php } else {?>
-        <span>Forsendelse</span>
+        <span>Leveret til døren for Fyn og Jylland</span>
         <?php }?>
           </p>
       </div>
@@ -192,7 +194,7 @@ if($BT_info->company){
             </div></td>
           <td><p><?php echo $item->product_quantity;?></p></td>
           <td><p><?php echo number_format($item->product_item_price,2,',','.').' DKK'; ?></p></td>
-          <td><p><?php echo number_format($item->product_final_price,2,',','.').' DKK'; ?></p></td>
+          <td><p><?php echo number_format($item->product_item_price*$item->product_quantity,2,',','.').' DKK'; ?></p></td>
         </tr>
         <?php }?>
         <tr>

@@ -278,8 +278,8 @@ jQuery(document).ready(function(){
                                 <?php if($select2){?><p><?php echo $select2;?></p><?php }?>
                             </div></td>
                         <td><p><?php echo $product->quantity;?></p></td>
-                        <td><p><?php echo $product->prices['salesPrice'];?> DKK </p></td>
-                        <td><p><?php echo $product->prices['salesPrice']*$product->quantity;?> DKK </p></td>
+                        <td><p><?php echo number_format($product->prices['salesPrice'],2,',','.').' DKK';?></p></td>
+                        <td><p><?php echo number_format($product->prices['salesPrice']*$product->quantity,2,',','.').' DKK';?></p></td>
                     </tr>
                     <?php }?>
                     <tr>
