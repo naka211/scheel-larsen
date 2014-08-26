@@ -279,7 +279,7 @@ else{
             <div class="footer_bottom clearfix">
                 <div class="container">
                     <p class="fl">Copyright © 2014 <a href="index.php">Scheel-Larsen.dk</a> . All rights reserved</p>
-                    <p class="fr">Design af <a target="_blank" href="http://www.mywebcreations.dk/">My Web Creations</a></p>
+                    <!--<p class="fr">Design af <a target="_blank" href="http://www.mywebcreations.dk/">My Web Creations</a></p>-->
                 </div>
             </div>
         </footer>
