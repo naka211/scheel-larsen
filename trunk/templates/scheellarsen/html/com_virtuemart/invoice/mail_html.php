@@ -209,7 +209,7 @@ table tr td table.top_info {
                                                 <td><?php echo $BT_info->message1;?></td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Betalingsmetode:</strong></td>
+                                                <td>Betalingsmetode:</td>
                                                 <td>
                                                 <?php if($orderDetail->virtuemart_paymentmethod_id == 3){?>
                                                 Efterbetalte
@@ -219,7 +219,7 @@ table tr td table.top_info {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Levering:</strong></td>
+                                                <td>Levering:</td>
                                                 <td>
                                                 <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
                                                 <span>Ved afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
@@ -265,7 +265,7 @@ table tr td table.top_info {
                                             </tr>
                                             <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
                                             <tr>
-                                                <td valign="top" colspan="2"><strong class="red">Bemærk! Vi kontakter jer, når varen er klar afhentning</strong></td>
+                                                <td valign="top" colspan="2"><strong style="color: red; font-size:18px;">Bemærk! Vi kontakter jer, når varen er klar afhentning</strong></td>
                                             </tr>
                                             <?php }?>
                                         </tbody>
@@ -335,10 +335,8 @@ table tr td table.top_info {
                                                 if($orderDetail->virtuemart_shipmentmethod_id == 1){
                                             ?>
                                             <tr>
-                                                <td>Rabat 10% ved afhentning: </td>
-                                            </tr>
-                                            <tr>
-                                                <td><?php echo '-'.number_format($orderDetail->order_subtotal*0.1,2,',','.').' DKK'; ?></td>
+                                                <td align="right">Rabat 10% ved afhentning: </td>
+                                                <td align="right"><?php echo '-'.number_format($orderDetail->order_subtotal*0.1,2,',','.').' DKK'; ?></td>
                                             </tr>
                                             <?php }?>
                                             <tr>
