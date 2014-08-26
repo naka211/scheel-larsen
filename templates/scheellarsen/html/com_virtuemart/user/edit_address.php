@@ -89,24 +89,33 @@ jQuery(document).ready(function(){
 	}
 	//isST process
     
-    var zip = jQuery("#city").val();
-    if(zip < 5000) {
-        jQuery("#ship1").val(2);
-        var subtotal = Number(jQuery("#subtotal").val());
-        if(subtotal <= 1000){
-            var fee = 150;
-        } else {
-            var fee = 0;
-        }
-        var text = 'Leveret på Sjælland: ';
-    } else {
-        jQuery("#ship1").val(3);
-        var fee = 350;
-        var text = 'Leveret til døren for Fyn og Jylland: ';
-    }
-    jQuery("#shipPriceLabel").html(text+fee+" DKK");
-    jQuery("#shipFee").val(fee);
-    changeDelivery(jQuery('input[name=virtuemart_shipmentmethod_id]:checked', '#checkoutForm').val());
+	setDelivery = function(zipcode){
+		zipcode = Number(zipcode);
+		if(zipcode < 5000) {
+			jQuery("#ship1").val(2);
+			var subtotal = Number(jQuery("#subtotal").val());
+			if(subtotal <= 1000){
+				var fee = 150;
+			} else {
+				var fee = 0;
+			}
+			var text = 'Leveret på Sjælland: ';
+		} else {
+			jQuery("#ship1").val(3);
+			var fee = 350;
+			var text = 'Leveret til døren for Fyn og Jylland: ';
+		}
+		jQuery("#shipFee").val(fee);
+		jQuery("#shipPriceLabel").html(text+fee+" DKK");
+		jQuery("#shipPriceLabel1").html(fee+" DKK");
+		jQuery("#shipMethod").show();
+		changeDelivery(jQuery('input[name=virtuemart_shipmentmethod_id]:checked', '#checkoutForm').val());
+	}
+	
+    var zip = jQuery("#zip").val();
+	if(zip){
+		setDelivery(zip);
+	}
     
     jQuery("#zip").blur(function(){
 		var zip = jQuery("#zip").val();
@@ -117,25 +126,9 @@ jQuery(document).ready(function(){
         }).done(function(result) {
             if(result){
                 jQuery("#city").val(result);
-                if(zip < 5000) {
-                    jQuery("#ship1").val(2);
-                    var subtotal = Number(jQuery("#subtotal").val());
-                    if(subtotal <= 1000){
-                        var fee = 150;
-                    } else {
-                        var fee = 0;
-                    }
-                    var text = 'Leveret på Sjælland: ';
-                } else {
-                    jQuery("#ship1").val(3);
-                    var fee = 350;
-                    var text = 'Leveret til døren for Fyn og Jylland: ';
-                }
-                jQuery("#shipFee").val(fee);
-                jQuery("#shipPriceLabel").html(text+fee+" DKK");
-                jQuery("#shipPriceLabel1").html(fee+" DKK");
-                jQuery("#shipMethod").show();
-                changeDelivery(jQuery('input[name=virtuemart_shipmentmethod_id]:checked', '#checkoutForm').val());
+				if(!jQuery("#st_zip").val()){
+					setDelivery(zip);
+				}
             }
 		});
     });
@@ -144,8 +137,9 @@ jQuery(document).ready(function(){
         if(jQuery(".w_Address").css("display")=="none"){
             jQuery(".w_Address").html("");
             jQuery("#STsameAsBT").val("1");
+			setDelivery(jQuery("#zip").val());
         } else {
-            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone">';
+            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip" maxlength="4"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone">';
             jQuery(".w_Address").html(st_html);
             jQuery("#STsameAsBT").val("0");
             
@@ -157,6 +151,7 @@ jQuery(document).ready(function(){
                     data: {zip: st_zip}
                 }).done(function(result) {
                     jQuery("#st_city").val(result);
+					setDelivery(st_zip);
                 });
             });
         }
@@ -202,7 +197,7 @@ jQuery(document).ready(function(){
                     <input class="input required" type="text" placeholder="Efternavn *" name="last_name" id="last_name">
                     <input class="input required" type="text" placeholder="Vejnavn *" name="street_name" id="street_name">
                     <input class="input required" type="text" placeholder="Hus/gade nr. *" name="street_number" id="street_number">
-                    <input class="w75 fl input2 required" type="text" placeholder="Postnr. *" name="zip" id="zip">
+                    <input class="w75 fl input2 required" type="text" placeholder="Postnr. *" name="zip" id="zip" maxlength="4">
                     <input class="w203 fr input2 required" type="text" placeholder="Bynavn *" name="city" id="city" readonly>
                     <input class="input required" type="text" placeholder="Telefon *" name="phone_1" id="phone_1">
                     <input class="input required validate-email" type="text" placeholder="E-mail adresse *" name="email" id="email">
