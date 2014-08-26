@@ -37,6 +37,7 @@ if (empty($this->keyword)){
 <script type="text/javascript">
     $('head').append('<link href="<?php echo $tmpl;?>css/black_style.css" rel="stylesheet" />');
 </script>
+        <?php if($this->category->images){?>
         <div class="banner">
             <div class="html_carousel">
               <div class="shawdow-banner"></div>
@@ -53,7 +54,7 @@ if (empty($this->keyword)){
               <div class="pagination" id="block1_pag"></div>
             </div>
         </div>
-<?php } ?>
+<?php }} ?>
         <h4 class="c505050"><?php echo $this->category->category_description; ?></h4>
         <p></p>
 <!--<div id="callout" class="banner-item">
@@ -168,8 +169,8 @@ if (VmConfig::get ('showCategory', 1) and empty($this->keyword)) {
 			</h3>
                         <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
                         <?php if(!empty($product->prices['discountAmount'])){?>
-                        <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] ); ?>
-                            <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+                        <?php //echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] ); ?>
+                            <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay(abs($product->prices['discountAmount']),0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
                         <?php }?>
                         <h4 class="price_2">
                             <?php
@@ -260,8 +261,8 @@ if (!empty($this->keyword)){
 			</h3>
                         <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
                         <?php if(!empty($product->prices['discountAmount'])){?>
-                        <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] ); ?>
-                            <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+                        <?php //echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] ); ?>
+                            <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay(abs($product->prices['discountAmount']),0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
                         <?php }?>
                         <h4 class="price_2">
                             <?php

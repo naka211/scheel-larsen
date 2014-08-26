@@ -43,7 +43,7 @@ JHtml::_('behavior.formvalidation');
     <script src="<?php echo $tmpl;?>js/jquery-1.9.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <jdoc:include type="head" />
-
+    <script src="<?php echo JURI::base();?>components/com_virtuemart/assets/js/vmprices.js" type="text/javascript"></script>
     <!-- Bootstrap -->
     <link href="<?php echo $tmpl;?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $tmpl;?>css/animate.css" rel="stylesheet">
@@ -107,7 +107,7 @@ if (!class_exists( 'VmModel' )) require(JPATH_ADMINISTRATOR.DS.'components'.DS.'
 $cart->prepareCartViewData();
 
 if(count($cart)>0){
-    $pri = $cart->pricesUnformatted['salesPrice'];
+    $pri = number_format($cart->pricesUnformatted['salesPrice'],2,',','.').' DKK';
 }
 else{
     $pri = 0;
@@ -117,7 +117,7 @@ else{
                     <div class="w_cart"> <img src="<?php echo $tmpl;?>img/cart.png" alt="">
                         <div id="bg-cart"></div>
                         <div class="cart_content clearfix"> <a class="img-cart clearfix hover" href="#"> <img src="<?php echo $tmpl;?>img/icon_cart.png" alt="">
-                            <p class="fl"><span><?php echo count($cart->products);?> VARE(R) =</span><span><?php echo $pri.' DKK'; ?></span></p>
+                            <p class="fl"><span><?php echo count($cart->products);?> VARE(R) =</span><span><?php echo $pri; ?></span></p>
                             <p class="icon_down"></p>
                             </a>
                             <div class="list-cart"> <a href="#" id="btnClose-cart" class="bntClose2"></a>
@@ -232,7 +232,7 @@ else{
                     <div class="newsletter clearfix">
                         <div class="w485 fl">
                             <p>TILMELD DIG VORES NYHEDSBREV OG FÅ GODE TILBUD OG NYHEDER <br>
-                                VI UDSENDER NYHEDSBREV 1-2 GANGE OM MÅNEDEN!</p>
+                                VI UDSENDER NYHEDSBREVE 1-2 GANGE OM MÅNEDEN!</p>
                         </div>
                         <div class="w430 fr mt5">
                             <form action="index.php" method="post" class="form-validate">

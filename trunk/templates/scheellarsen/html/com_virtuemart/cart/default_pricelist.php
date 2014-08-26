@@ -192,6 +192,6 @@ foreach ($this->cart->products as $pkey => $prow) {
         </table>
         
 <?php }else{ ?>
-        <div>Cart is empty</div>
+        <div>Din indkøbskurv er tom</div>
 <?php } ?>
 
