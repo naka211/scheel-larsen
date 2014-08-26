@@ -15,7 +15,7 @@ if(JRequest::getVar('success')){?>
         Du er hermed tilmeldt vores nyhedsbrev.<br>
         <br>
         Med venlig hilsen<br>
-        Scheel-Larsen
+        Krukker & Havemøbler ApS
         </p>
     </div>
 </div>

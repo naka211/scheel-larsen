@@ -222,9 +222,11 @@ table tr td table.top_info {
                                                 <td>Levering:</td>
                                                 <td>
                                                 <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
-                                                <span>Ved afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
+                                                <span>Afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
+                                                <?php } else if($orderDetail->virtuemart_shipmentmethod_id == 2){?>
+                                                <span>Leveret på Sjælland</span>
                                                 <?php } else {?>
-                                                <span>Forsendelse</span>
+                                                <span>Leveret til døren for Fyn og Jylland</span>
                                                 <?php }?>
                                                 </td>
                                             </tr>
@@ -307,7 +309,7 @@ table tr td table.top_info {
                                 </td>
                                 <td align="center"><?php echo $item->product_quantity;?></td>
                                 <td align="center"><?php echo number_format($item->product_item_price,2,',','.').' DKK'; ?></td>
-                                <td align="center"><?php echo number_format($item->product_final_price,2,',','.').' DKK'; ?></td>
+                                <td align="center"><?php echo number_format($item->product_item_price*$item->product_quantity,2,',','.').' DKK'; ?></td>
                             </tr>
                             <?php }?>
                             <tr>

@@ -64,7 +64,7 @@ foreach ( $productList as $product ) { //print_r($product);exit;
                 <p class="no_number">Vare-nummer: <?php echo $product->product_sku?></p>
                 <?php if(!empty($product->prices['discountAmount'])){?>
                 <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
-                <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay($product->prices['discountAmount'],0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+                <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay(abs($product->prices['discountAmount']),0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
                 <?php }?>
                 <h4><?php echo $this->currency->priceDisplay($product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );?></h4>
                 <a class="btnMore btn2" href="<?php echo $link;?>">Vis detaljer</a>
