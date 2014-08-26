@@ -27,16 +27,20 @@ $cart->prepareCartViewData();
 <li class="clearfix">
     <div class="list-cart-img"><a href="<?php echo $product->url; ?>">
         <?php 
-            if(count($matches)>0){
+            if(isset($matches) && count($matches)>0){
                 echo $matches[0].'/>';
             }else{
-                echo $product->image->displayMediaThumb ('', FALSE);
+                $encode = json_encode($product->image);
+                $decode = json_decode($encode);
+                echo '<img src="'.$decode->file_url.'"/>';
+//                var_dump($product->image->file_url);die;
+//                echo $product->image->displayMediaThumb('',false,'',true,true,'false'); 
             }
         ?>
         </a></div>
     <div class="list-cart-content">
       <h4><?php echo $product->product_name; ?></h4>
-      <p>Vare-nummer: <?php echo $product->product_sku; ?></p>
+      <p>Vare-nummer: <?php echo $product->sku; ?></p>
       <p><?php echo $cusfinal ?></p>
     </div>
     <div class="count">
@@ -51,6 +55,5 @@ $cart->prepareCartViewData();
         ?>
     </p>
     <p class="price3"><?php echo number_format($cart->pricesUnformatted[$pid]['salesPrice'], 2,',','.'). ' DKK' ?></p>
-    <a href="javascript:void(0);" onclick="deleteProduct('<?php echo $product->cart_item_id;?>')" rel="nofollow"" class="btnClose">close</a>
+   <a href="javascript:void(0);" onclick="deleteProduct('<?php echo $product->cart_item_id;?>')" rel="nofollow"" class="btnClose">close</a>
 </li>
-<?php } ?>
