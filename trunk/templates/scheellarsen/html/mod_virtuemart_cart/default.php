@@ -57,3 +57,4 @@ $cart->prepareCartViewData();
     <p class="price3"><?php echo number_format($cart->pricesUnformatted[$pid]['salesPrice'], 2,',','.'). ' DKK' ?></p>
    <a href="javascript:void(0);" onclick="deleteProduct('<?php echo $product->cart_item_id;?>')" rel="nofollow"" class="btnClose">close</a>
 </li>
+<?php } ?>
