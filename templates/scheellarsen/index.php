@@ -266,8 +266,11 @@ else{
                         </div>
                         <div class="w430 fr mt5">
                             <form action="index.php" method="post" class="form-validate">
-                                <input type="text" placeholder="Indtast din e-mail" class="fl required validate-email">
+                                <input type="text" placeholder="Indtast din e-mail" class="fl required validate-email" name="email">
                                 <button type="submit" class="btnSubscribe btn2 fl ml5" style="cursor:pointer; border:none;">Tilmeld</button>
+                                <input type="hidden" name="option" value="com_virtuemart" />
+                                <input type="hidden" name="controller" value="virtuemart" />
+                                <input type="hidden" name="task" value="subscribe" />
                             </form>
                         </div>
                     </div>
