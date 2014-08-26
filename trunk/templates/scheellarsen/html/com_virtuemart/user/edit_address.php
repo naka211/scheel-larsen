@@ -89,17 +89,6 @@ jQuery(document).ready(function(){
 	}
 	//isST process
     
-    jQuery("#st_zip").blur(function(){
-		var st_zip = jQuery("#st_zip").val();
-		jQuery.ajax({
-            type: "POST",
-            url: "<?php echo JURI::base();?>index.php?option=com_virtuemart&controller=cart&task=requestCity",
-            data: {zip: st_zip}
-        }).done(function(result) {
-			jQuery("#st_city").val(result);
-		});
-    });
-    
     var zip = jQuery("#city").val();
     if(zip < 5000) {
         jQuery("#ship1").val(2);
@@ -159,6 +148,17 @@ jQuery(document).ready(function(){
             var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone">';
             jQuery(".w_Address").html(st_html);
             jQuery("#STsameAsBT").val("0");
+            
+            jQuery("#st_zip").blur(function(){
+                var st_zip = jQuery("#st_zip").val();
+                jQuery.ajax({
+                    type: "POST",
+                    url: "<?php echo JURI::base();?>index.php?option=com_virtuemart&controller=cart&task=requestCity",
+                    data: {zip: st_zip}
+                }).done(function(result) {
+                    jQuery("#st_city").val(result);
+                });
+            });
         }
     }
     
@@ -177,7 +177,7 @@ jQuery(document).ready(function(){
 			jQuery("#checkoutForm").submit();
 		} else {
 			alert('Bedes acceptere vilkår og betingelser');
-			jQuery("#term").focus();
+			jQuery("#tosAccepted").focus();
 			return false;
 		}
 	});

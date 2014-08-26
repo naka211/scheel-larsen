@@ -7,6 +7,9 @@ defined('_JEXEC') or die('Restricted access');
 // ALL THE DISPLAY IS Done by Ajax using "hiddencontainer" ?>
 <!-- Virtuemart 2 Ajax Card -->
 <?php 
+if (!class_exists( 'VmModel' )) require(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_virtuemart'.DS.'helpers'.DS.'vmmodel.php');
+ if (!class_exists( 'VmConfig' )) require(JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_virtuemart'.DS.'helpers'.DS.'config.php');
+    if(!class_exists('VirtueMartCart')) require(JPATH_VM_SITE.DS.'helpers'.DS.'cart.php');
 $cart = VirtueMartCart::getCart(); 
 $cart->prepareCartViewData();
 ?>
