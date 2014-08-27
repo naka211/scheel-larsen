@@ -31,3 +31,4 @@ ul.cate li:hover ul li:hover a {color: #505050;}
 .template h2 {color: #505050; font-weight: bold;}
 .product_page h4 {color: #505050;}
 .btn_Findos {background: url(../img/title_find_os2.png) no-repeat; width: 187px; height: 28px; text-indent: -9999px; display: block;}
+.btnAddcart {background: url(../img/btnAddcart2.jpg) no-repeat !important; width: 434px; height: 44px; display: block; text-indent: -9999px;}
