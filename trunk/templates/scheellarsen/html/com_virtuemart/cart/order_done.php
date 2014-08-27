@@ -54,7 +54,7 @@ $modelOrder = VmModel::getModel('orders');
 $order1 = array();		
 $order1['order_status'] = "C";
 $order1['customer_notified'] =1;
-$modelOrder->updateStatusForOneOrder($virtuemart_order_id, $order1, true);
+$modelOrder->updateStatusForOneOrder($orderid, $order1, true);
 
 $query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'BT' AND virtuemart_order_id = ".$order_info->virtuemart_order_id;
 $db->setQuery($query);
