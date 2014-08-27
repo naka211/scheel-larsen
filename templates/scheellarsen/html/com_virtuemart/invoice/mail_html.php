@@ -218,18 +218,7 @@ table tr td table.top_info {
                                                 <?php }?>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>Levering:</td>
-                                                <td>
-                                                <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
-                                                <span>Afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
-                                                <?php } else if($orderDetail->virtuemart_shipmentmethod_id == 2){?>
-                                                <span>Leveret på Sjælland</span>
-                                                <?php } else {?>
-                                                <span>Leveret til døren for Fyn og Jylland</span>
-                                                <?php }?>
-                                                </td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table></td>
                                 <td width="50%" valign="top"><table width="100%">
@@ -272,6 +261,24 @@ table tr td table.top_info {
                                             <?php }?>
                                         </tbody>
                                     </table></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                <table width="100%">
+                                    <tbody><tr>
+                                        <td width="15%" valign="top" align="left">Levering:</td>
+                                        <td width="85%">
+                                        <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
+                                        <span>Afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
+                                        <?php } else if($orderDetail->virtuemart_shipmentmethod_id == 2){?>
+                                        <span>Leveret på Sjælland</span>
+                                        <?php } else {?>
+                                        <span>Leveret til døren for Fyn og Jylland</span>
+                                        <?php }?>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                </td>
                             </tr>
                         </tbody>
                     </table></td>

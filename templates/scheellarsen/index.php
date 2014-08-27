@@ -181,7 +181,7 @@ else{
                                         <table>
                                             <tr>
                                                 <td>Subtotal:</td>
-                                                <td width="40%" class="mwc-subtotal"><?php echo number_format($cart->pricesUnformatted['salesPrice'],2,',','.').' DKK'; ?></td>
+                                                <td width="60%" class="mwc-subtotal"><?php echo number_format($cart->pricesUnformatted['salesPrice'],2,',','.').' DKK'; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Heraf moms: </td>
