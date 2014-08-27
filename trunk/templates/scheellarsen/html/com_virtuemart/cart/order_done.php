@@ -27,12 +27,12 @@ defined('_JEXEC') or die('');
 $admin = JFactory::getUser('62');
 $cart = $this->cart;
 //print_r($cart);
-if(!class_exists('shopFunctionsF')) require(JPATH_VM_SITE.DS.'helpers'.DS.'shopfunctionsf.php');
+/*if(!class_exists('shopFunctionsF')) require(JPATH_VM_SITE.DS.'helpers'.DS.'shopfunctionsf.php');
 $config =& JFactory::getConfig();
 $fromName = $config->getValue( 'config.sitename' );
 $fromMail = $config->getValue( 'config.mailfrom' );
 $vars['user'] = array('name' => $fromName, 'email' => $fromMail);
-$vars['vendor'] = array('vendor_store_name' => $fromName );
+$vars['vendor'] = array('vendor_store_name' => $fromName );*/
 
 $db = JFactory::getDBO();
 $orderid = JRequest::getVar('virtuemart_order_id');
@@ -45,9 +45,16 @@ if(!class_exists('VmModel'))require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'vmmo
 $orderModel=VmModel::getModel('orders');
 $order = $orderModel->getOrder($orderid);
 //print_r($order);exit;
-$vars['orderDetails']=$order;
+/*$vars['orderDetails']=$order;
 shopFunctionsF::renderMail('invoice', $admin->email, $vars);
-shopFunctionsF::renderMail('invoice', $order->email, $vars);
+shopFunctionsF::renderMail('invoice', $order->email, $vars);*/
+
+if (!class_exists('VirtueMartModelOrders')) require( JPATH_VM_ADMINISTRATOR . DS . 'models' . DS . 'orders.php' );
+$modelOrder = VmModel::getModel('orders');	
+$order1 = array();		
+$order1['order_status'] = "C";
+$order1['customer_notified'] =1;
+$modelOrder->updateStatusForOneOrder($virtuemart_order_id, $order, true);
 
 $query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'BT' AND virtuemart_order_id = ".$order_info->virtuemart_order_id;
 $db->setQuery($query);
@@ -88,14 +95,14 @@ if($BT_info->address_type_name == 1 ){
         <p>
           <label for="">Kundetype:</label>
           <span><?php echo $type;?></p>
-		<?php if($BT_info->address_type_name == 2){?>
+		<?php if($BT_info->company){?>
         <label for="">Firmanavn:</label><span><?php echo $BT_info->company;?></span><br>
         <label for="">CVR-nr.:</label><span><?php echo $BT_info->cvr;?></span><br>
-        <?php } else if($BT_info->address_type_name == 3){?>
-        <label for="">EAN-nr.:</label><span><?php echo $BT_info->ean;?></span><br>
-        <label for="">Myndighed/Institution:</label><span><?php echo $BT_info->authority;?></span><br>
-        <label for="">Ordre- el. rekvisitionsnr.:</label><span><?php echo $BT_info->order1;?></span><br>
-        <label for="">Personreference:</label><span><?php echo $BT_info->person;?></span><br>
+        <?php } else if($BT_info->ean){?>
+        <p><label for="">EAN-nr.:</label><span><?php echo $BT_info->ean;?></p>
+        <p><label for="">Myndighed/Institution:</label><span><?php echo $BT_info->authority;?></p>
+        <p><label for="">Ordre- el. rekvisitionsnr.:</label><span><?php echo $BT_info->order1;?></p>
+        <p><label for="">Personreference:</label><span><?php echo $BT_info->person;?></p>
         <?php }?>
         <p>
           <label for="">Fornavn:</label>
@@ -135,10 +142,12 @@ if($BT_info->address_type_name == 1 ){
           </p>
         <p>
           <label for=""><strong>Levering:</strong></label>
-        <?php if($BT_info->type == 1){?>
-        <span>Ved afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
+        <?php if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
+        <span>Afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
+        <?php } else if($order['details']['BT']->virtuemart_shipmentmethod_id == 2){?>
+        <span>Leveret på Sjælland</span>
         <?php } else {?>
-        <span>Forsendelse</span>
+        <span>Leveret til døren for Fyn og Jylland</span>
         <?php }?>
           </p>
       </div>
