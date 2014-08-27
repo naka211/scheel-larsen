@@ -240,7 +240,6 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 	<td colspan="4" style="padding: 30px 10px; line-height: 1.8em;">
 		Krukker & Havemøbler ApS - Hesselrødvej 26 - 2980 Kokkedal<br />
 		Mobil: 41628001 - info@scheel-larsen.dk - CVR 30711912<br />
-		<a style="text-decoration: none;" href="mailto:info@amagerisenkram.dk">info@amagerisenkram.dk</a>
 	</td>
 	</tr>
 </table>
