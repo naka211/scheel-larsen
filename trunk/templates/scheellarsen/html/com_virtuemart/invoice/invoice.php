@@ -238,9 +238,8 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 
 	<tr style="margin-top: 20px;">
 	<td colspan="4" style="padding: 30px 10px; line-height: 1.8em;">
-		Tårnby Torv Isenkram
-		Tårnby Torv 9 2770 Kastrup<br />
-		Tlf: 3250 3611 - Fax: 3252 1536<br />
+		Krukker & Havemøbler ApS - Hesselrødvej 26 - 2980 Kokkedal<br />
+		Mobil: 41628001 - info@scheel-larsen.dk - CVR 30711912<br />
 		<a style="text-decoration: none;" href="mailto:info@amagerisenkram.dk">info@amagerisenkram.dk</a>
 	</td>
 	</tr>
