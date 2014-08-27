@@ -126,9 +126,9 @@ if($BT_info->company){
           </p>
         <p>
           <label for="">Levering:</label>
-        <?php if($BT_info->virtuemart_shipmentmethod_id == 1){?>
+        <?php if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
         <span>Afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
-        <?php } else if($BT_info->virtuemart_shipmentmethod_id == 2){?>
+        <?php } else if($order['details']['BT']->virtuemart_shipmentmethod_id == 2){?>
         <span>Leveret på Sjælland</span>
         <?php } else {?>
         <span>Leveret til døren for Fyn og Jylland</span>
