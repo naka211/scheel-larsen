@@ -308,9 +308,31 @@ class VirtueMartViewProductdetails extends VmView {
 	$this->assignRef('currency', $currency);
 
 	if(JRequest::getCmd( 'layout', 'default' )=='notify') $this->setLayout('notify'); //Added by Seyi Awofadeju to catch notify layout
+    
+    //T.Trung
+    $child_array = array();
+	$this->getLastCategory($child_array, 29);
+    $this->assignRef('child_array', $child_array);
+    //T.Trung end
 
 	parent::display($tpl);
     }
+    
+    //T.Trung
+    public function getLastCategory(&$array, $category_id){
+		$categoryModel = VmModel::getModel('category');
+		$vendorId = '1';
+		$categories = $categoryModel->getChildCategoryList($vendorId, $category_id);
+		foreach($categories as $category){
+			$categories1 = $categoryModel->getChildCategoryList($vendorId, (int)$category->virtuemart_category_id);
+			if(!$categories1){
+				$array[] = $category->virtuemart_category_id;
+			} else {
+				$this->getLastCategory($array, $category->virtuemart_category_id);
+			}
+		}
+	}
+    //T.Trung end
 
 	function renderMailLayout ($doVendor, $recipient) {
 		$tpl = VmConfig::get('order_mail_html') ? 'mail_html_notify' : 'mail_raw_notify';

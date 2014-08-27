@@ -19,6 +19,11 @@ if (empty($this->product)) {
     // event onContentBeforeDisplay
     echo $this->product->event->beforeDisplayContent;
 ?>
+<?php if(in_array($this->product->virtuemart_category_id, $this->child_array)) {?>
+<script type="text/javascript">
+    jQuery('head').append('<link href="<?php echo $tmpl;?>css/black_style.css" rel="stylesheet" />');
+</script>
+<?php }?>
 <div class="template">
   <div class="productdetail_page clearfix">
     <div class="main_content frame clearfix">

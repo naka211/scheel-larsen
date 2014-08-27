@@ -266,8 +266,8 @@ table tr td table.top_info {
                                 <td colspan="4">
                                 <table width="100%">
                                     <tbody><tr>
-                                        <td width="15%" valign="top" align="left">Levering:</td>
-                                        <td width="85%">
+                                        <td width="18%" valign="top" align="left">Levering:</td>
+                                        <td width="82%">
                                         <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
                                         <span>Afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
                                         <?php } else if($orderDetail->virtuemart_shipmentmethod_id == 2){?>
@@ -298,8 +298,9 @@ table tr td table.top_info {
                                 <th>Pris i alt</th>
                             </tr>
                             <?php foreach($this->orderDetails["items"] as $item){
-                            $attrs = json_decode($item->product_attribute);
-                            $attrs = (array)$attrs;
+                                $item->product_attribute = preg_replace('#"\s*<span.*?<\\\/span>#','"',$item->product_attribute);
+                                $attrs = json_decode($item->product_attribute);
+                                $attrs = (array)$attrs;
                             ?>
                             <tr>
                                 <td><h4><?php echo $item->order_item_name;?></h4>
