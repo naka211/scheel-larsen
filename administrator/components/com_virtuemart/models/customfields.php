@@ -887,7 +887,7 @@ class VirtueMartModelCustomfields extends VmModel {
 				$default = current ($group->options);
 				foreach ($group->options as $productCustom) {
 					$price = self::_getCustomPrice($productCustom->custom_price, $currency, $calculator);
-					$productCustom->text = vmText::_($productCustom->custom_value) . ' ' . $price;
+					$productCustom->text = vmText::_($productCustom->custom_value);
 				}
 				$group->display = VmHTML::select ('customPrice[' . $row . '][' . $group->virtuemart_custom_id . ']', $group->options, $default->custom_value, '', 'virtuemart_customfield_id', 'text', FALSE, false);
 			}
