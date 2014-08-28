@@ -117,7 +117,7 @@ class VirtueMartViewProductdetails extends VmView {
 	    }
 	    $product->customfieldsSorted['normal'] = $product->customfields;
 	    unset($product->customfields);
-    }
+    } 
 
 	$product->event = new stdClass();
 	$product->event->afterDisplayTitle = '';
