@@ -24,107 +24,161 @@ if (empty($this->product)) {
     jQuery('head').append('<link href="<?php echo $tmpl;?>css/black_style.css" rel="stylesheet" />');
 </script>
 <?php }?>
+
 <div class="template">
-  <div class="productdetail_page clearfix">
-    <div class="main_content frame clearfix">
-	{module Breadcrumbs}
-        <div class="product_img">
-            <?php
+    <div class="productdetail_page clearfix">
+        <div class="main_content frame clearfix"> {module Breadcrumbs}
+            <div class="product_img">
+                <?php
             echo $this->loadTemplate('images');
             ?>
-
-            <!--<ul id="thumblist" class="thumail clearfix gallery">
+                
+                <!--<ul id="thumblist" class="thumail clearfix gallery">
               <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
               <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
               <li><a href="#"><img src="img/thumnail/img_larg.jpg" alt=""></a></li>
-            </ul>-->                    
-            <hr>
-            <a href="javascript:void(0);" id="facebookShare"><img src="<?php echo $tmpl?>img/icon_face.png" alt=""></a>
-            <div class="clear mb10"></div>
-            <div class="video clearfix">
-              <a class="fl imgZoom" href="https://www.youtube.com/watch?v=-1gQDlgrAQk"><img src="<?php echo $tmpl?>img/thumnail/img_small2.jpg" alt=""></a>
+            </ul>-->
+                <hr>
+                <a href="javascript:void(0);" id="facebookShare"><img src="<?php echo $tmpl?>img/icon_face.png" alt=""></a>
+                <div class="clear mb10"></div>
+                <?php if($this->product->customfieldsSorted){?>
+                <div class="video clearfix"> <a class="fl imgZoom" href="<?php echo $this->product->customfieldsSorted['normal'][0]->display?>"><img src="<?php echo $tmpl?>img/thumnail/img_small2.jpg" alt=""></a> </div>
+                <?php }?>
             </div>
-        </div>
-        <div class="product_content">
-            <h2><?php echo $this->product->product_name ?></h2>
-            <?php // afterDisplayTitle Event
+            <div class="product_content">
+                <h2><?php echo $this->product->product_name ?></h2>
+                <?php // afterDisplayTitle Event
                 echo $this->product->event->afterDisplayTitle 
             ?>
-            <p><strong>Vare-nummer: <?php echo $this->product->product_sku?></strong></p>
-             <div id="scrollbar2">
-              <div class="scrollbar">
-                <div class="track">
-                  <div class="thumb">
-                    <div class="end"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="viewport">
-                <div class="overview">
-                    <?php
+                <p><strong>Vare-nummer: <?php echo $this->product->product_sku?></strong></p>
+                <div id="scrollbar2">
+                    <div class="scrollbar">
+                        <div class="track">
+                            <div class="thumb">
+                                <div class="end"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="viewport">
+                        <div class="overview">
+                            <?php
                     if (!empty($this->product->product_desc)) {
                         echo $this->product->product_desc;
                     }
                     ?>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <h3><?php if(!empty($this->product->prices['discountAmount'])){?>
-                <span class="price_old">Førpris: <?php echo $this->currency->priceDisplay($this->product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></span> 
-                <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay(abs($this->product->prices['discountAmount']),0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
-                <?php }?></h3>
-            <div class="number">
-              <label for="">Antal:</label>
-              <input type="text" name="qtytmp" id="qtytmp" value="<?php if (isset($this->product->min_order_level) && (int)$this->product->min_order_level > 0) {
+                <?php if($this->product->type_image){
+                ?>
+                <div class="reveal-modal" id="f_size" style="top: 100px; opacity: 1; visibility: hidden;">
+                    <div class="f_size clearfix">
+                        <h2>STØRRELSESGUIDE</h2>
+                        <div class="f_size_content">
+                            <div class="size_img"> <img alt="" src="images/type_images/<?php echo $this->product->type_image?>.jpg"> </div>
+                            <div class="size_detail">
+                                <table>
+                                    <tbody>
+                                        <?php if($this->product->diameter){?>
+                                        <tr>
+                                            <td width="40%" class="black">Diameter:</td>
+                                            <td><?php echo $this->product->diameter;?> cm</td>
+                                        </tr>
+                                        <?php }?>
+                                        <?php if($this->product->width){?>
+                                        <tr>
+                                            <td class="black">Bredde:</td>
+                                            <td><?php echo $this->product->width;?> cm</td>
+                                        </tr>
+                                        <?php }?>
+                                        <?php if($this->product->length){?>
+                                        <tr>
+                                            <td class="black">Længde:</td>
+                                            <td><?php echo $this->product->length;?> cm</td>
+                                        </tr>
+                                        <?php }?>
+                                        <?php if($this->product->depth){?>
+                                        <tr>
+                                            <td class="black">Dybde:</td>
+                                            <td><?php echo $this->product->depth;?> cm</td>
+                                        </tr>
+                                        <?php }?>
+                                        <?php if($this->product->height){?>
+                                        <tr>
+                                            <td class="black">Højde:</td>
+                                            <td><?php echo $this->product->height;?> cm</td>
+                                        </tr>
+                                        <?php }?>
+                                        <?php if($this->product->seatheight){?>
+                                        <tr>
+                                            <td class="black">Sædehøjde:</td>
+                                            <td><?php echo $this->product->seatheight;?> cm</td>
+                                        </tr>
+                                        <?php }?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="close-reveal-modal" id="close-reveal-modal2"></a>
+                </div>
+                <a data-reveal-id="f_size" href="#" class="btn_sizeguide">STØRRELSESGUIDE</a>
+                <?php }?>
+                <h3>
+                    <?php if(!empty($this->product->prices['discountAmount'])){?>
+                    <span class="price_old">Førpris: <?php echo $this->currency->priceDisplay($this->product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></span>
+                    <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay(abs($this->product->prices['discountAmount']),0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+                    <?php }?>
+                </h3>
+                <div class="number">
+                    <label for="">Antal:</label>
+                    <input type="text" name="qtytmp" id="qtytmp" value="<?php if (isset($this->product->min_order_level) && (int)$this->product->min_order_level > 0) {
 			echo $this->product->min_order_level;
 		} else {
 			echo '1';
 		} ?>" onblur="syncQty(this);"/>
-              <h2 class="price">
-            <?php if ($this->show_prices and (empty($this->product->images[0]) or $this->product->images[0]->file_is_downloadable == 0)) {
+                    <h2 class="price">
+                        <?php if ($this->show_prices and (empty($this->product->images[0]) or $this->product->images[0]->file_is_downloadable == 0)) {
     echo $this->loadTemplate('showprices');
             } 
             ?>
-                <?php
+                        <?php
 //                    if (VmConfig::get ( 'show_prices' ))
 //                            echo $this->currency->priceDisplay($this->product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );
                 ?>
-              </h2>
-            </div>
-                
-            <div class="fr mt10">
-                <?php $stockhandle = VmConfig::get ('stockhandle', 'none');
+                    </h2>
+                </div>
+                <div class="fr mt10">
+                    <?php $stockhandle = VmConfig::get ('stockhandle', 'none');
                 if (($stockhandle == 'disableit' or $stockhandle == 'disableadd') || ($this->product->product_in_stock - $this->product->product_ordered) < 1) {
                     ?>
-                <img src="<?php echo $tmpl?>img/icon_del.png" alt="">
-                <?php }else{ ?>
-                <img src="<?php echo $tmpl?>img/icon_checkgreen.png" alt="">
-                <?php } ?>
-            </div>
-            <div class="clear mb20"></div>
-            <?php 
+                    <img src="<?php echo $tmpl?>img/icon_del.png" alt="">
+                    <?php }else{ ?>
+                    <img src="<?php echo $tmpl?>img/icon_checkgreen.png" alt="">
+                    <?php } ?>
+                </div>
+                <div class="clear mb20"></div>
+                <?php 
             if (!empty($this->product->customfieldsSorted['normal'])){
             $this->position = 'normal';
             echo $this->loadTemplate('customfields');
             }
             ?>
-            
-            <?php 
+                <?php 
             if((($this->product->product_in_stock - $this->product->product_ordered) > 0) && (!$this->product->product_delivery))
 			echo $this->loadTemplate('addtocart');
             ?>
-            
-	<?php
+                <?php
 	// Product Edit Link
 	echo $this->edit_link;
 	// Product Edit Link END
 	?>
-        <?php
+                <?php
 	// PDF - Print - Email Icon
 	if (VmConfig::get('show_emailfriend') || VmConfig::get('show_printicon') || VmConfig::get('pdf_button_enable')) {
 	?>
-		<div class="icons">
-		<?php
+                <div class="icons">
+                    <?php
 		//$link = (JVM_VERSION===1) ? 'index2.php' : 'index.php';
 		$link = 'index.php?tmpl=component&option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $this->product->virtuemart_product_id;
 		$MailLink = 'index.php?option=com_virtuemart&view=productdetails&task=recommend&virtuemart_product_id=' . $this->product->virtuemart_product_id . '&virtuemart_category_id=' . $this->product->virtuemart_category_id . '&tmpl=component';
@@ -135,23 +189,16 @@ if (empty($this->product)) {
 		echo $this->linkIcon($link . '&print=1', 'COM_VIRTUEMART_PRINT', 'printButton', 'show_printicon');
 		echo $this->linkIcon($MailLink, 'COM_VIRTUEMART_EMAIL', 'emailButton', 'show_emailfriend');
 		?>
-		<div class="clear"></div>
-		</div>
-	<?php } ?>
-            
-        </div>
-        
-        
-        
-        
-        
-        
-	<?php
+                    <div class="clear"></div>
+                </div>
+                <?php } ?>
+            </div>
+            <?php
 	// Product Navigation
 	if (VmConfig::get('product_navigation', 1)) {
 	?>
-		<div class="product-neighbours">
-		<?php
+            <div class="product-neighbours">
+                <?php
 		if (!empty($this->product->neighbours ['previous'][0])) {
 		$prev_link = JRoute::_('index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $this->product->neighbours ['previous'][0] ['virtuemart_product_id'] . '&virtuemart_category_id=' . $this->product->virtuemart_category_id);
 		echo JHTML::_('link', $prev_link, $this->product->neighbours ['previous'][0]
@@ -162,11 +209,10 @@ if (empty($this->product)) {
 		echo JHTML::_('link', $next_link, $this->product->neighbours ['next'][0] ['product_name'], array('class' => 'next-page'));
 		}
 		?>
-		<div class="clear"></div>
-		</div>
-	<?php }?>
-
-	<?php
+                <div class="clear"></div>
+            </div>
+            <?php }?>
+            <?php
 	// Back To Category Button
 	/*if ($this->product->virtuemart_category_id) {
 		$catURL =  JRoute::_('index.php?option=com_virtuemart&view=category&virtuemart_category_id='.$this->product->virtuemart_category_id);
@@ -180,8 +226,7 @@ if (empty($this->product)) {
 		<a href="<?php echo $catURL ?>" class="product-details" title="<?php echo $categoryName ?>"><?php echo JText::sprintf('COM_VIRTUEMART_CATEGORY_BACK_TO',$categoryName) ?></a>
 	</div>*/
 ?>
-
-<?php
+            <?php
 		// TODO in Multi-Vendor not needed at the moment and just would lead to confusion
 		/* $link = JRoute::_('index2.php?option=com_virtuemart&view=virtuemart&task=vendorinfo&virtuemart_vendor_id='.$this->product->virtuemart_vendor_id);
 		  $text = JText::_('COM_VIRTUEMART_VENDOR_FORM_INFO_LBL');
@@ -193,19 +238,14 @@ if (empty($this->product)) {
 
 			if (empty($this->rating)) {
 			?>
-			<span class="vote"><?php echo JText::_('COM_VIRTUEMART_RATING') . ' ' . JText::_('COM_VIRTUEMART_UNRATED') ?></span>
-				<?php
+            <span class="vote"><?php echo JText::_('COM_VIRTUEMART_RATING') . ' ' . JText::_('COM_VIRTUEMART_UNRATED') ?></span>
+            <?php
 			} else {
 				$ratingwidth = $this->rating->rating * 24; //I don't use round as percetntage with works perfect, as for me
 				?>
-			<span class="vote">
-	<?php echo JText::_('COM_VIRTUEMART_RATING') . ' ' . round($this->rating->rating) . '/' . $maxrating; ?><br/>
-				<span title=" <?php echo (JText::_("COM_VIRTUEMART_RATING_TITLE") . round($this->rating->rating) . '/' . $maxrating) ?>" class="ratingbox" style="display:inline-block;">
-				<span class="stars-orange" style="width:<?php echo $ratingwidth.'px'; ?>">
-				</span>
-				</span>
-			</span>
-			<?php
+            <span class="vote"> <?php echo JText::_('COM_VIRTUEMART_RATING') . ' ' . round($this->rating->rating) . '/' . $maxrating; ?><br/>
+            <span title=" <?php echo (JText::_("COM_VIRTUEMART_RATING_TITLE") . round($this->rating->rating) . '/' . $maxrating) ?>" class="ratingbox" style="display:inline-block;"> <span class="stars-orange" style="width:<?php echo $ratingwidth.'px'; ?>"> </span> </span> </span>
+            <?php
 			}
 		}
 		if (is_array($this->productDisplayShipments)){
@@ -226,8 +266,8 @@ if (empty($this->product)) {
 	// Availability Image
 	
 	// Product Price ?>
-	<div class="w-price-left">
-<?php
+            <div class="w-price-left">
+                <?php
 if ($this->show_prices and (empty($this->product->images[0]) or $this->product->images[0]->file_is_downloadable == 0)) {
 //    echo $this->loadTemplate('showprices');
 }
@@ -236,8 +276,8 @@ $model		= VmModel::getModel("shipmentmethod");
 $shipment	= $model->getShipments();
 $shipment = $shipment[1];
 ?>
-	</div>
-<?php
+            </div>
+            <?php
 		// Add To Cart Button
 // 			if (!empty($this->product->prices) and !empty($this->product->images[0]) and $this->product->images[0]->file_is_downloadable==0 ) {
 //		if (!VmConfig::get('use_as_catalog', 0) and !empty($this->product->prices['salesPrice'])) {
@@ -248,18 +288,17 @@ $shipment = $shipment[1];
 // Ask a question about this product
 if (VmConfig::get('ask_question', 1) == 1){
 	?>
-			<div class="ask-a-question">
-				<a class="ask-a-question" href="<?php echo $this->askquestion_url ?>" ><?php echo JText::_('COM_VIRTUEMART_PRODUCT_ENQUIRY_LBL') ?></a>
-				<!--<a class="ask-a-question modal" rel="{handler: 'iframe', size: {x: 700, y: 550}}" href="<?php echo $this->askquestion_url ?>"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_ENQUIRY_LBL') ?></a>-->
-			</div>
-		<?php }
+            <div class="ask-a-question"> <a class="ask-a-question" href="<?php echo $this->askquestion_url ?>" ><?php echo JText::_('COM_VIRTUEMART_PRODUCT_ENQUIRY_LBL') ?></a> 
+                <!--<a class="ask-a-question modal" rel="{handler: 'iframe', size: {x: 700, y: 550}}" href="<?php echo $this->askquestion_url ?>"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_ENQUIRY_LBL') ?></a>--> 
+            </div>
+            <?php }
 
 		// Manufacturer of the Product
 		if (VmConfig::get('show_manufacturers', 1) && !empty($this->product->virtuemart_manufacturer_id)) {
 			//echo $this->loadTemplate('manufacturer');
 		}
 		?>
-	<?php
+            <?php
 //	if (!empty($this->product->customfieldsSorted['normal'])){
 //	$this->position = 'normal';
 //	echo $this->loadTemplate('customfields');
@@ -268,28 +307,29 @@ if (VmConfig::get('ask_question', 1) == 1){
 	$product_packaging = '';
 	if ($this->product->product_box) {
 	?>
-		<div class="product-box">
-		<?php
+            <div class="product-box">
+                <?php
 			echo JText::_('COM_VIRTUEMART_PRODUCT_UNITS_IN_BOX') .$this->product->product_box;
 		?>
-		</div>
-	<?php } // Product Packaging END
+            </div>
+            <?php } // Product Packaging END
 	?>
-<?php if($this->product->product_delivery){
+            <?php if($this->product->product_delivery){
 	$db = JFactory::getDBO();
 	$db->setQuery("SELECT introtext FROM #__content WHERE id = 16");	
 	$text = $db->loadResult();
 ?>
-<div class="w-frm-login reveal-modal" id="myModal1">
-	<a class="close-reveal-modal" href="javascript:void(0);"></a>	
-	<div class="frm-login"><div class="logo2" style="text-align:left;border-bottom: none"><?php echo $text;?></div></div>
-</div>
-<?php }?>
-    </div>
-<?php
+            <div class="w-frm-login reveal-modal" id="myModal1"> <a class="close-reveal-modal" href="javascript:void(0);"></a>
+                <div class="frm-login">
+                    <div class="logo2" style="text-align:left;border-bottom: none"><?php echo $text;?></div>
+                </div>
+            </div>
+            <?php }?>
+        </div>
+        <?php
 	// onContentAfterDisplay event
 	echo $this->product->event->afterDisplayContent; ?>
-	<?php
+        <?php
 	// Product Files
 	// foreach ($this->product->images as $fkey => $file) {
 	// Todo add downloadable files again
@@ -310,5 +350,5 @@ if (VmConfig::get('ask_question', 1) == 1){
 		echo $this->loadTemplate('customfields');
 	} // Product Custom ontop end
 	?>
-  </div>
+    </div>
 </div>

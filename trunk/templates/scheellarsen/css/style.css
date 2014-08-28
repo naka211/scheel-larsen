@@ -485,6 +485,17 @@ ul.info_company li:nth-child(6n+6) {width: 110px;}
 
 a.btnAdd {background: url(../img/icon_add.jpg) no-repeat; width: 9px; height: 9px; text-indent: -99999px; display: block; position: absolute; top: 0; right: 0;}
 a.btnDel {background: url(../img/btnClose.png) no-repeat; width: 9px; height: 9px; text-indent: -99999px; display: block; position: absolute; top: 42px; right: 13px;}
+a.btn_sizeguide {text-transform: uppercase; color: #fff; padding: 5px 20px; margin: 10px 0; display: block; width: 145px; border-radius: 2px; background-color: #4763b2; background-image: -webkit-linear-gradient(bottom, #815822, #b38843 60%, #d6b45b); background-image: -moz-linear-gradient(bottom, #815822, #b38843 60%, #d6b45b); background-image: -o-linear-gradient(bottom, #815822, #b38843 60%, #d6b45b); background-image: linear-gradient(to top, #815822, #b38843 60%, #d6b45b);}
+a.btn_sizeguide:hover {color: #fff; background-color: #4763b2; background-image: -webkit-linear-gradient(bottom, #815822, #b38843); background-image: -moz-linear-gradient(bottom, #815822, #b38843); background-image: -o-linear-gradient(bottom, #815822, #b38843); background-image: linear-gradient(to top, #815822, #b38843);}
+
+#f_size {margin-left: -235px; width: 460px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color: #fff; -webkit-box-shadow: inset 0 0 0 2px #fff; -moz-box-shadow: inset 0 0 0 2px #fff; box-shadow: inset 0 0 0 2px #fff; border: solid 1px #dcd6c0;}
+.f_size h2 {background: #efece1; padding: 10px 20px; font-size: 13px; color: #000; font-family:'Myriad Pro Regular'; margin: 0; }
+.f_size_content {padding: 20px;}
+.f_size_content .size_img {width: 419px; height: 306px; border: 1px solid #acacac;}
+.size_detail {margin-top: 15px; font-family: 'gothic';}
+.size_detail table tr td {padding: 5px 10px; border: 1px solid #cacaca; text-align: right; background-image: -webkit-linear-gradient(top, #e3e3e3 41%, #fff); background-image: -moz-linear-gradient(top, #e3e3e3 41%, #fff); background-image: -o-linear-gradient(top, #e3e3e3 41%, #fff); background-image: linear-gradient(to bottom, #e3e3e3 41%, #fff);}
+.size_detail table tr td.black {background: #717171; color: #fff; text-align: left;}
+#close-reveal-modal2 {background: url(../img/btnClose.png) no-repeat; color: #aaa; cursor: pointer; display: block; font-size: 22px; font-weight: bold; height: 30px; line-height: 0.5; position: absolute; right: -5px; top: 15px; width: 30px;}
 /* Black themes*/
 /*.navbar-default {background: #fff; border: none; background: #fff url(../img/border_top2.jpg) repeat-x top center !important;}
 .cart_content {background-color: #f1f1f1 !important;}

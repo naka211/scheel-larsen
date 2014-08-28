@@ -32,6 +32,15 @@ $cart->prepareCartViewData();
 <script type="text/javascript">
 jQuery(document).ready(function(){
 
+    $('#checkoutForm input[type=checkbox]').on('change invalid', function() {
+        var textfield = $(this).get(0);
+        textfield.setCustomValidity('');
+        
+        if (!textfield.validity.valid) {
+          textfield.setCustomValidity('Venligst accepterer vores handelsbetingelser');  
+        }
+    });
+    
 	var company = '<input class="input required" type="text" placeholder="Firmanavn *" name="company" id="company"><input class="input required" type="text" placeholder="CVR-nr. *" name="cvr" id="cvr" style="margin-bottom:10px;">';
 	var public = '<input class="input required" type="text" placeholder="EAN-nr. *" name="ean" id="ean" maxlength="13"><input class="input required" type="text" placeholder="Myndighed/Institution *" name="authority" id="authority"><input class="input required" type="text" placeholder="Ordre- el. rekvisitionsnr. *" name="order1" id="order1"><input class="input required" type="text" placeholder="Personreference *" name="person" id="person" style="margin-bottom:10px;">';
 	jQuery("#choicemaker").change(function () {
