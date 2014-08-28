@@ -26,7 +26,24 @@ $i=0;
 <div class="vm-lang-list-container">
 	<?php echo $this->langList; ?>
 </div>
-
+<script>
+jQuery(document).ready(function(){
+    setImage = function(value){
+        if(value){
+            jQuery("#type_image_src").attr("src", "<?php echo JURI::base()?>type_images/"+value+".jpg");
+            jQuery("#type_image_src").show();
+        } else {
+            jQuery("#type_image_src").hide();
+        }
+    }
+    setImage(jQuery("#type_image").val());
+});
+</script>
+<style>
+img#type_image_src {
+    width:70px;
+}
+</style>
 <fieldset>
 	<legend><?php echo vmText::_('COM_VIRTUEMART_PRODUCT_INFORMATION'); echo ' id: '.$this->product->virtuemart_product_id ?></legend>
     <table class="adminform" width="100%">
@@ -132,6 +149,62 @@ $i=0;
 				echo '<td><td>';
 			}?>
 		</tr>
+        <!--T.Trung-->
+        <?php 
+        if($this->document->language == 'da-dk'){
+            $select_text = 'Vælg et billede';
+            $width_text = 'Bredde';
+            $length_text = 'Længde';
+            $depth_text = 'Dybde';
+            $height_text = 'Højde';
+            $seatheight_text = 'Sædehøjde';
+        } else {
+            $select_text = 'Please select a image';
+            $width_text = 'Width';
+            $length_text = 'Length';
+            $depth_text = 'Depth';
+            $height_text = 'Height';
+            $seatheight_text = 'Seat height';
+        }
+        $diameter_text = 'Diameter';
+        ?>
+        <tr>
+            <td>
+                <select id="type_image" name="type_image" onChange="setImage(this.value)">
+                    <option value=""><?php echo $select_text;?></option>
+                    <option value="Borde1" <?php if($this->product->type_image == 'Borde1') echo 'selected'?>>Borde1</option>
+                    <option value="Borde2" <?php if($this->product->type_image == 'Borde2') echo 'selected'?>>Borde2</option>
+                    <option value="Borde3" <?php if($this->product->type_image == 'Borde3') echo 'selected'?>>Borde3</option>
+                    <option value="Borde4" <?php if($this->product->type_image == 'Borde4') echo 'selected'?>>Borde4</option>
+                    <option value="Krukker1" <?php if($this->product->type_image == 'Krukker1') echo 'selected'?>>Krukker1</option>
+                    <option value="Krukker2" <?php if($this->product->type_image == 'Krukker2') echo 'selected'?>>Krukker2</option>
+                    <option value="Krukker3" <?php if($this->product->type_image == 'Krukker3') echo 'selected'?>>Krukker3</option>
+                    <option value="Krukker4" <?php if($this->product->type_image == 'Krukker4') echo 'selected'?>>Krukker4</option>
+                    <option value="Parasoller1" <?php if($this->product->type_image == 'Parasoller1') echo 'selected'?>>Parasoller1</option>
+                    <option value="Parasoller2" <?php if($this->product->type_image == 'Parasoller2') echo 'selected'?>>Parasoller2</option>
+                    <option value="Parasoller3" <?php if($this->product->type_image == 'Parasoller3') echo 'selected'?>>Parasoller3</option>
+                    <option value="Sofaer" <?php if($this->product->type_image == 'Sofaer') echo 'selected'?>>Sofaer</option>
+                    <option value="Stole" <?php if($this->product->type_image == 'Stole') echo 'selected'?>>Stole</option>
+                </select>
+            </td>
+            <td>
+                <img id="type_image_src" src="" />
+            </td>
+            <td colspan="4">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <div style="width:100px; float:left;"><?php echo $diameter_text?>: </div><input type="text" name="diameter" value="<?php echo $this->product->diameter;?>" style="margin:0px 0px 5px; width:70px" /> cm<br />
+                <div style="width:100px; float:left;"><?php echo $width_text?>: </div><input type="text" name="width" value="<?php echo $this->product->width;?>" style="margin:0px 0px 5px; width:70px"/> cm<br />
+                <div style="width:100px; float:left;"><?php echo $length_text?>: </div><input type="text" name="length" value="<?php echo $this->product->length;?>" style="margin:0px 0px 5px; width:70px"/> cm<br />
+                <div style="width:100px; float:left;"><?php echo $depth_text?>: </div><input type="text" name="depth" value="<?php echo $this->product->depth;?>" style="margin:0px 0px 5px; width:70px"/> cm<br />
+                <div style="width:100px; float:left;"><?php echo $height_text?>: </div><input type="text" name="height" value="<?php echo $this->product->height;?>" style="margin:0px 0px 5px; width:70px"/> cm<br />
+                <div style="width:100px; float:left;"><?php echo $seatheight_text?>: </div><input type="text" name="seatheight" value="<?php echo $this->product->seatheight;?>" style="margin:0px 0px 5px; width:70px"/> cm<br />
+            </td>
+        </tr>
+        <!--T.Trung end-->
+        
 	</table>
 </fieldset>
 

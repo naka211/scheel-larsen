@@ -102,7 +102,15 @@ class TableProducts extends VmTable {
        /** @var int published or unpublished */
 	var $published 		        = 1;
 
-
+    //T.Trung
+    var $type_image		        = '';
+    var $diameter 		        = '';
+    var $width   		        = '';
+    var $length 		        = '';
+    var $depth   		        = '';
+    var $height 		        = '';
+    var $seatheight		        = '';
+    //T.Trung
 
 	/**
 	 * @author Max Milbers
