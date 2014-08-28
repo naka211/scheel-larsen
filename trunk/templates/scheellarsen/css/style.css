@@ -267,7 +267,7 @@ background-color: #fff; -webkit-box-shadow: 0 0 4px rgba(0,0,0,.15); -moz-box-sh
 .footer_bottom {background: #110302; color: #fff; padding: 10px 0 0;}
 .footer_bottom a {color: #fff;}
 .bor_bottom0 {border-bottom: none !important;}
-.delivery {border-top: 2px solid #dcd6c0; border-bottom: 1px solid #dcd6c0; padding: 20px 0; background: #fff; text-align: center;}
+.delivery {border-top: 2px solid #dcd6c0; border-bottom: 1px solid #dcd6c0; padding: 20px 0; background: #fff; text-align: left;}
 .delivery ul li {float: left; width: 245px;}
 .delivery ul li:first-child {width: 300px;}
 .delivery ul li:last-child {width: 175px; float: right;}

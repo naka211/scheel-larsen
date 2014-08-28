@@ -93,7 +93,6 @@ class VirtuemartViewCategory extends VmView {
 			$category = $categoryModel->getCategory($categoryId);
 		}
 
-
 		if(!empty($category)){
 
 			if(empty($category->category_layout) or $category->category_layout != 'categories') {
@@ -230,6 +229,7 @@ class VirtuemartViewCategory extends VmView {
 			shopFunctionsF::setVmTemplate($this,$category->category_template,0,$category->category_layout);
 		} else {
 			//Backward compatibility
+            
 			if(!isset($category)) {
 				$category = new stdClass();
 				$category->category_name = '';

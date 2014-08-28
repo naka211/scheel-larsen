@@ -35,7 +35,7 @@ $alert=JText::sprintf ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED', $step);
 		if (!empty($this->product->customfieldsCart)) {
 			?>
 			<div class="product-fields">
-				<?php foreach ($this->product->customfieldsCart as $field) { ?>
+				<?php foreach ($this->product->customfieldsCart as $field) { //print_r($field);exit;?>
                                 <ul class="option clearfix">
 				<div class="product-field product-field-type-<?php echo $field->field_type ?>">
 					<?php if ($field->show_title) { ?>

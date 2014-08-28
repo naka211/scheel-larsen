@@ -968,24 +968,22 @@ class VirtueMartModelCustomfields extends VmModel {
 								//		$productCustom->virtuemart_custom_id . '" name="customPrice[' . $row . '][' . $productCustom->virtuemart_customfield_id . ']" /><label
 								//		for="' . $productCustom->virtuemart_custom_id . '">' . $this->displayProductCustomfieldFE ($productCustom, $row) . ' ' . $price . '</label>';
 						//MarkerVarMods
-                                                                        //Trieu Nguyen add
-                                                                        $parentid = '';
-                                                                        if($productCustom->custom_parent_id){
-                                                                            $parentid = ' parent-id="'.$productCustom->custom_parent_id.'"';
-                                                                        }
-                                                                        
-                                                                        $group->display .= '<li'.$parentid.'><input id="' . $productCustom->virtuemart_customfield_id .$row. '" ' . $checked . ' type="radio" value="' .
-                                                                                $productCustom->virtuemart_customfield_id . '" name="customPrice[' . $row . '][' . $productCustom->virtuemart_custom_id . ']" /><label
-                                                                            for="' . $productCustom->virtuemart_customfield_id .$row. '">' . $this->displayProductCustomfieldFE ($product, $productCustom, $row) . ' ' . $price . '</label></li>';                                                                                    
+                                    //Trieu Nguyen add
+                                    $parentid = '';
+                                    if($productCustom->custom_parent_id){
+                                        $parentid = ' parent-id="'.$productCustom->custom_parent_id.'"';
+                                    }
+                                    
+                                    $group->display .= '<li'.$parentid.'><input id="' . $productCustom->virtuemart_customfield_id .$row. '" ' . $checked . ' type="radio" value="' . $productCustom->virtuemart_customfield_id . '" name="customPrice[' . $row . '][' . $productCustom->virtuemart_custom_id . ']" /><label for="' . $productCustom->virtuemart_customfield_id .$row. '">' . $this->displayProductCustomfieldFE ($product, $productCustom, $row) . '</label></li>';                                                                                    
 //										for="' . $productCustom->virtuemart_customfield_id .$row. '" class="other-customfield">' . $this->displayProductCustomfieldFE ($product, $productCustom, $row) . ' ' . $price . '</label>';
 
-                                                                        /*$group->display .= '<li><input id="' . $productCustom->virtuemart_customfield_id .$row. '" ' . $checked . ' type="radio" value="' .
-                                                                                    $productCustom->virtuemart_customfield_id . '" name="customPrice[' . $row . '][' . $productCustom->virtuemart_custom_id . ']" /><label
-    										for="' . $productCustom->virtuemart_customfield_id .$row. '">' . $this->displayProductCustomfieldFE ($product, $productCustom, $row) . ' ' . $price . '</label></li>';
-                                                                         */
-                                                                        $checked = '';
-                                                                        // Trieu Nguyen add
-                                                                        $int++;
+                                    /*$group->display .= '<li><input id="' . $productCustom->virtuemart_customfield_id .$row. '" ' . $checked . ' type="radio" value="' .
+                                                $productCustom->virtuemart_customfield_id . '" name="customPrice[' . $row . '][' . $productCustom->virtuemart_custom_id . ']" /><label
+        for="' . $productCustom->virtuemart_customfield_id .$row. '">' . $this->displayProductCustomfieldFE ($product, $productCustom, $row) . ' ' . $price . '</label></li>';
+                                     */
+                                    $checked = '';
+                                    // Trieu Nguyen add
+                                    $int++;
 								}
 							}
 						}

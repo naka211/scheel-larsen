@@ -41,16 +41,16 @@ if (empty($this->product)) {
                 <hr>
                 <a href="javascript:void(0);" id="facebookShare"><img src="<?php echo $tmpl?>img/icon_face.png" alt=""></a>
                 <div class="clear mb10"></div>
-                <?php if($this->product->customfieldsSorted){?>
+                <?php /*if($this->product->customfieldsSorted){?>
                 <div class="video clearfix"> <a class="fl imgZoom" href="<?php echo $this->product->customfieldsSorted['normal'][0]->display?>"><img src="<?php echo $tmpl?>img/thumnail/img_small2.jpg" alt=""></a> </div>
-                <?php }?>
+                <?php }*/?>
             </div>
             <div class="product_content">
                 <h2><?php echo $this->product->product_name ?></h2>
                 <?php // afterDisplayTitle Event
                 echo $this->product->event->afterDisplayTitle 
             ?>
-                <p><strong>Vare-nummer: <?php echo $this->product->product_sku?></strong></p>
+                <p><strong>Varenummer: <?php echo $this->product->product_sku?></strong></p>
                 <div id="scrollbar2">
                     <div class="scrollbar">
                         <div class="track">
