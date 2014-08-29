@@ -337,7 +337,7 @@ a.conditions {text-decoration: underline; color: #0074be; margin-left: 15px;}
 .breadcrumb > li > a {padding-left: 5px;}
 .breadcrumb > li:hover > a {color: #A08262;}
 .breadcrumb > li:first-child > a {padding-left: 0;}
-.template h2 {color: #A08262; font-size: 24px;}
+.template h2 {color: #A08262; font-size: 20px;}
 .conditions_page h4 {font-size: 15px; color: #A08262; margin: 10px 0 0; font-family: 'Myriad Pro Regular'; text-transform: none;}
 .about_page img {border: 1px solid #dcd6c0; padding: 3px; background: #fff;}
 .info_page img {border: 1px solid #dcd6c0; padding: 3px; background: #fff; margin-bottom: 10px;}
