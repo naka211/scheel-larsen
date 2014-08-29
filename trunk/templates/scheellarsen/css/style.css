@@ -383,7 +383,7 @@ a.btnPrint2 {background: url(../img/btnPrint2.jpg) no-repeat !important;}
 .map {padding: 3px; background: #fff; border: 1px solid #dcd6c0; margin-top: 40px;}
 .product_page h4 {text-transform: none; color: #A08262; font-size: 15px; font-family: 'Myriad Pro Regular';}
 ul.list_product {margin-top: 20px;}
-ul.list_product li {float: left; margin-right: 15px; margin-bottom: 10px; padding: 7px; width: 233px; min-height: 220px; background-color: #fff; border: solid 1px #dcd6c0; text-align: center;}
+ul.list_product li {float: left; margin-right: 15px; margin-bottom: 10px; padding: 7px; width: 233px; min-height: 229px; background-color: #fff; border: solid 1px #dcd6c0; text-align: center;}
 ul.list_product li:nth-child(3n+3) {margin-right: 0;}
 ul.list_product li:hover {background: url(../img/hover_li.png) no-repeat bottom center;}
 .frame {padding: 30px; border: 1px solid #dcd6c0; background: #fff; margin-bottom: 20px;}

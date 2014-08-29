@@ -191,12 +191,12 @@ class VirtuemartViewCategory extends VmView {
 
 			$categoryModel->addImages($category);
 
-			if($category->category_layout == 'categories' or ($categoryId >0 and $virtuemart_manufacturer_id <1)){
+			//if($category->category_layout == 'categories' or ($categoryId >0 and $virtuemart_manufacturer_id <1)){
 				$category->children = $categoryModel->getChildCategoryList( $vendorId, $categoryId, $categoryModel->getDefaultOrdering(), $categoryModel->_selectedOrderingDir );
 				$categoryModel->addImages($category->children,1);
-			} else {
+			/*} else {
 				$category->children = false;
-			}
+			}*/
 
 			if (VmConfig::get('enable_content_plugin', 0)) {
 				shopFunctionsF::triggerContentPlugin($category, 'category','category_description');
