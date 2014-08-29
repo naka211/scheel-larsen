@@ -168,7 +168,8 @@ img#type_image_src {
         }
         $diameter_text = 'Diameter';
         ?>
-        <tr>
+        <?php $i = 1 - $i; ?>
+        <tr class="row<?php echo $i?>">
             <td>
                 <select id="type_image" name="type_image" onChange="setImage(this.value)">
                     <option value=""><?php echo $select_text;?></option>
@@ -201,6 +202,12 @@ img#type_image_src {
                 <div style="width:100px; float:left;"><?php echo $depth_text?>: </div><input type="text" name="depth" value="<?php echo $this->product->depth;?>" style="margin:0px 0px 5px; width:70px"/> cm<br />
                 <div style="width:100px; float:left;"><?php echo $height_text?>: </div><input type="text" name="height" value="<?php echo $this->product->height;?>" style="margin:0px 0px 5px; width:70px"/> cm<br />
                 <div style="width:100px; float:left;"><?php echo $seatheight_text?>: </div><input type="text" name="seatheight" value="<?php echo $this->product->seatheight;?>" style="margin:0px 0px 5px; width:70px"/> cm<br />
+            </td>
+        </tr>
+        <?php $i = 1 - $i; ?>
+        <tr class="row<?php echo $i?>">
+            <td colspan="6">
+                <div style="width:100px; float:left;">Video: </div><input type="text" name="video" value="<?php echo $this->product->video;?>" style="margin:0px 0px 5px; width:200px" />
             </td>
         </tr>
         <!--T.Trung end-->

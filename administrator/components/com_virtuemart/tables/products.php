@@ -110,6 +110,7 @@ class TableProducts extends VmTable {
     var $depth   		        = '';
     var $height 		        = '';
     var $seatheight		        = '';
+    var $video		            = '';
     //T.Trung
 
 	/**
