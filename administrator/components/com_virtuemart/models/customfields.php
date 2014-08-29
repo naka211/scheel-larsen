@@ -855,7 +855,7 @@ class VirtueMartModelCustomfields extends VmModel {
 		if (!class_exists ('vmCustomPlugin')) {
 			require(JPATH_VM_PLUGINS . DS . 'vmcustomplugin.php');
 		}
-
+        
 		//$free = vmText::_ ('COM_VIRTUEMART_CART_PRICE_FREE');
 		// render select list
 		foreach ($groups as $group) {
@@ -885,12 +885,19 @@ class VirtueMartModelCustomfields extends VmModel {
 
 			if ($group->field_type == 'V') {
 				$default = current ($group->options);
+                $i = 1;
 				foreach ($group->options as $productCustom) {
 					$price = self::_getCustomPrice($productCustom->custom_price, $currency, $calculator);
 					$productCustom->text = vmText::_($productCustom->custom_value);
-                    
                     //T.Trung
+                    if($i == 1){
+                        $checked = 'checked';
+                        $i = 0;
+                    } else {
+                        $checked = '';
+                    }
                     $group->display .= '<li><input id="' . $productCustom->virtuemart_customfield_id .$row. '" ' . $checked . ' type="radio" value="' . $productCustom->virtuemart_customfield_id . '" name="customPrice[' . $row . '][' . $productCustom->virtuemart_custom_id . ']" /><label for="' . $productCustom->virtuemart_customfield_id .$row. '">' . $productCustom->text . '</label></li>';
+                    
                     //T.Trung end
 				}
 				//$group->display = VmHTML::select ('customPrice[' . $row . '][' . $group->virtuemart_custom_id . ']', $group->options, $default->custom_value, '', 'virtuemart_customfield_id', 'text', FALSE, false);
