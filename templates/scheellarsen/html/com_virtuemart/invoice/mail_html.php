@@ -304,7 +304,7 @@ table tr td table.top_info {
                             ?>
                             <tr>
                                 <td><h4><?php echo $item->order_item_name;?></h4>
-                                    <p>Vare-nummer: <?php echo $item->order_item_sku;?></p>
+                                    <p>Varenummer: <?php echo $item->order_item_sku;?></p>
                                       <?php 
                                       $i = 1;
                                       foreach($attrs as $attr){

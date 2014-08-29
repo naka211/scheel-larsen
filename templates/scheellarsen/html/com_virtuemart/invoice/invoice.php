@@ -1,32 +1,27 @@
 <?php
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
-if($this->orderDetails['details']['BT']->address_type_name == 1 ){
-	$type = "Privat";
-} else if($this->orderDetails['details']['BT']->address_type_name == 2 ){
-	$type = "Erhverv";
-} else {
+//print_r($this->orderDetails);exit;
+if($this->orderDetails['details']['BT']->company){
+    $type = "Erhverv";
+} else if($this->orderDetails['details']['BT']->ean){
 	$type = "Offentlig instans";
+} else {
+	$type = "Privat";
+}
+
+if(!$this->orderDetails['details']['ST']){
+    $this->orderDetails['details']['ST'] = $this->orderDetails['details']['BT'];
 }
 	?>
 <table border="0" cellspacing="0" cellpadding="0" style="margin: 15px; background: #fff; border: 1px solid #646464;">
 	<tr>
-		<td colspan="4"><h2 style="color: #00b2ea; border-bottom: 1px dotted #CACACA; padding: 10px; margin: 0;">FAKTURA</h2></td>
+		<td colspan="4"><h2 style="color: #B48944; border-bottom: 1px dotted #CACACA; padding: 10px; margin: 0;">FAKTURA</h2></td>
 	</tr>
 
 	<tr>
 		<td height="30" style="padding-left: 10px"><strong>Ordrenummer:</strong></td>
 		<td height="30" style="padding-left: 10px"><strong><?php echo $this->orderDetails['details']['BT']->order_number;?></strong></td>
-	</tr>
-
-	<tr style="padding-left: 20px">
-		<td height="30" style="padding-left: 10px"><strong>Kundetype:</strong></td>
-		<td height="30" style="padding-left: 10px"><strong><?php echo $type;?></strong></td>
-	</tr>
-
-	<tr style="padding-left: 20px">
-		<td height="30" style="padding-left: 10px"><strong>E-mail:</strong></td>
-		<td height="30" style="padding-left: 10px"><strong><?php echo $this->orderDetails['details']['BT']->email;?></strong></td>
 	</tr>
 
 	<tr>
@@ -39,8 +34,12 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 				<tr>
 				<td colspan="2" height="30" style="padding-left: 10px"><strong>Kundeoplysninger:</strong></td>
 				</tr>
+                <tr>
+					<td width="50%" height="30" style="padding-left: 10px">Kundetype:</td>
+					<td width="50%" height="30"><?php echo $type;?></td>
+				</tr>
 
-<?php if($this->orderDetails['details']['BT']->address_type_name == 2){?>
+<?php if($this->orderDetails['details']['BT']->company){?>
 				<tr>
 					<td width="50%" height="30" style="padding-left: 10px">Firmanavn:</td>
 					<td width="50%" height="30"><?php echo $this->orderDetails['details']['BT']->company;?></td>
@@ -50,7 +49,7 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 					<td width="50%" height="30" style="padding-left: 10px">CVR-nr.:</td>
 					<td width="50%" height="30"><?php echo $this->orderDetails['details']['BT']->cvr;?></td>
 				</tr>
-<?php } else if($this->orderDetails['details']['BT']->address_type_name == 3){?>
+<?php } else if($this->orderDetails['details']['BT']->ean){?>
 				<tr>
 					<td width="50%" height="30" style="padding-left: 10px">EAN-nr.:</td>
 					<td width="50%" height="30"><?php echo $this->orderDetails['details']['BT']->ean;?></td>
@@ -71,7 +70,6 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 					<td width="50%" height="30"><?php echo $this->orderDetails['details']['BT']->person;?></td>
 				</tr>
 <?php }?>
-
 				<tr>
 					<td width="50%" height="30" style="padding-left: 10px">Fornavn:</td>
 					<td width="50%" height="30"><?php echo $this->orderDetails['details']['BT']->first_name;?></td>
@@ -83,8 +81,13 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 				</tr>
 
 				<tr>
-					<td height="30" style="padding-left: 10px">Adresse:</td>
-					<td height="30"><?php echo $this->orderDetails['details']['BT']->address_1;?></td>
+					<td height="30" style="padding-left: 10px">Vejnavn:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['BT']->street_name;?></td>
+				</tr>
+                
+                <tr>
+					<td height="30" style="padding-left: 10px">Hus/gade nr.:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['BT']->street_number;?></td>
 				</tr>
 
 				<tr>
@@ -100,6 +103,10 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 				<tr>
 					<td height="30" style="padding-left: 10px">Telefon:</td>
 					<td height="30"><?php echo $this->orderDetails['details']['BT']->phone_1;?></td>
+				</tr>
+                <tr>
+					<td height="30" style="padding-left: 10px">E-mail:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['BT']->email;?></td>
 				</tr>
 			</table>
 		</td>
@@ -121,8 +128,13 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 				</tr>
 
 				<tr>
-					<td height="30">Adresse:</td>
-					<td height="30"><?php echo $this->orderDetails['details']['ST']->address_1;?></td>
+					<td height="30">Vejnavn:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['ST']->street_name;?></td>
+				</tr>
+                
+                <tr>
+					<td height="30">Hus/gade nr.:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['ST']->street_number;?></td>
 				</tr>
 
 				<tr>
@@ -139,6 +151,11 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 					<td height="30">Telefon:</td>
 					<td height="30"><?php echo $this->orderDetails['details']['ST']->phone_1;?></td>
 				</tr>
+                <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
+                <tr>
+					<td height="30" colspan="2"><strong style="color: red; font-size:18px;">Bemærk! Vi kontakter jer, når varen er klar afhentning</strong></td>
+				</tr>
+                <?php }?>
 			</table>
 		</td>
 	</tr>
@@ -154,7 +171,13 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 			<td style="padding-left: 10px"><strong>Betaling: </strong></td>
 			</tr>
 			<tr>
-			<td valign="top" style="padding-left: 10px">Kortbetaling</td>
+			<td valign="top" style="padding-left: 10px">
+            <?php if($this->orderDetails['details']['BT']->virtuemart_paymentmethod_id == 3){?>
+            Efterbetalte
+            <?php } else {?>
+            Kortbetaling
+            <?php }?>
+            </td>
 			</tr>
 			</table>
 		</td>
@@ -164,7 +187,15 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 			<td><strong>Leveringsservice:</strong></td>
 			</tr>
 			<tr>
-				<td valign="top" height="30"><?php if($this->orderDetails['details']['BT']->address_2){?>Afhentning: <?php echo $this->orderDetails['details']['BT']->address_2;?><?php }else{echo 'Forsendelse';}?></td>
+				<td valign="top" height="30">
+                <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
+                Afhentning på Hesselrødvej 26, 2980 Kokkedal
+                <?php } else if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 2){?>
+                Leveret på Sjælland
+                <?php } else {?>
+                Leveret til døren for Fyn og Jylland
+                <?php }?>
+                </td>
 			</tr>
 			</table>
 		</td>
@@ -178,17 +209,32 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 	<td colspan="4">
 	<table border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #CACACA;line-height: 1.8em">
 		<tr align="right" style="background: #EFEFEF;">
-		<td width="40%" style="text-align: left; padding-left: 10px">Produkt</td>
-		<td width="10%">Vare-nr</td>
+		<td width="50%" style="text-align: left; padding-left: 10px">Produkt</td>
+		<!--<td width="10%">Vare-nr</td>-->
 		<td width="10%">Antal</td>
 		<td width="20%">Pris pr. enhed</td>
 		<td width="20%" style="padding-right: 20px">Pris i alt</td>
 		</tr>
 
-	<?php foreach($this->orderDetails['items'] as $item){?>
+	<?php foreach($this->orderDetails['items'] as $item){
+        $item->product_attribute = preg_replace('#"\s*<span.*?<\\\/span>#','"',$item->product_attribute);
+        $attrs = json_decode($item->product_attribute);
+        $attrs = (array)$attrs;    
+    ?>
 		<tr style="text-align: right;">
-		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A; text-align: left; padding-left: 10px"><?php echo $item->order_item_name;?></td>
-		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo $item->order_item_sku;?></td>
+		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A; text-align: left; padding-left: 10px">
+        <strong><?php echo $item->order_item_name;?></strong><br />
+        Varenummer: <?php echo $item->order_item_sku;?><br />
+        <?php $i = 1;
+        foreach($attrs as $attr){
+          if($i != 2){
+        ?>
+        <?php echo $attr;?><br />
+        <?php }
+        $i++;
+        }?>
+        </td>
+		<!--<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo $item->order_item_sku;?></td>-->
 		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo $item->product_quantity;?></td>
 		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo number_format($item->product_final_price,2,',','.');?> DKK</td>
 		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;padding-right: 10px;"><?php echo number_format($item->product_subtotal_with_tax,2,',','.');?> DKK</td>
@@ -196,7 +242,7 @@ if($this->orderDetails['details']['BT']->address_type_name == 1 ){
 	<?php }?>
 
 		<tr>
-		<td colspan="3" style="text-transform: uppercase; color: red; padding-left: 10px"><strong><?php if($this->orderDetails['details']['BT']->address_2){echo "Afhentning: ".$this->orderDetails['details']['BT']->address_2;}else{if($this->orderDetails['details']['BT']->address_type_name != 3) echo 'Forsendelse';else echo 'E-faktura/Nem-handel fakturablanket';}?></strong></td>
+		<td colspan="2" style="text-transform: uppercase; color: red; padding-left: 10px"></td>
 		<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
 		<tr>
 			<td width="400" style="color: #3A3A3A;">Forsendelse:</td>
