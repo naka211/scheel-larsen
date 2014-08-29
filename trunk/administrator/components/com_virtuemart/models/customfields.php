@@ -888,8 +888,13 @@ class VirtueMartModelCustomfields extends VmModel {
 				foreach ($group->options as $productCustom) {
 					$price = self::_getCustomPrice($productCustom->custom_price, $currency, $calculator);
 					$productCustom->text = vmText::_($productCustom->custom_value);
+                    
+                    //T.Trung
+                    $group->display .= '<li><input id="' . $productCustom->virtuemart_customfield_id .$row. '" ' . $checked . ' type="radio" value="' . $productCustom->virtuemart_customfield_id . '" name="customPrice[' . $row . '][' . $productCustom->virtuemart_custom_id . ']" /><label for="' . $productCustom->virtuemart_customfield_id .$row. '">' . $productCustom->text . '</label></li>';
+                    //T.Trung end
 				}
-				$group->display = VmHTML::select ('customPrice[' . $row . '][' . $group->virtuemart_custom_id . ']', $group->options, $default->custom_value, '', 'virtuemart_customfield_id', 'text', FALSE, false);
+				//$group->display = VmHTML::select ('customPrice[' . $row . '][' . $group->virtuemart_custom_id . ']', $group->options, $default->custom_value, '', 'virtuemart_customfield_id', 'text', FALSE, false);
+                
 			}
 			else {
 				if ($group->field_type == 'G') {
