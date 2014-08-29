@@ -81,11 +81,17 @@ jQuery(document).ready(function(){
 			jQuery("#shipPriceLabel1").html("0,00 DKK");
 			var total = formatMoney(parseFloat((jQuery("#subtotal").val())*0.9));
 			jQuery("#payTotal").html(total+" DKK");
+            
+            var moms =  formatMoney(parseFloat(((jQuery("#subtotal").val())*0.9)*0.2));
+            jQuery("#moms").html(moms+" DKK");
             jQuery("#deduct").show();
 		} else {
             jQuery("#shipPriceLabel1").html(jQuery("#shipFee").val() + ",00 DKK");
 			var total = formatMoney(parseFloat(Number(jQuery("#subtotal").val()) + Number(jQuery("#shipFee").val())));
 			jQuery("#payTotal").html(total+" DKK");
+            
+            var moms =  formatMoney(parseFloat((jQuery("#subtotal").val())*0.2));
+            jQuery("#moms").html(moms+" DKK");
             jQuery("#deduct").hide();
         }
 	}
@@ -166,9 +172,9 @@ jQuery(document).ready(function(){
         }
     }
     
-    jQuery(".w_Address").hide();
     shipTo();
-    
+    jQuery(".w_Address").hide();
+        
     jQuery('.btnLevering').click(function(event){
         event.preventDefault();
         jQuery(".w_Address").slideToggle("500","swing", function(){
@@ -294,7 +300,7 @@ jQuery(document).ready(function(){
                                 </tr>
                                 <tr>
                                     <td colspan="2">Heraf moms: </td>
-                                    <td colspan="2"><?php echo number_format($cart->pricesUnformatted['billTotal']*0.2,2,',','.');?> DKK</td>
+                                    <td colspan="2"><span id="moms"><?php echo number_format($cart->pricesUnformatted['billTotal']*0.2,2,',','.');?> DKK</span></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">FRAGT: </td>
