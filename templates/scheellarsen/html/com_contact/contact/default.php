@@ -25,6 +25,10 @@ if(JRequest::getVar('success')){?>
 .invalid {
 border-color: red !important;
 }
+#recaptcha_area input {
+    height: auto;
+    display: inline;
+}
 </style>
 <div class="template">
     <div class="contact_page"> {module Breadcrumbs}
@@ -32,14 +36,27 @@ border-color: red !important;
         <div class="w375 fl">
             <div class="w71 fl mr30 mt10"> <img alt="" src="templates/scheellarsen/img/logo2.png"> </div>
             {article 9}{introtext}{/article} </div>
-        <div class="w300 fr">
+        <div class="w320 fr">
             <p>Felter markeret med * skal udfyldes</p>
             <div class="frm_contact clearfix">
+                <script type="text/javascript">
+                 var RecaptchaOptions = {
+                    theme : 'white',
+                    lang : 'da',
+                    custom_translations : { instructions_visual : "Indtast koden" }
+                 };
+                 </script>
                 <form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate">
                     <input type="text" placeholder="Navn *" class="required" name="jform[contact_name]">
                     <input type="text" placeholder="Email *" class="required validate-email" name="jform[contact_email]">
                     <input type="text" placeholder="Telefon *" class="required" name="jform[contact_phone]">
                     <textarea placeholder="Din besked" name="jform[contact_message]"></textarea>
+                    <?php
+                      require_once('recaptchalib.php');
+                      $publickey = "6Lf5nPkSAAAAAANw6ZL8A7SWzXuiBYOQ0RyTbzhf"; // you got this from the signup page
+                      echo recaptcha_get_html($publickey);
+                    ?>
+                    <div style="height:10px"></div>
                     <button type="submit" class="btn2 btnSend validate" style="border:none; cursor:pointer;">Send</button>
                     <button type="reset" class="btn2 btnNustil" style="border:none; cursor:pointer;">Nulstil</button>
                     <input type="hidden" name="option" value="com_contact" />
