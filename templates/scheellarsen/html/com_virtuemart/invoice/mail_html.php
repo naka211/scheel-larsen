@@ -327,10 +327,19 @@ table tr td table.top_info {
                                                 <td width="74%" align="right">Subtotal: </td>
                                                 <td width="26%" align="right"><?php echo number_format($orderDetail->order_subtotal,2,',','.').' DKK'; ?></td>
                                             </tr>
+                                            <?php 
+                                                if($orderDetail->virtuemart_shipmentmethod_id == 1){
+                                            ?>
+                                            <tr>
+                                                <td align="right">Heraf moms: </td>
+                                                <td align="right"><?php echo number_format(($orderDetail->order_subtotal*0.9)*0.2,2,',','.').' DKK'; ?></td>
+                                            </tr>
+                                            <?php } else {?>
                                             <tr>
                                                 <td align="right">Heraf moms: </td>
                                                 <td align="right"><?php echo number_format($orderDetail->order_subtotal*0.2,2,',','.').' DKK'; ?></td>
                                             </tr>
+                                            <?php }?>
                                             <tr>
                                                 <td align="right">FRAGT:</td>
                                                 <td align="right"><?php 
