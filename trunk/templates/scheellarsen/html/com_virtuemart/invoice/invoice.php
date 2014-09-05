@@ -245,32 +245,45 @@ if(!$this->orderDetails['details']['ST']){
 		<td colspan="2" style="text-transform: uppercase; color: red; padding-left: 10px"></td>
 		<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
 		<tr>
-			<td width="400" style="color: #3A3A3A;">Forsendelse:</td>
+			<td style="color: #3A3A3A;">SUBTOTAL:</td>
 		</tr>
 		<tr>
-			<td style="color: #3A3A3A;">Subtotal inkl. moms:</td>
+			<td style="color: #3A3A3A;">HERAF MOMS:</td>
 		</tr>
-		<tr>
-			<td style="color: #3A3A3A;">Heraf moms:</td>
+        <tr>
+			<td width="400" style="color: #3A3A3A;">FRAGT:</td>
 		</tr>
+        <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
+        <tr>
+			<td width="400" style="color: #3A3A3A;">Rabat 10% ved afhentning:</td>
+		</tr>
+        <?php }?>
 		<tr>
-			<td><strong>TOTAL INKL. MOMS:</strong></td>
+			<td><strong>TOTAL:</strong></td>
 		</tr>
 		</table></td>
 
 		<td><table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align: right;" >
 		<tr>
+			<td style="padding: 0 10px; color: #3A3A3A;" ><?php echo number_format($this->orderDetails['details']['BT']->order_subtotal,2,',','.');?> DKK</td>
+		</tr>
+        <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
+		<tr>
+			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format($this->orderDetails['details']['BT']->order_subtotal*0.2,2,',','.');?> DKK</td>
+		</tr>
+        <?php } else {?>
+        <tr>
+			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format(($this->orderDetails['details']['BT']->order_subtotal*0.9)*0.2,2,',','.');?> DKK</td>
+		</tr>
+        <?php }?>
+        <tr>
 			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format($this->orderDetails['details']['BT']->order_shipment,2,',','.');?> DKK</td>
 		</tr>
-
-		<tr>
-			<td style="padding: 0 10px; color: #3A3A3A;" ><?php echo number_format($this->orderDetails['details']['BT']->order_salesPrice,2,',','.');?> DKK</td>
+        <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
+        <tr>
+			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo '-'.number_format($this->orderDetails['details']['BT']->order_subtotal*0.1,2,',','.');?> DKK</td>
 		</tr>
-
-		<tr>
-			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format($this->orderDetails['details']['BT']->order_salesPrice*0.2,2,',','.');?> DKK</td>
-		</tr>
-
+        <?php }?>
 		<tr>
 			<td style="padding: 0 10px;"><strong><?php echo number_format($this->orderDetails['details']['BT']->order_total,2,',','.');?> DKK</strong></td>
 		</tr>

@@ -220,10 +220,17 @@ if($BT_info->address_type_name == 1 ){
                   <td colspan="2">Subtotal: </td>
                   <td width="25%" colspan="2"><?php echo number_format($order['details']['BT']->order_subtotal,2,',','.').' DKK'; ?></td>
                 </tr>
+                <?php if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
                 <tr>
                   <td colspan="2">Heraf moms: </td>
                   <td colspan="2"><?php echo number_format($order['details']['BT']->order_subtotal*0.2,2,',','.').' DKK'; ?></td>
                 </tr>
+                <?php } else {?>
+                <tr>
+                  <td colspan="2">Heraf moms: </td>
+                  <td colspan="2"><?php echo number_format(($order['details']['BT']->order_subtotal*0.9)*0.2,2,',','.').' DKK'; ?></td>
+                </tr>
+                <?php }?>
                 <tr>
                   <td colspan="2">FRAGT: </td>
                   <td><?php 
