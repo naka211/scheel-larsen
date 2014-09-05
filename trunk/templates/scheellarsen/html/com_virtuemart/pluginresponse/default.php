@@ -255,6 +255,6 @@ if($BT_info->company){
       2980 Kokkedal<br>
       Mobil: 41628001<br>
       Email: info@scheel-larsen.dk</p>
-    <div class="goto clearfix"> <a href="index.php" class="btnHome fl hover">Til forside</a> <a href="#" class="btnPrint fl hover ml10">PRINT KVITTERING</a> </div>
+    <div class="goto clearfix"> <a href="index.php" class="btnHome fl hover">Til forside</a> <a target="_blank" href="index.php?option=com_virtuemart&view=invoice&layout=invoice&tmpl=component&virtuemart_order_id=<?php echo $order['details']['BT']->virtuemart_order_id;?>&order_number=<?php echo $order['details']['BT']->order_number;?>&order_pass=<?php echo $order['details']['BT']->order_pass;?>" class="btnPrint fl hover ml10">PRINT KVITTERING</a> </div>
   </div>
 </div>
