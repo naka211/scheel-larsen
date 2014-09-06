@@ -121,6 +121,10 @@ $document->addStyleDeclaration ('#facebox .content {display: block !important; h
         <?php if(count($this->cart->products)> 0){ ?>
         <?php $continue_link = JRoute::_('index.php?option=com_virtuemart&view=category' . $categoryLink); ?>
         <a class="btnShopvidere fl hover" href="<?php echo $continue_link ?>">Shop videre</a>
+
+		<?php echo $this->loadTemplate ('coupon');?>
+        
+        
         <a class="btnCheckout fr hover" href="<?php echo JURI::base().'user/editaddresscheckoutBT.html';?>">Gå til kassen</a>
         <?php } ?>
     </div>

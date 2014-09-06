@@ -44,7 +44,7 @@ $order_info = $db->loadObject();
 if(!class_exists('VmModel'))require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'vmmodel.php');
 $orderModel=VmModel::getModel('orders');
 $order = $orderModel->getOrder($orderid);
-//print_r($order);exit;
+print_r($order);exit;
 /*$vars['orderDetails']=$order;
 shopFunctionsF::renderMail('invoice', $admin->email, $vars);
 shopFunctionsF::renderMail('invoice', $order->email, $vars);*/
@@ -241,6 +241,15 @@ if($BT_info->address_type_name == 1 ){
                   ?>
                   </td>
                 </tr>
+                <?php 
+                    if($order['details']['BT']->coupon_code){
+                ?>
+                <tr>
+                    <td colspan="2">Gavekort rabat:</td>
+                    <td colspan="2"><?php echo number_format($order['details']['BT']->coupon_discount*0.1,2,',','.').' DKK'; ?></td>
+                </tr>
+                <?php }?>
+                
                 <?php 
                     if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){
                 ?>

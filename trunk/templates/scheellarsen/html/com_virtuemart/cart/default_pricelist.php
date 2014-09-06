@@ -179,6 +179,12 @@ foreach ($this->cart->products as $pkey => $prow) {
                               <td>Heraf moms: </td>
                               <td><?php echo number_format($this->cart->pricesUnformatted['salesPrice']*0.2,2,',','.');?> DKK<?php // echo $this->currencyDisplay->createPriceDiv ('billTaxAmount', '', $this->cart->pricesUnformatted['paymentTax'], FALSE); ?></td>
                             </tr>
+                            <?php if (!empty($this->cart->cartData['couponCode'])) { ?>
+                            <tr>
+                              <td>Gavekort rabat: </td>
+                              <td><?php echo $this->currencyDisplay->priceDisplay ($this->cart->pricesUnformatted['salesPriceCoupon']);?><?php ?></td>
+                            </tr>
+                            <?php } ?>
                             <tr>
                               <td><h4>total:</h4></td>
                               <td><h4><?php echo number_format($this->cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?><?php // echo $this->currencyDisplay->createPriceDiv ('billTotal', '', $this->cart->pricesUnformatted['billTotal'], FALSE); ?></h4></td>

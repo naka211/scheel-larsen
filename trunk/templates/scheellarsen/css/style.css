@@ -496,6 +496,11 @@ a.btn_sizeguide:hover {color: #fff; background-color: #4763b2; background-image:
 .size_detail table tr td {padding: 5px 10px; border: 1px solid #cacaca; text-align: right; background-image: -webkit-linear-gradient(top, #e3e3e3 41%, #fff); background-image: -moz-linear-gradient(top, #e3e3e3 41%, #fff); background-image: -o-linear-gradient(top, #e3e3e3 41%, #fff); background-image: linear-gradient(to bottom, #e3e3e3 41%, #fff);}
 .size_detail table tr td.black {background: #717171; color: #fff; text-align: left;}
 #close-reveal-modal2 {background: url(../img/btnClose.png) no-repeat; color: #aaa; cursor: pointer; display: block; font-size: 22px; font-weight: bold; height: 30px; line-height: 0.5; position: absolute; right: -5px; top: 15px; width: 30px;}
+
+.graris {background: #f9f7f3; border: 1px solid #B9B8BE; color: #848484; float: left; margin: 0 0 10px 0; padding: 20px; float: right; }
+.frm_coupon input {width: 190px; float: left; margin-right: 5px; background-color: #fff; border: solid 1px #b9b9b9; padding: 3px 10px; font-style: italic; color: #818181; font-size: 13px; font-weight: inherit;}
+.frm_coupon a {float: right; margin-top: 0; display:block; background: #8f652b; padding: 3px 10px; color: #fff; text-transform: uppercase;}
+.frm_coupon a:hover {background: #7a5117; text-decoration: none;}
 /* Black themes*/
 /*.navbar-default {background: #fff; border: none; background: #fff url(../img/border_top2.jpg) repeat-x top center !important;}
 .cart_content {background-color: #f1f1f1 !important;}

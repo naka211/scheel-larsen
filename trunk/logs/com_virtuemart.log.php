@@ -36,3 +36,11 @@
 2014-08-29 08:06:54 ERROR vmError: Attention file images has no extension in view productdetails and directory D:\www\htdocs\scheel-larsen	emplates\scheellarsen\html\com_virtuemart\productdetails
 2014-08-29 08:07:16 ERROR vmError: Attention file images has no extension in view productdetails and directory D:\www\htdocs\scheel-larsen	emplates\scheellarsen\html\com_virtuemart\productdetails
 2014-08-29 08:57:48 ERROR vmError: Warning extension of the image is a png, tpcdf has problems with that in the header, choose a jpg or gif
+2014-09-06 04:20:53 ERROR vmError: Attention file images has no extension in view productdetails and directory D:\www\htdocs\scheel-larsen	emplates\scheellarsen\html\com_virtuemart\productdetails
+2014-09-06 04:25:13 ERROR vmError: Attention file images has no extension in view productdetails and directory D:\www\htdocs\scheel-larsen	emplates\scheellarsen\html\com_virtuemart\productdetails
+2014-09-06 04:33:32 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-06 04:33:33 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-06 10:48:42 ERROR vmError: Attention file images has no extension in view productdetails and directory D:\www\htdocs\scheel-larsen	emplates\scheellarsen\html\com_virtuemart\productdetails
+2014-09-06 11:00:07 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-06 11:00:09 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-06 11:03:13 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\

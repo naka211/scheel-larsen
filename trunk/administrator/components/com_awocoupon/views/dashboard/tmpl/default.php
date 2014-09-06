@@ -182,7 +182,7 @@ function g_plugin_install(val) {
 		
 		
 		
-				<table class="adminlist">
+				<!--<table class="adminlist">
 				<thead><tr><th colspan="2"><?php echo JText::_( 'COM_AWOCOUPON_LI_LICENSE' ); ?></th></tr></thead>
 				<tbody>
 				<?php if(!empty($this->license->l)) { ?>
@@ -202,7 +202,7 @@ function g_plugin_install(val) {
 					<tr><td><b><span style="color:red;font-size:16px;"><?php echo JText::_( 'COM_AWOCOUPON_LI_INVALID_LICENSE' ); ?></span></b></td></tr>
 				<?php } ?>
 				</tbody>
-				</table>
+				</table>-->
 
 
 		
@@ -210,7 +210,7 @@ function g_plugin_install(val) {
 		
 		
 		
-				<table class="adminlist">
+				<!--<table class="adminlist">
 				<thead><tr><th colspan="2"><?php echo JText::_( 'COM_AWOCOUPON_DH_CHECK_UPDATE' ); ?></th></tr></thead>
 				<tbody>
 				<?php if($this->check['connect'] == 0) : ?>
@@ -241,7 +241,7 @@ function g_plugin_install(val) {
 					<td><?php echo $this->check['current_version']; ?></td>
 				</tr>
 				</tbody>
-				</table>
+				</table>-->
 		
 		
 		
