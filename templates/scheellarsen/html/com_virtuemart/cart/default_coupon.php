@@ -19,7 +19,7 @@
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
 
-if ($this->layoutName!='default') {
+/*if ($this->layoutName!='default') {
 ?>
 <form method="post" id="userForm" name="enterCouponCode" action="<?php echo JRoute::_('index.php'); ?>">
 <?php } ?>
@@ -35,4 +35,20 @@ if ($this->layoutName!='default') {
     <input type="hidden" name="task" value="setcoupon" />
     <input type="hidden" name="controller" value="cart" />
 </form>
-<?php } ?>
+<?php } */?>
+
+<div class="graris">
+    <p>Har du en værdikode?</p>
+    <div class="frm_coupon clearfix">
+        <form method="post" id="userForm" name="enterCouponCode" action="<?php echo JRoute::_('index.php'); ?>">
+            <input placeholder="Indtast koden her ..." name="coupon_code">
+            <a href="#" onclick="document.getElementById('Send').click();">Aktiver</a>
+            <input type="submit" style="display:none" name="Send" id="Send" value="Send">
+            <input type="hidden" name="option" value="com_virtuemart" />
+            <input type="hidden" name="view" value="cart" />
+            <input type="hidden" name="task" value="setcoupon" />
+            <input type="hidden" name="controller" value="cart" />
+        </form>
+    </div>
+</div>
+<div class="clear"></div>

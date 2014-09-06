@@ -323,7 +323,7 @@ class AwoCouponModelHistory extends AwoCouponModel {
 		
 		}
 		if(empty($rows)) return false;
-		
+		 
 		$order = call_user_func(array(AWOCOUPON_ESTOREHELPER,'getOrder'),$order_id);
 //printr($order);
 //printrx($rows);

@@ -306,6 +306,12 @@ jQuery(document).ready(function(){
                                     <td colspan="2">FRAGT: </td>
                                     <td colspan="2"><span id="shipPriceLabel1"></span></td>
                                 </tr>
+                                <?php if (!empty($cart->cartData['couponCode'])) { ?>
+                                <tr>
+                                    <td colspan="2">Gavekort rabat: </td>
+                                    <td colspan="2"><?php echo number_format ($cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?></td>
+                                </tr>
+                                <?php } ?>
                                 <tr id="deduct">
                                     <td colspan="2">Rabat 10% ved afhentning: </td>
                                     <td colspan="2"><?php echo '-'.number_format($cart->pricesUnformatted['salesPrice']*0.1,2,',','.').' DKK'; ?></td>
