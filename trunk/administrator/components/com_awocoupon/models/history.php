@@ -269,6 +269,7 @@ class AwoCouponModelHistory extends AwoCouponModel {
 		$db  = JFactory::getDBO();
 
 		$rows = call_user_func(array(AWOCOUPON_ESTOREHELPER,'getHistorySentGift'),$order_id);
+		
 
 		$codes = array();
 		foreach($rows as $k=>$row) {
@@ -326,7 +327,7 @@ class AwoCouponModelHistory extends AwoCouponModel {
 		 
 		$order = call_user_func(array(AWOCOUPON_ESTOREHELPER,'getOrder'),$order_id);
 //printr($order);
-//printrx($rows);
+//print_r($rows);exit;
 		
 		return call_user_func(array('AwoCoupon'.AWOCOUPON_ESTORE.'GiftcertHandler','process_resend'),$order,$rows);
 
