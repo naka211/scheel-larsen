@@ -194,7 +194,7 @@ else{
                                         </table>
                                     </div>
                                 </div>
-                                <a class="bntCheckout btn2" href="<?php echo JURI::base().'user/editaddresscheckoutBT.html';?>">GÅ TIL KASSEN</a> <a class="bntBasket btn2" href="index.php?option=com_virtuemart&view=cart">SE VAREKURV</a> </div>
+                                <!--<a class="bntCheckout btn2" href="<?php echo JURI::base().'user/editaddresscheckoutBT.html';?>">GÅ TIL KASSEN</a>--> <a class="bntBasket btn2" href="index.php?option=com_virtuemart&view=cart">SE VAREKURV</a> </div>
                             <!--.list-cart--> 
                         </div>
                     </div>
