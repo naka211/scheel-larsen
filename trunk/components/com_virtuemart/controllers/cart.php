@@ -122,8 +122,11 @@ class VirtueMartControllerCart extends JController {
 		$this->json = new stdClass();
 		$cart = VirtueMartCart::getCart(false);
 		if ($cart) {
-
+            
 			$virtuemart_product_ids = JRequest::getVar('virtuemart_product_id', array(), 'default', 'array');
+            //T.Trung
+            $this->checkGiftCard($virtuemart_product_ids, $cart);
+            //T.Trung end
 			$view = $this->getView ('cart', 'json');
 			$errorMsg = 0;//JText::_('COM_VIRTUEMART_CART_PRODUCT_ADDED');
 			$products = $cart->add($virtuemart_product_ids, $errorMsg );
@@ -598,6 +601,10 @@ class VirtueMartControllerCart extends JController {
 		$db->setQuery('SELECT city FROM #__postnumber WHERE number = '.$zip);
 		die($db->loadResult());
 	}
+    
+    function checkGiftCard($virtuemart_product_ids, $cart){
+        print_r($cart);exit;
+    }
 
 }
 
