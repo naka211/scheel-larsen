@@ -25,25 +25,25 @@ if(typeof Virtuemart === "undefined")
 			productUpdate : function(mod) {
 				var $ = jQuery ;
 				$.ajaxSetup({ cache: false })
-                                $.ajax({
-                                        type: "GET",
-                                        contentType: "application/json; charset=utf-8",
-                                        url: "index.php",
-                                        data: { option: "com_virtuemart", view: "cart", layout: "mycart", format: "json" },
-                                        dataType: "html",
-                                        success: function (response) { 
-                                            
-                                            $('#list-item').html(response);
-                                            $('.mwc-tax').html($("div.my-tax").text());
-                                            $('.mwc-subtotal').html($("div.my-total").text());
-                                            $('.mwc-total-head').html($("div.my-total").text());
-                                            $('.img-cart p span').eq(1).text($("div.my-total").text());
-                                            $('.img-cart p span').eq(0).text($("div.my-quantity").text());
-                                        },
+                        $.ajax({
+                                type: "GET",
+                                contentType: "application/json; charset=utf-8",
+                                url: "index.php",
+                                data: { option: "com_virtuemart", view: "cart", layout: "mycart", format: "json" },
+                                dataType: "html",
+                                success: function (response) { 
+                                    
+                                    $('#list-item').html(response);
+                                    $('.mwc-tax').html($("div.my-tax").text());
+                                    $('.mwc-subtotal').html($("div.my-total").text());
+                                    $('.mwc-total-head').html($("div.my-total").text());
+                                    $('.img-cart p span').eq(1).text($("div.my-total").text());
+                                    $('.img-cart p span').eq(0).text($("div.my-quantity").text());
+                                },
 //                                        error: function (error){
 //                                            console.log(error);
 //                                        }
-                                });
+                        });
                                
 				$.getJSON(window.vmSiteurl+"index.php?option=com_virtuemart&nosef=1&view=cart&task=viewJS&format=json"+window.vmLang,
 					function(datas, textStatus) {
@@ -90,6 +90,12 @@ if(typeof Virtuemart === "undefined")
 
                 $.getJSON(vmSiteurl+'index.php?option=com_virtuemart&nosef=1&view=cart&task=addJS&format=json'+vmLang,datas,
                 function(datas, textStatus) {
+                    //T.Trung
+                    if(datas.status == 1){
+                        alert('Du kan ikke købe gavekort med et andet produkt');
+                        return false;
+                    }
+                    //T.Trung end
                     if(datas.stat ==1){
 
                         var txt = datas.msg;
