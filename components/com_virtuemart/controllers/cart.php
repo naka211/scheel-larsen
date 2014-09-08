@@ -603,7 +603,7 @@ class VirtueMartControllerCart extends JController {
 	}
     
     function checkGiftCard($virtuemart_product_ids, $cart){
-        print_r($cart);exit;
+        //print_r($cart);exit;
     }
 
 }
