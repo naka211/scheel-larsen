@@ -603,8 +603,28 @@ class VirtueMartControllerCart extends JController {
 	}
     
     function checkGiftCard($virtuemart_product_ids, $cart){
-        //print_r($cart);exit;
-        if(!empty($cart['products'])){
+        
+        if(!empty($cart->products)){
+            $product_model = VmModel::getModel('product');
+            $virtuemart_category_ids = $product_model->getProductCategories($virtuemart_product_ids[0], true);
+            $virtuemart_category_id = $virtuemart_category_ids[0];
+            
+            foreach($cart->products as $product){
+                $category_arr[] = $product->virtuemart_category_id;
+            }
+            
+           
+            if(($virtuemart_category_id == 14) && ($category_arr[0] != 14)){
+                $this->json->status = '1';
+                echo json_encode($this->json);
+                exit;
+            }
+            
+            if(($virtuemart_category_id != 14) && ($category_arr[0] == 14)){
+                $this->json->status = '1';
+                echo json_encode($this->json);
+                exit;
+            }
             
         }
     }
