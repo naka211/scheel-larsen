@@ -52,6 +52,12 @@ $ST_info = $db->loadObject();
 if(!$ST_info){
     $ST_info = $BT_info;
 }
+
+if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
+    $isGiftCard = true;
+} else {
+    $isGiftCard = false;
+}
 ?>
 <html lang="en">
 <head>
@@ -254,6 +260,16 @@ table tr td table.top_info {
                                                 <td>Telefonnummer:</td>
                                                 <td><?php echo $ST_info->phone_1;?></td>
                                             </tr>
+                                            <?php if($isGiftCard){?>
+                                            <tr>
+                                                <td>E-mail:</td>
+                                                <td><?php echo $ST_info->email1;?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Besked:</td>
+                                                <td><?php echo $ST_info->message1;?></td>
+                                            </tr>
+                                            <?php }?>
                                             <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
                                             <tr>
                                                 <td valign="top" colspan="2"><strong style="color: red; font-size:18px;">Bemærk! Vi kontakter jer, når varen er klar afhentning</strong></td>

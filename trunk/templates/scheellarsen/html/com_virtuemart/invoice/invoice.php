@@ -13,6 +13,12 @@ if($this->orderDetails['details']['BT']->company){
 if(!$this->orderDetails['details']['ST']){
     $this->orderDetails['details']['ST'] = $this->orderDetails['details']['BT'];
 }
+
+if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
+    $isGiftCard = true;
+} else {
+    $isGiftCard = false;
+}
 	?>
 <table border="0" cellspacing="0" cellpadding="0" style="margin: 15px; background: #fff; border: 1px solid #646464;">
 	<tr>
@@ -108,6 +114,10 @@ if(!$this->orderDetails['details']['ST']){
 					<td height="30" style="padding-left: 10px">E-mail:</td>
 					<td height="30"><?php echo $this->orderDetails['details']['BT']->email;?></td>
 				</tr>
+                <tr>
+					<td height="30" style="padding-left: 10px">Besked:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['BT']->message1;?></td>
+				</tr>
 			</table>
 		</td>
 
@@ -151,6 +161,17 @@ if(!$this->orderDetails['details']['ST']){
 					<td height="30">Telefon:</td>
 					<td height="30"><?php echo $this->orderDetails['details']['ST']->phone_1;?></td>
 				</tr>
+                <?php if($isGiftCard){?>
+                <tr>
+					<td height="30">E-mail:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['ST']->email1;?></td>
+				</tr>
+
+				<tr>
+					<td height="30">Besked:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['ST']->message1;?></td>
+				</tr>
+                <?php }?>
                 <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
                 <tr>
 					<td height="30" colspan="2"><strong style="color: red; font-size:18px;">Bemærk! Vi kontakter jer, når varen er klar afhentning</strong></td>
