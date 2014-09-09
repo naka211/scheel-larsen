@@ -59,6 +59,12 @@ if($BT_info->company){
 } else {
 	$type = "Privat";
 }
+
+if($order['items'][0]->virtuemart_category_id == 14){
+    $isGiftCard = true;
+} else {
+    $isGiftCard = false;
+}
 ?>
 <style>
 .costumTitle{
@@ -158,6 +164,14 @@ if($BT_info->company){
         <p>
           <label for="">Telefonnummer:</label>
           <?php echo $ST_info->phone_1;?></p>
+        <?php if($isGiftCard){?>
+          <p>
+          <label for="">E-mail:</label>
+          <?php echo $ST_info->email1;?></p>
+          <p>
+          <label for="">Besked:</label>
+          <?php echo $ST_info->message1;?></p>
+        <?php }?>
         <?php if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
         <p class="red f18">Bemærk! Vi kontakter jer, når varen er klar afhentning</p>
         <?php }?>
