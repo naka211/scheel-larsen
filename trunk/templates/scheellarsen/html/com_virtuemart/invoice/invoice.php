@@ -274,6 +274,13 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
         <tr>
 			<td width="400" style="color: #3A3A3A;">FRAGT:</td>
 		</tr>
+        
+        <?php if($this->orderDetails['details']['BT']->coupon_code){?>
+        <tr>
+			<td width="400" style="color: #3A3A3A;">Gavekort rabat:</td>
+		</tr>
+        <?php }?>
+        
         <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
         <tr>
 			<td width="400" style="color: #3A3A3A;">Rabat 10% ved afhentning:</td>
@@ -300,6 +307,13 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
         <tr>
 			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format($this->orderDetails['details']['BT']->order_shipment,2,',','.');?> DKK</td>
 		</tr>
+        
+        <?php if($this->orderDetails['details']['BT']->coupon_code){?>
+        <tr>
+			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format($this->orderDetails['details']['BT']->coupon_discount,2,',','.');?> DKK</td>
+		</tr>
+        <?php }?>
+        
         <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
         <tr>
 			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo '-'.number_format($this->orderDetails['details']['BT']->order_subtotal*0.1,2,',','.');?> DKK</td>

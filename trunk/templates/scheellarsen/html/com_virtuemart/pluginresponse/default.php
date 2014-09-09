@@ -241,6 +241,16 @@ if($order['items'][0]->virtuemart_category_id == 14){
                   ?>
                   </td>
                 </tr>
+                
+                <?php 
+                    if($order['details']['BT']->coupon_code){
+                ?>
+                <tr>
+                    <td colspan="2">Gavekort rabat:</td>
+                    <td colspan="2"><?php echo number_format($order['details']['BT']->coupon_discount,2,',','.').' DKK'; ?></td>
+                </tr>
+                <?php }?>
+                
                 <?php 
                     if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){
                 ?>

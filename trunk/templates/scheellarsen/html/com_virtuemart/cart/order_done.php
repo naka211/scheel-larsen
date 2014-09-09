@@ -260,7 +260,7 @@ if($order['items'][0]->virtuemart_category_id == 14){
                 ?>
                 <tr>
                     <td colspan="2">Gavekort rabat:</td>
-                    <td colspan="2"><?php echo number_format($order['details']['BT']->coupon_discount*0.1,2,',','.').' DKK'; ?></td>
+                    <td colspan="2"><?php echo number_format($order['details']['BT']->coupon_discount,2,',','.').' DKK'; ?></td>
                 </tr>
                 <?php }?>
                 
