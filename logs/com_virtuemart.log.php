@@ -44,3 +44,9 @@
 2014-09-06 11:00:07 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
 2014-09-06 11:00:09 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
 2014-09-06 11:03:13 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-09 04:12:19 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-09 04:12:57 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-09 07:13:26 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-09 07:13:28 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-09 07:43:04 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\
+2014-09-09 07:43:05 ERROR vmError: Path wrong to store invoices, folder invoices does not exist /var/www/clients/client41/web408/web/vmfiles/invoices\

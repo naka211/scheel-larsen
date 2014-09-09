@@ -108,8 +108,10 @@ class AwoCouponVirtuemartGiftcertHandler  extends AwoCouponEstoreGiftcertHandler
 	protected function getproductattributes($row) {
 		$recipient_email = $row->email;
 		$recipient_name = $row->first_name.' '.$row->last_name;
-		$message = '';
-		
+		//$message = '';
+		//T.Trung
+        $message = $row->message;
+        //T.Trung end
 		$attrlist = array();
 		if(!empty($row->product_attribute)) {
 			$name_id = (int)$this->params->get('virtuemart_giftcert_field_recipient_name', 0);

@@ -55,7 +55,7 @@ class AwoCouponEstoreGiftcertHandler {
 		foreach($rows as $row) {
 			$this_mail_key = $this->getproductattributes($row);
 			$mail_key[$this_mail_key['email']] = $this_mail_key;
-
+            
 			$current_profile = $profile_default;
 			if(!empty($row->profile_id)) {
 				if(!empty($profiles[$row->profile_id])) $current_profile = $profiles[$row->profile_id];
@@ -431,8 +431,6 @@ class AwoCouponEstoreGiftcertHandler {
 		return array('recipient_name'=>$row->first_name.' '.$row->last_name,'email'=>$row->email,'message'=>'');
 	}
 
-
-	
 	protected function cleanup_error($message) {
 //trigger_error($message);
 

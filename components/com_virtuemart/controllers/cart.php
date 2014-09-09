@@ -563,7 +563,7 @@ class VirtueMartControllerCart extends JController {
 				$cart->ST['zip'] = JRequest::getVar('st_zip');
 				$cart->ST['city'] = JRequest::getVar('st_city');
 				$cart->ST['phone_1'] = JRequest::getVar('st_phone');
-				$cart->ST['email'] = JRequest::getVar('st_email');
+				$cart->ST['email1'] = JRequest::getVar('st_email');
 				$cart->ST['message1'] = JRequest::getVar('st_message1');
 			}
 			//T.Trung end
