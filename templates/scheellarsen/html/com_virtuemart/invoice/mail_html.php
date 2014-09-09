@@ -366,6 +366,12 @@ table tr td table.top_info {
                                                   ?>
                                                 </td>
                                             </tr>
+                                            <?php if($orderDetail->coupon_code){?>
+                                            <tr>
+                                                <td align="right">Gavekort rabat: </td>
+                                                <td align="right"><?php echo number_format($orderDetail->coupon_discount,2,',','.').' DKK'; ?></td>
+                                            </tr>
+                                            <?php }?>
                                             <?php 
                                                 if($orderDetail->virtuemart_shipmentmethod_id == 1){
                                             ?>
