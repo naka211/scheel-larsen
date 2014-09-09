@@ -449,7 +449,7 @@ class AwocouponVirtuemartHelper {
 	}
 	
 
-	static function getHistorySentGift($order_id) {
+	/*static function getHistorySentGift($order_id) {
 		$db = JFactory::getDBO();
 		$sql = 'SELECT i.virtuemart_order_item_id AS order_item_id,i.virtuemart_order_id AS order_id,i.product_item_price,i.product_quantity,
 						u.virtuemart_user_id AS user_id,u.email,u.first_name,u.last_name,ap.expiration_number,ap.expiration_type,ap.coupon_template_id,
@@ -463,8 +463,24 @@ class AwocouponVirtuemartHelper {
 				 GROUP BY i.virtuemart_order_item_id';
 		$db->setQuery($sql);
 		return $db->loadObjectList();
+	}*/
+    //T.Trung
+    static function getHistorySentGift($order_id) {
+		$db = JFactory::getDBO();
+		$sql = 'SELECT i.virtuemart_order_item_id AS order_item_id,i.virtuemart_order_id AS order_id,i.product_item_price,i.product_quantity,
+						u.virtuemart_user_id AS user_id,u.email1 as email,u.first_name,u.last_name, u.message1 as message, ap.expiration_number, ap.expiration_type, ap.coupon_template_id,
+						i.order_item_currency,ap.profile_id,i.virtuemart_product_id AS product_id,i.product_attribute,i.order_item_name,g.codes
+						
+				  FROM #__virtuemart_order_items i 
+				  JOIN #__awocoupon_giftcert_product ap ON ap.product_id=i.virtuemart_product_id
+				  JOIN #__virtuemart_order_userinfos u ON u.virtuemart_order_id=i.virtuemart_order_id AND u.address_type="ST"
+				  JOIN #__awocoupon_giftcert_order g ON g.order_id=i.virtuemart_order_id AND g.email_sent=1
+				 WHERE i.virtuemart_order_id='.(int)$order_id.' AND ap.published=1
+				 GROUP BY i.virtuemart_order_item_id';
+		$db->setQuery($sql);
+		return $db->loadObjectList();
 	}
-	
+	//T.Trung end
 	
 	
 	static function rpt_purchased_giftcert_list($start_date,$end_date,$order_status) {

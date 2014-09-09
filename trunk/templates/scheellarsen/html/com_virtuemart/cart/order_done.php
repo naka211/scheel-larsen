@@ -44,7 +44,7 @@ $order_info = $db->loadObject();
 if(!class_exists('VmModel'))require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'vmmodel.php');
 $orderModel=VmModel::getModel('orders');
 $order = $orderModel->getOrder($orderid);
-print_r($order);exit;
+//print_r($order);exit;
 /*$vars['orderDetails']=$order;
 shopFunctionsF::renderMail('invoice', $admin->email, $vars);
 shopFunctionsF::renderMail('invoice', $order->email, $vars);*/

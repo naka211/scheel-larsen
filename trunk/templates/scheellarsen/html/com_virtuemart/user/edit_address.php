@@ -16,6 +16,16 @@ else {
 $cart = VirtueMartCart::getCart(); 
 $cart->prepareCartViewData();
 //print_r($cart);exit;
+
+foreach($cart->products as $product){
+    $category_arr[] = $product->virtuemart_category_id;
+}
+if($category_arr[0] == 14){
+    $isGiftCard = true;
+} else {
+    $isGiftCard = false;
+}
+
 ?>
 
 <div id="ppCartcredit" class="reveal-modal">
@@ -85,7 +95,9 @@ jQuery(document).ready(function(){
             var moms =  formatMoney(parseFloat(((jQuery("#subtotal").val())*0.9)*0.2));
             jQuery("#moms").html(moms+" DKK");
             jQuery("#deduct").show();
+            
 		} else {
+            
             jQuery("#shipPriceLabel1").html(jQuery("#shipFee").val() + ",00 DKK");
 			var total = formatMoney(parseFloat(Number(jQuery("#subtotal").val()) + Number(jQuery("#shipFee").val())));
 			jQuery("#payTotal").html(total+" DKK");
@@ -154,9 +166,10 @@ jQuery(document).ready(function(){
             jQuery("#STsameAsBT").val("1");
 			setDelivery(jQuery("#zip").val());
         } else {
-            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip" maxlength="4"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone"><input class="input required" type="text" placeholder="E-mail*" name="st_email" id="st_email"><textarea class="textarea" placeholder="Evt. din besked" name="st_message1"></textarea>';
+            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip" maxlength="4"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone"><?php if($isGiftCard){?><input class="input required" type="text" placeholder="E-mail*" name="st_email" id="st_email"><textarea class="textarea" placeholder="Evt. din besked" name="st_message1"></textarea><?php }?>';
             jQuery(".w_Address").html(st_html);
             jQuery("#STsameAsBT").val("0");
+            
             
             jQuery("#st_zip").blur(function(){
                 var st_zip = jQuery("#st_zip").val();
@@ -173,7 +186,13 @@ jQuery(document).ready(function(){
     }
     
     shipTo();
+    <?php if($isGiftCard){?>
+    jQuery(".w_Address").show();
+    jQuery("#deduct").hide();
+    jQuery("#shipPriceLabel1").html("0 DKK");
+    <?php } else {?>
     jQuery(".w_Address").hide();
+    <?php }?>
         
     jQuery('.btnLevering').click(function(event){
         event.preventDefault();
@@ -182,7 +201,7 @@ jQuery(document).ready(function(){
         });
     });
     
-	jQuery("#checkoutBtn").bind("click",function(){
+	/*jQuery("#checkoutBtn").bind("click",function(){
 		if(jQuery("#tosAccepted").is(':checked')){
 			jQuery("#checkoutForm").submit();
 		} else {
@@ -190,7 +209,7 @@ jQuery(document).ready(function(){
 			jQuery("#tosAccepted").focus();
 			return false;
 		}
-	});
+	});*/
 });
 </script>
 <form method="post" id="checkoutForm" name="userForm" class="form-validate" style="padding:0;border-top:none" action="index.php">
@@ -228,6 +247,7 @@ jQuery(document).ready(function(){
         <div class="w605 fr">
             <ul class="levering clearfix">
                 <h2><span>2</span>Levering</h2>
+                <?php if(!$isGiftCard){?>
                 <li id="shipMethod" style="display:none;">
                     <input id="ship1" name="virtuemart_shipmentmethod_id" value="0" type="radio" checked onChange="changeDelivery(this.value)">
                     <span id="shipPriceLabel"></span>
@@ -236,6 +256,11 @@ jQuery(document).ready(function(){
                     <input id="ship2" name="virtuemart_shipmentmethod_id" value="1" type="radio" onChange="changeDelivery(this.value)">
                     Ved afhentning på Hesselrødvej 26, 2980 Kokkedal, sparer du 10%, som vil blive fratrukket automatisk
                 </li>
+                <?php } else {?>
+                <li>
+                    <input name="virtuemart_shipmentmethod_id" value="4" type="radio" checked> Levering: 0 DKK
+                </li>
+                <?php }?>
             </ul>
             <div class="payment_Method clearfix">
                 <h2><span>3</span>Betalingsmetode</h2>
