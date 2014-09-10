@@ -1,6 +1,15 @@
 <?php
 // No direct access.
 defined('_JEXEC') or die; 
+
+//Detect mobile
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ( !$detect->isMobile() ) {
+    include('index_mobile.php');
+    return;
+}
+//Detect mobile end
 $tmpl = JURI::base().'templates/'.$this->template."/";
 $session = JFactory::getSession();
 $option = JRequest::getVar('option');
