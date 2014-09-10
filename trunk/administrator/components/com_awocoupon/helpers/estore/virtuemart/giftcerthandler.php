@@ -36,7 +36,7 @@ class AwoCouponVirtuemartGiftcertHandler  extends AwoCouponEstoreGiftcertHandler
 		return $instance->generate_auto_email($rows);
 	}
 	
-	protected function process_order_status_change( ) {
+	/*protected function process_order_status_change( ) {
 		$auto_order_status = $this->params->get('giftcert_order_status', 'C') ;
 		
 		if( $this->order->order_status==$auto_order_status ) {
@@ -58,8 +58,34 @@ class AwoCouponVirtuemartGiftcertHandler  extends AwoCouponEstoreGiftcertHandler
 			$this->generate_auto_email($rows);
 
 		}
+	}*/
+	//T.Trung
+    
+    protected function process_order_status_change( ) {
+		$auto_order_status = $this->params->get('giftcert_order_status', 'C') ;
+		
+		if( $this->order->order_status==$auto_order_status ) {
+		// order confirmed now mail out gift certs if any
+			
+			$sql = 'SELECT i.virtuemart_order_item_id AS order_item_id,i.virtuemart_order_id AS order_id,p.product_parent_id,i.product_item_price,i.product_quantity,
+							u.virtuemart_user_id AS user_id,u.email1 as email, u.first_name, u.last_name, u.message1 as message, ap.expiration_number, ap.expiration_type, ap.coupon_template_id,
+							i.order_item_currency,ap.profile_id,i.virtuemart_product_id AS product_id,i.product_attribute,i.order_item_name,ap.vendor_name,ap.vendor_email
+							
+					  FROM #__virtuemart_order_items i 
+					  JOIN #__awocoupon_giftcert_product ap ON ap.product_id=i.virtuemart_product_id
+					  JOIN #__virtuemart_products p ON p.virtuemart_product_id=i.virtuemart_product_id
+					  JOIN #__virtuemart_order_userinfos u ON u.virtuemart_order_id=i.virtuemart_order_id AND u.address_type="ST"
+					  LEFT JOIN #__awocoupon_giftcert_order g ON g.order_id=i.virtuemart_order_id AND g.estore="virtuemart" AND g.email_sent=1
+					 WHERE i.virtuemart_order_id='.$this->order->order_id.' AND g.order_id IS NULL AND ap.published=1 AND ap.estore="virtuemart"
+					 GROUP BY i.virtuemart_order_item_id';
+			$this->db->setQuery( $sql ); 
+			$rows = $this->db->loadObjectList();
+			$this->generate_auto_email($rows);
+
+		}
 	}
-	
+    
+    //T.Trung end
 	
 	
 	protected function formatcurrency($val) {
