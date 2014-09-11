@@ -303,7 +303,7 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
 		<tr>
 			<td style="padding: 0 10px; color: #3A3A3A;" ><?php echo number_format($this->orderDetails['details']['BT']->order_subtotal,2,',','.');?> DKK</td>
 		</tr>
-        <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
+        <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id != 1){?>
 		<tr>
 			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format($this->orderDetails['details']['BT']->order_subtotal*0.2,2,',','.');?> DKK</td>
 		</tr>
