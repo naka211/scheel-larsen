@@ -200,7 +200,7 @@ ul.cate li.active ul li a {color: #505050;}
 ul.cate li ul li.active a {color: #A08262;}
 ul.cate li:hover ul li.active a {color: #A08262;}
 ul.cate li:hover a {color: #A08262;}
-ul.cate li ul {padding-left: 20px; list-style: disc inside none;}
+ul.cate li ul {list-style: disc inside none;}
 ul.cate li:hover ul li:hover a {color: #A08262;}
 ul.cate li:hover ul li a {color: #505050;}
 .w485 {width: 485px;} .w430 {width: 430px;}

@@ -562,17 +562,25 @@ class VirtueMartControllerCart extends JController {
 			//T.Trung end
             //print_r($cart);exit;
 			$cart->confirmDone();
+            
 			//T.Trung
-			$siteURL = JURI::base();
-            if(JRequest::getVar('mwctype') == 3){
+            $orderModel=VmModel::getModel('orders');
+            $order = $orderModel->getOrder($cart->virtuemart_order_id);
+            
+            $siteURL = JURI::base();
+            if($order->order_total == 0){
                 $this->setRedirect( $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done&virtuemart_order_id='.$cart->virtuemart_order_id);
             } else {
-                $viabill = "";
-                if(JRequest::getVar('virtuemart_paymentmethod_id') == 2){
-                    $viabill = "&viabill=1";
+                if(JRequest::getVar('mwctype') == 3){
+                    $this->setRedirect( $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done&virtuemart_order_id='.$cart->virtuemart_order_id);
+                } else {
+                    $viabill = "";
+                    if(JRequest::getVar('virtuemart_paymentmethod_id') == 2){
+                        $viabill = "&viabill=1";
+                    }
+                    
+                    $this->setRedirect($siteURL . 'index.php?option=com_virtuemart&view=cart&layout=payment&virtuemart_order_id='.$cart->virtuemart_order_id.$viabill);
                 }
-                
-                $this->setRedirect($siteURL . 'index.php?option=com_virtuemart&view=cart&layout=payment&virtuemart_order_id='.$cart->virtuemart_order_id.$viabill);
             }
 			//T.Trung end
 			/*$view = $this->getView('cart', 'html');

@@ -7,33 +7,17 @@ JHTML::_( 'behavior.modal' );
 $mobile = JURI::base()."templates/scheellarsen/mobile/";
 ?>
 <div id="content" class="w-content">
-    <div class="eachBox banner-box clearfix">
-          <div id="banner" class="clearfix">
-            <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
-                  <div data-src="<?php echo $mobile;?>img/slider01.jpg"> </div>
-                  <div data-src="<?php echo $mobile;?>img/slider02.jpg"> </div>
-                  <div data-src="<?php echo $mobile;?>img/slider03.jpg"> </div>
-              </div>
-            <!-- #camera_wrap_1 --> 
-        </div>
-          <!--#banner--> 
-      </div>
-    <!--.banner-box-->
+    {module Home Banners}
     
     <div class="eachBox news">
-          <h1> Vi holder Ferielukket<br>
-            fra lørdag d. 7. til mandag d. 22. september 2013</h1>
-          <p>(vi kan selvfølgelig træffes på email: info@scheel-larsen.dk)<br>
-            Loungemøbler, Luksus stole i polyrattan, Haveborde, Parasoller, flere hundrede Frostsikre Krukker, Lamme- og<br>
-            Renskind og meget mere (5.000 kvm. udendørsudstilling)</p>
-          <p>Åbent: Tirsdag-fredag, kl. 14.00-20.00 - lørdag, søn- og helligdage, kl. 10.00-16.00.<br>
-            (Ferielukket fra 7. september - 22. september 2013)</p>
-      </div>
+        {article 14}{introtext}{/article}
+    </div>
     <!--discount-stt-->
     
     <div class="eachBox wrap-list-prod clearfix">
           <h2>udvalgte produkter</h2>
           <ul class="listProd clearfix">
+          
             <li>
                   <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $mobile;?>img/img01.jpg" alt=""></a> </div>
                   <h3>Diamond Loungestol Hvid Tex®</h3>
@@ -41,41 +25,7 @@ $mobile = JURI::base()."templates/scheellarsen/mobile/";
                   <p class="price_sale">(De sparer: 50 DKK) </p>
                   <h4>479 DKK</h4>
                   <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-            <li>
-                  <div class="img_main"> <a href="product_detail_out_of_stock.php"><img src="<?php echo $mobile;?>img/img02.jpg" alt=""></a> </div>
-                  <h3>Diamond Loungestol Hvid Tex®</h3>
-                  <p class="price_before">Førpris: 529 DKK</p>
-                  <p class="price_sale">(De sparer: 50 DKK) </p>
-                  <h4>479 DKK</h4>
-                  <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-            <li>
-                  <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $mobile;?>img/img01.jpg" alt=""></a> </div>
-                  <h3>Diamond Loungestol Hvid Tex®</h3>
-                  <p class="price_before">Førpris: 529 DKK</p>
-                  <p class="price_sale">(De sparer: 50 DKK) </p>
-                  <h4>479 DKK</h4>
-                  <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-            <li>
-                  <div class="img_main"> <a href="product_detail_out_of_stock.php"><img src="<?php echo $mobile;?>img/img02.jpg" alt=""></a> </div>
-                  <h3>Diamond Loungestol Hvid Tex®</h3>
-                  <p class="price_before"> </p>
-                  <p class="price_sale"> </p>
-                  <h4>479 DKK</h4>
-                  <a class="btnMore btn2" href="product_detail_out_of_stock.php">Vis detaljer</a> </li>
-            <li>
-                  <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $mobile;?>img/img01.jpg" alt=""></a> </div>
-                  <h3>Diamond Loungestol Hvid Tex®</h3>
-                  <p class="price_before">Førpris: 529 DKK</p>
-                  <p class="price_sale">(De sparer: 50 DKK) </p>
-                  <h4>479 DKK</h4>
-                  <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-            <li>
-                  <div class="img_main"> <a href="product_detail_out_of_stock.php"><img src="<?php echo $mobile;?>img/img02.jpg" alt=""></a> </div>
-                  <h3>Diamond Loungestol Hvid Tex®</h3>
-                  <p class="price_before">Førpris: 529 DKK</p>
-                  <p class="price_sale">(De sparer: 50 DKK) </p>
-                  <h4>479 DKK</h4>
-                  <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
+            
         </ul>
       </div>
     <!--eachBox wrap-list-prod-->
