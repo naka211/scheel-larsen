@@ -302,6 +302,7 @@ a.btnCookie {position: absolute; right: 10px; top: 10px; background: url(../img/
 .select {padding: 3px 5px;}
 a.btnDowndata {float: right; padding: 4px 15px;}
 a.btnLevering {background: url(../img/btnLevering.png) no-repeat; width: 285px; height: 28px; display: block; text-indent: -99999px; margin-bottom: 10px;}
+a.btnLevering1 {background: url(../img/btnLevering1.png) no-repeat; width: 285px; height: 28px; display: block; text-indent: -99999px; margin-bottom: 10px;}
 a.btnLevering2 {background: url(../img/btnLevering2.png) no-repeat;}
 .hover:hover {opacity: 0.8;filter: alpha(opacity=80);}
 ul.levering {padding-bottom: 15px; border-bottom: 1px dotted #868686; margin-bottom: 15px;}

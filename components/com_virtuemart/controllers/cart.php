@@ -527,7 +527,6 @@ class VirtueMartControllerCart extends JController {
 			$cart->BT['cvr'] = JRequest::getVar('cvr');
 				
 			$cart->BT['email'] = JRequest::getVar('email');
-			$cart->BT['address_type_name'] = JRequest::getVar('mwctype');
 			$cart->BT['first_name'] = JRequest::getVar('first_name');
 			$cart->BT['last_name'] = JRequest::getVar('last_name');
 			$cart->BT['street_name'] = JRequest::getVar('street_name');
@@ -537,7 +536,6 @@ class VirtueMartControllerCart extends JController {
 			$cart->BT['phone_1'] = JRequest::getVar('phone_1');
             $cart->BT['message1'] = JRequest::getVar('message1');
 			
-			$cart->BT['type'] = JRequest::getVar('type');
 			$cart->virtuemart_shipmentmethod_id = JRequest::getVar('virtuemart_shipmentmethod_id');
             $cart->virtuemart_paymentmethod_id = JRequest::getVar('virtuemart_paymentmethod_id');
 			$cart->STsameAsBT = JRequest::getVar('STsameAsBT');
@@ -558,11 +556,6 @@ class VirtueMartControllerCart extends JController {
 				$cart->ST = array();
 				$cart->ST['first_name'] = JRequest::getVar('st_first_name');
 				$cart->ST['last_name'] = JRequest::getVar('st_last_name');
-				$cart->ST['street_name'] = JRequest::getVar('st_street_name');
-				$cart->ST['street_number'] = JRequest::getVar('st_street_number');
-				$cart->ST['zip'] = JRequest::getVar('st_zip');
-				$cart->ST['city'] = JRequest::getVar('st_city');
-				$cart->ST['phone_1'] = JRequest::getVar('st_phone');
 				$cart->ST['email1'] = JRequest::getVar('st_email');
 				$cart->ST['message1'] = JRequest::getVar('st_message1');
 			}

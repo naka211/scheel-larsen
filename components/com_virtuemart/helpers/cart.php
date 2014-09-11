@@ -945,7 +945,7 @@ class VirtueMartCart {
 			return $this->redirecter('index.php?option=com_virtuemart&view=user&task=editaddresscheckout&addrtype=BT' , '');
 		}*/
 
-		if($this->STsameAsBT!==0){
+		/*if($this->STsameAsBT!==0){
 			if($this->_confirmDone){
 				$this->ST = $this->BT;
 			} else {
@@ -968,7 +968,7 @@ class VirtueMartCart {
 				return $this->redirecter('index.php?option=com_virtuemart&view=user&task=editaddresscheckout&addrtype=ST' , '');
 			}
 
-		}
+		}*/
 
 		if(VmConfig::get('oncheckout_only_registered',0)) {
 			$currentUser = JFactory::getUser();

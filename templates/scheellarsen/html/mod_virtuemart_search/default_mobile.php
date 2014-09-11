@@ -1,7 +1,7 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-$tmpl = JURI::base().'templates/'.$this->template."/";
+$tmpl = JURI::base().'templates/scheellarsen/';
 $mobile = $tmpl."mobile/";
 
 $text = JRequest::getVar("keyword", "Hvad søger du efter…");
@@ -11,7 +11,7 @@ if(!$text){
 ?>
 <!--BEGIN Search Box -->
 <form id="vm_mod_search" class="navbar-form navbar-left relative" role="search" action="<?php echo JRoute::_('index.php?option=com_virtuemart&view=search&search=true&limitstart=0&virtuemart_category_id='.$category_id ); ?>" method="get">
-<?php $output = '<input name="keyword" id="mod_virtuemart_search" alt="'.$button_text.'" class="form-control txtip" type="text" size="'.$width.'" value="'.$text.'"  onblur="if(this.value==\'\') this.value=\''.$text.'\';" onfocus="if(this.value==\''.$text.'\') this.value=\'\';" />';
+<?php $output = '<input name="keyword" id="mod_virtuemart_search" class="txtip" type="text" value="'.$text.'"  onblur="if(this.value==\'\') this.value=\''.$text.'\';" onfocus="if(this.value==\''.$text.'\') this.value=\'\';" />';
  $image = JURI::base().'components/com_virtuemart/assets/images/vmgeneral/search.png' ;
 
 			if ($button) :

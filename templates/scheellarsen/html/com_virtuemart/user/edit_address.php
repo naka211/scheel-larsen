@@ -166,7 +166,11 @@ jQuery(document).ready(function(){
             jQuery("#STsameAsBT").val("1");
 			setDelivery(jQuery("#zip").val());
         } else {
-            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip" maxlength="4"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone"><?php if($isGiftCard){?><input class="input required" type="text" placeholder="E-mail*" name="st_email" id="st_email"><textarea class="textarea" placeholder="Evt. din besked" name="st_message1"></textarea><?php }?>';
+            <?php if($isGiftCard){?>
+            var st_html = '<input class="input required" type="text" placeholder="Modtagerens fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Modtagerens efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Email på modtager* " name="st_email" id="st_email"><textarea class="textarea" placeholder="Evt. besked til modtageren: Her kan du skrive en lykønskning eller besked til modtageren" name="st_message1"></textarea>';
+            <?php } else {?>
+            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip" maxlength="4"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone">';
+            <?php }?>
             jQuery(".w_Address").html(st_html);
             jQuery("#STsameAsBT").val("0");
             
@@ -194,7 +198,7 @@ jQuery(document).ready(function(){
     jQuery(".w_Address").hide();
     <?php }?>
         
-    jQuery('.btnLevering').click(function(event){
+    jQuery('.showDelivery').click(function(event){
         event.preventDefault();
         jQuery(".w_Address").slideToggle("500","swing", function(){
             shipTo();
@@ -236,11 +240,15 @@ jQuery(document).ready(function(){
                     <input class="input required" type="text" placeholder="Telefon *" name="phone_1" id="phone_1">
                     <input class="input required validate-email" type="text" placeholder="E-mail adresse *" name="email" id="email">
                     <textarea class="textarea" placeholder="Evt. din besked" name="message1"></textarea>
-                    <p>(Felter markeret med * skal udfyldes)</p>
-                    <a class="btnLevering hover" href="javascript:void(0);">Levering til anden adresse</a>
+                    <?php if(!$isGiftCard){?>
+                    <a class="btnLevering hover showDelivery" href="javascript:void(0);">Levering til anden adresse</a>
+                    <?php } else {?>
+                    <a class="btnLevering1 hover showDelivery" href="javascript:void(0);">Modtageren af gavekortet</a>
+                    <?php }?>
                     <div class="w_Address clearfix">
                         
                     </div>
+                    <p>(Felter markeret med * skal udfyldes)</p>
                 </div>
             </div>
         </div>

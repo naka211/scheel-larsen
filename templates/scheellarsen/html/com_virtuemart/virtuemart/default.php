@@ -1,6 +1,16 @@
 <?php
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
+
+//Detect mobile
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ( $detect->isMobile() ) {
+    include('default_mobile.php');
+    return;
+}
+//Detect mobile end
+
 JHTML::_( 'behavior.modal' );
 ?>
 <?php # Vendor Store Description
