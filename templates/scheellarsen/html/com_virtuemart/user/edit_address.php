@@ -132,6 +132,9 @@ jQuery(document).ready(function(){
 			var fee = 350;
 			var text = 'Leveret til døren for Fyn og Jylland: ';
 		}
+        <?php if($isGiftCard){?>
+        fee = 0;
+        <?php }?>
 		jQuery("#shipFee").val(fee);
 		jQuery("#shipPriceLabel").html(text+fee+" DKK");
 		jQuery("#shipPriceLabel1").html(fee+" DKK");
@@ -193,7 +196,7 @@ jQuery(document).ready(function(){
     <?php if($isGiftCard){?>
     jQuery(".w_Address").show();
     jQuery("#deduct").hide();
-    jQuery("#shipPriceLabel1").html("0 DKK");
+    jQuery("#shipPriceLabel1").html("0,00 DKK");
     <?php } else {?>
     jQuery(".w_Address").hide();
     <?php }?>
