@@ -136,7 +136,17 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
 					<td height="30">Efternavn:</td>
 					<td height="30"><?php echo $this->orderDetails['details']['ST']->last_name;?></td>
 				</tr>
+                <?php if($isGiftCard){?>
+                <tr>
+					<td height="30">E-mail:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['ST']->email1;?></td>
+				</tr>
 
+				<tr>
+					<td height="30">Besked:</td>
+					<td height="30"><?php echo $this->orderDetails['details']['ST']->message1;?></td>
+				</tr>
+                <?php } else {?>
 				<tr>
 					<td height="30">Vejnavn:</td>
 					<td height="30"><?php echo $this->orderDetails['details']['ST']->street_name;?></td>
@@ -160,16 +170,6 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
 				<tr>
 					<td height="30">Telefon:</td>
 					<td height="30"><?php echo $this->orderDetails['details']['ST']->phone_1;?></td>
-				</tr>
-                <?php if($isGiftCard){?>
-                <tr>
-					<td height="30">E-mail:</td>
-					<td height="30"><?php echo $this->orderDetails['details']['ST']->email1;?></td>
-				</tr>
-
-				<tr>
-					<td height="30">Besked:</td>
-					<td height="30"><?php echo $this->orderDetails['details']['ST']->message1;?></td>
 				</tr>
                 <?php }?>
                 <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>

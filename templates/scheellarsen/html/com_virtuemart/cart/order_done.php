@@ -158,13 +158,25 @@ if($order['items'][0]->virtuemart_category_id == 14){
           </p>
       </div>
       <div class="w250 fl">
-        <p class="bold">Leveringsadresse:</p>
+        <?php if($isGiftCard){?>
+            <p class="bold">Modtageren af gavekortet:</p>
+        <?php } else {?>
+            <p class="bold">Leveringsadresse:</p>
+        <?php }?>
         <p>
           <label for="">Fornavn:</label>
           <?php echo $ST_info->first_name;?></p>
         <p>
           <label for="">Efternavn:</label>
           <?php echo $ST_info->last_name;?></p>
+        <?php if($isGiftCard){?>
+        <p>
+          <label for="">E-mail:</label>
+          <?php echo $ST_info->email1;?></p>
+          <p>
+          <label for="">Besked:</label>
+          <?php echo $ST_info->message1;?></p>
+        <?php } else {?>
         <p>
           <label for="">Vejnavn:</label>
           <?php echo $ST_info->street_name;?></p>
@@ -180,13 +192,6 @@ if($order['items'][0]->virtuemart_category_id == 14){
         <p>
           <label for="">Telefonnummer:</label>
           <?php echo $ST_info->phone_1;?></p>
-        <?php if($isGiftCard){?>
-        <p>
-          <label for="">E-mail:</label>
-          <?php echo $ST_info->email1;?></p>
-          <p>
-          <label for="">Besked:</label>
-          <?php echo $ST_info->message1;?></p>
         <?php }?>
         <?php if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
         <p class="red f18">Bemærk! Vi kontakter jer, når varen er klar afhentning</p>
