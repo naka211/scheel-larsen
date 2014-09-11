@@ -5,7 +5,7 @@ defined('_JEXEC') or die;
 //Detect mobile
 require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;
-if ( !$detect->isMobile() ) {
+if ( $detect->isMobile() ) {
     include('index_mobile.php');
     return;
 }

@@ -106,11 +106,9 @@ $mobile = $tmpl."mobile/";
         <div id="header" class="mm-fixed-top">
           <a href="index.php" class="logo"><img src="<?php echo $mobile;?>img/logo.png"></a>
           <div class="headright"> 
-              <div class="wrapSearch">
-              {module Search product}
-              <!--<input class="txtip" placeholder="Hvad søger du efter ..."> <a href="#"><img src="<?php echo $mobile;?>img/iconSearch.png"></a>-->
-              
-              </div>		 
+                <div class="wrapSearch">
+                {module Search product}
+                </div>		 
               <a class="btnShopbag" href="cart.php"> <img src="<?php echo $mobile;?>img/btnShopbag.png">  <span class="nummber">3</span></a>
               <a href="#menu-left" class="bntMenuleft"><img src="<?php echo $mobile;?>img/bntMenuleft.png"></a>
           </div><!--headright-->  
@@ -118,93 +116,13 @@ $mobile = $tmpl."mobile/";
         
         <div id="ppMap" style="display: none;">
             <div class="wrap-pp wrapMap">
-                 <img class="imgMap_demo" src="<?php echo $mobile;?>img/map-mobile.jpg"> 
+                 <!--<img class="imgMap_demo" src="<?php echo $mobile;?>img/map-mobile.jpg"> -->
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2235.3331502889896!2d12.431027599999998!3d55.9262623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652478c58c6b30d%3A0x882207eeab2b9c27!2zSGVzc2VscsO4ZHZlaiAyNiwgMjk4MCBLb2trZWRhbCwgxJBhbiBN4bqhY2g!5e0!3m2!1svi!2s!4v1407298529040" width="600" height="400" frameborder="0" style="border:0"></iframe>
             </div><!--wrap-cartcredit-->  
         </div><!--ppCartcredit-->
       <!--#header-->
+      <jdoc:include type="component" />
       
-      <div id="content" class="w-content">
-        <div class="eachBox banner-box clearfix">
-              <div id="banner" class="clearfix">
-                <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
-                      <div data-src="<?php echo $mobile;?>img/slider01.jpg"> </div>
-                      <div data-src="<?php echo $mobile;?>img/slider02.jpg"> </div>
-                      <div data-src="<?php echo $mobile;?>img/slider03.jpg"> </div>
-                  </div>
-                <!-- #camera_wrap_1 --> 
-            </div>
-              <!--#banner--> 
-          </div>
-        <!--.banner-box-->
-        
-        <div class="eachBox news">
-              <h1> Vi holder Ferielukket<br>
-                fra lørdag d. 7. til mandag d. 22. september 2013</h1>
-              <p>(vi kan selvfølgelig træffes på email: info@scheel-larsen.dk)<br>
-                Loungemøbler, Luksus stole i polyrattan, Haveborde, Parasoller, flere hundrede Frostsikre Krukker, Lamme- og<br>
-                Renskind og meget mere (5.000 kvm. udendørsudstilling)</p>
-              <p>Åbent: Tirsdag-fredag, kl. 14.00-20.00 - lørdag, søn- og helligdage, kl. 10.00-16.00.<br>
-                (Ferielukket fra 7. september - 22. september 2013)</p>
-          </div>
-        <!--discount-stt-->
-        
-        <div class="eachBox wrap-list-prod clearfix">
-              <h2>udvalgte produkter</h2>
-              <ul class="listProd clearfix">
-                <li>
-                      <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $mobile;?>img/img01.jpg" alt=""></a> </div>
-                      <h3>Diamond Loungestol Hvid Tex®</h3>
-                      <p class="price_before">Førpris: 529 DKK</p>
-                      <p class="price_sale">(De sparer: 50 DKK) </p>
-                      <h4>479 DKK</h4>
-                      <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-                <li>
-                      <div class="img_main"> <a href="product_detail_out_of_stock.php"><img src="<?php echo $mobile;?>img/img02.jpg" alt=""></a> </div>
-                      <h3>Diamond Loungestol Hvid Tex®</h3>
-                      <p class="price_before">Førpris: 529 DKK</p>
-                      <p class="price_sale">(De sparer: 50 DKK) </p>
-                      <h4>479 DKK</h4>
-                      <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-                <li>
-                      <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $mobile;?>img/img01.jpg" alt=""></a> </div>
-                      <h3>Diamond Loungestol Hvid Tex®</h3>
-                      <p class="price_before">Førpris: 529 DKK</p>
-                      <p class="price_sale">(De sparer: 50 DKK) </p>
-                      <h4>479 DKK</h4>
-                      <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-                <li>
-                      <div class="img_main"> <a href="product_detail_out_of_stock.php"><img src="<?php echo $mobile;?>img/img02.jpg" alt=""></a> </div>
-                      <h3>Diamond Loungestol Hvid Tex®</h3>
-                      <p class="price_before"> </p>
-                      <p class="price_sale"> </p>
-                      <h4>479 DKK</h4>
-                      <a class="btnMore btn2" href="product_detail_out_of_stock.php">Vis detaljer</a> </li>
-                <li>
-                      <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $mobile;?>img/img01.jpg" alt=""></a> </div>
-                      <h3>Diamond Loungestol Hvid Tex®</h3>
-                      <p class="price_before">Førpris: 529 DKK</p>
-                      <p class="price_sale">(De sparer: 50 DKK) </p>
-                      <h4>479 DKK</h4>
-                      <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-                <li>
-                      <div class="img_main"> <a href="product_detail_out_of_stock.php"><img src="<?php echo $mobile;?>img/img02.jpg" alt=""></a> </div>
-                      <h3>Diamond Loungestol Hvid Tex®</h3>
-                      <p class="price_before">Førpris: 529 DKK</p>
-                      <p class="price_sale">(De sparer: 50 DKK) </p>
-                      <h4>479 DKK</h4>
-                      <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-            </ul>
-          </div>
-        <!--eachBox wrap-list-prod-->
-        
-        <div class="eachBox  box_gavekort"> <a href="gavekort.html"><img src="<?php echo $mobile;?>img/gavekort.png"></a> </div>
-        
-            <div class="eachBox">
-                <ul class="list-bn">
-                    <li><a href="cane-line.html"><img src="<?php echo $mobile;?>img/image01.jpg"></a></li>
-                    <li><a href="skind.html"><img src="<?php echo $mobile;?>img/image02.jpg"></a></li>
-                </ul>
-            </div>
             
          <div class="wrap-list-serviecs clearfix">
             <ul class="list-serviecs clearfix">
