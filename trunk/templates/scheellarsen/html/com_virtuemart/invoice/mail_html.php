@@ -230,7 +230,13 @@ table tr td table.top_info {
                                 <td width="50%" valign="top"><table width="100%">
                                         <tbody>
                                             <tr>
-                                                <td colspan="4"><strong>Leveringsadresse:</strong></td>
+                                                <td colspan="4"><strong>
+                                                <?php if($isGiftCard){?>
+                                                    Modtageren af gavekortet:
+                                                <?php } else {?>
+                                                    Leveringsadresse:
+                                                <?php }?>
+                                                </strong></td>
                                             </tr>
                                             <tr>
                                                 <td width="30%">Fornavn:</td>
@@ -240,6 +246,16 @@ table tr td table.top_info {
                                                 <td>Efternavn:</td>
                                                 <td><?php echo $ST_info->last_name;?></td>
                                             </tr>
+                                            <?php if($isGiftCard){?>
+                                            <tr>
+                                                <td>E-mail:</td>
+                                                <td><?php echo $ST_info->email1;?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Besked:</td>
+                                                <td><?php echo $ST_info->message1;?></td>
+                                            </tr>
+                                            <?php } else {?>
                                             <tr>
                                                 <td>Vejnavn:</td>
                                                 <td><?php echo $ST_info->street_name;?></td>
@@ -259,15 +275,6 @@ table tr td table.top_info {
                                             <tr>
                                                 <td>Telefonnummer:</td>
                                                 <td><?php echo $ST_info->phone_1;?></td>
-                                            </tr>
-                                            <?php if($isGiftCard){?>
-                                            <tr>
-                                                <td>E-mail:</td>
-                                                <td><?php echo $ST_info->email1;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Besked:</td>
-                                                <td><?php echo $ST_info->message1;?></td>
                                             </tr>
                                             <?php }?>
                                             <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
