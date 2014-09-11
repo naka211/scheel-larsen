@@ -124,7 +124,13 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
 		<td colspan="2" valign="top">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td colspan="2" height="30"><strong>Leveringsadresse:</strong></td>
+					<td colspan="2" height="30"><strong>
+                    <?php if($isGiftCard){?>
+                        Modtageren af gavekortet:
+                    <?php } else {?>
+                        Leveringsadresse:
+                    <?php }?>
+                    </strong></td>
 				</tr>
 
 				<tr>
@@ -205,7 +211,7 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
 		<td colspan="2">
 			<table border="0" cellspacing="0" cellpadding="0" width="100%">
 			<tr>
-			<td><strong>Leveringsservice:</strong></td>
+			<td><strong>Levering:</strong></td>
 			</tr>
 			<tr>
 				<td valign="top" height="30">
@@ -213,8 +219,10 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
                 Afhentning på Hesselrødvej 26, 2980 Kokkedal
                 <?php } else if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 2){?>
                 Leveret på Sjælland
-                <?php } else {?>
+                <?php } else if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 3){?>
                 Leveret til døren for Fyn og Jylland
+                <?php } else {?>
+                Leveret via e-mail
                 <?php }?>
                 </td>
 			</tr>
