@@ -9,6 +9,15 @@
 // no direct access
 defined('_JEXEC') or die;
 
+//Detect mobile
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ( $detect->isMobile() ) {
+    include('default_mobile.php');
+    return;
+}
+//Detect mobile end
+
 //require_once JPATH_ROOT . '/components/com_banners/helpers/banner.php';
 $baseurl = JURI::base();
 ?>

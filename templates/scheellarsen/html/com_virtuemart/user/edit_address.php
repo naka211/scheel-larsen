@@ -269,7 +269,7 @@ jQuery(document).ready(function(){
                 </li>
                 <?php } else {?>
                 <li>
-                    <input name="virtuemart_shipmentmethod_id" value="4" type="radio" checked> Levering: 0 DKK
+                    <input name="virtuemart_shipmentmethod_id" value="4" type="radio" checked> Gavekort til modtageren vil blive leveret pr. mail
                 </li>
                 <?php }?>
             </ul>
@@ -350,7 +350,7 @@ jQuery(document).ready(function(){
                                 <?php } ?>
                                 <tr id="deduct">
                                     <td colspan="2">Rabat 10% ved afhentning: </td>
-                                    <td colspan="2"><?php echo '-'.number_format($cart->pricesUnformatted['salesPrice']*0.1,2,',','.').' DKK'; ?></td>
+                                    <td colspan="2"><?php echo '-'.number_format($cart->pricesUnformatted['billTotal']*0.1,2,',','.').' DKK'; ?></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><h4>TOTAL:</h4></td>
@@ -370,7 +370,7 @@ jQuery(document).ready(function(){
         <!--<a class="fr btnBetaling hover" href="thanks.php">til Betaling</a>-->
         <button type="submit" class="validate fr btnBetaling hover" style="cursor:pointer; border:none;">Til Betaling</button>
         
-        <input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['salesPrice']?>" />
+        <input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['billTotal']?>" />
         <input type="hidden" id="shipFee" value=""/>
         <input type="hidden" id="pay3" name="" value=""/>
         
