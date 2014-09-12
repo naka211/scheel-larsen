@@ -278,10 +278,9 @@ if($this->orderDetails['details']['BT']->coupon_code){
         $i++;
         }?>
         </td>
-		<!--<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo $item->order_item_sku;?></td>-->
 		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo $item->product_quantity;?></td>
-		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo number_format($item->product_final_price,2,',','.');?> DKK</td>
-		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;padding-right: 10px;"><?php echo number_format($item->product_subtotal_with_tax,2,',','.');?> DKK</td>
+		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo number_format($item->product_item_price,2,',','.');?> DKK</td>
+		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;padding-right: 10px;"><?php echo number_format($item->product_item_price*$item->product_quantity,2,',','.');?> DKK</td>
 		</tr>
 	<?php }?>
 

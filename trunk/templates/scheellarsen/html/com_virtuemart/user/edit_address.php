@@ -106,6 +106,7 @@ jQuery(document).ready(function(){
 		if(val == 1){
 			jQuery("#shipPriceLabel1").html("0,00 DKK");
             var totalValue = jQuery("#total").val();
+			<?php if (!empty($cart->cartData['couponCode'])) { ?>
             var couponValue = jQuery("#coupon_value").val();
             var subTotalValue = jQuery("#subtotal").val();
             var tmp = parseFloat((subTotalValue)*0.1);
@@ -131,7 +132,10 @@ jQuery(document).ready(function(){
                 var couponText = formatMoney(tmp - (parseFloat(subTotalValue) - parseFloat(couponValue)));
                 jQuery("#balance").html(couponText + " DKK");
             }
-            
+            <?php } else {?>
+			var totalText = formatMoney(parseFloat(totalValue*0.9)); 
+            jQuery("#payTotal").html(totalText + " DKK");
+			<?php }?>
             jQuery("#deduct").show();
             
 		} else {
