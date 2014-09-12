@@ -50,7 +50,7 @@ defined ('_JEXEC') or die('Restricted access');
 		echo $this->currency->createPriceDiv ('priceWithoutTax', 'COM_VIRTUEMART_PRODUCT_SALESPRICE_WITHOUT_TAX', $this->product->prices);
 	}*/
 	if ($this->product->prices['discountedPriceWithoutTax'] != $this->product->prices['priceWithoutTax']) {
-		echo $this->currency->createPriceDiv ('basePrice', '', $this->product->prices);
+		echo $this->currency->createPriceDiv ('salesPrice', '', $this->product->prices);
 	} else {
 		echo $this->currency->createPriceDiv ('priceWithoutTax', '', $this->product->prices);
 	}
