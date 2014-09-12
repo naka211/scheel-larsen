@@ -387,7 +387,7 @@ ul.list_product {margin-top: 20px;}
 ul.list_product li {float: left; margin-right: 15px; margin-bottom: 10px; padding: 7px; width: 233px; min-height: 229px; background-color: #fff; border: solid 1px #dcd6c0; text-align: center;}
 ul.list_product li:nth-child(3n+3) {margin-right: 0;}
 ul.list_product li:hover {background: url(../img/hover_li.png) no-repeat bottom center;}
-.frame {padding: 30px; border: 1px solid #dcd6c0; background: #fff; margin-bottom: 20px;}
+.frame {padding: 10px 30px; border: 1px solid #dcd6c0; background: #fff; margin-bottom: 20px;}
 .product_img {width: 430px; float: left;}
 .product_img .img_larg {width: 430px; height: 318px;}
 .product_img .img_larg img {width: 430px; height: 318px;}
@@ -502,6 +502,8 @@ a.btn_sizeguide:hover {color: #fff; background-color: #4763b2; background-image:
 .frm_coupon input {width: 190px; float: left; margin-right: 5px; background-color: #fff; border: solid 1px #b9b9b9; padding: 3px 10px; font-style: italic; color: #818181; font-size: 13px; font-weight: inherit;}
 .frm_coupon a {float: right; margin-top: 0; display:block; background: #8f652b; padding: 3px 10px; color: #fff; text-transform: uppercase;}
 .frm_coupon a:hover {background: #7a5117; text-decoration: none;}
+
+#f_note {margin-left: -12%; width: 500px; padding: 20px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
 /* Black themes*/
 /*.navbar-default {background: #fff; border: none; background: #fff url(../img/border_top2.jpg) repeat-x top center !important;}
 .cart_content {background-color: #f1f1f1 !important;}

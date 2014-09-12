@@ -566,7 +566,7 @@ class VirtueMartControllerCart extends JController {
 			//T.Trung
             $orderModel=VmModel::getModel('orders');
             $order = $orderModel->getOrder($cart->virtuemart_order_id);
-            
+            //print_r($order);exit;
             $siteURL = JURI::base();
             if($order['details']['BT']->order_total == 0){
                 $this->setRedirect( $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done&virtuemart_order_id='.$cart->virtuemart_order_id);

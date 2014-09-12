@@ -191,8 +191,7 @@ jQuery(document).ready(function(){
             });
         }
     }
-    
-    shipTo();
+
     <?php if($isGiftCard){?>
     jQuery(".w_Address").show();
     jQuery("#deduct").hide();
@@ -200,6 +199,8 @@ jQuery(document).ready(function(){
     <?php } else {?>
     jQuery(".w_Address").hide();
     <?php }?>
+        
+    shipTo();
         
     jQuery('.showDelivery').click(function(event){
         event.preventDefault();
@@ -220,7 +221,7 @@ jQuery(document).ready(function(){
 });
 </script>
 <form method="post" id="checkoutForm" name="userForm" class="form-validate" style="padding:0;border-top:none" action="index.php">
-<div class="template2 mb70">
+<div class="template2 mb70" style="margin-top:-30px;">
     <div class="checkout_page clearfix">
         <div class="w285 fl">
             <h2><span>1</span>Kundeoplysninger</h2>

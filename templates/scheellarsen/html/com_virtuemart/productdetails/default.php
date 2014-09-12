@@ -25,7 +25,7 @@ if (empty($this->product)) {
 </script>
 <?php }?>
 
-<div class="template">
+<div class="template" style="margin-top:-30px;">
     <div class="productdetail_page clearfix">
         <div class="main_content frame clearfix"> {module Breadcrumbs}
             <div class="product_img">

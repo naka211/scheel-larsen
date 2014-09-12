@@ -92,7 +92,7 @@ if(typeof Virtuemart === "undefined")
                 function(datas, textStatus) {
                     //T.Trung
                     if(datas.status == 1){
-                        alert('Du kan ikke købe gavekort med et andet produkt');
+                        jQuery('#f_note').reveal();
                         return false;
                     }
                     //T.Trung end
