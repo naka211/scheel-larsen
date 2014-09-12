@@ -44,7 +44,7 @@ $order_info = $db->loadObject();
 if(!class_exists('VmModel'))require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'vmmodel.php');
 $orderModel=VmModel::getModel('orders');
 $order = $orderModel->getOrder($orderid);
-//print_r($order['items'][0]->virtuemart_category_id);exit;
+//print_r($order);exit;
 /*$vars['orderDetails']=$order;
 shopFunctionsF::renderMail('invoice', $admin->email, $vars);
 shopFunctionsF::renderMail('invoice', $order->email, $vars);*/
@@ -81,13 +81,28 @@ if($order['items'][0]->virtuemart_category_id == 14){
 } else {
     $isGiftCard = false;
 }
+
+//T.Trung
+if($order['details']['BT']->coupon_code){
+    $db= JFactory::getDBO();
+    $query = "SELECT id, coupon_value FROM #__awocoupon WHERE coupon_code = '".$order['details']['BT']->coupon_code."'";
+    $db->setQuery($query);
+    $coupon = $db->loadObject();
+    
+    $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
+    $db->setQuery($query);
+    $discount = $db->loadObject();
+
+    $coupon_value = $coupon->coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+}
+//T.Trung end
 ?>
 <style>
 .costumTitle{
     display:none;
 }
 </style>
-<div class="template2">
+<div class="template2" style="margin-bottom:-30px">
   <div class="thanks_page clearfix">
     <h2 class="c669903">Indkøbskurven</h2>
     <div class="top_info">
@@ -238,20 +253,9 @@ if($order['items'][0]->virtuemart_category_id == 14){
           <td class="cf9f7f3" colspan="4"><table class="sub_order_Summary">
               <tbody>
                 <tr>
-                  <td colspan="2">Subtotal: </td>
+                  <td colspan="2">SUBTOTAL INKL. MOMS: </td>
                   <td width="25%" colspan="2"><?php echo number_format($order['details']['BT']->order_subtotal,2,',','.').' DKK'; ?></td>
                 </tr>
-                <?php if($order['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
-                <tr>
-                  <td colspan="2">Heraf moms: </td>
-                  <td colspan="2"><?php echo number_format($order['details']['BT']->order_subtotal*0.2,2,',','.').' DKK'; ?></td>
-                </tr>
-                <?php } else {?>
-                <tr>
-                  <td colspan="2">Heraf moms: </td>
-                  <td colspan="2"><?php echo number_format(($order['details']['BT']->order_subtotal*0.9)*0.2,2,',','.').' DKK'; ?></td>
-                </tr>
-                <?php }?>
                 <tr>
                   <td colspan="2">FRAGT: </td>
                   <td><?php 
@@ -280,9 +284,16 @@ if($order['items'][0]->virtuemart_category_id == 14){
                 </tr>
                 <?php }?>
                 <tr>
-                  <td colspan="2"><h4>total:</h4></td>
+                  <td colspan="2"><h4>AT BETALE INKL. MOMS:</h4></td>
                   <td colspan="2"><h4><?php echo number_format($order['details']['BT']->order_total,2,',','.').' DKK'; ?></h4></td>
                 </tr>
+                <?php 
+                    if($order['details']['BT']->coupon_code){
+                ?>
+                <tr>
+                    <td colspan="4" style="text-align:right;">(Gavekort restbeløb: <?php echo number_format($coupon_value,2,',','.').' DKK'; ?>)</td>
+                </tr>
+                <?php }?>
               </tbody>
             </table></td>
         </tr>

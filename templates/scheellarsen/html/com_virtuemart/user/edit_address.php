@@ -26,6 +26,22 @@ if($category_arr[0] == 14){
     $isGiftCard = false;
 }
 
+if($cart->couponCode){
+    $db= JFactory::getDBO();
+    $query = "SELECT id, coupon_value FROM #__awocoupon WHERE coupon_code = '".$cart->couponCode."'";
+    $db->setQuery($query);
+    $coupon = $db->loadObject();
+    
+    $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
+    $db->setQuery($query);
+    $discount = $db->loadObject();
+    if($discount){
+        $coupon_value = $coupon->coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+    } else {
+        $coupon_value = $coupon->coupon_value;
+    }
+}
+
 ?>
 
 <div id="ppCartcredit" class="reveal-modal">
@@ -89,21 +105,64 @@ jQuery(document).ready(function(){
 	changeDelivery = function(val){
 		if(val == 1){
 			jQuery("#shipPriceLabel1").html("0,00 DKK");
-			var total = formatMoney(parseFloat((jQuery("#subtotal").val())*0.9));
-			jQuery("#payTotal").html(total+" DKK");
+            var totalValue = jQuery("#total").val();
+            var couponValue = jQuery("#coupon_value").val();
+            var subTotalValue = jQuery("#subtotal").val();
+            var tmp = parseFloat((subTotalValue)*0.1);
             
-            var moms =  formatMoney(parseFloat(((jQuery("#subtotal").val())*0.9)*0.2));
-            jQuery("#moms").html(moms+" DKK");
+            var tmp1 = couponValue - subTotalValue;
+            var tmp2 = couponValue - subTotalValue + tmp;
+            
+            if((tmp1 > 0)){
+                jQuery("#payTotal").html("0,00 DKK");
+                var couponText = formatMoney(parseFloat(couponValue) - parseFloat(subTotalValue) + tmp);
+                jQuery("#balance").html(couponText + " DKK");
+            } 
+            
+            if((tmp1 < 0) && (tmp2 < 0)){
+                var totalText = formatMoney(parseFloat(subTotalValue) - parseFloat(couponValue) - tmp); 
+                jQuery("#payTotal").html(totalText + " DKK");
+                
+                jQuery("#balance").html("0,00 DKK");
+            }
+            
+            if((tmp1 < 0) && (tmp2 > 0)){
+                jQuery("#payTotal").html("0,00 DKK");
+                var couponText = formatMoney(tmp - (parseFloat(subTotalValue) - parseFloat(couponValue)));
+                jQuery("#balance").html(couponText + " DKK");
+            }
+            
             jQuery("#deduct").show();
             
 		} else {
+            var totalValue = jQuery("#total").val();
+            var couponValue = jQuery("#coupon_value").val();
+            var subTotalValue = jQuery("#subtotal").val();
+            var shipValue = jQuery("#shipFee").val();
             
-            jQuery("#shipPriceLabel1").html(jQuery("#shipFee").val() + ",00 DKK");
-			var total = formatMoney(parseFloat(Number(jQuery("#subtotal").val()) + Number(jQuery("#shipFee").val())));
-			jQuery("#payTotal").html(total+" DKK");
+            var tmp1 = couponValue - subTotalValue;
+            var tmp2 = couponValue - subTotalValue - shipValue;
             
-            var moms =  formatMoney(parseFloat((jQuery("#subtotal").val())*0.2));
-            jQuery("#moms").html(moms+" DKK");
+            if(tmp1 <= 0){
+                var total = formatMoney(parseFloat(Number(subTotalValue) - Number(couponValue) + Number(shipValue)));
+			    jQuery("#payTotal").html(total+" DKK");
+            }
+            
+            if((tmp1 > 0) && (tmp2 > 0)){
+                jQuery("#payTotal").html("0,00 DKK");
+                var couponText = formatMoney(parseFloat(couponValue) - parseFloat(subTotalValue) -  Number(shipValue));
+                jQuery("#balance").html(couponText + " DKK");
+            }
+            
+            if((tmp1 > 0) && (tmp2 < 0)){
+                var totalText = formatMoney(Number(shipValue) - (parseFloat(couponValue) - parseFloat(subTotalValue))); 
+                jQuery("#payTotal").html(totalText + " DKK");
+                jQuery("#balance").html("0,00 DKK");
+            }
+            
+            jQuery("#shipPriceLabel1").html(shipValue + ",00 DKK");
+			
+            
             jQuery("#deduct").hide();
         }
 	}
@@ -117,29 +176,31 @@ jQuery(document).ready(function(){
 	//isST process
     
 	setDelivery = function(zipcode){
-		zipcode = Number(zipcode);
-		if(zipcode < 5000) {
-			jQuery("#ship1").val(2);
-			var subtotal = Number(jQuery("#subtotal").val());
-			if(subtotal <= 1000){
-				var fee = 150;
-			} else {
-				var fee = 0;
-			}
-			var text = 'Leveret på Sjælland: ';
-		} else {
-			jQuery("#ship1").val(3);
-			var fee = 350;
-			var text = 'Leveret til døren for Fyn og Jylland: ';
-		}
-        <?php if($isGiftCard){?>
-        fee = 0;
-        <?php }?>
-		jQuery("#shipFee").val(fee);
-		jQuery("#shipPriceLabel").html(text+fee+" DKK");
-		jQuery("#shipPriceLabel1").html(fee+" DKK");
-		jQuery("#shipMethod").show();
-		changeDelivery(jQuery('input[name=virtuemart_shipmentmethod_id]:checked', '#checkoutForm').val());
+        if(zipcode){
+            zipcode = Number(zipcode);
+            if(zipcode < 5000) {
+                jQuery("#ship1").val(2);
+                var subtotal = Number(jQuery("#subtotal").val());
+                if(subtotal <= 1000){
+                    var fee = 150;
+                } else {
+                    var fee = 0;
+                }
+                var text = 'Leveret på Sjælland: ';
+            } else {
+                jQuery("#ship1").val(3);
+                var fee = 350;
+                var text = 'Leveret til døren for Fyn og Jylland: ';
+            }
+            <?php if($isGiftCard){?>
+            fee = 0;
+            <?php }?>
+            jQuery("#shipFee").val(fee);
+            jQuery("#shipPriceLabel").html(text+fee+" DKK");
+            jQuery("#shipPriceLabel1").html(fee+" DKK");
+            jQuery("#shipMethod").show();
+            changeDelivery(jQuery('input[name=virtuemart_shipmentmethod_id]:checked', '#checkoutForm').val());
+        }
 	}
 	
     var zip = jQuery("#zip").val();
@@ -332,12 +393,8 @@ jQuery(document).ready(function(){
                     <tr>
                         <td colspan="4" class="cf9f7f3"><table class="sub_order_Summary">
                                 <tr>
-                                    <td colspan="2">Subtotal: </td>
+                                    <td colspan="2">SUBTOTAL INKL. MOMS: </td>
                                     <td colspan="2" width="30%"> <?php echo number_format($cart->pricesUnformatted['salesPrice'],2,',','.').' DKK'; ?> </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Heraf moms: </td>
-                                    <td colspan="2"><span id="moms"><?php echo number_format($cart->pricesUnformatted['billTotal']*0.2,2,',','.');?> DKK</span></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">FRAGT: </td>
@@ -346,17 +403,21 @@ jQuery(document).ready(function(){
                                 <?php if (!empty($cart->cartData['couponCode'])) { ?>
                                 <tr>
                                     <td colspan="2">Gavekort kupon: </td>
-                                    <td colspan="2"><?php echo number_format ($cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?></td>
+                                    <td colspan="2" id="discountText"><?php echo number_format ($cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?></td>
                                 </tr>
                                 <?php } ?>
                                 <tr id="deduct">
                                     <td colspan="2">Rabat 10% ved afhentning: </td>
-                                    <td colspan="2"><?php echo '-'.number_format($cart->pricesUnformatted['billTotal']*0.1,2,',','.').' DKK'; ?></td>
+                                    <td colspan="2"><?php echo '-'.number_format($cart->pricesUnformatted['salesPrice']*0.1,2,',','.').' DKK'; ?></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><h4>TOTAL:</h4></td>
+                                    <td colspan="2"><h4>AT BETALE INKL. MOMS:</h4></td>
                                     <td colspan="2"><h4><span id="payTotal"><?php echo number_format($cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?></span></h4></td>
                                 </tr>
+                                <?php if (!empty($cart->cartData['couponCode'])) { ?>
+                                <tr>
+                                    <td colspan="4" style="text-align:right;">(Gavekort restbeløb: <span id="balance"><?php echo number_format($coupon_value + $cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?></span>)</td>
+                                <?php } ?>
                             </table></td>
                     </tr>
                 </table>
@@ -371,7 +432,9 @@ jQuery(document).ready(function(){
         <!--<a class="fr btnBetaling hover" href="thanks.php">til Betaling</a>-->
         <button type="submit" class="validate fr btnBetaling hover" style="cursor:pointer; border:none;">Til Betaling</button>
         
-        <input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['billTotal']?>" />
+        <input type="hidden" id="coupon_value" value="<?php echo $coupon_value;?>" />
+        <input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['salesPrice']?>" />
+        <input type="hidden" id="total" value="<?php echo $cart->pricesUnformatted['billTotal']?>" />
         <input type="hidden" id="shipFee" value=""/>
         <input type="hidden" id="pay3" name="" value=""/>
         
