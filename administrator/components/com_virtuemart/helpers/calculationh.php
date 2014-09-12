@@ -364,9 +364,10 @@ class calculationHelper {
 		$this->productPrices['salesPrice'] = !empty($this->productPrices['salesPriceWithDiscount']) ? $this->productPrices['salesPriceWithDiscount'] : $salesPrice;
 
         //T.Trung
-        if (!empty($variant)) {;
+        /*if (!empty($variant)) {
 			$this->productPrices['salesPrice'] = $this->productPrices['salesPrice'] + doubleval($variant);
 		}
+		*/
         //T.Trung end
 		$this->productPrices['salesPriceTemp'] = $this->productPrices['salesPrice'];
 		//Okey, this may not the best place, but atm we handle the override price as salesPrice
