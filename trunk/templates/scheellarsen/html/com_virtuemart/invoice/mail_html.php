@@ -44,7 +44,7 @@ if($this->orderDetails['details']['BT']->company){
 $query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'BT' AND virtuemart_order_id = ".$orderid;
 $db->setQuery($query);
 $BT_info = $db->loadObject();
-//print_r($BT_info);exit;
+
 $query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'ST' AND virtuemart_order_id = ".$orderid;
 $db->setQuery($query);
 $ST_info = $db->loadObject();
@@ -58,6 +58,21 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
 } else {
     $isGiftCard = false;
 }
+
+//T.Trung
+if($orderDetail->coupon_code){
+    $db= JFactory::getDBO();
+    $query = "SELECT id, coupon_value FROM #__awocoupon WHERE coupon_code = '".$orderDetail->coupon_code."'";
+    $db->setQuery($query);
+    $coupon = $db->loadObject();
+    
+    $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
+    $db->setQuery($query);
+    $discount = $db->loadObject();
+
+    $coupon_value = $coupon->coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+}
+//T.Trung end
 ?>
 <html lang="en">
 <head>
@@ -349,22 +364,9 @@ table tr td table.top_info {
                                 <td style="padding: 0px;" colspan="4"><table width="100%" cellspacing="0" cellpadding="0" border="0" class="subtotal">
                                         <tbody>
                                             <tr>
-                                                <td width="74%" align="right">Subtotal: </td>
+                                                <td width="74%" align="right">SUBTOTAL INKL. MOMS: </td>
                                                 <td width="26%" align="right"><?php echo number_format($orderDetail->order_subtotal,2,',','.').' DKK'; ?></td>
                                             </tr>
-                                            <?php 
-                                                if($orderDetail->virtuemart_shipmentmethod_id == 1){
-                                            ?>
-                                            <tr>
-                                                <td align="right">Heraf moms: </td>
-                                                <td align="right"><?php echo number_format(($orderDetail->order_subtotal*0.9)*0.2,2,',','.').' DKK'; ?></td>
-                                            </tr>
-                                            <?php } else {?>
-                                            <tr>
-                                                <td align="right">Heraf moms: </td>
-                                                <td align="right"><?php echo number_format($orderDetail->order_subtotal*0.2,2,',','.').' DKK'; ?></td>
-                                            </tr>
-                                            <?php }?>
                                             <tr>
                                                 <td align="right">FRAGT:</td>
                                                 <td align="right"><?php 
@@ -390,9 +392,14 @@ table tr td table.top_info {
                                             </tr>
                                             <?php }?>
                                             <tr>
-                                                <td align="right" style="font-size: 18px;">Total:</td>
+                                                <td align="right" style="font-size: 18px;">AT BETALE INKL. MOMS:</td>
                                                 <td align="right" style="font-size: 18px;"><?php echo number_format($orderDetail->order_total,2,',','.').' DKK'; ?></td>
                                             </tr>
+                                            <?php if($orderDetail->coupon_code){?>
+                                            <tr>
+                                                <td align="right" colspan="2">(Gavekort restbeløb: <?php echo number_format($coupon_value,2,',','.').' DKK'; ?>)</td>
+                                            </tr>
+                                            <?php }?>
                                         </tbody>
                                     </table></td>
                             </tr>

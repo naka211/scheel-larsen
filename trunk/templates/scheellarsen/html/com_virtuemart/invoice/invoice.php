@@ -19,6 +19,21 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
 } else {
     $isGiftCard = false;
 }
+
+//T.Trung
+if($this->orderDetails['details']['BT']->coupon_code){
+    $db= JFactory::getDBO();
+    $query = "SELECT id, coupon_value FROM #__awocoupon WHERE coupon_code = '".$this->orderDetails['details']['BT']->coupon_code."'";
+    $db->setQuery($query);
+    $coupon = $db->loadObject();
+    
+    $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
+    $db->setQuery($query);
+    $discount = $db->loadObject();
+
+    $coupon_value = $coupon->coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+}
+//T.Trung end
 	?>
 <table border="0" cellspacing="0" cellpadding="0" style="margin: 15px; background: #fff; border: 1px solid #646464;">
 	<tr>
@@ -272,46 +287,39 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
 
 		<tr>
 		<td colspan="2" style="text-transform: uppercase; color: red; padding-left: 10px"></td>
-		<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<td width="600"><table width="100%" border="0" cellpadding="0" cellspacing="0">
 		<tr>
-			<td style="color: #3A3A3A;">SUBTOTAL:</td>
-		</tr>
-		<tr>
-			<td style="color: #3A3A3A;">HERAF MOMS:</td>
+			<td style="color: #3A3A3A;">SUBTOTAL INKL. MOMS:</td>
 		</tr>
         <tr>
-			<td width="400" style="color: #3A3A3A;">FRAGT:</td>
+			<td style="color: #3A3A3A;">FRAGT:</td>
 		</tr>
         
         <?php if($this->orderDetails['details']['BT']->coupon_code){?>
         <tr>
-			<td width="400" style="color: #3A3A3A;">Gavekort rabat:</td>
+			<td style="color: #3A3A3A;">Gavekort rabat:</td>
 		</tr>
         <?php }?>
         
         <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id == 1){?>
         <tr>
-			<td width="400" style="color: #3A3A3A;">Rabat 10% ved afhentning:</td>
+			<td style="color: #3A3A3A;">Rabat 10% ved afhentning:</td>
 		</tr>
         <?php }?>
 		<tr>
-			<td><strong>TOTAL:</strong></td>
+			<td><strong>AT BETALE INKL. MOMS:</strong></td>
 		</tr>
+        <?php if($this->orderDetails['details']['BT']->coupon_code){?>
+        <tr>
+			<td style="color: #3A3A3A;">&nbsp;</td>
+		</tr>
+        <?php }?>
 		</table></td>
 
 		<td><table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align: right;" >
 		<tr>
 			<td style="padding: 0 10px; color: #3A3A3A;" ><?php echo number_format($this->orderDetails['details']['BT']->order_subtotal,2,',','.');?> DKK</td>
 		</tr>
-        <?php if($this->orderDetails['details']['BT']->virtuemart_shipmentmethod_id != 1){?>
-		<tr>
-			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format($this->orderDetails['details']['BT']->order_subtotal*0.2,2,',','.');?> DKK</td>
-		</tr>
-        <?php } else {?>
-        <tr>
-			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format(($this->orderDetails['details']['BT']->order_subtotal*0.9)*0.2,2,',','.');?> DKK</td>
-		</tr>
-        <?php }?>
         <tr>
 			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format($this->orderDetails['details']['BT']->order_shipment,2,',','.');?> DKK</td>
 		</tr>
@@ -330,6 +338,11 @@ if($this->orderDetails["items"][0]->virtuemart_category_id == 14){
 		<tr>
 			<td style="padding: 0 10px;"><strong><?php echo number_format($this->orderDetails['details']['BT']->order_total,2,',','.');?> DKK</strong></td>
 		</tr>
+        <?php if($this->orderDetails['details']['BT']->coupon_code){?>
+        <tr>
+			<td style="padding: 0 10px; color: #3A3A3A;">(Gavekort restbeløb: <?php echo number_format($coupon_value,2,',','.').' DKK'; ?>)</td>
+		</tr>
+        <?php }?>
 		</table></td>
 		</tr>
 	</table>

@@ -16,6 +16,24 @@
  * other free or open source software licenses.
  *
  */
+ 
+//T.Trung
+if($this->cart->couponCode){
+    $db= JFactory::getDBO();
+    $query = "SELECT id, coupon_value FROM #__awocoupon WHERE coupon_code = '".$this->cart->couponCode."'";
+    $db->setQuery($query);
+    $coupon = $db->loadObject();
+    
+    $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
+    $db->setQuery($query);
+    $discount = $db->loadObject();
+    if($discount){
+        $coupon_value = $coupon->coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+    } else {
+        $coupon_value = $coupon->coupon_value;
+    }
+}
+//T.Trung end
 ?>
 
             <?php if(count($this->cart->products)> 0){ ?>
@@ -169,15 +187,11 @@ foreach ($this->cart->products as $pkey => $prow) {
                             <li>Fragt til Jylland 350 DKK.</li>
                           </ul>
                         </td>
-                        <td colspan="2" width="35%">
+                        <td colspan="2" width="39%">
                           <table>
                             <tr><?php // print_r($this->cart->pricesUnformatted); ?>
-                              <td>Subtotal:</td>
-                              <td><?php echo number_format($this->cart->pricesUnformatted['salesPrice'],2,',','.').' DKK'; ?><?php // echo $this->currencyDisplay->createPriceDiv ('salesPrice', '', $this->cart->pricesUnformatted, FALSE) ?></td>
-                            </tr>
-                            <tr>
-                              <td>Heraf moms: </td>
-                              <td><?php echo number_format($this->cart->pricesUnformatted['salesPrice']*0.2,2,',','.');?> DKK<?php // echo $this->currencyDisplay->createPriceDiv ('billTaxAmount', '', $this->cart->pricesUnformatted['paymentTax'], FALSE); ?></td>
+                              <td>SUBTOTAL INKL. MOMS:</td>
+                              <td><?php echo number_format($this->cart->pricesUnformatted['salesPrice'],2,',','.').' DKK'; ?></td>
                             </tr>
                             <?php if (!empty($this->cart->cartData['couponCode'])) { ?>
                             <tr>
@@ -186,9 +200,14 @@ foreach ($this->cart->products as $pkey => $prow) {
                             </tr>
                             <?php } ?>
                             <tr>
-                              <td><h4>total:</h4></td>
-                              <td><h4><?php echo number_format($this->cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?><?php // echo $this->currencyDisplay->createPriceDiv ('billTotal', '', $this->cart->pricesUnformatted['billTotal'], FALSE); ?></h4></td>
+                              <td><h4>AT BETALE INKL. MOMS:</h4></td>
+                              <td><h4><?php echo number_format($this->cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?></h4></td>
                             </tr>
+                            <?php if (!empty($this->cart->cartData['couponCode'])) { ?>
+                            <tr>
+                              <td colspan="2" style="text-align:right;">(Gavekort restbeløb: <?php echo number_format($coupon_value + $this->cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?>)</td>
+                            </tr>
+                            <?php } ?>
                           </table>
                         </td>
                       </tr>
