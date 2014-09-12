@@ -568,7 +568,7 @@ class VirtueMartControllerCart extends JController {
             $order = $orderModel->getOrder($cart->virtuemart_order_id);
             
             $siteURL = JURI::base();
-            if($order->order_total == 0){
+            if($order['details']['BT']->order_total == 0){
                 $this->setRedirect( $siteURL . 'index.php?option=com_virtuemart&view=cart&layout=order_done&virtuemart_order_id='.$cart->virtuemart_order_id);
             } else {
                 if(JRequest::getVar('mwctype') == 3){
