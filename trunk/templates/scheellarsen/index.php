@@ -307,5 +307,12 @@ $(document).ready(function() {
         </div>
         <?php }?>
     </div>
+    
+    <div id="f_note" class="reveal-modal">
+      <div class="f_note clearfix">
+        <p>Du bedes købe gavekort eller produkt(er) adskilt!</p>
+      </div>
+       <a id="close-reveal-modal" class="close-reveal-modal"></a>
+    </div>
 </body>
 </html>
