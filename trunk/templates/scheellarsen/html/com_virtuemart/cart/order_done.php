@@ -246,7 +246,7 @@ if($order['details']['BT']->coupon_code){
             </div></td>
           <td><p><?php echo $item->product_quantity;?></p></td>
           <td><p><?php echo number_format($item->product_item_price,2,',','.').' DKK'; ?></p></td>
-          <td><p><?php echo number_format($item->product_final_price,2,',','.').' DKK'; ?></p></td>
+          <td><p><?php echo number_format($item->product_item_price*$item->product_quantity,2,',','.').' DKK'; ?></p></td>
         </tr>
         <?php }?>
         <tr>
