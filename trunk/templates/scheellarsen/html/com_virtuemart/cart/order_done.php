@@ -54,7 +54,7 @@ $modelOrder = VmModel::getModel('orders');
 $order1 = array();		
 $order1['order_status'] = "C";
 $order1['customer_notified'] =1;
-//$modelOrder->updateStatusForOneOrder($orderid, $order1, true);
+$modelOrder->updateStatusForOneOrder($orderid, $order1, true);
 
 $query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'BT' AND virtuemart_order_id = ".$order_info->virtuemart_order_id;
 $db->setQuery($query);
@@ -68,12 +68,12 @@ if(!$ST_info){
     $ST_info = $BT_info;
 }
 
-if($BT_info->address_type_name == 1 ){
-	$type = "Privat";
-} else if($BT_info->address_type_name == 2 ){
+if($BT_info->ean){
+	$type = "Offentlig instans";
+} else if($BT_info->company){
 	$type = "Erhverv";
 } else {
-	$type = "Offentlig instans";
+	$type = "Privat";
 }
 
 if($order['items'][0]->virtuemart_category_id == 14){
