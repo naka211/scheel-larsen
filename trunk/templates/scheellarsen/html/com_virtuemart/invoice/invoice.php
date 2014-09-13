@@ -256,9 +256,8 @@ if($this->orderDetails['details']['BT']->coupon_code){
 	<td colspan="4">
 	<table border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #CACACA;line-height: 1.8em">
 		<tr align="right" style="background: #EFEFEF;">
-		<td width="50%" style="text-align: left; padding-left: 10px">Produkt</td>
-		<!--<td width="10%">Vare-nr</td>-->
-		<td width="10%">Antal</td>
+		<td width="40%" style="text-align: left; padding-left: 10px">Produkt</td>
+		<td width="20%">Antal</td>
 		<td width="20%">Pris pr. enhed</td>
 		<td width="20%" style="padding-right: 20px">Pris i alt</td>
 		</tr>
@@ -313,7 +312,7 @@ if($this->orderDetails['details']['BT']->coupon_code){
 		</tr>
         <?php if($this->orderDetails['details']['BT']->coupon_code){?>
         <tr>
-			<td style="color: #3A3A3A;">&nbsp;</td>
+			<td style="color: #3A3A3A;">Gavekort restbeløb: <?php echo number_format($coupon_value,2,',','.').' DKK'; ?></td>
 		</tr>
         <?php }?>
 		</table></td>
@@ -342,7 +341,7 @@ if($this->orderDetails['details']['BT']->coupon_code){
 		</tr>
         <?php if($this->orderDetails['details']['BT']->coupon_code){?>
         <tr>
-			<td style="padding: 0 10px; color: #3A3A3A;">(Gavekort restbeløb: <?php echo number_format($coupon_value,2,',','.').' DKK'; ?>)</td>
+			<td style="padding: 0 10px; color: #3A3A3A;">&nbsp;</td>
 		</tr>
         <?php }?>
 		</table></td>
