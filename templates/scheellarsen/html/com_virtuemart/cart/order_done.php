@@ -54,7 +54,7 @@ $modelOrder = VmModel::getModel('orders');
 $order1 = array();		
 $order1['order_status'] = "C";
 $order1['customer_notified'] =1;
-$modelOrder->updateStatusForOneOrder($orderid, $order1, true);
+//$modelOrder->updateStatusForOneOrder($orderid, $order1, true);
 
 $query = "SELECT * FROM #__virtuemart_order_userinfos WHERE address_type = 'BT' AND virtuemart_order_id = ".$order_info->virtuemart_order_id;
 $db->setQuery($query);
@@ -91,9 +91,13 @@ if($order['details']['BT']->coupon_code){
     
     $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
     $db->setQuery($query);
-    $discount = $db->loadObject();
-
-    $coupon_value = $coupon->coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+    $discounts = $db->loadObjectList();
+	
+	$coupon_value = $coupon->coupon_value;
+	foreach($discounts as $discount){
+		$coupon_value = $coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+	}
+	
 }
 //T.Trung end
 ?>
