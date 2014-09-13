@@ -288,8 +288,8 @@ if($this->orderDetails['details']['BT']->coupon_code){
 	<?php }?>
 
 		<tr>
-		<td colspan="2" style="text-transform: uppercase; color: red; padding-left: 10px"></td>
-		<td width="600"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<td style="text-transform: uppercase; color: red; padding-left: 10px"></td>
+		<td width="400" colspan="2"><table width="100%" border="0" cellpadding="0" cellspacing="0">
 		<tr>
 			<td style="color: #3A3A3A;">SUBTOTAL INKL. MOMS:</td>
 		</tr>
