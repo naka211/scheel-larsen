@@ -68,7 +68,7 @@ if($orderDetail->coupon_code){
     
     $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
     $db->setQuery($query);
-    $discount = $db->loadObjectList();
+    $discounts = $db->loadObjectList();
 
    	$coupon_value = $coupon->coupon_value;
 	foreach($discounts as $discount){
