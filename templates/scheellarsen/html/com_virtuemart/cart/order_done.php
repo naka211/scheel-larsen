@@ -106,7 +106,7 @@ if($order['details']['BT']->coupon_code){
     display:none;
 }
 </style>
-<div class="template2" style="margin-bottom:-30px">
+<div class="template2">
   <div class="thanks_page clearfix">
     <h2 class="c669903">Indkøbskurven</h2>
     <div class="top_info">
