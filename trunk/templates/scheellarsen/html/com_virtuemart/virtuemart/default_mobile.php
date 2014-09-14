@@ -13,21 +13,38 @@ $mobile = JURI::base()."templates/scheellarsen/mobile/";
         {article 14}{introtext}{/article}
     </div>
     <!--discount-stt-->
-    
     <div class="eachBox wrap-list-prod clearfix">
-          <h2>udvalgte produkter</h2>
-          <ul class="listProd clearfix">
-          
-            <li>
-                  <div class="img_main"> <a href="product_detail.php"><img src="<?php echo $mobile;?>img/img01.jpg" alt=""></a> </div>
-                  <h3>Diamond Loungestol Hvid Tex®</h3>
-                  <p class="price_before">Førpris: 529 DKK</p>
-                  <p class="price_sale">(De sparer: 50 DKK) </p>
-                  <h4>479 DKK</h4>
-                  <a class="btnMore btn2" href="product_detail.php">Vis detaljer</a> </li>
-            
+        <h2>udvalgte produkter</h2>
+        <ul class="listProd clearfix">
+          	<?php
+			foreach ($this->products as $type => $productList ) {
+				foreach ( $productList as $product ) {
+					$link = JRoute::_ ( 'index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $product->virtuemart_product_id . '&virtuemart_category_id=' . $product->virtuemart_category_id );
+			?>
+			<li>
+                <div class="img_main"> <a href="<?php echo $link;?>">
+                <?php // Product Image
+                if ($product->images) {
+                    echo $product->images[0]->displayMediaThumb( 'border="0"', false, '' );
+                }
+                ?>
+                </a> </div>
+                <h3><?php echo $product->product_name?></h3>
+                <?php if(!empty($product->prices['discountAmount'])){?>
+                <p class="price_before">Førpris: <?php echo $this->currency->priceDisplay($product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></p>
+                <p class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay(abs($product->prices['discountAmount']),0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>) </p>
+                <?php }?>
+                <h4><?php
+					if (VmConfig::get ( 'show_prices' ) == '1') {
+						echo $this->currency->priceDisplay($product->prices['salesPrice'],0,1.0,false,$this->currency->_priceConfig['salesPrice'][1] );
+					} ?></h4>
+                <a class="btnMore btn2" href="<?php echo $link;?>">Vis detaljer</a>
+            </li>
+            <?php 
+				}
+			}?>
         </ul>
-      </div>
+    </div>
     <!--eachBox wrap-list-prod-->
     
     <div class="eachBox  box_gavekort"> <a href="gavekort.html"><img src="<?php echo $mobile;?>img/gavekort.png"></a> </div>

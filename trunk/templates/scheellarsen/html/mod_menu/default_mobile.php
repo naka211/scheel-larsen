@@ -3,14 +3,6 @@
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
-//Detect mobile
-require_once 'Mobile_Detect.php';
-$detect = new Mobile_Detect;
-if ( !$detect->isMobile() ) {
-    include('default_mobile.php');
-    return;
-}
-//Detect mobile end
 ?>
 
 <ul<?php
@@ -19,7 +11,7 @@ if ( !$detect->isMobile() ) {
 		$tag = $params->get('tag_id').'';
 		echo ' id="'.$tag.'"';
 	}
-?> class="nav navbar-nav">
+?> class="ulMenu">
 <?php
 foreach ($list as $i => &$item) :
 	$class = 'item-'.$item->id;

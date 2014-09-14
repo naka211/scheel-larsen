@@ -5,7 +5,7 @@ defined('_JEXEC') or die('Restricted access');
 //Detect mobile
 require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;
-if ( $detect->isMobile() ) {
+if ( !$detect->isMobile() ) {
     include('default_mobile.php');
     return;
 }

@@ -9,15 +9,6 @@
 // no direct access
 defined('_JEXEC') or die;
 
-//Detect mobile
-require_once 'Mobile_Detect.php';
-$detect = new Mobile_Detect;
-if ( !$detect->isMobile() ) {
-    include('default_mobile.php');
-    return;
-}
-//Detect mobile end
-
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 // Create shortcuts to some parameters.
@@ -28,10 +19,15 @@ $images = json_decode($this->item->images);
 //$user		= JFactory::getUser();
 
 ?>
-<div class="template">
-    <div class="about_page">
-        {module Breadcrumbs}
-        <h2><?php echo $this->escape($this->item->title); ?></h2>
-        <?php echo $this->item->text; ?>
-    </div>
+<div class="w-content undepages" id="content">
+  <!--<ul class="eachBox breadcrumb">
+    <li><a href="index.php">Forside</a></li>
+    <li><a href="om-os.php">Om Scheel-Larsen</a></li>
+  </ul>-->
+  {module Breadcrumbs}
+  <div class="eachBox about_page">
+    <h2><?php echo $this->escape($this->item->title); ?></h2>
+    <?php echo $this->item->text; ?>
+  </div>
+  <!--eachBox-->  
 </div>
