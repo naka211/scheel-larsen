@@ -1,16 +1,8 @@
 <?php
 // no direct access
 defined('_JEXEC') or die;
-//Detect mobile
-require_once 'Mobile_Detect.php';
-$detect = new Mobile_Detect;
-if ( !$detect->isMobile() ) {
-    include('default_mobile.php');
-    return;
-}
-//Detect mobile end
 ?>
-<ul class="breadcrumb">
+<ul class="eachBox breadcrumb">
 <?php for ($i = 0; $i < $count; $i ++) :
 	// Workaround for duplicate Home when using multilanguage
 	if ($i == 1 && !empty($list[$i]->link) && !empty($list[$i-1]->link) && $list[$i]->link == $list[$i-1]->link) {

@@ -27,7 +27,7 @@ a.btnActive { background: #4c3515;}
 .btnCate { float: right;}
 .divWrapAll ul.ulMenu,.divWrapAll ul.ulCate {padding-top: 0.5em;} 
 
-.menu_active > a, .cate_active > a  { background:  #865a21;} 
+.active > a, .cate_active > a  { background:  #865a21;} 
 
 /**SETTING BUTTON BACIS */
 .btn {text-transform: uppercase;background: #0074bf;color: #fff;padding: 0.5em 1em;display: inline-block;text-align: center;font-size: 1.15em;}

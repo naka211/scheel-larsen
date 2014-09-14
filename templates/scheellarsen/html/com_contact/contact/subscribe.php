@@ -6,6 +6,16 @@
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
+
+//Detect mobile
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ( !$detect->isMobile() ) {
+    include('subscribe_mobile.php');
+    return;
+}
+//Detect mobile end
+
 JHtml::_('behavior.formvalidation');
 if(JRequest::getVar('success')){?>
 
