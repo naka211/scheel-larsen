@@ -121,7 +121,6 @@ JHtml::_('behavior.formvalidation');
         
         <div id="ppMap" style="display: none;">
             <div class="wrap-pp wrapMap">
-                 <!--<img class="imgMap_demo" src="<?php echo $mobile;?>img/map-mobile.jpg"> -->
                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2235.3331502889896!2d12.431027599999998!3d55.9262623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652478c58c6b30d%3A0x882207eeab2b9c27!2zSGVzc2VscsO4ZHZlaiAyNiwgMjk4MCBLb2trZWRhbCwgxJBhbiBN4bqhY2g!5e0!3m2!1svi!2s!4v1407298529040" width="600" height="400" frameborder="0" style="border:0"></iframe>
             </div><!--wrap-cartcredit-->  
         </div><!--ppCartcredit-->
@@ -215,17 +214,6 @@ JHtml::_('behavior.formvalidation');
                 <div class="btnmn clearfix"><a href="javascript:void(0);" class="btnMenu">MENU</a> <a href="javascript:void(0);" class="btnCate">PRODUKTER</a></div>
                 {module Top Menu}
                 {module Category Menu}
-                <!--<ul class="ulCate">
-                    <li><a href="product.php">1000 KRUKKER </a> </li> 
-                    <li><a href="product.php">PARASOL/PAVILLION ETC.</a> </li>
-                    <li><a href="product.php">HAVEMØBLER </a> </li>
-                    <li><a href="product_.php">CANE-LINE </a> </li>
-                    <li><a href="product.php">MOSAIK & SMEDEJERN </a></li>
-                    <li><a href="product.php">ACCESSORIES TIL HAVEN </a> </li>
-                    <li><a href="product.php">SKIND</a></li>
-                    <li><a href="product.php">HAVEBEHOLDERE </a></li>
-                    <li><a href="product.php">GAVEKORT</a></li>       
-                </ul> -->
             </div>
             
         </nav>  
