@@ -490,7 +490,7 @@ ul.option li input {width: 10px; height: 8px; -moz-appearance:none; -o-appearanc
 .size_detail table tr td.black {background: #717171; color: #fff; text-align: left;}
 .fancybox-skin {background: #fff;}
 .f_size_content .size_img { border: 1px solid #acacac; text-align: center;}
-
+.wrap_price { min-height: 2.6em;}
 
 
 /********** ---------------------- CSS MOBILE & TABEL FORM HERE ----------------------------- CSS MOBILE & TABEL FORM HERE  ------------------- **********/ 

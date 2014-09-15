@@ -4,9 +4,12 @@ defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
 //Detect mobile
+$config =& JFactory::getConfig();
+$showPhone = $config->getValue( 'config.show_phone' );
+
 require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;
-if ( !$detect->isMobile() ) {
+if ( $showPhone || $detect->isMobile() ) {
     include('default_mobile.php');
     return;
 }

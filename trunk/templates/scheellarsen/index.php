@@ -3,9 +3,12 @@
 defined('_JEXEC') or die; 
 
 //Detect mobile
+$config =& JFactory::getConfig();
+$showPhone = $config->getValue( 'config.show_phone' );
+
 require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;
-if ( !$detect->isMobile() ) {
+if ( $showPhone || $detect->isMobile() ) {
     include('index_mobile.php');
     return;
 }
