@@ -341,8 +341,9 @@ ul#thumblist li a img { max-width: 100%;border: 1px solid #ccc; padding: 3px;}
 .product_content { margin:0.5em 0;} 
 .product_content h2 { text-transform: uppercase;}
 .product_content h2.price  { display: inline-block; float: left; font-size: 1.8em; line-height: 1.7em; margin: 0;  }
-.product_content .rownumber { margin-bottom: 0.8em; }
-.product_content h3 {text-transform: uppercase; margin: 1em 0 0.5em 0; color: #505050;  }
+.product_content h2.price .PricesalesPrice { color:#a08262;  }
+.product_content .rownumber { margin-bottom: 0.8em; margin-top:0.5em; }
+.product_content h3 {text-transform: uppercase; margin: 1em 0 0 0; color: #505050;  }
 .product_content span.price_old { font-size: 0.9em; font-weight: normal;text-decoration: line-through;}  
 .product_content .number {  float: left;margin-right: 12px;margin-top: 2px; }
 .product_content .number label { font-size:  1.1em;}
@@ -491,6 +492,7 @@ ul.option li input {width: 10px; height: 8px; -moz-appearance:none; -o-appearanc
 .fancybox-skin {background: #fff;}
 .f_size_content .size_img { border: 1px solid #acacac; text-align: center;}
 .wrap_price { min-height: 2.6em;}
+ul.option li input { visibility: hidden;}
 
 
 /********** ---------------------- CSS MOBILE & TABEL FORM HERE ----------------------------- CSS MOBILE & TABEL FORM HERE  ------------------- **********/ 

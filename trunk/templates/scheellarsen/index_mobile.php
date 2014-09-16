@@ -2,6 +2,10 @@
 // No direct access.
 defined('_JEXEC') or die; 
 
+$option = JRequest::getVar('option');
+$view = JRequest::getVar('view');
+$optview = $option.$view;
+
 $tmpl = JURI::base().'templates/'.$this->template."/";
 $mobile = $tmpl."mobile/";
 JHtml::_('behavior.formvalidation');
@@ -10,8 +14,9 @@ JHtml::_('behavior.formvalidation');
 <html>
     <head>
         <meta charset="utf-8">
+		<script type='text/javascript' src="<?php echo $mobile;?>js/jquery-1.8.3.min.js"></script>
         <jdoc:include type="head" />
-
+		
         <link href="<?php echo $tmpl;?>images/favicon.ico" rel="shortcut icon"/>
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo $mobile;?>css/reset.css">
@@ -94,6 +99,35 @@ JHtml::_('behavior.formvalidation');
             });
         </script>
         <script type='text/javascript' src='<?php echo $mobile;?>js/tho.js'> </script>
+		
+		<?php if($optview=="com_virtuemartproductdetails"){
+			$db = JFactory::getDBO();
+			$query = 'SELECT product_desc, product_name FROM #__virtuemart_products_da_dk WHERE virtuemart_product_id = '.JRequest::getVar('virtuemart_product_id');	
+			$db->setQuery($query);
+			$pro = $db->loadObject();
+			
+			$query = 'SELECT file_url FROM #__virtuemart_medias WHERE virtuemart_media_id = (SELECT virtuemart_media_id FROM #__virtuemart_product_medias WHERE virtuemart_product_id = '.JRequest::getVar('virtuemart_product_id').' LIMIT 0,1)';	
+			$db->setQuery($query);
+			$img = $db->loadResult();
+			?>
+		<meta name="productTitle" property="og:title" content="<?php echo $pro->product_name;?>">
+		<meta name="productImage" property="og:image" content="<?php echo JURI::base().$img;?>">
+		<meta property="og:url" content="<?php echo JRoute::_('http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]);?>" />
+		<meta property="og:description" content="<?php echo strip_tags($pro->product_desc);?>" />
+		<script>
+			jQuery(document).ready(function(){
+				jQuery("#facebookShare").click(function(){
+					postFacebookWallDetail("<?php echo urlencode(JURI::root()."index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=".JRequest::getVar('virtuemart_product_id')."&virtuemart_category_id=".JRequest::getVar('virtuemart_category_id')); ?>");
+				});
+				function postFacebookWallDetail(urlencode){
+					t=document.title; 
+					window.open('http://www.facebook.com/sharer.php?u='+urlencode+'&v=<?php echo time();?>','sharer','toolbar=0,status=0,width=626,height=436'); 
+					return false; 
+				}
+				
+			});
+		</script>
+		<?php }?>
     </head>
     <body>
     
@@ -113,8 +147,15 @@ JHtml::_('behavior.formvalidation');
           <div class="headright"> 
                 <div class="wrapSearch">
                 {module Search product}
-                </div>		 
-              <a class="btnShopbag" href="cart.php"> <img src="<?php echo $mobile;?>img/btnShopbag.png">  <span class="nummber">3</span></a>
+                </div>
+				<?php 
+if (!class_exists( 'VmModel' )) require(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_virtuemart'.DS.'helpers'.DS.'vmmodel.php');
+ if (!class_exists( 'VmConfig' )) require(JPATH_ADMINISTRATOR . DS . 'components' . DS . 'com_virtuemart'.DS.'helpers'.DS.'config.php');
+    if(!class_exists('VirtueMartCart')) require(JPATH_VM_SITE.DS.'helpers'.DS.'cart.php');
+        $cart = VirtueMartCart::getCart(); 
+$cart->prepareCartViewData();
+?>
+              <a class="btnShopbag" href="cart.html"> <img src="<?php echo $mobile;?>img/btnShopbag.png">  <span class="nummber"><?php echo count($cart->products);?></span></a>
               <a href="#menu-left" class="bntMenuleft"><img src="<?php echo $mobile;?>img/bntMenuleft.png"></a>
           </div><!--headright-->  
         </div> 
