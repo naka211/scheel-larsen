@@ -95,6 +95,9 @@ if(typeof Virtuemart === "undefined")
                         jQuery('#f_note').reveal();
                         return false;
                     }
+					
+					//Mobile
+					$('span.nummber').text(Number($("span.nummber").text()) + 1);
                     //T.Trung end
                     if(datas.stat ==1){
 
