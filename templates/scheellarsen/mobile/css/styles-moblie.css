@@ -502,7 +502,9 @@ ul.option li input { visibility: hidden;}
 		padding: 0.38em 0.5em;  width: 60%; max-width: 200px; border: 1px solid #B9B8BE;  
 		color: #5a5a5a; background: #fff; border-radius: 0; float: left;}
 .frm_coupon .btn2 { width: 38%; float: left; margin-left: 2%; max-width: 100px; font-size: 1em; padding: 0.5em 0;background: #9d7b57; }
-
+.invalid{
+	border-color: red !important;
+}
 
 /********** ---------------------- CSS MOBILE & TABEL FORM HERE ----------------------------- CSS MOBILE & TABEL FORM HERE  ------------------- **********/ 
 

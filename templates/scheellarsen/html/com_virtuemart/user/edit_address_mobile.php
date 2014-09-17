@@ -209,7 +209,7 @@ jQuery(document).ready(function(){
     });
     
     shipTo = function(){
-        if(jQuery(".w_Address").css("display")=="none"){
+        if(jQuery(".w_Address").css("display")=="none"){alert('aa aa');
             jQuery(".w_Address").html("");
             jQuery("#STsameAsBT").val("1");
 			setDelivery(jQuery("#zip").val());
@@ -245,11 +245,11 @@ jQuery(document).ready(function(){
     jQuery(".w_Address").hide();
     <?php }?>
         
-    //shipTo();
+    shipTo();
         
     jQuery('.showDelivery').click(function(event){
         event.preventDefault();
-        jQuery(".w_Address").slideToggle("1000","swing", function(){alert('dasdas');
+        jQuery(".w_Address").slideToggle("1000","swing", function(){
             shipTo();
         });
     });
@@ -365,8 +365,24 @@ jQuery(document).ready(function(){
 		</div>
 		<!-- clearfix -->
 		
-		<div class="wrap-button"> <a class="btn2 btnGray btnBackShop" href="cart.php"><span class="back"><<</span> Til Varekurv</a> <a class="btn2 btntoPayment" href="thanks.php">til Betaling <span class="next">>></span></a> </div>
-		<!--wrap-button --> 
+		<div class="wrap-button">
+			<a class="btn2 btnGray btnBackShop" href="index.php"><span class="back"><<</span> Til Varekurv</a>
+			<button type="submit" class="validate btn2 btntoPayment" style="cursor:pointer; border:none;">Til Betaling</button>
+		</div>
+		<!--wrap-button -->
+		
+		<input type="hidden" id="coupon_value" value="<?php echo $coupon_value;?>" />
+		<input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['salesPrice']?>" />
+		<input type="hidden" id="total" value="<?php echo $cart->pricesUnformatted['billTotal']?>" />
+		<input type="hidden" id="shipFee" value=""/>
+		<input type="hidden" id="pay3" name="" value=""/>
+		<input type="hidden" name="option" value="com_virtuemart"/>
+		<input type="hidden" name="view" value="cart"/>
+		<input type="hidden" name="task" value="confirm"/>
+		<input type='hidden' id='STsameAsBT' name='STsameAsBT' value=''/>
+		<?php
+        echo JHTML::_ ('form.token');
+        ?>
 		
 	</div>
 	<!--eachBox boxCheckout-->
@@ -384,115 +400,4 @@ jQuery(document).ready(function(){
 	<!--ppCartcredit--> 
 	
 </div>
-</form>
-<?php 
-return;
-?>
-<form method="post" id="checkoutForm" name="userForm" class="form-validate" style="padding:0;border-top:none" action="index.php">
-	<div class="template2 mb70" style="margin-top:-30px;">
-		<div class="checkout_page clearfix">
-			
-				<div class="order_Summary clearfix">
-					<h2><span>4</span>Ordreoversigt</h2>
-					<table class="main_order_Summary">
-						<tr class="title">
-							<th>Varebeskrivelse</th>
-							<th>Antal</th>
-							<th>Pris pr stk.</th>
-							<th>Pris i alt</th>
-						</tr>
-						<?php foreach($cart->products as $product){
-                        if(count($product->customPrices) > 1){
-                            preg_match_all("#<span class=\"product-field-type-S\"> [\w\W]*?</span>#", $product->customfields, $tmp);
-                            $select1 = $tmp[0][0];
-                            $select2 = $tmp[0][1];
-                            preg_match("#src=\"([\w\W]*?)\" alt#", $product->customfields, $tmp1);
-                            $img = $tmp1[1];
-                        } else {
-                            preg_match("#<span class=\"product-field-type-V\">[\w\W]*?</span>#", $product->customfields, $tmp);
-                            $select1 = $tmp[0];
-                            $select2 = '';
-                            $img = $product->image->file_url_thumb;
-                        }
-                    ?>
-						<tr>
-							<td><div class="img_pro">
-									<?php 
-                                if(strlen($img)>4){
-                                    echo '<img width="90" src="'.$img.'"> ';
-                                }else{
-                                    echo $product->image->displayMediaThumb ('', FALSE);
-                                }
-                                ?>
-								</div>
-								<div class="content_pro" style="float:none;">
-									<h4><?php echo $product->product_name;?></h4>
-									<p>Vare-nummer: <?php echo $product->product_sku;?></p>
-									<?php if($select1){?>
-									<p><?php echo $select1;?></p>
-									<?php }?>
-									<?php if($select2){?>
-									<p><?php echo $select2;?></p>
-									<?php }?>
-								</div></td>
-							<td><p><?php echo $product->quantity;?></p></td>
-							<td><p><?php echo number_format($product->prices['salesPrice'],2,',','.').' DKK';?></p></td>
-							<td><p><?php echo number_format($product->prices['salesPrice']*$product->quantity,2,',','.').' DKK';?></p></td>
-						</tr>
-						<?php }?>
-						<tr>
-							<td colspan="4" class="cf9f7f3"><table class="sub_order_Summary">
-									<tr>
-										<td colspan="2">SUBTOTAL INKL. MOMS: </td>
-										<td colspan="2" width="30%"><?php echo number_format($cart->pricesUnformatted['salesPrice'],2,',','.').' DKK'; ?></td>
-									</tr>
-									<tr>
-										<td colspan="2">FRAGT: </td>
-										<td colspan="2"><span id="shipPriceLabel1"></span></td>
-									</tr>
-									<?php if (!empty($cart->cartData['couponCode'])) { ?>
-									<tr>
-										<td colspan="2">Gavekort kupon: </td>
-										<td colspan="2" id="discountText"><?php echo number_format ($cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?></td>
-									</tr>
-									<?php } ?>
-									<tr id="deduct">
-										<td colspan="2">Rabat 10% ved afhentning: </td>
-										<td colspan="2"><?php echo '-'.number_format($cart->pricesUnformatted['salesPrice']*0.1,2,',','.').' DKK'; ?></td>
-									</tr>
-									<tr>
-										<td colspan="2"><h4>AT BETALE INKL. MOMS:</h4></td>
-										<td colspan="2"><h4><span id="payTotal"><?php echo number_format($cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?></span></h4></td>
-									</tr>
-									<?php if (!empty($cart->cartData['couponCode'])) { ?>
-									<tr>
-										<td colspan="4" style="text-align:right;">(Gavekort restbeløb: <span id="balance"><?php echo number_format($coupon_value + $cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?></span>)</td>
-										<?php } ?>
-								</table></td>
-						</tr>
-					</table>
-				</div>
-				<p class="accetp">
-					<input name="tosAccepted" id="tosAccepted" type="checkbox" value="1" class="required">
-					Jeg bekræfter hermed at mine data er korrekte, samt at kurven indeholder de varer jeg ønsker. </p>
-				<a class="conditions" href="index.php?option=com_content&view=article&id=8&Itemid=131" target="_blank">Jeg accepterer Handelsbetingelser.</a> </div>
-			<div class="clear"></div>
-			<div class="nextto clearfix"> <a class="fl btnVarekurv hover" href="index.php?option=com_virtuemart&view=cart">Til Varekurv</a> 
-				<!--<a class="fr btnBetaling hover" href="thanks.php">til Betaling</a>-->
-				<button type="submit" class="validate fr btnBetaling hover" style="cursor:pointer; border:none;">Til Betaling</button>
-				<input type="hidden" id="coupon_value" value="<?php echo $coupon_value;?>" />
-				<input type="hidden" id="subtotal" value="<?php echo $cart->pricesUnformatted['salesPrice']?>" />
-				<input type="hidden" id="total" value="<?php echo $cart->pricesUnformatted['billTotal']?>" />
-				<input type="hidden" id="shipFee" value=""/>
-				<input type="hidden" id="pay3" name="" value=""/>
-				<input type="hidden" name="option" value="com_virtuemart"/>
-				<input type="hidden" name="view" value="cart"/>
-				<input type="hidden" name="task" value="confirm"/>
-				<input type='hidden' id='STsameAsBT' name='STsameAsBT' value=''/>
-				<?php
-        echo JHTML::_ ('form.token');
-        ?>
-			</div>
-		</div>
-	</div>
 </form>
