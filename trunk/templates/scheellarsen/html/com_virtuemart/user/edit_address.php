@@ -3,6 +3,19 @@
 defined ('_JEXEC') or die('Restricted access');
 // vmdebug('user edit address',$this->userFields['fields']);
 // Implement Joomla's form validation
+
+//Detect mobile
+$config =& JFactory::getConfig();
+$showPhone = $config->getValue( 'config.show_phone' );
+
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ( $showPhone || $detect->isMobile() ) {
+    include('edit_address_mobile.php');
+    return;
+}
+//Detect mobile end
+
 JHTML::_ ('behavior.formvalidation');
 if ($this->fTask === 'savecartuser') {
 	$rtask = 'registercartuser';

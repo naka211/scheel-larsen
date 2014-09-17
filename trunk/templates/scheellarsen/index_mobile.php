@@ -98,7 +98,6 @@ JHtml::_('behavior.formvalidation');
                 }); 
             });
         </script>
-        <script type='text/javascript' src='<?php echo $mobile;?>js/tho.js'> </script>
 		
 		<?php if($optview=="com_virtuemartproductdetails"){
 			$db = JFactory::getDBO();
