@@ -58,10 +58,14 @@
                               <div class="eachRowPro">
                                   <div class="proImg"><img src="img/img04.jpg" alt=""></div>
                                   <div class="row rowAbove">
-                                      <div class="proName"><h2><a href="#">LUCIE ANTIQUE TERRACOTTA </a></h2><p> <span class="spanlb">Varenummer:</span><span class="spanvl">30283</span></p></div>                                                
+                                      <div class="proName">
+                                        <h2><a href="#">LUCIE ANTIQUE TERRACOTTA </a></h2>
+                                        <p> <span class="spanlb">Varenummer:</span><span class="spanvl">30283</span></p>
+                                        <div class="proSize"><span class="spanlb">Størrelse:</span><span class="spanvl">Højde 21 cm-Ø27 cm</span></div>  
+                                      </div>
+                                      <div class="wrapedit"><span>Antal</span>  <span>1</span> </div> 
                                   </div> 
-                                  <div class="row rowBelow">                                                
-                                      <div class="proSize"><span class="spanlb">Størrelse:</span><span class="spanvl">Højde 21 cm-Ø27 cm</span><span class="lbAntal">Antal</span> <span class="valueAntal">1</span></div>
+                                  <div class="row rowBelow">  
                                       <div class="proPriceTT"><span class="spanlb">Pris i alt:</span><span class="spanvl">479 DKK </span></div> 
                                   </div>  
                                   <a class="proDel"> <img src="img/btnDel.jpg" alt="Delete"> </a>
@@ -69,10 +73,14 @@
                               <div class="eachRowPro">
                                   <div class="proImg"><img src="img/img04.jpg" alt=""></div>
                                   <div class="row rowAbove">
-                                      <div class="proName"><h2><a href="#">LUCIE ANTIQUE TERRACOTTA </a></h2><p> <span class="spanlb">Varenummer:</span><span class="spanvl">30283</span></p></div>                                                
+                                      <div class="proName">
+                                        <h2><a href="#">LUCIE ANTIQUE TERRACOTTA </a></h2>
+                                        <p> <span class="spanlb">Varenummer:</span><span class="spanvl">30283</span></p>
+                                        <div class="proSize"><span class="spanlb">Størrelse:</span><span class="spanvl">Højde 21 cm-Ø27 cm</span></div>  
+                                      </div>
+                                      <div class="wrapedit"><span>Antal</span>  <span>1</span> </div> 
                                   </div> 
-                                  <div class="row rowBelow">                                                
-                                      <div class="proSize"><span class="spanlb">Størrelse:</span><span class="spanvl">Højde 21 cm-Ø27 cm</span><span class="lbAntal">Antal</span> <span class="valueAntal">1</span></div>
+                                  <div class="row rowBelow">  
                                       <div class="proPriceTT"><span class="spanlb">Pris i alt:</span><span class="spanvl">479 DKK </span></div> 
                                   </div>  
                                   <a class="proDel"> <img src="img/btnDel.jpg" alt="Delete"> </a>
@@ -80,14 +88,20 @@
                               <div class="eachRowPro">
                                   <div class="proImg"><img src="img/img04.jpg" alt=""></div>
                                   <div class="row rowAbove">
-                                      <div class="proName"><h2><a href="#">LUCIE ANTIQUE TERRACOTTA </a></h2><p> <span class="spanlb">Varenummer:</span><span class="spanvl">30283</span></p></div>                                                
+                                      <div class="proName">
+                                        <h2><a href="#">LUCIE ANTIQUE TERRACOTTA </a></h2>
+                                        <p> <span class="spanlb">Varenummer:</span><span class="spanvl">30283</span></p>
+                                        <div class="proSize"><span class="spanlb">Størrelse:</span><span class="spanvl">Højde 21 cm-Ø27 cm</span></div>  
+                                      </div>
+                                      <div class="wrapedit"><span>Antal</span>  <span>1</span> </div> 
                                   </div> 
-                                  <div class="row rowBelow">                                                
-                                      <div class="proSize"><span class="spanlb">Størrelse:</span><span class="spanvl">Højde 21 cm-Ø27 cm</span><span class="lbAntal">Antal</span> <span class="valueAntal">1</span></div>
+                                  <div class="row rowBelow">  
                                       <div class="proPriceTT"><span class="spanlb">Pris i alt:</span><span class="spanvl">479 DKK </span></div> 
                                   </div>  
                                   <a class="proDel"> <img src="img/btnDel.jpg" alt="Delete"> </a>
                               </div><!--eachRowPro-->
+                               
+                               
                           </div> <!--wrapRowPro-->
                           <div class="wrapTotalPrice clearfix"> 
                                 <div class="box boxright">

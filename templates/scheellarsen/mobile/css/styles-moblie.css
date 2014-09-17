@@ -202,12 +202,12 @@ ul.list-bn li:nth-child(2) { margin-right: 0%;}
 .wrapTb  { margin-top: 0.5em;} 
 .wrapRowPro { border: 1px solid #dcd6c0; border-top: none;}
 .wrapTotalPrice { border: 1px solid #dcd6c0; border-top: none;}
-.proImg { width: 20%; float: left; text-align: center;}
+.proImg { width: 15%; float: left; text-align: center;margin-top: 0.5em;}
 .proImg img { width: 100%; max-width: 100px; padding: 3px; background: #fff;} 
 
 .eachRowPro { padding: 1em 0.5em 0.5em 0; border-top: 1px solid #dcd6c0; overflow: hidden;}
 .topbarcart { background: #e6e6e6; border: 1px solid #dcd6c0; border-bottom: none; padding: 0.4em  0.8em; color: #fff;}
-.row {width: 80%; float: left;font-size: 0.8em; }
+.row {width: 85%; float: left;font-size: 0.8em; }
 .rowAbove { position: relative; }
 .rowBelow {  margin-top:0.2em;}
 .eachRowPro {position: relative; }  
@@ -215,25 +215,25 @@ ul.list-bn li:nth-child(2) { margin-right: 0%;}
 .row .spanvl {padding-left: 3px;}
 
 .proImg { height: 100%;}
-.proName { width: 55%; float: left; }
+.proName { width: 60%; float: left; }
 .proName a { color: #000;}
 .proName h2 {line-height: 1.05em;}
 .proName h2 a { display: inline-block; font-weight: normal; text-transform: uppercase;font-size: 0.7em; line-height: 1.25em;}
 .proName p { font-size: 1em; margin-top: 0.2em;}
 
-.proSize { width: 60%; float: left;  }
+.proSize {  float: left;  }
 .proSize span  { display: inline-block;} 
 .wrapTb .topbarcart { color: #000;}
 .proDel { position: absolute; top:1em; right: 0.5em; opacity: 0.7;}
 .proDel img {width: 8px;}
 .proDel:hover { opacity: 1;}
 
-.wrapedit .update { display: inline-block; background: #9d7b57; padding: 3px; font-size: 0.8em; line-height: 1em;  color: #fff;}
+.wrapedit .update { display: inline-block; background: #9d7b57; padding: 3px; font-size: 0.8em; line-height: 1em;  color: #fff; border: none;width: inherit; text-align: center; padding: 0.2em 0;cursor: pointer;  -webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;}
 .wrapedit .update:hover {}
 .wrapedit span { color: #000;}
-.wrapedit { display: inline-block;margin: 0 auto;   width: 42%; float: left;}
+.wrapedit { display: inline-block;margin: 0 auto;   width: 40%; float: left;}
 .wrapedit .inputNumber { width: 18px;text-align: center;font-size: 1em;margin: 0 2px;}
-.proPriceTT {width: 40%; float: right; text-align: right;  } 
+.proPriceTT {width: 40%;float: right;text-align: right;position: absolute;right: 1em;bottom: 1em; } 
 
 .wrapTotalPrice { } 
 .wrapTotalPrice .box { padding: 1em;}
@@ -406,14 +406,14 @@ ul.option li input {width: 10px; height: 8px; -moz-appearance:none; -o-appearanc
 .valueAntal {color: #000;}
 .step4  { margin-bottom: 0em;} 
 .step4 .proDel, .thankyou .proDel  { visibility: hidden;}
-.step4 .proImg, .thankyou .proImg {width: 18%;}
-.step4 .row , .thankyou .row { font-size: 0.8em; width: 82%;}
+.step4 .proImg, .thankyou .proImg { margin-top: 0.2em;}
+.step4 .row , .thankyou .row { font-size: 0.8em; }
 
 .step4 .eachRowPro h2 ,.thankyou .eachRowPro h2{ margin: 0; line-height: 1.15em;}
 .step4 .proSize , .thankyou .proSize{ width: 70%;}
 .step4 .proPriceTT, .thankyou .proPriceTT {width: 30%;}
-.step4 .proName , .thankyou .proName{ width: 100%;}
-.step4 .wrapedit ,.thankyou .wrapedit{text-align: right;}
+.step4 .proName , .thankyou .proName{ width: 80%;}
+.step4 .wrapedit ,.thankyou .wrapedit{text-align: right; position: absolute; top: 1em; right: 0.5em;}
 .step4 .proPriceTT , .thankyou .proPriceTT { padding-top: 0;}
 .read-terms { margin-top: 1em;}
 .read-terms label { padding-left: 18px;display: block;}
@@ -495,6 +495,15 @@ ul.option li input {width: 10px; height: 8px; -moz-appearance:none; -o-appearanc
 ul.option li input { visibility: hidden;}
 
 
+.graris {background: #f9f7f3;border: 1px solid #B9B8BE;color: #848484; padding: 0.8em; margin-top: 0.5em; overflow: hidden; }
+.graris p {font-size: 1.1em; min-width: 195px; float: left;}
+.frm_coupon {text-align: right;}
+.frm_coupon input { font-size: 1.1em; margin: 0;
+		padding: 0.38em 0.5em;  width: 60%; max-width: 200px; border: 1px solid #B9B8BE;  
+		color: #5a5a5a; background: #fff; border-radius: 0; float: left;}
+.frm_coupon .btn2 { width: 38%; float: left; margin-left: 2%; max-width: 100px; font-size: 1em; padding: 0.5em 0;background: #9d7b57; }
+
+
 /********** ---------------------- CSS MOBILE & TABEL FORM HERE ----------------------------- CSS MOBILE & TABEL FORM HERE  ------------------- **********/ 
 
 @media only screen and (max-width:  320px)  {/** Only iPhone 5 in portrait   **/
@@ -530,6 +539,12 @@ ul.list-icon-social { top: 55px;}
  .proDel img {width: 12px;}
  .proName h2 a { font-size: 0.8em;}
  .product_content .number {  margin-top: 0; }
+
+.graris p { width: 100%; float: left;}
+ .frm_coupon {  width: 100%; float: left;}
+ .frm_coupon input { width: 70%; max-width: 350px;}
+ .frm_coupon .btn2 { width: 28%; max-width: 115px;}
+
 } /*End  iPhone 4 in landscape   */
 
 @media only screen and (min-width: 568px)   {	/**  iPhone 5 in landscape  568(5)  **/  	
@@ -540,6 +555,10 @@ ul.list-icon-social { top: 55px;}
  div.form-newsletter .txtInput { font-size: 1.1em;}
  .row { font-size: 1em;}
 
+.graris p { width: 40%;}
+ .frm_coupon {  width:60%;}
+ .frm_coupon input { width: 70%; max-width: 350px;}
+ .frm_coupon .btn2 { width: 28%; max-width: 115px; }
 
  } /*End  iPhone 5 in landscape   */
 
@@ -568,8 +587,6 @@ ul.list-serviecs li a p, ul.list-serviecs li a h2 { font-size: 0.9em;}
 .wrap-newsletter .txt-newsletter { width: 55%; margin-right: 5%; font-size: 0.95em  }
 .wrap-newsletter .form-newsletter {width: 40%; float: left;}
 
- 
-
 .contact .cont-left { width:  50%; max-width: 350px; margin-right: 4%; float: left; border-bottom: none;}
 .contact .cont-right { width:  45%; max-width: 350px; float: left;}
 #logo .divlogo img { margin-top: 0.5em;}
@@ -582,7 +599,6 @@ ul.list-serviecs li a p, ul.list-serviecs li a h2 { font-size: 0.9em;}
 .col-right-checkout { width:60%;  float: right; font-size: 90%;}
 .bnt-another-add { font-size: 0.95em;}
 
-.proImg img {width: 50%;}
 .wrapTotalPrice .box {padding-right: 0.5em;}
 .wrapTotalPrice .boxleft {width: 50%; float: left;}
 .wrapTotalPrice .boxright {width: 50%; float: right; padding-top: 2em;}
@@ -591,7 +607,7 @@ ul.list-serviecs li a p, ul.list-serviecs li a h2 { font-size: 0.9em;}
 .step4 .proImg img,
 .thankyou .proImg img { width: 90%;}
 
-
+.graris  p { text-align: right; padding-right: 1em;}
 } /* End Tables/Ipad Portrait   */
  
  @media only screen and (min-width: 800px)   { 	/**  Tables  Portrait    **/   

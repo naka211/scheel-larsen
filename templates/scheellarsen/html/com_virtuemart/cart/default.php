@@ -19,6 +19,19 @@
 
 // Check to ensure this file is included in Joomla!
 defined ('_JEXEC') or die('Restricted access');
+
+//Detect mobile
+$config =& JFactory::getConfig();
+$showPhone = $config->getValue( 'config.show_phone' );
+
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ( $showPhone || $detect->isMobile() ) {
+    include('default_mobile.php');
+    return;
+}
+//Detect mobile end
+
 if(VmConfig::get('usefancy',1)){
 	vmJsApi::js( 'fancybox/jquery.fancybox-1.3.4.pack');
 	vmJsApi::css('jquery.fancybox-1.3.4');
