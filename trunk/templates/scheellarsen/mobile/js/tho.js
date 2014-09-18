@@ -31,7 +31,7 @@ $(document).ready(function(){
 
 	// JS for Checkout page (col-left-checkout)  ...
 		//check out
-        $(".w_Address").hide();
+        /*$(".w_Address").hide();
         $(".btnLevering").show();
         
         $('.btnLevering').click(function(event){
@@ -71,7 +71,7 @@ $(document).ready(function(){
  		$(".w-another-add").hide();     
         $('.bnt-another-add').click(function(){
         	$(".w-another-add").slideToggle();
-        });
+        });*/
 
 	  
 	// JavaScript ....

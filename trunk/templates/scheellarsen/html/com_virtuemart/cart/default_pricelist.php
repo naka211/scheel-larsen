@@ -26,12 +26,12 @@ if($this->cart->couponCode){
     
     $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
     $db->setQuery($query);
-    $discount = $db->loadObject();
-    if($discount){
-        $coupon_value = $coupon->coupon_value - $discount->coupon_discount - $discount->shipping_discount;
-    } else {
-        $coupon_value = $coupon->coupon_value;
-    }
+    $discounts = $db->loadObjectList();
+	
+    $coupon_value = $coupon->coupon_value;
+	foreach($discounts as $discount){
+		$coupon_value = $coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+	}
 }
 //T.Trung end
 ?>

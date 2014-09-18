@@ -26,12 +26,12 @@ if($cart->couponCode){
     
     $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
     $db->setQuery($query);
-    $discount = $db->loadObject();
-    if($discount){
-        $coupon_value = $coupon->coupon_value - $discount->coupon_discount - $discount->shipping_discount;
-    } else {
-        $coupon_value = $coupon->coupon_value;
-    }
+    $discounts = $db->loadObjectList();
+    
+	$coupon_value = $coupon->coupon_value;
+	foreach($discounts as $discount){
+		$coupon_value = $coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+	}
 }
 ?>
 <script type="text/javascript">
@@ -209,7 +209,7 @@ jQuery(document).ready(function(){
     });
     
     shipTo = function(){
-        if(jQuery(".w_Address").css("display")=="none"){alert('aa aa');
+        if(jQuery(".w_Address").css("display")=="none"){
             jQuery(".w_Address").html("");
             jQuery("#STsameAsBT").val("1");
 			setDelivery(jQuery("#zip").val());
@@ -217,7 +217,7 @@ jQuery(document).ready(function(){
             <?php if($isGiftCard){?>
             var st_html = '<input class="input required" type="text" placeholder="Modtagerens fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Modtagerens efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Email på modtager* " name="st_email" id="st_email"><textarea class="textarea" placeholder="Evt. besked til modtageren: Her kan du skrive en lykønskning eller besked til modtageren" name="st_message1"></textarea>';
             <?php } else {?>
-            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip" maxlength="4"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone">';
+            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="inputPostnr input required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip" maxlength="4"><input class="inputBynavn input" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone">';
             <?php }?>
             jQuery(".w_Address").html(st_html);
             jQuery("#STsameAsBT").val("0");
@@ -247,13 +247,20 @@ jQuery(document).ready(function(){
         
     shipTo();
         
-    jQuery('.showDelivery').click(function(event){
-        event.preventDefault();
-        jQuery(".w_Address").slideToggle("1000","swing", function(){
-            shipTo();
+    /*jQuery('#showDelivery').click(function(event){
+        jQuery("#w_Address").slideToggle("1000","swing", function(){alert('2222');
+            //shipTo();
         });
-    });
+    });*/
 });
+
+function showDelivery(){
+	jQuery(".w_Address").slideToggle("500","swing", function(){
+		shipTo();
+	});
+}
+
+
 </script>
 <form method="post" id="checkoutForm" name="userForm" class="form-validate" style="padding:0;border-top:none" action="index.php">
 <div id="content" class="w-content undepages checkout">
@@ -281,12 +288,15 @@ jQuery(document).ready(function(){
 						<input class="input required validate-email" type="text" placeholder="E-mail adresse *" name="email" id="email">
 						<textarea class="textarea" placeholder="Evt. din besked" name="message1"></textarea>
 					</div>
-					<p>(Felter markeret med * skal udfyldes)</p>
 				</div>
 				<!--entryInfo-->
-				
-				<div class="btn2 bnt-another-add showDelivery"><span class="iconHome-ck"><img src="templates/scheellarsen/mobile/img/iconHome-ck.png"></span> Levering til anden adresse</div>
+				<?php if(!$isGiftCard){?>
+				<div class="btn2 bnt-another-add showDelivery" onClick="showDelivery();" ><span class="iconHome-ck"><img src="templates/scheellarsen/mobile/img/iconHome-ck.png"></span> Levering til anden adresse</div>
+				<?php } else {?>
+				<div class="btn2 bnt-another-add showDelivery" onClick="showDelivery();" ><span class="iconHome-ck"><img src="templates/scheellarsen/mobile/img/gift.png"></span> Modtageren af gavekortet</div>
+				<?php }?>
 				<div class="w-another-add w_Address"></div>
+				<p>(Felter markeret med * skal udfyldes)</p>
 			</div>
 			<!--col-left-checkout-->
 			
@@ -298,11 +308,10 @@ jQuery(document).ready(function(){
 						<label><input class="lbradio lb1" id="ship1" name="virtuemart_shipmentmethod_id" value="0" checked="checked" type="radio" onChange="changeDelivery(this.value)"><span id="shipPriceLabel"></span></label>
 					</div>
 					<div class="eachRow">
-						<label><input class="lbradio lb1" id="ship2" name="virtuemart_shipmentmethod_id" value="1" checked="checked" type="radio" onChange="changeDelivery(this.value)">Ved afhentning på Hesselrødvej 26, 2980 Kokkedal, sparer du 10%, som vil blive fratrukket automatisk</label>
-					</div>
+						<label><input class="lbradio lb1" id="ship2" name="virtuemart_shipmentmethod_id" value="1" checked="checked" type="radio" onChange="changeDelivery(this.value)">Ved afhentning på Hesselrødvej 26, 2980 Kokkedal, sparer du 10%, som vil blive fratrukket automatisk</label></div>
 					<?php } else {?>
 					<div class="eachRow">
-						<label><input class="lbradio lb1" name="virtuemart_shipmentmethod_id" value="4" checked="checked" type="radio">Gavekort til modtageren vil blive leveret pr. mail</label>
+						<label><input class="lbradio lb1" name="virtuemart_shipmentmethod_id" value="4" checked="checked" type="radio">Gavekort til modtageren vil blive leveret pr. mail</label></div>
 					<?php }?>
 				</div>
 				<!--step2-->
@@ -322,31 +331,58 @@ jQuery(document).ready(function(){
 					<div class="wrapTb clearfix">
 						<div class="topbarcart clearfix">Varebeskrivelse</div>
 						<div class="wrapRowPro">
-							
+							<?php foreach($cart->products as $product){
+								if(count($product->customPrices) > 1){
+									preg_match_all("#<span class=\"product-field-type-S\"> [\w\W]*?</span>#", $product->customfields, $tmp);
+									$select1 = $tmp[0][0];
+									$select2 = $tmp[0][1];
+									preg_match("#src=\"([\w\W]*?)\" alt#", $product->customfields, $tmp1);
+									$img = $tmp1[1];
+								} else {
+									preg_match("#<span class=\"product-field-type-V\">[\w\W]*?</span>#", $product->customfields, $tmp);
+									$select1 = $tmp[0];
+									$select2 = '';
+									$img = $product->image->file_url_thumb;
+								}
+							?>
 							<div class="eachRowPro">
-								<div class="proImg"><img src="templates/scheellarsen/mobile/img/img04.jpg" alt=""></div>
+								<div class="proImg"><?php 
+                                if(strlen($img)>4){
+                                    echo '<img width="90" src="'.$img.'"> ';
+                                }else{
+                                    echo $product->image->displayMediaThumb ('', FALSE);
+                                }
+                                ?></div>
 								<div class="row rowAbove">
 									<div class="proName">
-										<h2><a href="#">LUCIE ANTIQUE TERRACOTTA </a></h2>
-										<p> <span class="spanlb">Varenummer:</span><span class="spanvl">30283</span></p>
-										<div class="proSize"><span class="spanlb">Størrelse:</span><span class="spanvl">Højde 21 cm-Ø27 cm</span></div>
+										<h2><?php echo $product->product_name;?></h2>
+										<p> <span class="spanlb">Varenummer:</span><span class="spanvl"><?php echo $product->product_sku;?></span></p>
+										<div class="proSize"><span class="spanvl">Højde 21 cm-Ø27 cm</span></div>
+										<?php if($select1){?><div class="proSize"><span class="spanvl"><?php echo $select1;?></span></div><?php }?>
+                                		<?php if($select2){?><div class="proSize"><span class="spanvl"><?php echo $select2;?></span></div><?php }?>
 									</div>
-									<div class="wrapedit"><span>Antal</span> <span>1</span> </div>
+									<div class="wrapedit"><span>Antal</span> <span><?php echo $product->quantity;?></span> </div>
 								</div>
 								<div class="row rowBelow">
-									<div class="proPriceTT"><span class="spanlb">Pris i alt:</span><span class="spanvl">479 DKK </span></div>
+									<div class="proPriceTT"><span class="spanlb">Pris i alt:</span><span class="spanvl"><?php echo number_format($product->prices['salesPrice']*$product->quantity,2,',','.').' DKK';?></span></div>
 								</div>
 							</div>
 							<!--eachRowPro-->
-							
+							<?php }?>
 						</div>
 						<!--wrapRowPro-->
 						<div class="wrapTotalPrice clearfix">
 							<div class="box boxright">
-								<div class="eachRow r-nor clearfix"> <span class="lbNor">SUBTOTAL: </span> <span class="lbPrice">1.916 DKK</span> </div>
-								<div class="eachRow r-nor clearfix"> <span class="lbNor">HERAF MOMS: </span> <span class="lbPrice">383,20 DKK</span> </div>
-								<div class="eachRow r-nor clearfix"> <span class="lbNor">FRAGT: </span> <span class="lbPrice">150 DKK</span> </div>
-								<div class="eachRow r-total clearfix"> <span class="lbTotal">TOTAL:</span> <span class="totalPrice">1.955 DKK</span> </div>
+								<div class="eachRow r-nor clearfix"> <span class="lbNor">SUBTOTAL INKL. MOMS: </span> <span class="lbPrice"><?php echo number_format($cart->pricesUnformatted['salesPrice'],2,',','.').' DKK'; ?></span> </div>
+								<div class="eachRow r-nor clearfix"> <span class="lbNor">FRAGT: </span> <span class="lbPrice" id="shipPriceLabel1"></span> </div>
+								<?php if (!empty($cart->cartData['couponCode'])) { ?>
+								<div class="eachRow r-nor clearfix"> <span class="lbNor">GAVEKORT KUPON: </span> <span class="lbPrice" id="discountText"><?php echo number_format ($cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?></span> </div>
+                                <?php } ?>
+								<div class="eachRow r-nor clearfix" id="deduct"> <span class="lbNor">RABAT 10% VED AFHENTNING: </span> <span class="lbPrice"><?php echo '-'.number_format($cart->pricesUnformatted['salesPrice']*0.1,2,',','.').' DKK'; ?></span> </div>
+								<div class="eachRow r-total clearfix"> <span class="lbTotal">AT BETALE INKL. MOMS:</span> <span class="totalPrice" id="payTotal"><?php echo number_format($cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?></span> </div>
+								<?php if (!empty($cart->cartData['couponCode'])) { ?>
+								<div class="eachRow r-nor clearfix"> (Gavekort restbeløb: <?php echo number_format($coupon_value + $cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?>) </div>
+                                <?php } ?>
 							</div>
 						</div>
 						<!--wrapTotalPrice--> 
@@ -355,8 +391,8 @@ jQuery(document).ready(function(){
 					
 					<div class="read-terms clearfix">
 						<label>
-							<input type="checkbox">
-							Jeg bekræfter hermed at mine data er korrekte, samt at kurven indeholder de varer jeg ønsker. <a target="_blank" href="terms.php">Jeg accepterer Handelsbetingelser.</a></label>
+							<input name="tosAccepted" id="tosAccepted" type="checkbox" value="1" class="required">
+							Jeg bekræfter hermed at mine data er korrekte, samt at kurven indeholder de varer jeg ønsker. <a target="_blank" href="index.php?option=com_content&view=article&id=8&Itemid=131">Jeg accepterer Handelsbetingelser.</a></label>
 					</div>
 				</div>
 				<!--step4--> 
@@ -364,7 +400,6 @@ jQuery(document).ready(function(){
 			<!--col-right --> 
 		</div>
 		<!-- clearfix -->
-		
 		<div class="wrap-button">
 			<a class="btn2 btnGray btnBackShop" href="index.php"><span class="back"><<</span> Til Varekurv</a>
 			<button type="submit" class="validate btn2 btntoPayment" style="cursor:pointer; border:none;">Til Betaling</button>
@@ -376,6 +411,7 @@ jQuery(document).ready(function(){
 		<input type="hidden" id="total" value="<?php echo $cart->pricesUnformatted['billTotal']?>" />
 		<input type="hidden" id="shipFee" value=""/>
 		<input type="hidden" id="pay3" name="" value=""/>
+		
 		<input type="hidden" name="option" value="com_virtuemart"/>
 		<input type="hidden" name="view" value="cart"/>
 		<input type="hidden" name="task" value="confirm"/>

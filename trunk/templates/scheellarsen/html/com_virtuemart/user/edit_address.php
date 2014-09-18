@@ -47,12 +47,12 @@ if($cart->couponCode){
     
     $query = "SELECT coupon_discount, shipping_discount FROM #__awocoupon_history WHERE coupon_id = ".$coupon->id."";
     $db->setQuery($query);
-    $discount = $db->loadObject();
-    if($discount){
-        $coupon_value = $coupon->coupon_value - $discount->coupon_discount - $discount->shipping_discount;
-    } else {
-        $coupon_value = $coupon->coupon_value;
-    }
+    $discounts = $db->loadObjectList();
+    
+	$coupon_value = $coupon->coupon_value;
+	foreach($discounts as $discount){
+		$coupon_value = $coupon_value - $discount->coupon_discount - $discount->shipping_discount;
+	}
 }
 
 ?>
@@ -394,7 +394,6 @@ jQuery(document).ready(function(){
                                     echo $product->image->displayMediaThumb ('', FALSE);
                                 }
                                 ?>
-                                
                             </div>
                             <div class="content_pro" style="float:none;">
                                 <h4><?php echo $product->product_name;?></h4>
