@@ -381,7 +381,7 @@ function showDelivery(){
 								<div class="eachRow r-nor clearfix" id="deduct"> <span class="lbNor">RABAT 10% VED AFHENTNING: </span> <span class="lbPrice"><?php echo '-'.number_format($cart->pricesUnformatted['salesPrice']*0.1,2,',','.').' DKK'; ?></span> </div>
 								<div class="eachRow r-total clearfix"> <span class="lbTotal">AT BETALE INKL. MOMS:</span> <span class="totalPrice" id="payTotal"><?php echo number_format($cart->pricesUnformatted['billTotal'],2,',','.').' DKK'; ?></span> </div>
 								<?php if (!empty($cart->cartData['couponCode'])) { ?>
-								<div class="eachRow r-nor clearfix"> (Gavekort restbeløb: <?php echo number_format($coupon_value + $cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?>) </div>
+								<div class="eachRow r-nor clearfix"> (Gavekort restbeløb: <span id="balance"><?php echo number_format($coupon_value + $cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?></span>) </div>
                                 <?php } ?>
 							</div>
 						</div>

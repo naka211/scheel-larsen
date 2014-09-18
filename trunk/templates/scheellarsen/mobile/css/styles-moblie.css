@@ -436,7 +436,7 @@ ul.option li input {width: 10px; height: 8px; -moz-appearance:none; -o-appearanc
 .order-list {padding: 0  0 0.5em 0; border-top: 1px dotted #868686; margin-top: 1em; }
 .order-list h5 { margin-bottom: 0.5em; font-size: 1.2em; }
 .order-list .cusBox { width: 100%; float: left; } 
-.order-list .eachRow label { display: inline-block; float: left;width: 30%; max-width: 150px;margin-bottom: 5px;}
+.order-list .eachRow label { display: inline-block; float: left;width: 30%; max-width: 170px;margin-bottom: 5px;}
 .order-list span { display: inline-block; float: left;width: 70%;  }
 .order-list div.eachRow {  overflow: hidden;}
 .order-list div.cus-info { }
@@ -505,6 +505,11 @@ ul.option li input { visibility: hidden;}
 .invalid{
 	border-color: red !important;
 }
+
+.thankyou .proImg { width: 0.5em;}
+.thankyou .proImg img { display: none;}
+.thankyou .rowAbove { position: static;}
+.thankyou .wrapedit { padding-right: 0.5em;}
 
 /********** ---------------------- CSS MOBILE & TABEL FORM HERE ----------------------------- CSS MOBILE & TABEL FORM HERE  ------------------- **********/ 
 

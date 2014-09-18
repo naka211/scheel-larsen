@@ -1,5 +1,16 @@
 <?php
 defined('_JEXEC') or die('');
+//Detect mobile
+$config =& JFactory::getConfig();
+$showPhone = $config->getValue( 'config.show_phone' );
+
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ( $showPhone || $detect->isMobile() ) {
+    include('order_done_mobile.php');
+    return;
+}
+//Detect mobile end
 
 /**
 *
@@ -190,6 +201,7 @@ if($order['details']['BT']->coupon_code){
         <p>
           <label for="">Efternavn:</label>
           <?php echo $ST_info->last_name;?></p>
+		  
         <?php if($isGiftCard){?>
         <p>
           <label for="">E-mail:</label>
