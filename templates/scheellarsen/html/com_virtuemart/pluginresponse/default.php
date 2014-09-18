@@ -20,7 +20,16 @@
 defined('_JEXEC') or die('Restricted access');
 JHTML::_('behavior.modal');
 
+//Detect mobile
+$config =& JFactory::getConfig();
+$showPhone = $config->getValue( 'config.show_phone' );
 
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ( $showPhone || $detect->isMobile() ) {
+    include('default_mobile.php');
+    return;
+}
 /*echo "<h3>" . $this->paymentResponse . "</h3>";
 if ($this->paymentResponseHtml) {
     echo "<fieldset>";
@@ -106,7 +115,7 @@ if($order['details']['BT']->coupon_code){
 		<?php if($BT_info->company){?>
         <p><label for="">Firmanavn:</label><?php echo $BT_info->company;?></p>
         <p><label for="">CVR-nr.:</label><?php echo $BT_info->cvr;?></p>
-        <?php } else if($BT_info->ean == 3){?>
+        <?php } else if($BT_info->ean){?>
         <p><label for="">EAN-nr.:</label><?php echo $BT_info->ean;?></p>
         <p><label for="">Myndighed/Institution:</label><?php echo $BT_info->authority;?></p>
         <p><label for="">Ordre- el. rekvisitionsnr.:</label><?php echo $BT_info->order1;?></p>
