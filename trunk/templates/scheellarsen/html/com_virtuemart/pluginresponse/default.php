@@ -241,8 +241,8 @@ if($order['details']['BT']->coupon_code){
               }?>
             </div></td>
           <td><p><?php echo $item->product_quantity;?></p></td>
-          <td><p><?php echo number_format($item->product_item_price,2,',','.').' DKK'; ?></p></td>
-          <td><p><?php echo number_format($item->product_item_price*$item->product_quantity,2,',','.').' DKK'; ?></p></td>
+          <td><p><?php echo number_format($item->product_final_price,2,',','.').' DKK'; ?></p></td>
+          <td><p><?php echo number_format($item->product_final_price*$item->product_quantity,2,',','.').' DKK'; ?></p></td>
         </tr>
         <?php }?>
         <tr>
@@ -250,7 +250,7 @@ if($order['details']['BT']->coupon_code){
               <tbody>
                 <tr>
                   <td colspan="2">SUBTOTAL INKL. MOMS: </td>
-                  <td width="25%" colspan="2"><?php echo number_format($order['details']['BT']->order_subtotal,2,',','.').' DKK'; ?></td>
+                  <td width="25%" colspan="2"><?php echo number_format($order['details']['BT']->order_salesPrice,2,',','.').' DKK'; ?></td>
                 </tr>
                 <tr>
                   <td colspan="2">FRAGT: </td>

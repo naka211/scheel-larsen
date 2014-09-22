@@ -360,8 +360,8 @@ table tr td table.top_info {
                                       }?>
                                 </td>
                                 <td align="center"><?php echo $item->product_quantity;?></td>
-                                <td align="center"><?php echo number_format($item->product_item_price,2,',','.').' DKK'; ?></td>
-                                <td align="center"><?php echo number_format($item->product_item_price*$item->product_quantity,2,',','.').' DKK'; ?></td>
+                                <td align="center"><?php echo number_format($item->product_final_price,2,',','.').' DKK'; ?></td>
+                                <td align="center"><?php echo number_format($item->product_final_price*$item->product_quantity,2,',','.').' DKK'; ?></td>
                             </tr>
                             <?php }?>
                             <tr>
@@ -369,7 +369,7 @@ table tr td table.top_info {
                                         <tbody>
                                             <tr>
                                                 <td width="74%" align="right">SUBTOTAL INKL. MOMS: </td>
-                                                <td width="26%" align="right"><?php echo number_format($orderDetail->order_subtotal,2,',','.').' DKK'; ?></td>
+                                                <td width="26%" align="right"><?php echo number_format($orderDetail->order_salesPrice,2,',','.').' DKK'; ?></td>
                                             </tr>
                                             <tr>
                                                 <td align="right">FRAGT:</td>
