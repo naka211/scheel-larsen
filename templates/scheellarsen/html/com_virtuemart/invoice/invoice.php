@@ -281,8 +281,8 @@ if($this->orderDetails['details']['BT']->coupon_code){
         }?>
         </td>
 		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo $item->product_quantity;?></td>
-		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo number_format($item->product_item_price,2,',','.');?> DKK</td>
-		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;padding-right: 10px;"><?php echo number_format($item->product_item_price*$item->product_quantity,2,',','.');?> DKK</td>
+		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;"><?php echo number_format($item->product_final_price,2,',','.');?> DKK</td>
+		<td style="border-bottom: 1px solid #CACACA; color: #3A3A3A;padding-right: 10px;"><?php echo number_format($item->product_final_price*$item->product_quantity,2,',','.');?> DKK</td>
 		</tr>
 	<?php }?>
 
@@ -319,7 +319,7 @@ if($this->orderDetails['details']['BT']->coupon_code){
 
 		<td><table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align: right;" >
 		<tr>
-			<td style="padding: 0 10px; color: #3A3A3A;" ><?php echo number_format($this->orderDetails['details']['BT']->order_subtotal,2,',','.');?> DKK</td>
+			<td style="padding: 0 10px; color: #3A3A3A;" ><?php echo number_format($this->orderDetails['details']['BT']->order_salesPrice,2,',','.');?> DKK</td>
 		</tr>
         <tr>
 			<td style="padding: 0 10px; color: #3A3A3A;"><?php echo number_format($this->orderDetails['details']['BT']->order_shipment,2,',','.');?> DKK</td>

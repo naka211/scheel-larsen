@@ -277,7 +277,7 @@ if($order['details']['BT']->coupon_code){
 						<div class="wrapedit"><span>Antal</span> <span><?php echo $item->product_quantity;?></span> </div>
 					</div>
 					<div class="row rowBelow">
-						<div class="proPriceTT"><span class="spanlb">Pris i alt:</span><span class="spanvl"><?php echo number_format($item->product_item_price*$item->product_quantity,2,',','.').' DKK'; ?></span></div>
+						<div class="proPriceTT"><span class="spanlb">Pris i alt:</span><span class="spanvl"><?php echo number_format($item->product_final_price*$item->product_quantity,2,',','.').' DKK'; ?></span></div>
 					</div>
 				</div>
 				<!--eachRowPro-->
@@ -286,7 +286,7 @@ if($order['details']['BT']->coupon_code){
 			<!--wrapRowPro-->
 			<div class="wrapTotalPrice clearfix">
 				<div class="box boxright">
-					<div class="eachRow r-nor clearfix"> <span class="lbNor">SUBTOTAL INKL. MOMS: </span> <span class="lbPrice"><?php echo number_format($order['details']['BT']->order_subtotal,2,',','.').' DKK'; ?></span> </div>
+					<div class="eachRow r-nor clearfix"> <span class="lbNor">SUBTOTAL INKL. MOMS: </span> <span class="lbPrice"><?php echo number_format($order['details']['BT']->order_salesPrice,2,',','.').' DKK'; ?></span> </div>
 					<div class="eachRow r-nor clearfix"> <span class="lbNor">FRAGT: </span> <span class="lbPrice"><?php                     if($order['details']['BT']->virtuemart_shipmentmethod_id != 1) echo number_format($order['details']['BT']->order_shipment,2,',','.').' DKK'; else echo 0 . ' DKK';?></span> </div>
 					<?php if($order['details']['BT']->coupon_code){?>
 					<div class="eachRow r-nor clearfix"> <span class="lbNor">GAVEKORT KUPON: </span> <span class="lbPrice"><?php echo number_format($order['details']['BT']->coupon_discount,2,',','.').' DKK'; ?></span> </div>
