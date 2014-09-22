@@ -319,7 +319,7 @@ ul.levering li ul li {margin-right: 5px;}
 .order_Summary table.main_order_Summary tr.title th {padding: 7px;}
 .order_Summary table.main_order_Summary tr td {padding: 12px; border-bottom: solid 1px #dcd6c0;}
 .order_Summary table.main_order_Summary tr td .img_pro {float: left; width: 90px; height: 66px; margin-right: 12px; margin-top: 10px;}
-.order_Summary table.main_order_Summary tr td .content_pro {float: left; width: 240px;}
+.order_Summary table.main_order_Summary tr td .content_pro {float: left; width: 340px;}
 .order_Summary table.main_order_Summary tr td .content_pro p {margin: 0;}
 .order_Summary table.main_order_Summary tr td .content_pro h4 {margin: 0; font-size: 13px; font-family: 'Myriad Pro Regular'; color: #000;}
 .order_Summary table.sub_order_Summary tr td {padding: 5px 12px; text-align: right; text-transform: uppercase; color: #000; border: none; background: #f9f7f3;}
