@@ -147,6 +147,7 @@ table tr td table.top_info {
 
 <body>
 <div class="page">
+	<div style="margin-top:20px;"><img src="<?php echo JURI::base().'templates/scheellarsen/img/logo.png'?>" /></div>
     <table width="100%" cellspacing="0" cellpadding="0" border="0" style="padding:10px;">
         <tbody>
             <tr>
