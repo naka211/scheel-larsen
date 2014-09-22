@@ -196,7 +196,7 @@ foreach ($this->cart->products as $pkey => $prow) {
                             <?php if (!empty($this->cart->cartData['couponCode'])) { ?>
                             <tr>
                               <td>Gavekort kupon: </td>
-                              <td><?php echo $this->currencyDisplay->priceDisplay ($this->cart->pricesUnformatted['salesPriceCoupon']);?><?php ?></td>
+                              <td><?php echo number_format($this->cart->pricesUnformatted['salesPriceCoupon'],2,',','.').' DKK'; ?></td>
                             </tr>
                             <?php } ?>
                             <tr>
