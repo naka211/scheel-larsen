@@ -1788,11 +1788,11 @@ class AwoCouponEstoreCouponHandler {
     protected function cleanup_coupon_code_helper( $order_id ) {
 	// remove the coupon coupon_code(s)
 		
-		$coupon_session = $this->session->get('coupon', '', 'awocoupon');error_log(serialize($coupon_session), 3, "error2.log");
+		$coupon_session = $this->session->get('coupon', '', 'awocoupon');
 		if(empty($coupon_session) ) return null;
 		$coupon_session = unserialize($coupon_session);
 		
-		$this->session->set('coupon', null, 'awocoupon');error_log(serialize($coupon_session), 3, "error2_1.log");
+		$this->session->set('coupon', null, 'awocoupon');
 //printr($coupon_session);
 		
 
@@ -1800,19 +1800,19 @@ class AwoCouponEstoreCouponHandler {
 		$user = JFactory::getUser ();
 
 		$order_id = (int)$order_id;
-		$user_email = $this->get_orderemail($order_id);error_log(serialize($user_email), 3, "error3.log");
+		$user_email = $this->get_orderemail($order_id);
 
 		if(empty($order_id)) $order_id = 'NULL';
 		$user_email = empty($user_email) ? 'NULL' : '"'.awolibrary::dbEscape($user_email).'"';
 		
 		
 		$children_coupons = $coupon_session['processed_coupons'];
-		error_log(serialize($children_coupons), 3, "error4.log");
+
 		$coupon_ids = implode(',',array_keys($children_coupons));
 		$sql = 'SELECT id,num_of_uses_type,num_of_uses,function_type,coupon_value FROM #__awocoupon WHERE estore="'.$this->estore.'" AND published=1 AND id IN ('.$coupon_ids.')';
 		$db->setQuery( $sql );
 		$rows = $db->loadObjectList();
-		error_log(serialize($rows), 3, "error5.log");
+
 		//$parent_coupon_id = (int)$coupon_session['coupon_id'];
 		$parents = array();
 		
@@ -1837,7 +1837,7 @@ class AwoCouponEstoreCouponHandler {
 			
 			
 			$sql = 'INSERT INTO #__awocoupon_history (estore,coupon_entered_id,coupon_id,user_id,user_email,coupon_discount,shipping_discount,order_id,productids,details)
-				    VALUES ("'.$this->estore.'",'.$parent_coupon_id.','.$coupon_row->id.','.$user->id.','.$user_email.','.$product_discount.','.$shipping_discount.',"'.$order_id.'","'.$usedproducts.'","'.$coupon_details.'")';error_log($sql, 3, "error6.log");
+				    VALUES ("'.$this->estore.'",'.$parent_coupon_id.','.$coupon_row->id.','.$user->id.','.$user_email.','.$product_discount.','.$shipping_discount.',"'.$order_id.'","'.$usedproducts.'","'.$coupon_details.'")';
 			$db->setQuery( $sql );
 			$db->query();
 				
