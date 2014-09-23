@@ -28,6 +28,7 @@ class plgVmCouponAwoCoupon extends JPlugin {
 		$awo_file = JPATH_ADMINISTRATOR.'/components/com_awocoupon/helpers/estore/virtuemart/couponhandler.php';
 		if(file_exists($awo_file)) {
 			require_once $awo_file;
+			error_log("plugin awocoupon", 3, "error6.log");
 			return AwoCouponVirtuemartCouponHandler::remove_coupon_code($_code);
 		}
 		
