@@ -111,6 +111,9 @@ if($order['details']['BT']->coupon_code){
 	
 }
 //T.Trung end
+
+$cart = VirtueMartCart::getCart();
+$cart->emptyCart();
 ?>
 <style>
 .costumTitle{
