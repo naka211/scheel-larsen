@@ -48,12 +48,12 @@ class AwoCouponVirtuemartCouponHandler extends AwoCouponEstoreCouponHandler {
 	}
 	
 	static function remove_coupon_code( $code ) {
-		$instance = new AwoCouponVirtuemartCouponHandler();error_log(serialize($instance), 3, "error1.log");
+		$instance = new AwoCouponVirtuemartCouponHandler();
 		$instance->vmcoupon_code = $code;
 	  	$instance->session = JFactory::getSession();
 	
 		$order_id = JRequest::getVar ( 'virtuemart_order_id' );
-		if(!$order_id){
+		if(empty($order_id)){
 			$db = JFactory::getDBO();
 			$q = 'SELECT `virtuemart_order_id` FROM `#__virtuemart_orders` WHERE `order_number`="'.$db->getEscaped($orderNumber).'"';
 			$db->setQuery($q);
