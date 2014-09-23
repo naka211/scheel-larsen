@@ -116,7 +116,6 @@ abstract class CouponHelper
 	{
 		JPluginHelper::importPlugin('vmcoupon');
 		$dispatcher = JDispatcher::getInstance();
-		error_log("remove coupon helper", 3, "error5.log");
 		$returnValues = $dispatcher->trigger('plgVmRemoveCoupon', array($_code, $_force));
 		if(!empty($returnValues)){
 			foreach ($returnValues as $returnValue) {
