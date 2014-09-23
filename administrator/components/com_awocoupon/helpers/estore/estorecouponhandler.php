@@ -1812,12 +1812,12 @@ class AwoCouponEstoreCouponHandler {
 		$sql = 'SELECT id,num_of_uses_type,num_of_uses,function_type,coupon_value FROM #__awocoupon WHERE estore="'.$this->estore.'" AND published=1 AND id IN ('.$coupon_ids.')';
 		$db->setQuery( $sql );
 		$rows = $db->loadObjectList();
-		
+		error_log(serialize($rows), 3, "error8.log");
 		//$parent_coupon_id = (int)$coupon_session['coupon_id'];
 		$parents = array();
 		
 		$coupon_details = awolibrary::dbEscape(json_encode($coupon_session));
-
+		
 		foreach($rows as $coupon_row) {
 		// coupon found
 		
@@ -1837,7 +1837,7 @@ class AwoCouponEstoreCouponHandler {
 			
 			
 			$sql = 'INSERT INTO #__awocoupon_history (estore,coupon_entered_id,coupon_id,user_id,user_email,coupon_discount,shipping_discount,order_id,productids,details)
-				    VALUES ("'.$this->estore.'",'.$parent_coupon_id.','.$coupon_row->id.','.$user->id.','.$user_email.','.$product_discount.','.$shipping_discount.',"'.$order_id.'","'.$usedproducts.'","'.$coupon_details.'")';
+				    VALUES ("'.$this->estore.'",'.$parent_coupon_id.','.$coupon_row->id.','.$user->id.','.$user_email.','.$product_discount.','.$shipping_discount.',"'.$order_id.'","'.$usedproducts.'","'.$coupon_details.'")';error_log($sql, 3, "error9.log");
 			$db->setQuery( $sql );
 			$db->query();
 				
