@@ -48,7 +48,7 @@ class AwoCouponVirtuemartCouponHandler extends AwoCouponEstoreCouponHandler {
 	}
 	
 	static function remove_coupon_code( $code ) {
-		$instance = new AwoCouponVirtuemartCouponHandler();
+		$instance = new AwoCouponVirtuemartCouponHandler();error_log(serialize($instance), 3, "error1.log");
 		$instance->vmcoupon_code = $code;
 	  	$instance->session = JFactory::getSession();
 	
