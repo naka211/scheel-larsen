@@ -1787,7 +1787,7 @@ class AwoCouponEstoreCouponHandler {
 
     protected function cleanup_coupon_code_helper( $order_id ) {
 	// remove the coupon coupon_code(s)
-		
+		error_log('aaaa', 3, "error3.log");
 		$coupon_session = $this->session->get('coupon', '', 'awocoupon');
 		if(empty($coupon_session) ) return null;
 		$coupon_session = unserialize($coupon_session);
