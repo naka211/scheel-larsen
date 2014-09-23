@@ -54,6 +54,12 @@ class AwoCouponVirtuemartCouponHandler extends AwoCouponEstoreCouponHandler {
 	
 		error_log(serialize($code), 3, "error1.log");
 		$order_id = JRequest::getVar ( 'virtuemart_order_id' );error_log(serialize($order_id), 3, "error2.log");
+		if(!$order_id){
+			if (!class_exists('VirtueMartModelOrders'))
+    	    require( JPATH_VM_ADMINISTRATOR . DS . 'models' . DS . 'orders.php' );
+			$data = JRequest::get('post');
+			$order_id = VirtueMartModelOrders::getOrderIdByOrderNumber($data['ordernumber']);
+		}
 		$instance->cleanup_coupon_code_helper($order_id);
 		
 		return true;
