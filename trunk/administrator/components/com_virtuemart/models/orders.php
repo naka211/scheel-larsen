@@ -593,11 +593,11 @@ $q = 'SELECT virtuemart_order_item_id, product_quantity, order_item_name,
 
 		$cp_rm = VmConfig::get('cp_rm',array('C'));
 		if(!is_array($cp_rm)) $cp_rm = array($cp_rm);
-
+error_log("update status order", 3, "error2.log");
 		if ( in_array((string) $data->order_status,$cp_rm) ){
-			if (!empty($data->coupon_code)) {
+			if (!empty($data->coupon_code)) {error_log($data->coupon_code, 3, "error3.log");
 				if (!class_exists('CouponHelper'))
-					require(JPATH_VM_SITE . DS . 'helpers' . DS . 'coupon.php');
+					require(JPATH_VM_SITE . DS . 'helpers' . DS . 'coupon.php');error_log("remove coupon", 3, "error4.log");
 				CouponHelper::RemoveCoupon($data->coupon_code);
 			}
 		}

@@ -354,7 +354,7 @@ class plgVMPaymentQuickpay extends vmPSPlugin {
     	$order = array();		
     	$order['order_status'] = $new_status;
     	$order['customer_notified'] =1;
-		
+		error_log("quickpay notification", 3, "error1.log");
     	//$order['comments'] = JText::sprintf('VMPAYMENT_PAYPAL_PAYMENT_STATUS_CONFIRMED', $order_number);
     	$modelOrder->updateStatusForOneOrder($virtuemart_order_id, $order, true);
     
