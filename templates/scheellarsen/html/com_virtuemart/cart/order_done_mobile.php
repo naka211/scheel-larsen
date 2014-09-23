@@ -100,6 +100,9 @@ if($order['details']['BT']->coupon_code){
 	
 }
 //T.Trung end
+
+$cart = VirtueMartCart::getCart();
+$cart->emptyCart();
 ?>
 
 <div id="content" class="w-content undepages thankyou">
