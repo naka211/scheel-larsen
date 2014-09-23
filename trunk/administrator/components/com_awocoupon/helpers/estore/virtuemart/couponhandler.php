@@ -52,8 +52,8 @@ class AwoCouponVirtuemartCouponHandler extends AwoCouponEstoreCouponHandler {
 		$instance->vmcoupon_code = $code;
 	  	$instance->session = JFactory::getSession();
 	
-		
-		$order_id = JRequest::getVar ( 'virtuemart_order_id' );error_log($order_id, 3, "error7.log");
+		error_log(serialize($code), 3, "error1.log");
+		$order_id = JRequest::getVar ( 'virtuemart_order_id' );error_log(serialize($order_id), 3, "error2.log");
 		$instance->cleanup_coupon_code_helper($order_id);
 		
 		return true;
