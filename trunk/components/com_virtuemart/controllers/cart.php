@@ -604,7 +604,14 @@ class VirtueMartControllerCart extends JController {
 		$zip = JRequest::getVar('zip');
 		$db = JFactory::getDBO();
 		$db->setQuery('SELECT city FROM #__postnumber WHERE number = '.$zip);
-		die($db->loadResult());
+		
+		if($db->loadResult()){
+			echo $db->loadResult();
+			exit;
+		} else {
+			echo 0;
+			exit;
+		}
 	}
     
     function checkGiftCard($virtuemart_product_ids, $cart){
