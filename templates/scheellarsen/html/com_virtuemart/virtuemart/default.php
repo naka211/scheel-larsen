@@ -15,6 +15,7 @@ if ( $showPhone || $detect->isMobile() ) {
 //Detect mobile end
 
 JHTML::_( 'behavior.modal' );
+//print_r($this->products);exit;
 ?>
 <?php # Vendor Store Description
 /*if (!empty($this->vendor->vendor_store_desc) and VmConfig::get('show_store_desc', 1)){?>
@@ -33,7 +34,7 @@ JHTML::_( 'behavior.modal' );
     <h2><img alt="" src="templates/scheellarsen/img/title_product.png"></h2>
     <ul class="clearfix">
         <?php
-foreach ($this->products as $type => $productList ) {
+//foreach ($this->products as $type => $productList ) {
 // Calculating Products Per Row
 /*$products_per_row = VmConfig::get ( 'homepage_products_per_row', 3 ) ;
 $cellwidth = ' width'.floor ( 100 / $products_per_row );*/
@@ -42,7 +43,7 @@ $cellwidth = ' width'.floor ( 100 / $products_per_row );*/
 
 // Start the Output
 
-foreach ( $productList as $product ) { //print_r($product);exit;
+foreach ( $this->products['featured'] as $product ) { //print_r($product);exit;
 
 	$link=JRoute::_ ( 'index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $product->virtuemart_product_id . '&virtuemart_category_id=' . $product->virtuemart_category_id );
 
@@ -85,6 +86,6 @@ foreach ( $productList as $product ) { //print_r($product);exit;
         </li>
         <?php
     }
-}?>
+?>
     </ul>
 </div>
