@@ -200,7 +200,12 @@ jQuery(document).ready(function(){
             data: {zip: zip}
         }).done(function(result) {
             if(result){
-                jQuery("#city").val(result);
+                if(result == 0){
+					jQuery("#city").val('');
+				} else {
+					jQuery("#city").val(result);
+				}
+				
 				if(!jQuery("#st_zip").val()){
 					setDelivery(zip);
 				}
@@ -282,8 +287,8 @@ function showDelivery(){
 						<input class="input required" type="text" placeholder="Efternavn *" name="last_name" id="last_name">
 						<input class="input required" type="text" placeholder="Vejnavn *" name="street_name" id="street_name">
 						<input class="input required" type="text" placeholder="Hus/gade nr. *" name="street_number" id="street_number">
-						<input class="input inputPostnr required" type="text" placeholder="Postnr. *" name="zip" id="zip" maxlength="4">
-						<input class="input inputBynavn required" type="text" placeholder="Bynavn *" name="city" id="city" readonly>
+						<input class="input inputPostnr required" type="text" placeholder="Postnr. *" name="zip" id="zip">
+						<input class="input inputBynavn required" type="text" placeholder="Bynavn *" name="city" id="city">
 						<input class="input required" type="text" placeholder="Telefon *" name="phone_1" id="phone_1">
 						<input class="input required validate-email" type="text" placeholder="E-mail adresse *" name="email" id="email">
 						<textarea class="textarea" placeholder="Evt. din besked" name="message1"></textarea>
