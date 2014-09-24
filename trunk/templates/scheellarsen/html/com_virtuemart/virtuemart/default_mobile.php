@@ -14,8 +14,8 @@ $mobile = JURI::base()."templates/scheellarsen/mobile/";
 		<h2>udvalgte produkter</h2>
 		<ul class="listProd clearfix">
 			<?php
-			foreach ($this->products as $type => $productList ) {
-				foreach ( $productList as $product ) {
+			//foreach ($this->products as $type => $productList ) {
+				foreach ( $this->products['featured'] as $product ) {
 					$link = JRoute::_ ( 'index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $product->virtuemart_product_id . '&virtuemart_category_id=' . $product->virtuemart_category_id );
 			?>
 			<li>
@@ -42,7 +42,7 @@ $mobile = JURI::base()."templates/scheellarsen/mobile/";
 				<a class="btnMore btn2" href="<?php echo $link;?>">Vis detaljer</a> </li>
 			<?php 
 				}
-			}?>
+			//}?>
 		</ul>
 	</div>
 	<!--eachBox wrap-list-prod-->
