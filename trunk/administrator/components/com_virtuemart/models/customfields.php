@@ -700,8 +700,10 @@ class VirtueMartModelCustomfields extends VmModel {
 					else {
 						$vendorId = $product->virtuemart_vendor_id;
 					}
-					$q = 'SELECT `virtuemart_media_id` as value,`file_title` as text FROM `#__virtuemart_medias` WHERE `published`=1
-					AND (`virtuemart_vendor_id`= "' . $vendorId . '" OR `shared` = "1")';
+					$virtuemart_product_id = JRequest::getVar('virtuemart_product_id');
+					/*$q = 'SELECT `virtuemart_media_id` as value,`file_title` as text FROM `#__virtuemart_medias` WHERE `published`=1
+					AND (`virtuemart_vendor_id`= "' . $vendorId . '" OR `shared` = "1")';*/
+					$q = 'SELECT m.virtuemart_media_id as value, m.file_title as text FROM #__virtuemart_medias as m INNER JOIN #__virtuemart_product_medias pm ON m.virtuemart_media_id = pm.virtuemart_media_id WHERE m.published=1 AND pm.virtuemart_product_id = '.$virtuemart_product_id.' AND (m.virtuemart_vendor_id= "' . $vendorId . '" OR m.shared = "1")';
 					$this->_db->setQuery ($q);
 					$options = $this->_db->loadObjectList ();
 					return JHTML::_ ('select.genericlist', $options, 'field[' . $row . '][custom_value]', '', 'value', 'text', $field->custom_value) . '</td><td>' . $priceInput;
