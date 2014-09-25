@@ -229,12 +229,12 @@ ul.cate li:hover ul li a {color: #505050;}
 .products {padding: 15px 0; position: relative;}
 .products h2 {margin-top: 0; border-bottom: 1px solid #d9d9d9; padding-bottom: 5px; margin-bottom: 15px;}
 .products h2 span {font-size: 13px; font-family: 'Myriad Pro Regular'; text-transform: none; font-style: italic;}
-.products ul li {float: left; margin-right: 15px; margin-bottom: 12px; padding: 7px; width: 233px; min-height: 280px; background-color: #fff; border: solid 1px #dcd6c0; text-align: center; position: relative;}
+.products ul li {float: left; margin-right: 15px; margin-bottom: 12px; padding: 7px; width: 233px; min-height: 285px; background-color: #fff; border: solid 1px #dcd6c0; text-align: center; position: relative;}
 /*.products ul:nth-child(n+2) li {min-height: 220px;}*/
 .products ul:nth-child(n+2) li:hover {background: url(../img/hover_li.png) no-repeat bottom center;}
 .products ul li h3 {margin: 10px 0 0;}
-.products ul li h4 {margin: 10px 0 0; font-size: 18px; color: #A08262;}
-.products ul li h4.price_2 { position: absolute; bottom: 5px; left: 90px; z-index: 1;}
+.products ul li h4 {margin: 5px 0 0; font-size: 18px; color: #A08262;}
+.products ul li h4.price_2 { position: absolute; bottom: 5px; left: 70px; z-index: 1;}
 .products ul li .price_sale {font-size: 12px; font-family: 'gothic'; color: #646464;}
 .products ul li .price_before {font-size: 12px; font-family: 'gothic'; color: #646464; text-decoration: line-through;}
 .products ul li p {margin-bottom: 0;}

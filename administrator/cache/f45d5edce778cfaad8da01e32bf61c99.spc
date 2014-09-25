@@ -18,7 +18,57 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 		
 		
 		
-	";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:7:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:53:"List all News || All news from the VirtueMart project";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:142:"VirtueMart - a free, easy to use and up-to-date e-commerce solution. Fully integrated into a free, but professional Content Management System.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:38:"http://virtuemart.net/news/latest-news";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:13:"lastBuildDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 22 Aug 2014 10:55:12 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:9:"generator";a:1:{i:0;a:5:{s:4:"data";s:40:"Joomla! - Open Source Content Management";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"language";a:1:{i:0;a:5:{s:4:"data";s:5:"en-gb";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"item";a:10:{i:0;a:6:{s:4:"data";s:31:"
+	";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:7:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:53:"List all News || All news from the VirtueMart project";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:142:"VirtueMart - a free, easy to use and up-to-date e-commerce solution. Fully integrated into a free, but professional Content Management System.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:38:"http://virtuemart.net/news/latest-news";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:13:"lastBuildDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 24 Sep 2014 09:29:53 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:9:"generator";a:1:{i:0;a:5:{s:4:"data";s:40:"Joomla! - Open Source Content Management";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"language";a:1:{i:0;a:5:{s:4:"data";s:5:"en-gb";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"item";a:10:{i:0;a:6:{s:4:"data";s:31:"
+			
+			
+			
+			
+			
+			
+			
+		";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:7:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:41:"Security release of vm2.6.10 and vm2.9.9b";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:84:"http://virtuemart.net/news/latest-news/462-security-release-of-vm2-6-10-and-vm2-9-9b";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:84:"http://virtuemart.net/news/latest-news/462-security-release-of-vm2-6-10-and-vm2-9-9b";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:7407:"<div class="feed-description"><p>If you are using a version lower than 2.6.10, you should update right away.</p>
+<p>During a routine audit done by the Sucuri firm, they found a critical vulnerability and informed the VirtueMart team.<br />The bug was immediately patched (in record time) and the <a href="http://virtuemart.net/index.php?option=com_content&amp;view=article&amp;id=54:downloads&amp;catid=162:uncategorised&amp;Itemid=100146#download">version 2.6.10 (stable version) and 2.9.9b (in RC state)</a> fixes this issue.</p>
+<p>If you cannot update VirtueMart, please follow those <a href="http://virtuemart.net/#fix">instructions</a>.</p>
+<h3>Our Security policy</h3>
+<p>There were recently some misconceptions about our security policy. Some people complain that we are not following the "Full Disclosure" philosophy (please read <a href="http://en.wikipedia.org/wiki/Full_disclosure_(computer_security)">Full disclosure (computer security)</a>&nbsp;). The "Full Disclosure" comes from the beginning of the open source movement and is also to see as an answer to the "non-disclosure" behavior of proprietary software vendors. The experience was that sent vulnerabilities were not fixed. So the people learnt that revealing the vulnerability in public lead to a fast reaction of the blamed company. The evil guys of this business just started to blackmail companies. <br />There are of course also some other advantages. In case of Linux kernels, the idea is that all together work on a fix for it. The leaks are often a lot complexer and so the more people know about the faster it is fixed. Furthermore anyone should be able to learn from the leak to prevent the issue in future.</p>
+<p>In our case, the most security leaks are fixed within minutes, maybe within 1-2 hours. So the argument, the more people the faster a fix is ready is not suitable for joomla/extensions. So we are following the philosophy of the "responsible disclosure" (please read <a href="http://en.wikipedia.org/wiki/Responsible_disclosure">Responsible disclosure</a>&nbsp;). Also <a href="http://blog.sucuri.net/2014/07/responsible-disclosure-sucuri-open-letter-to-mailpoet-and-future-disclosures.html">sucuri.net</a> is following this idea. They are professionals and know how to handle a vulnerability for the best of all users. They informed us secretly about the problem. We fixed it within a day, they tested our fix and asked if it is the right time to inform their customers. We did the most important thing, to provide a fix, only missing was the "responsible disclosure". So I agreed, but misunderstood them, because I did not meant that they disclosure the vulnerability in detail. A correct disclosure in our environment (php, opensource) must also always contain an explanation to fix the issue manually. The other reason is that the problem is actually in the joomla user "model" , and it should be also fixed in the JUser to prevent misuse of it before we should do the "Full disclosure". Persuading the joomla developers to protect their model got complexer than thought. Their argument is that there is no problem as long as you are using the Joomla Form. We got just stuck and must now prepare an explanation, why it is always bad to allow any form to override internal variables of an object.</p>
+<h3><a name="fix"></a>How to get the security fix without updating VirtueMart</h3>
+<p>If you cannot update VirtueMart, there are two possibilites:</p>
+<h4>Exchange the file models/user.php</h4>
+<p>The easiest way is just to exchange the user model with the new one:</p>
+<ol>
+<li>Dowload the latest version (<a href="http://dev.virtuemart.net/attachments/download/784/com_virtuemart.2.6.10.zip">VirtueMart 2.6.10</a> or <a href="http://dev.virtuemart.net/attachments/download/791/com_virtuemart.2.9.9b.zip">VirtueMart 2.9.9b</a>)</li>
+<li>Replace the file&nbsp;<span style="font-size: 10.9090909957886px; font-family: 'courier new', courier;">/administrator/components/com_virtuemart/models/user.php</span> with the new one.</li>
+</ol>
+<p>The user model is almost untouched for a year, so you should first try just to exchange the model.</p>
+<h4>Patch the user.php file</h4>
+<p>If you think your user model is too heavily modified, it is enough to add a unset($data['isRoot']); to the top of the user store function:</p>
+<ol>
+<li>Go to&nbsp;<span style="font-family: 'courier new', courier; font-size: 10.9090909957886px;">/administrator/components/com_virtuemart/models/user.php</span></li>
+<li>Search for the function named<span style="font-family: 'courier new', courier;"> function&nbsp;store(&amp;$data,$checkToken = TRUE)</span></li>
+<li>Replace <span style="font-family: 'courier new', courier;">if (!$user-&gt;bind($data)) { </span>with
+<pre>if(!$user-&gt;authorise('core.admin','com_virtuemart')){
+	$whiteDataToBind = array();
+	$whiteDataToBind['name'] = $data['name'];
+	$whiteDataToBind['username'] = $data['username'];
+	$whiteDataToBind['email'] = $data['email'];
+	if(isset($data['password'])) $whiteDataToBind['password'] = $data['password'];
+	if(isset($data['password2'])) $whiteDataToBind['password2'] = $data['password2'];
+	} else {
+		$whiteDataToBind = $data;
+	}
+// Bind Joomla userdata
+if (!$user-&gt;bind($whiteDataToBind)) {
+		.....
+</pre>
+</li>
+</ol>
+<p>We just creating a new array and setting any variable manually (white list).</p>
+<h3>The real problem behind all this</h3>
+<p>The JUser model bind function just loops through the properties of the class and sets data with the same name to the object. The filtering is done by an attached JForm (Gui elements) to filter the input of the data. So if developers use the joomla model without form, they have to filter the data themself, else it is possible to override internal variables of the object. <br />The binding for normal JTables does not override internal variables as long you follow the habit/convention to name them with a trailing underscore _. The check function additionally ensures that the data is correct. But the juser object does not follow the own joomla habits. Additionally it is very unclean to use MVC and to have a model, which needs GUI elements to do correct filtering. There exists enough tasks to use a model without any GUI. For a developer just using the joomla API it is like a trap. A model should be secure by itself, without the need of a "View" or "Controller" to be safe. SCNR, but joomla 2.5.16 fixed a security leak in some the JFormFields. So other solutions based on that were also very unsecure for years.</p>
+<p>The suggested fix in the joomla user model is very easy. Just unset the sensitive data, if a user is not admin. This should be done in the bind function and in the store function. The advantage lays on the hand. <br />A lot other extensions for joomla become more secure. It is very unlikely that only VM has this problem.<br />People can do a small joomla update and still use their modified extensions.</p>
+<p>Personally I see the request for full disclosure as a typical academic, but noobish request. Not only the good guys learn from disclosures. The black hat fraction also learns from it. It is important to differ and sometimes a full disclosure makes absolut sense, but not always. It depends on the complexity of the problem, how many people already know about, the reaction of the maintainers, and so on.</p>
+<p>&nbsp;</p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:26:"milbo@gmx.de (Max Milbers)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 12 Sep 2014 13:20:21 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:1;a:6:{s:4:"data";s:31:"
 			
 			
 			
@@ -78,7 +128,7 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 <p>&nbsp;</p>
 <div class="special-download">
 <p style="text-align: center;"><a href="http://virtuemart.net//downloads" class="button-primary">DOWNLOAD NOW</a></p>
-</div></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 15 Aug 2014 19:02:31 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:1;a:6:{s:4:"data";s:31:"
+</div></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 15 Aug 2014 19:02:31 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:2;a:6:{s:4:"data";s:31:"
 			
 			
 			
@@ -120,7 +170,7 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 <p style="text-align: center;"><a class="button-primary" href="http://extensions.virtuemart.net/support/virtuemart-supporter-membership-detail">Become a VirtueMart Associate Member</a>
 </p>
 <p>There is also already a thread about this in the forum&nbsp;<a href="http://forum.virtuemart.net/index.php?topic=124355.0">http://forum.virtuemart.net/index.php?topic=124355.0</a>
-</p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:26:"milbo@gmx.de (Max Milbers)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 04 Jul 2014 20:02:08 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:2;a:6:{s:4:"data";s:31:"
+</p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:26:"milbo@gmx.de (Max Milbers)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 04 Jul 2014 20:02:08 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:3;a:6:{s:4:"data";s:31:"
 			
 			
 			
@@ -148,7 +198,7 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 </ul>
 <div class="special-download">
 <p style="text-align: center;"><a class="button-primary" href="http://virtuemart.net/downloads">DOWNLOAD NOW</a></p>
-</div></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 29 May 2014 21:06:11 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:3;a:6:{s:4:"data";s:31:"
+</div></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 29 May 2014 21:06:11 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:4;a:6:{s:4:"data";s:31:"
 			
 			
 			
@@ -172,7 +222,7 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 <div class="special-download">
 	<p style="text-align: center;"><a class="button-primary" href="http://virtuemart.net/downloads">DOWNLOAD NOW</a>
 	</p>
-</div></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 21 May 2014 20:29:08 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:4;a:6:{s:4:"data";s:31:"
+</div></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 21 May 2014 20:29:08 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:5;a:6:{s:4:"data";s:31:"
 			
 			
 			
@@ -253,7 +303,7 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 <p style="text-align: left;">&nbsp;</p>
 <h2>For the people waiting on VirtueMart for Joomla 3&nbsp;</h2>
 <p>VirtueMart 3 is almost ready. The situation is maybe similar to vm2.5.3. The more testers and reports the faster we can release. Please download Virtuemart 2.9 (the beta for VM3) here&nbsp;<a href="http://dev.virtuemart.net/projects/virtuemart/files">http://dev.virtuemart.net/projects/virtuemart/files</a>. Search for the latest vm2.9.x, join us in the forum, tell us your experience with it <a href="http://forum.virtuemart.net/index.php?board=136.0">http://forum.virtuemart.net/index.php?board=136.0</a>.</p>
-<p>&nbsp;</p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 09 May 2014 18:10:09 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:5;a:6:{s:4:"data";s:31:"
+<p>&nbsp;</p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 09 May 2014 18:10:09 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:6;a:6:{s:4:"data";s:31:"
 			
 			
 			
@@ -261,7 +311,7 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 			
 			
 			
-		";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:7:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:37:"VirtueMart are proud to release VM2.6";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:80:"http://virtuemart.net/news/latest-news/456-virtuemart-are-proud-to-release-vm2-6";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:80:"http://virtuemart.net/news/latest-news/456-virtuemart-are-proud-to-release-vm2-6";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:15145:"<div class="feed-description"><p><a href="http://virtuemart.net/#vm2.6">Release of VirtueMart 2.6</a>, <a href="http://virtuemart.net/#vm3">VirtueMart 3 for Joomla 3 </a>is coming soon. New:<a href="http://virtuemart.net/#download"> Full Installer</a>&nbsp;including Joomla and VirtueMart.&nbsp;</p>
+		";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:7:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:37:"VirtueMart are proud to release VM2.6";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:80:"http://virtuemart.net/news/latest-news/456-virtuemart-are-proud-to-release-vm2-6";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:80:"http://virtuemart.net/news/latest-news/456-virtuemart-are-proud-to-release-vm2-6";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:15498:"<div class="feed-description"><p><a href="http://virtuemart.net/#vm2.6">Release of VirtueMart 2.6</a>, <a href="http://virtuemart.net/#vm3">VirtueMart 3 for Joomla 3 </a>is coming soon. New:<a href="http://virtuemart.net/#download"> Full Installer</a>&nbsp;including Joomla and VirtueMart.&nbsp;</p>
 <p class="box-warning"><a href="http://virtuemart.net/#requirements">New minimum requirement for VirtueMart is <strong>php 5.3.10</strong></a></p>
 <h2><a name="vm2.6"></a>Enhanced Features:</h2>
 <p>With so many changes over the past couple of years, we noticed that many small and big features have been added to the core of VirtueMart. Some of these have been provided by 3rd party developers, whilst others were added as workarounds to remove/avoid bugs, or to complete a feature, which combined with our increased experience has translated into many more general and useful functions.</p>
@@ -295,45 +345,52 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 <p>- reviews emails: not sending an email when the review has not been saved.<br />- a lot of minors, little fallbacks, small completions, added a missing returns, added initializing of a variable ....<br />- replaced deprecated key_exists by array_key_exists</p>
 <p><span style="color: #ffffff;"><a name="download"><span style="color: #ffffff;">Download</span></a></span></p>
 <p><!-- START: Articles Anywhere --><h1>Download VirtueMart now!</h1>
-<p>VirtueMart is a powerful free ecommerce component for <a href="http://joomla.org">Joomla!®</a>. Easy to use for beginners and experts, it offers thousands of built in <a href="http://virtuemart.net/index.php?option=com_content&amp;view=article&amp;id=455&amp;Itemid=100010">features</a> to create your store professionally in some minutes.</p>
-<p>VirtueMart 2.6.8 is the latest stable version available. It is compatible with<strong> Joomla! 2.5</strong>.</p>
+<p>VirtueMart is a powerful free ecommerce component for <a href="http://joomla.org">Joomla!®</a>. Easy to use for beginners and experts, it offers thousands of built in <a href="http://virtuemart.net/index.php?option=com_content&amp;view=article&amp;id=455&amp;Itemid=100010">features</a> to quickly install your professional store.</p>
+<p>VirtueMart 2.6.10 is the latest stable version available. It is compatible with<strong> Joomla! 2.5</strong>.</p>
 <div class="frontpage-features" style="text-align: center;">
-<h3><a name="download">VirtueMart is an Open source project, and is free for download</a></h3>
+	<h3><a name="download">VirtueMart is an Open source project, and is free for download</a>
+	</h3>
 </div>
 <div class="special-download">
-<p style="text-align: center;"><a href="http://dev.virtuemart.net/attachments/download/765/com_virtuemart.2.6.8_extract_first.zip" class="button-primary">DOWNLOAD NOW<br /> VirtueMart component (core and AIO) only</a></p>
+	<p style="text-align: center;"><a href="http://dev.virtuemart.net/attachments/download/786/com_virtuemart.2.6.10_extract_first.zip" class="button-primary">DOWNLOAD NOW<br /> VirtueMart component (core and AIO) only</a>
+	</p>
 </div>
 <div class="special-download">
-<p style="text-align: center;"><a href="http://dev.virtuemart.net/attachments/download/768/VirtueMart2.6.8_Joomla_2.5.24-Stable-Full_Package.zip" class="button-primary">DOWNLOAD NOW <br />Full installer includes Joomla with VirtueMart installed</a></p>
+	<p style="text-align: center;"><a href="http://dev.virtuemart.net/attachments/download/787/VirtueMart2.6.10_Joomla_2.5.24-Stable-Full_Package.zip" class="button-primary">DOWNLOAD NOW <br />Full installer includes Joomla with VirtueMart installed</a>
+	</p>
+</div>
+<div class="special-download">
+	<p style="text-align: center;"><a href="http://dev.virtuemart.net/attachments/download/800/com_virtuemart.2.9.9c_extract_first.zip" class="button-primary">DOWNLOAD VM3 NOW <br />VirtueMart 3 Release Candidate (2.9.9c core and AIO)</a>
+	</p>
 </div>
 <ul>
-<li class="info"><a href="http://virtuemart.net/community/translations/virtuemart">Download your language pack</a></li>
-<li class="info"><a href="http://dev.virtuemart.net/projects/virtuemart/files">Download older versions of VirtueMart</a></li>
+	<li class="info"><a href="http://virtuemart.net/community/translations/virtuemart">Download your language pack</a></li>
+	<li class="info"><a href="http://dev.virtuemart.net/projects/virtuemart/files">Download older versions of VirtueMart</a></li>
 </ul>
 <h3>How to start</h3>
 <p><strong>You are new to Joomla and VirtueMart or you don't have Joomla already installed?</strong> we recommend to download the Full installer:</p>
 <ol>
-<li>Unzip the downloaded archive</li>
-<li>Move the unzipped archive to your web folder</li>
-<li>Open your browser and enter the URL of you website</li>
-<li>The installation process starts. Follow the instructions.</li>
+	<li>Unzip the downloaded archive</li>
+	<li>Move the unzipped archive to your web folder</li>
+	<li>Open your browser and enter the URL of you website</li>
+	<li>The installation process starts. Follow the instructions.</li>
 </ol>
 <p><strong>You already have Joomla installed ?</strong> Download VirtueMart component (core and AIO)</p>
 <ol>
-<li>Unzip the downloaded archive</li>
-<li>Install first the VirtueMart core component via the Joomla installer (com_virtuemart.w.x.y.zip)</li>
-<li>Install the VirtueMart&nbsp;AIO component. It contains VirtueMart plugins and modules (com_virtuemart_ext_aio.w.x.y.zip)</li>
+	<li>Unzip the downloaded archive</li>
+	<li>Install first the VirtueMart core component via the Joomla installer (com_virtuemart.w.x.y.zip)</li>
+	<li>Install the VirtueMart&nbsp;AIO component. It contains VirtueMart plugins and modules (com_virtuemart_ext_aio.w.x.y.zip)</li>
 </ol>
 <p>More detailed instructions can be found here:&nbsp;<a href="http://docs.virtuemart.net/tutorials/30-installation-migration-upgrade-vm-2/80-installation-of-virtuemart-2">installation instructions</a>.</p>
 <p>You need more help? Visit our forum section about <a href="http://forum.virtuemart.net/index.php?board=115.0">Installation, Migration &amp; Upgrade VM 2</a>.</p>
 <h3>Features</h3>
 <p>VirtueMart includes natively a very important list of features such as:</p>
 <ul class="check">
-<li>Complex product easily created</li>
-<li>Easy Store Management</li>
-<li>Powerful SEO features</li>
-<li>Marketing and promotions tools included</li>
-<li>Numerous payment providers integrated</li>
+	<li>Complex product easily created</li>
+	<li>Easy Store Management</li>
+	<li>Powerful SEO features</li>
+	<li>Marketing and promotions tools included</li>
+	<li>Numerous payment providers integrated</li>
 </ul>
 <p>Discover <a href="http://virtuemart.net/index.php?option=com_content&amp;view=article&amp;id=455&amp;Itemid=100010">all the features</a>, and try <a href="http://virtuemart.net/index.php?option=com_content&amp;view=article&amp;id=145&amp;Itemid=97">our demo</a>.</p>
 <h3>Requirements</h3>
@@ -341,22 +398,26 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 <h3>Hosting</h3>
 <p>Hosting is an important part of the success of your business. VirtueMart has selected some hosts companies for their performance specialized in hosting VirtueMart shops:</p>
 <div class="clearfix" style="text-align: left;"><a href="https://partners.a2hosting.com/solutions.php?id=4268&amp;url=453"><img style="margin-right: 10px; margin-bottom: 10px; float: left;" src="http://virtuemart.net/images/sobipro/entries/1905/a2%20hosting%20logo.png" alt="a2 hosting logo" height="45" width="171" /></a>
-<div class="bfc-o">High performance VirtueMart Hosting featuring 300% faster hosting than the competition on our SwiftServer SSDs! A2 Hosting is even a Global Joomla Sponsor and their <strong>24/7 Guru Crew Support team will install VirtueMart for you!<br /></strong> <a href="http://virtuemart.net/partners/links/1905-a2-hosting">More about A2 hosting</a> <br /><a href="https://partners.a2hosting.com/solutions.php?id=4268&amp;url=453">Sign Up Now with A2 hosting</a></div>
+	<div class="bfc-o">High performance VirtueMart Hosting featuring 300% faster hosting than the competition on our SwiftServer SSDs! A2 Hosting is even a Global Joomla Sponsor and their <strong>24/7 Guru Crew Support team will install VirtueMart for you!<br /></strong><a href="http://virtuemart.net/partners/links/1905-a2-hosting">More about A2 hosting</a><br /><a href="https://partners.a2hosting.com/solutions.php?id=4268&amp;url=453">Sign Up Now with A2 hosting</a>
+	</div>
 </div>
 <p>&nbsp;</p>
 <div class="clearfix"><a href="http://ccp.cloudaccess.net/aff.php?aff=2447"><img src="http://virtuemart.net/images/sobipro/entries/991/thumb_1.png" alt="thumb 1" style="margin-right: 15px; margin-bottom: 15px; float: left;" height="59" width="165" /></a>
-<div class="bfc-o">Joomla! Software as a Service - Application and Hosting Support all in One Package. We specialize in Joomla! hosting and support.&nbsp;<br /><a href="http://virtuemart.net/partners/links/991-cloudaccessnet">More about Cloudaccess</a><br /> <a href="http://ccp.cloudaccess.net/aff.php?aff=2447">Sign Up Now with Cloudaccess</a></div>
+	<div class="bfc-o">Joomla! Software as a Service - Application and Hosting Support all in One Package. We specialize in Joomla! hosting and support.&nbsp;<br /><a href="http://virtuemart.net/partners/links/991-cloudaccessnet">More about Cloudaccess</a><br /><a href="http://ccp.cloudaccess.net/aff.php?aff=2447">Sign Up Now with Cloudaccess</a>
+	</div>
 </div>
 <p>&nbsp;</p>
 <div class="clearfix"><a href="http://www.joomla100.com/"><img style="margin-right: 15px; margin-bottom: 15px; float: left;" src="http://virtuemart.net/images/sobipro/entries/1915/thumb_joomla100.com.PNG" alt="thumb joomla100.com" height="67" width="166" /></a>
-<div class="bfc-o">Unser Shop-Paket ist ideal für Website-Betreiber, die im Internet einen Shop betreiben oder ihren Besuchern einen Katalog mit Produkten präsentieren möchten. In dieses Paket haben wir für Sie den VirtueMart Webshop mit Joomla 2.5 und VM 2.0 (inkl. kostenlosem Template eines VirtueMart-Entwicklers) integriert.&nbsp;<br /><a href="http://virtuemart.net/partners/links/1915-joomla100com">More about Joomla100.com</a><br /><a href="http://www.joomla100.com/">Sign Up Now with Joomla100</a></div>
+	<div class="bfc-o">Unser Shop-Paket ist ideal für Website-Betreiber, die im Internet einen Shop betreiben oder ihren Besuchern einen Katalog mit Produkten präsentieren möchten. In dieses Paket haben wir für Sie den VirtueMart Webshop mit Joomla 2.5 und VM 2.0 (inkl. kostenlosem Template eines VirtueMart-Entwicklers) integriert.&nbsp;<br /><a href="http://virtuemart.net/partners/links/1915-joomla100com">More about Joomla100.com</a><br /><a href="http://www.joomla100.com/">Sign Up Now with Joomla100</a>
+	</div>
 </div>
 <p>&nbsp;</p>
-<div class="clearfix"><a href="http://www.siteground.com/friends.htm?referrer_id=6953838"><img style="margin-right: 15px; margin-bottom: 15px; float: left;" src="http://virtuemart.net/images/sobipro/entries/1990/img_SiteGround.Com_Inc._Logo.png" alt="thumb siteground.com/" height="67" width="166" /></a>
-<div class="bfc-o">If you have chosen to use VirtueMart shopping cart addon for Joomla to build your online shop, you can count on our unique handmade hosting solution. We provide multiple server locations, free CDN and advanced caching options to make both yours and your customers’ experience with VirtueMart really fast and enjoyable. We also make sure that your VirtueMart website is safer and better supported than anywhere else!<br /><a href="http://virtuemart.net/partners/links/1990-site-ground">More about Siteground.com</a><br /><a href="http://www.siteground.com/friends.htm?referrer_id=6953838">Sign Up Now with Siteground</a></div>
+<div class="clearfix"><a href="http://www.siteground.com/index.htm?afcode=b036ea05a0d8e71844386ef0e831ec41"><img style="margin-right: 15px; margin-bottom: 15px; float: left;" src="http://virtuemart.net/images/sobipro/entries/1990/img_SiteGround.Com_Inc._Logo.png" alt="thumb siteground.com/" height="67" width="166" /></a>
+	<div class="bfc-o">If you have chosen to use VirtueMart shopping cart addon for Joomla to build your online shop, you can count on our unique handmade hosting solution. We provide multiple server locations, free CDN and advanced caching options to make both yours and your customers’ experience with VirtueMart really fast and enjoyable. We also make sure that your VirtueMart website is safer and better supported than anywhere else!<br /><a href="http://virtuemart.net/partners/links/1990-site-ground">More about Siteground.com</a><br /><a href="http://www.siteground.com/index.htm?afcode=b036ea05a0d8e71844386ef0e831ec41">Sign Up Now with Siteground</a>
+	</div>
 </div>
 <p>&nbsp;</p><!-- END: Articles Anywhere -->
-<p>&nbsp;</p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:26:"milbo@gmx.de (Max Milbers)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 07 Apr 2014 21:39:02 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:6;a:6:{s:4:"data";s:31:"
+<p>&nbsp;</p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:26:"milbo@gmx.de (Max Milbers)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 07 Apr 2014 21:39:02 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:7;a:6:{s:4:"data";s:31:"
 			
 			
 			
@@ -394,7 +455,7 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 <li>PayPal Express Checkout order link fixed</li>
 <li>Obsolete usergroups files removed</li>
 </ul>
-<h2><a class="button-primary" href="http://dev.virtuemart.net/attachments/download/670/com_virtuemart.2.0.26a_extract_first.zip">Download VirtueMart 2.0.26a</a></h2></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:26:"milbo@gmx.de (Max Milbers)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 19 Dec 2013 22:10:46 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:7;a:6:{s:4:"data";s:31:"
+<h2><a class="button-primary" href="http://dev.virtuemart.net/attachments/download/670/com_virtuemart.2.0.26a_extract_first.zip">Download VirtueMart 2.0.26a</a></h2></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:26:"milbo@gmx.de (Max Milbers)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 19 Dec 2013 22:10:46 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:8;a:6:{s:4:"data";s:31:"
 			
 			
 			
@@ -457,7 +518,7 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 <li>All VM errors are logged</li>
 <li>Heidelpay:&nbsp;switch on sepa for direct debit. You can now use IBan and Bic, instead of account and bank no.</li>
 </ul>
-<h2><a class="button-primary" href="http://dev.virtuemart.net/attachments/download/669/com_virtuemart.2.0.26_extract_first.zip">Download VirtueMart 2.0.26</a></h2></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 13 Dec 2013 16:34:41 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:8;a:6:{s:4:"data";s:31:"
+<h2><a class="button-primary" href="http://dev.virtuemart.net/attachments/download/669/com_virtuemart.2.0.26_extract_first.zip">Download VirtueMart 2.0.26</a></h2></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 13 Dec 2013 16:34:41 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:9;a:6:{s:4:"data";s:31:"
 			
 			
 			
@@ -475,19 +536,4 @@ a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"
 <p>We are proud to announce that effective today, Klarna Checkout is available for VirtueMart!</p>
 <h3>Klarna Checkout</h3>
 <p>Klarna Checkout is the revolutionary payment solution that changes the way the world shops online. With Klarna Checkout, you can offer your customers all the popular payment methods in one payment solution. Ingeniously simple and friction free. Klarna Checkout is today available for Sweden, Norway and Finland.</p>
-<p class="feed-readmore"><a target="_blank" href ="/news/latest-news/450-virtuemart-2-0-24a-includes-klarna-checkout">Read More...</a></p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 15 Nov 2013 17:14:56 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:9;a:6:{s:4:"data";s:31:"
-			
-			
-			
-			
-			
-			
-			
-		";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:7:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:56:"VirtueMart 2.0.24 is available - includes SOFORT Banking";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:97:"http://virtuemart.net/news/latest-news/449-virtuemart-2-0-24-is-available-includes-sofort-banking";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:97:"http://virtuemart.net/news/latest-news/449-virtuemart-2-0-24-is-available-includes-sofort-banking";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:1672:"<div class="feed-description"><h2>New Release VirtueMart 2.0.24</h2>
-<p>This release is introducing SOFORT Banking, a popular payment solution in 10 european countries. We also integrated some bug fixes again, see the <a href="http://virtuemart.net/#ListBugs">list</a> below.</p>
-<h2>SOFORT Banking: The attractive payment method for you</h2>
-<p>Your customers simply pay in your online shop just as they are used to: by entering their familiar online banking login details and confirmation codes ensuring a maximum level of security. You will receive a real-time transaction confirmation immediately after the transfer has been listed.</p>
-<p><a href="https://www.sofort.com/eng-INT/"><img style="margin-right: 10px; margin-bottom: 10px; float: left;" src="https://www.sofort.com/var/sofort/storage/images/media/images/logos/sofort-ag-the-payment-network/651-9-ger-DE/SOFORT-AG-The-Payment-Network_header.png" alt="Sofort Banking" />SOFORT Banking</a> is a direct payment system and works like an automated advanced payment (by bank transfer) within seconds.</p>
-<p>When shopping online, your customer selects SOFORT Banking as a payment method. Then, your customer selects his/her country and enters the bank sort code into a securely encrypted payment wizard. Afterwards, the customer enters his/her online banking login details and confirms the credit transfer by entering a confirmation code.</p>
-<p>Your benefit: You will receive a real-time transaction confirmation that a transfer has been listed.</p>
-<p class="feed-readmore"><a target="_blank" href ="/news/latest-news/449-virtuemart-2-0-24-is-available-includes-sofort-banking">Read More...</a></p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:26:"milbo@gmx.de (Max Milbers)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Tue, 01 Oct 2013 15:55:17 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}s:27:"http://www.w3.org/2005/Atom";a:1:{s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:0:"";s:7:"attribs";a:1:{s:0:"";a:3:{s:3:"rel";s:4:"self";s:4:"type";s:19:"application/rss+xml";s:4:"href";s:61:"http://virtuemart.net/news/list-all-news?format=feed&type=rss";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}}}}}}s:4:"type";i:128;s:7:"headers";a:10:{s:4:"date";s:29:"Fri, 22 Aug 2014 10:55:12 GMT";s:6:"server";s:6:"Apache";s:3:"p3p";s:48:"CP=NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM";s:13:"cache-control";s:8:"no-cache";s:6:"pragma";s:8:"no-cache";s:10:"set-cookie";s:77:"9e647fd8d51d540064a09a04d5bcd417=ut2kulmogpnrdg8qkmr0r4he86; path=/; HttpOnly";s:4:"vary";s:15:"Accept-Encoding";s:16:"content-encoding";s:4:"gzip";s:14:"content-length";s:5:"17241";s:12:"content-type";s:34:"application/rss+xml; charset=utf-8";}s:5:"build";s:14:"20090627192103";}
+<p class="feed-readmore"><a target="_blank" href ="/news/latest-news/450-virtuemart-2-0-24a-includes-klarna-checkout">Read More...</a></p></div>";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:6:"author";a:1:{i:0;a:5:{s:4:"data";s:41:"valerie@virtuemart.net (Valérie Isaksen)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"category";a:1:{i:0;a:5:{s:4:"data";s:11:"Latest News";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 15 Nov 2013 17:14:56 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}s:27:"http://www.w3.org/2005/Atom";a:1:{s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:0:"";s:7:"attribs";a:1:{s:0:"";a:3:{s:3:"rel";s:4:"self";s:4:"type";s:19:"application/rss+xml";s:4:"href";s:61:"http://virtuemart.net/news/list-all-news?format=feed&type=rss";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}}}}}}s:4:"type";i:128;s:7:"headers";a:10:{s:4:"date";s:29:"Wed, 24 Sep 2014 09:29:53 GMT";s:6:"server";s:6:"Apache";s:3:"p3p";s:48:"CP=NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM";s:13:"cache-control";s:8:"no-cache";s:6:"pragma";s:8:"no-cache";s:10:"set-cookie";s:77:"9e647fd8d51d540064a09a04d5bcd417=ti6n03va0fl37o33ochk8brp97; path=/; HttpOnly";s:4:"vary";s:15:"Accept-Encoding";s:16:"content-encoding";s:4:"gzip";s:14:"content-length";s:5:"19381";s:12:"content-type";s:34:"application/rss+xml; charset=utf-8";}s:5:"build";s:14:"20090627192103";}
