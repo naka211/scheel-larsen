@@ -147,7 +147,7 @@ class AwoCouponVirtuemartCouponHandler extends AwoCouponEstoreCouponHandler {
 		
 	}
 	
-	protected function finalize_coupon($master_output) {
+	protected function finalize_coupon($master_output) { 
 		$session_array = $this->calc_coupon_session($master_output);
 		if(empty($session_array)) return false;
 		
