@@ -44,8 +44,7 @@ $amount = $order['details']['BT']->order_total * 100;
 $currency = 'DKK';
 $continueurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginResponseReceived&pm='.$pm.'&ordernumber='.$ordernumber.'&virtuemart_order_id='.$orderid;
 $cancelurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginUserPaymentCancel&on='.ordernumber.'&pm='.$pm;
-//$callbackurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginNotification&tmpl=component&sessionid='.$session->getId();
-$callbackurl = '';
+$callbackurl = $siteURL . 'index.php?option=com_virtuemart&view=pluginresponse&task=pluginNotification&tmpl=component&sessionid='.$session->getId();
                 
 $autocapture = '0';
 //$cardtypelock = 'dankort, danske-dk, mastercard, mastercard-dk, american-express, american-express-dk, diners, diners-dk, edankort, fbg1886, jcb, mastercard-debet-dk, nordea-dk, visa, visa-dk, visa-electron, visa-electron-dk';
