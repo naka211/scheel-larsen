@@ -113,7 +113,7 @@ padding: 20px; min-height: 280px; background-color: #f0a830; background-image: -
 .navbar-nav > li .sub h4 a {color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,.4);}
 
 
-.w_info {margin-left: 245px; width: 465px; margin-top: 10px;}
+.w_info {margin-left: 245px; width: 465px; margin-top: 10px; height:99px;}
 ul.info_company {float: left; width: 465px;}
 ul.info_company li {float: left; width: 155px; margin-bottom: 10px; background: url(../img/icon_check.png) no-repeat left center; padding-left: 20px; }
 .form-control {width: 327px; height: 32px; background-color: #fff; border: solid 1px #dcd6c0; border-radius: 0; font-style: italic;}
