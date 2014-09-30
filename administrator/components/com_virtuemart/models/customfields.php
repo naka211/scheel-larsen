@@ -701,6 +701,9 @@ class VirtueMartModelCustomfields extends VmModel {
 						$vendorId = $product->virtuemart_vendor_id;
 					}
 					$virtuemart_product_id = JRequest::getVar('virtuemart_product_id');
+					if(is_array($virtuemart_product_id)){
+						$virtuemart_product_id = $virtuemart_product_id[0];
+					}
 					/*$q = 'SELECT `virtuemart_media_id` as value,`file_title` as text FROM `#__virtuemart_medias` WHERE `published`=1
 					AND (`virtuemart_vendor_id`= "' . $vendorId . '" OR `shared` = "1")';*/
 					$q = 'SELECT m.virtuemart_media_id as value, m.file_title as text FROM #__virtuemart_medias as m INNER JOIN #__virtuemart_product_medias pm ON m.virtuemart_media_id = pm.virtuemart_media_id WHERE m.published=1 AND pm.virtuemart_product_id = '.$virtuemart_product_id.' AND (m.virtuemart_vendor_id= "' . $vendorId . '" OR m.shared = "1")';

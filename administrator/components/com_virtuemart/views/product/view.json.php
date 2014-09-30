@@ -87,7 +87,7 @@ class VirtuemartViewProduct extends JView {
 			$query .= 'order by `ordering` asc';
 			$this->db->setQuery($query);
 			$rows = $this->db->loadObjectlist();
-
+			
 			$html = array ();
 			foreach ($rows as $field) {
 				if ($field->field_type =='C' ){
