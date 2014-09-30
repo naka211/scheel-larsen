@@ -172,9 +172,11 @@ if (isset($this->product->customfields_fromParent)) { ?>
 			jQuery.each(data.value, function(index, value){
 				jQuery("#custom_field").append(value);
 				jQuery('#custom_field').trigger('sortupdate');
+				//T.Trung
+				nextCustom++
 			});
 		});
-		nextCustom++;
+		//nextCustom++;
 	});
 
 		jQuery('input#relatedproductsSearch').autocomplete({
