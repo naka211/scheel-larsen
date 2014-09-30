@@ -173,7 +173,8 @@ if (isset($this->product->customfields_fromParent)) { ?>
 				jQuery("#custom_field").append(value);
 				jQuery('#custom_field').trigger('sortupdate');
 				//T.Trung
-				nextCustom++
+				nextCustom++;
+				//T.Trung end
 			});
 		});
 		//nextCustom++;

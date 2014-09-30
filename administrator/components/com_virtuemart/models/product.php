@@ -1137,7 +1137,7 @@ class VirtueMartModelProduct extends VmModel {
 				if(!$this->listing){
 					$customfieldModel = VmModel::getModel ('Customfields');
 					$product->customfields = $customfieldModel->getproductCustomslist ($this->_id);
-	
+
 					if (empty($product->customfields) and !empty($product->product_parent_id)) {
 						//$product->customfields = $this->productCustomsfieldsClone($product->product_parent_id,true) ;
 						$product->customfields = $customfieldModel->getproductCustomslist ($product->product_parent_id, $this->_id);
