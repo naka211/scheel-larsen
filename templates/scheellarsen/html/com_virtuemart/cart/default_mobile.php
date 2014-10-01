@@ -211,7 +211,7 @@ if($this->cart->couponCode){
 			</form>
 			<!--wrapTotalPrice-->
 			<div class="graris">
-				<p>Har du en værdikode?</p>
+				<p>Har du et gavekort kan du indtaste din kode her.</p>
 				<div class="frm_coupon clearfix">
 					<form method="post" id="userForm" name="enterCouponCode" action="<?php echo JRoute::_('index.php'); ?>">
 						<input name="coupon_code" placeholder="Indtast koden her ...">
