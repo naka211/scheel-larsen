@@ -90,7 +90,7 @@ $alert=JText::sprintf ('COM_VIRTUEMART_WRONG_AMOUNT_ADDED', $step);
 		?>
 
 		<div class="addtocart-bar">
-
+			<input type="hidden" id="indexSelect" value="0" />
 <script type="text/javascript">
     
 jQuery(document).ready( function(){
@@ -98,6 +98,9 @@ jQuery(document).ready( function(){
     jQuery(".option.clearfix .product-field-type-S li").click(function() {
         var parent = jQuery(this).attr('parent-id');
         var index = items.index(this);
+		
+		jQuery('#indexSelect').val(index);
+		
         var newurl = jQuery(".product-field.product-field-type-M .product-field-display li[parent-id='" + parent + "']").eq(index).find("img").attr("src");
         newurl = newurl.replace("resized/", "");
         newurl = newurl.substr(0, newurl.lastIndexOf("_"))+newurl.substr(newurl.lastIndexOf("."));
@@ -107,7 +110,36 @@ jQuery(document).ready( function(){
         jQuery(".product_img #btnZoomIcon").attr("href",newurl);
         jQuery(".product_img .img_larg .imgZoom img").attr("src",newurl);
         jQuery(".product-field.product-field-type-M .product-field-display li[parent-id='" + parent + "']").eq(index).find("input").attr("checked","checked");
-    });    
+    });
+	
+	//T.Trung
+	changePrice = function(){
+		var parent = jQuery(".option.clearfix .product-field-type-S li").attr('parent-id');
+        var index = jQuery('#indexSelect').val();
+		
+		var old_price = jQuery(".old_price1 li[parent-id='" + parent + "']").eq(index).html();
+		
+		if(old_price){
+			old_price1 = formatMoney(Number(old_price));
+			var old_price_text = 'Førpris: ' + old_price1 + ' DKK';
+			jQuery('span.price_old').html(old_price_text);
+			
+			var new_price = jQuery('span.PricepriceWithoutTax').html();
+			new_price = new_price.replace(' DKK', '');
+			new_price = new_price.replace('.', '');
+
+			var save = formatMoney(Number(old_price) - Number(new_price));
+			var save_text = '(De sparer: '+save+' DKK) ';
+			jQuery('p.price_sale').html(save_text);		
+		}
+	}
+	
+	formatMoney = function(num){
+		var p = num.toFixed(2).split(".");
+		return p[0].split("").reverse().reduce(function(acc, num, i, orig) {
+			return  num + (i && !(i % 3) ? "." : "") + acc;
+		}, "") + "," + p[1];
+	}
 });
 jQuery('.product-field-type-M').parent().hide();
 
