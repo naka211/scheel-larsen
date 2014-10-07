@@ -19,6 +19,8 @@ if(typeof Virtuemart === "undefined")
 							if (value!=0) prices.find("span.Price"+key).show().html(value);
 							else prices.find(".Price"+key).html(0).hide();
 						}
+						//T.Trung
+						changePrice();
 					});
 				return false; // prevent reload
 			},
