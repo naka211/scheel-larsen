@@ -52,6 +52,49 @@ class VirtuemartControllerProduct extends VmController {
         $db->setQuery($query);
         $db->query();
     }
+	
+	function createRule($value){
+		 $model = VmModel::getModel("calc");
+         $data_arr = array(
+			"calc_name" => "-".$value." DKK" ,
+			"published" => 1,
+			"shared" => 0,
+			"ordering" => 0,
+			"calc_descr" => "",
+			"calc_kind" => "DBTax",
+			"calc_value_mathop" => "-",
+			"calc_value" => abs($value),
+			"calc_currency" => 40,
+			"calc_shopper_published" => 1,
+			"calc_vendor_published" => 1,
+			"publish_up" => "",
+			"publish_down" => "",
+			"virtuemart_vendor_id" => 1,
+			"virtuemart_calc_id" => 0,
+			"task" => "save",
+			"option" => "com_virtuemart",
+			"boxchecked" => 0,
+			"controller" => "calc",
+			"view" => "calc"
+		 );
+		 $token=JSession::getFormToken();
+		 $data_arr[$token] = 1;
+		 $model->store($data_arr);
+		 return $data_arr['virtuemart_calc_id'];
+    }
+	
+	function createRules5to200(){
+		for($i=5; $i<=200; $i=$i+5){
+			$this->createRule($i);
+		}
+	}
+	
+	function createRules300to10000(){
+		for($i=300; $i<=10000; $i=$i+100){
+			$this->createRule($i);
+		}
+	}
+	 
 	function __construct() {
 		parent::__construct('virtuemart_product_id');
 		$this->addViewPath(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_virtuemart' . DS . 'views');
