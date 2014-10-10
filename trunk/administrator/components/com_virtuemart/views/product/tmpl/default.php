@@ -20,6 +20,8 @@
 defined('_JEXEC') or die('Restricted access');
 AdminUIHelper::startAdminArea($this);
 
+$app = JFactory::getApplication ();
+
 /* Load some variables */
 $search_date = JRequest::getVar('search_date', null); // Changed search by date
 $now = getdate();
@@ -46,7 +48,8 @@ if ($product_parent_id=JRequest::getInt('product_parent_id', false))   $col_prod
 					?>
 
 				<?php echo JText::_('COM_VIRTUEMART_PRODUCT_LIST_SEARCH_BY_DATE') ?>&nbsp;
-					<input type="text" value="<?php echo JRequest::getVar('filter_product'); ?>" name="filter_product" size="25" />
+					<!--<input type="text" value="<?php echo JRequest::getVar('filter_product'); ?>" name="filter_product" size="25" />-->
+					<input type="text" value="<?php echo $app->getUserStateFromRequest( "com_virtuemart.filter_product" ); ?>" name="filter_product" size="25" />
 				<?php
 					echo $this->lists['search_type'];
 					echo $this->lists['search_order'];
