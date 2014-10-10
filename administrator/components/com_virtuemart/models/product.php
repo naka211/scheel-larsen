@@ -133,19 +133,24 @@ class VirtueMartModelProduct extends VmModel {
 	 * @author Max Milbers
 	 */
 	function updateRequests () {
-
+		$app = JFactory::getApplication ();
+		$option = 'com_virtuemart';
+		$view = 'product';
+		
 		$this->keyword = vRequest::uword ('keyword', "", ' ,-,+,.,_,#,/');
+		//$this->keyword = $app->getUserStateFromRequest( $option.".filter_product" );
+		
 		if ($this->keyword == "") {
 			$this->keyword = vRequest::uword ('filter_product', "", ' ,-,+,.,_,#,/');
+			//$app->setUserState( $option.'.filter_product', $this->keyword );
 			JRequest::setVar('filter_product',$this->keyword);
 			JRequest::setVar('keyword',$this->keyword);
 		} else {
 			JRequest::setVar('keyword',$this->keyword);
 		}
 
-		$app = JFactory::getApplication ();
-		$option = 'com_virtuemart';
-		$view = 'product';
+		
+		
 
 		if ($app->isSite ()) {
 			$filter_order = JRequest::getString ('orderby', "0");
