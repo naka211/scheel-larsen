@@ -137,20 +137,25 @@ class VirtueMartModelProduct extends VmModel {
 		$option = 'com_virtuemart';
 		$view = 'product';
 		
-		$this->keyword = vRequest::uword ('keyword', "", ' ,-,+,.,_,#,/');
-		//$this->keyword = $app->getUserStateFromRequest( $option.".filter_product" );
+		/*$this->keyword = vRequest::uword ('keyword', "", ' ,-,+,.,_,#,/');
 		
 		if ($this->keyword == "") {
 			$this->keyword = vRequest::uword ('filter_product', "", ' ,-,+,.,_,#,/');
-			//$app->setUserState( $option.'.filter_product', $this->keyword );
 			JRequest::setVar('filter_product',$this->keyword);
 			JRequest::setVar('keyword',$this->keyword);
 		} else {
 			JRequest::setVar('keyword',$this->keyword);
+		}*/
+		if(vRequest::uword ('filter_product', "", ' ,-,+,.,_,#,/')){
+			$app->setUserState( $option.'.filter_product', vRequest::uword ('filter_product', "", ' ,-,+,.,_,#,/') );
+			$this->keyword = vRequest::uword ('filter_product', "", ' ,-,+,.,_,#,/');
+			JRequest::setVar('filter_product',$this->keyword);
+			JRequest::setVar('keyword',$this->keyword);
+		} else {
+			$this->keyword = $app->getUserStateFromRequest( $option.".filter_product" );
+			JRequest::setVar('filter_product',$this->keyword);
+			JRequest::setVar('keyword',$this->keyword);
 		}
-
-		
-		
 
 		if ($app->isSite ()) {
 			$filter_order = JRequest::getString ('orderby', "0");
