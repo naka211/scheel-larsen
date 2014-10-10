@@ -53,7 +53,7 @@ class VirtuemartControllerProduct extends VmController {
         $db->query();
     }
 	
-	function createRule($value){
+	/*function createRule($value){
 		 $model = VmModel::getModel("calc");
          $data_arr = array(
 			"calc_name" => "-".$value." DKK" ,
@@ -93,7 +93,7 @@ class VirtuemartControllerProduct extends VmController {
 		for($i=300; $i<=10000; $i=$i+100){
 			$this->createRule($i);
 		}
-	}
+	}*/
 	 
 	function __construct() {
 		parent::__construct('virtuemart_product_id');
