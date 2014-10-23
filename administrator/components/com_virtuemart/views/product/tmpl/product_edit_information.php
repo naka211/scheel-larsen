@@ -174,18 +174,27 @@ img#type_image_src {
                 <select id="type_image" name="type_image" onChange="setImage(this.value)">
                     <option value=""><?php echo $select_text;?></option>
                     <option value="3x3 parasol" <?php if($this->product->type_image == '3x3 parasol') echo 'selected'?>>3x3 parasol</option>
-                    <!--<option value="Borde2" <?php if($this->product->type_image == 'Borde2') echo 'selected'?>>Borde2</option>
-                    <option value="Borde3" <?php if($this->product->type_image == 'Borde3') echo 'selected'?>>Borde3</option>
-                    <option value="Borde4" <?php if($this->product->type_image == 'Borde4') echo 'selected'?>>Borde4</option>
-                    <option value="Krukker1" <?php if($this->product->type_image == 'Krukker1') echo 'selected'?>>Krukker1</option>
-                    <option value="Krukker2" <?php if($this->product->type_image == 'Krukker2') echo 'selected'?>>Krukker2</option>
-                    <option value="Krukker3" <?php if($this->product->type_image == 'Krukker3') echo 'selected'?>>Krukker3</option>
-                    <option value="Krukker4" <?php if($this->product->type_image == 'Krukker4') echo 'selected'?>>Krukker4</option>
-                    <option value="Parasoller1" <?php if($this->product->type_image == 'Parasoller1') echo 'selected'?>>Parasoller1</option>
-                    <option value="Parasoller2" <?php if($this->product->type_image == 'Parasoller2') echo 'selected'?>>Parasoller2</option>
-                    <option value="Parasoller3" <?php if($this->product->type_image == 'Parasoller3') echo 'selected'?>>Parasoller3</option>
-                    <option value="Sofaer" <?php if($this->product->type_image == 'Sofaer') echo 'selected'?>>Sofaer</option>
-                    <option value="Stole" <?php if($this->product->type_image == 'Stole') echo 'selected'?>>Stole</option>-->
+                    <option value="Aflangt bord" <?php if($this->product->type_image == 'Aflangt bord') echo 'selected'?>>Aflangt bord</option>
+                    <option value="Baenk" <?php if($this->product->type_image == 'Baenk') echo 'selected'?>>Baenk</option>
+                    <option value="Bord Rundt" <?php if($this->product->type_image == 'Bord Rundt') echo 'selected'?>>Bord Rundt</option>
+                    <option value="Firkantet bord" <?php if($this->product->type_image == 'Firkantet bord') echo 'selected'?>>Firkantet bord</option>
+                    <option value="Firkantet krukke" <?php if($this->product->type_image == 'Firkantet krukke') echo 'selected'?>>Firkantet krukke</option>
+                    <option value="Krukke rund" <?php if($this->product->type_image == 'Krukke rund') echo 'selected'?>>Krukke rund</option>
+                    <option value="Krukkefad" <?php if($this->product->type_image == 'Krukkefad') echo 'selected'?>>Krukkefad</option>
+                    <option value="Lounge bord firkantet" <?php if($this->product->type_image == 'Lounge bord firkantet') echo 'selected'?>>Lounge bord firkantet</option>
+                    <option value="Lounge stol" <?php if($this->product->type_image == 'Lounge stol') echo 'selected'?>>Lounge stol</option>
+                    <option value="Loungebord aflangt" <?php if($this->product->type_image == 'Loungebord aflangt') echo 'selected'?>>Loungebord aflangt</option>
+                    <option value="Loungesofa" <?php if($this->product->type_image == 'Loungesofa') echo 'selected'?>>Loungesofa</option>
+                    <option value="Markise" <?php if($this->product->type_image == 'Markise') echo 'selected'?>>Markise</option>
+					<option value="Ovalt bord" <?php if($this->product->type_image == 'Ovalt bord') echo 'selected'?>>Ovalt bord</option>
+					<option value="Parasolfod firkantet" <?php if($this->product->type_image == 'Parasolfod firkantet') echo 'selected'?>>Parasolfod firkantet</option>
+					<option value="Parasolfod rund" <?php if($this->product->type_image == 'Parasolfod rund') echo 'selected'?>>Parasolfod rund</option>
+					<option value="Pavillion" <?php if($this->product->type_image == 'Pavillion') echo 'selected'?>>Pavillion</option>
+					<option value="Rund parasol" <?php if($this->product->type_image == 'Rund parasol') echo 'selected'?>>Rund parasol</option>
+					<option value="Sidehaengt parasol" <?php if($this->product->type_image == 'Sidehaengt parasol') echo 'selected'?>>Sidehaengt parasol</option>
+					<option value="Skammel" <?php if($this->product->type_image == 'Skammel') echo 'selected'?>>Skammel</option>
+					<option value="Solvogn" <?php if($this->product->type_image == 'Solvogn') echo 'selected'?>>Solvogn</option>
+					<option value="Stol" <?php if($this->product->type_image == 'Stol') echo 'selected'?>>Stol</option>
                 </select>
             </td>
             <td>
