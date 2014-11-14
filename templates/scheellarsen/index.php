@@ -122,7 +122,16 @@ JHtml::_('behavior.formvalidation');
                     if(result == 1)
                         Virtuemart.productUpdate();
                 });
-            }            
+            }
+			
+			$('input#subscribe_email').on('change invalid', function() {
+				var textfield = $(this).get(0);
+				textfield.setCustomValidity('');
+				
+				if (!textfield.validity.valid) {
+				  textfield.setCustomValidity('Venligst indtast din e-mail');  
+				}
+			});         
         });
     </script>
     </head>
@@ -146,7 +155,10 @@ ga('send', 'pageview');
     }(document, 'script', 'facebook-jssdk'));</script>
         <header class="clearfix">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="container relative"> <a class="navbar-brand" href="index.php"><img src="<?php echo $tmpl;?>img/logo.png" alt="logo"></a>
+                <div class="container relative">
+				<div class="ads_left"></div>
+				<div class="ads_right"></div>
+				<a class="navbar-brand" href=""><img src="<?php echo $tmpl;?>img/logo.png" alt="logo"></a>
                     <div class="w_info clearfix"> {module Information}
                         {module Search product} </div>
                     <?php 
@@ -214,7 +226,9 @@ else{
                                         </table>
                                     </div>
                                 </div>
-                                <!--<a class="bntCheckout btn2" href="<?php echo JURI::base().'user/editaddresscheckoutBT.html';?>">GÅ TIL KASSEN</a>--> <a class="bntBasket btn2" href="index.php?option=com_virtuemart&view=cart">SE VAREKURV</a> </div>
+                                <a class="bntBasket btn2" href="index.php?option=com_virtuemart&view=cart">SE VAREKURV</a>
+								<a id="btnClose-cart2" class="btnShopvidere fr hover" style="margin:20px 10px 0 0;" href="javascript:void(0);"></a>
+								</div>
                             <!--.list-cart--> 
                         </div>
                     </div>
@@ -286,7 +300,7 @@ else{
                         </div>
                         <div class="w430 fr mt5">
                             <form action="index.php" method="post" class="form-validate">
-                                <input type="text" placeholder="Indtast din e-mail" class="fl required validate-email" name="email">
+                                <input type="text" placeholder="Indtast din e-mail" class="fl required validate-email" name="email" id="subscribe_email">
                                 <button type="submit" class="btnSubscribe btn2 fl ml5" style="cursor:pointer; border:none;">Tilmeld</button>
                                 <input type="hidden" name="option" value="com_virtuemart" />
                                 <input type="hidden" name="controller" value="virtuemart" />
@@ -325,5 +339,24 @@ $(document).ready(function() {
       </div>
        <a id="close-reveal-modal" class="close-reveal-modal"></a>
     </div>
+	<!-- Google-kode til remarketingtag -->
+<!--------------------------------------------------
+Remarketingtags må ikke knyttes til personligt identificerbare oplysninger eller placeres på sider med relation til følsomme kategorier. Du finder flere oplysninger og en vejledning i, hvordan tags opsættes, på: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1016839084;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1016839084/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
 </body>
 </html>

@@ -56,7 +56,7 @@ border-color: red !important;
 						<textarea placeholder="Din besked" name="jform[contact_message]" class="txtArea"></textarea>
 						<?php
 						  require_once('recaptchalib.php');
-						  $publickey = "6LeznvkSAAAAAFtnSP0wmbHyPrp643iRsMuY9_Zw"; // you got this from the signup page
+						  $publickey = "6Lf5nPkSAAAAAANw6ZL8A7SWzXuiBYOQ0RyTbzhf"; // you got this from the signup page
 						  echo recaptcha_get_html($publickey);
 						?>
 						<div style="height:10px"></div>

@@ -101,6 +101,9 @@ jQuery(document).ready( function(){
 		
 		jQuery('#indexSelect').val(index);
 		
+		var outofstock_array = JSON.parse("[" + jQuery('#outofstock').val() + "]");
+		changeImage(outofstock_array[index]);
+		
         var newurl = jQuery(".product-field.product-field-type-M .product-field-display li[parent-id='" + parent + "']").eq(index).find("img").attr("src");
         newurl = newurl.replace("resized/", "");
         newurl = newurl.substr(0, newurl.lastIndexOf("_"))+newurl.substr(newurl.lastIndexOf("."));
@@ -134,6 +137,15 @@ jQuery(document).ready( function(){
 		}
 	}
 	
+	changeImage = function(outofstock){
+		if(outofstock){
+			jQuery(".fr.mt10 img").attr("src", "<?php echo JURI::base();?>templates/scheellarsen/img/icon_del.png");
+		} else {
+			jQuery(".fr.mt10 img").attr("src", "<?php echo JURI::base();?>templates/scheellarsen/img/icon_checkgreen.png");
+		}
+		
+	}
+	
 	formatMoney = function(num){
 		var p = num.toFixed(2).split(".");
 		return p[0].split("").reverse().reduce(function(acc, num, i, orig) {
@@ -141,6 +153,18 @@ jQuery(document).ready( function(){
 		}, "") + "," + p[1];
 	}
 });
+/*var outofstock_array = JSON.parse("[" + jQuery('#outofstock').val() + "]");
+var index = 0;
+var checked = outofstock_array.indexOf(0)
+outofstock_array.forEach(function(entry) {
+	if(entry){
+		jQuery(".product-field-type-S .product-field-display li").eq(index).hide();
+	}
+	index++;
+});
+
+jQuery(".product-field-type-S .product-field-display input").eq(checked).prop('checked', true);*/
+
 jQuery('.product-field-type-M').parent().hide();
 
     function syncQty(obj){

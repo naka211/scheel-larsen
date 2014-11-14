@@ -111,7 +111,7 @@ $document->addScriptDeclaration ("
 $document->addStyleDeclaration ('#facebox .content {display: block !important; height: 480px !important; overflow: auto; width: 560px !important; }');
 
 ?>
-<div class="template2" style="margin-top:-30px;">
+<div class="template2" style="margin-top:-15px;">
     <div class="cart_page clearfix">
         <h2><?php echo JText::_ ('COM_VIRTUEMART_CART_TITLE'); ?></h2>
         <form method="post" id="checkoutForm" name="checkoutForm" action="<?php echo JRoute::_ ('index.php?option=com_virtuemart&view=cart' . $taskRoute, $this->useXHTML, $this->useSSL); ?>">
@@ -132,7 +132,7 @@ $document->addStyleDeclaration ('#facebox .content {display: block !important; h
 		<input type='hidden' name='view' value='cart'/>
 	</form>
         <?php if(count($this->cart->products)> 0){ ?>
-        <?php $continue_link = JRoute::_('index.php?option=com_virtuemart&view=category' . $categoryLink); ?>
+        <?php $continue_link = $_SERVER['HTTP_REFERER']; ?>
         <?php echo $this->loadTemplate ('coupon');?>
         <a class="btnShopvidere fl hover" href="<?php echo $continue_link ?>">Shop videre</a>
         <a class="btnCheckout fr hover" href="<?php echo JURI::base().'user/editaddresscheckoutBT.html';?>">Gå til kassen</a>
