@@ -109,7 +109,7 @@ if (empty($this->product)) {
 			<!--End#ppSizeguide-->
 			<?php }?>
 			<?php if(!empty($this->product->prices['discountAmount'])){?>
-			<h3><span class="price_old">Førpris: <?php echo $this->currency->priceDisplay($this->product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></span> (De sparer: <?php echo $this->currency->priceDisplay(abs($this->product->prices['discountAmount']),0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>)</h3>
+			<h3><span class="price_old">Førpris: <?php echo $this->currency->priceDisplay($this->product->prices['basePrice'],0,1.0,false,$this->currency->_priceConfig['basePrice'][1] );?></span> <span class="price_sale">(De sparer: <?php echo $this->currency->priceDisplay(abs($this->product->prices['discountAmount']),0,1.0,false,$this->currency->_priceConfig['discountAmount'][1] );?>)</span></h3>
 			<?php }?>
 			<div class="rownumber clearfix">
 				<div class="number">

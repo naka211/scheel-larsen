@@ -255,7 +255,7 @@ jQuery(document).ready(function(){
             <?php if($isGiftCard){?>
             var st_html = '<input class="input required" type="text" placeholder="Modtagerens fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Modtagerens efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Email på modtager* " name="st_email" id="st_email"><textarea class="textarea" placeholder="Evt. besked til modtageren: Her kan du skrive en lykønskning eller besked til modtageren" name="st_message1"></textarea>';
             <?php } else {?>
-            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip" maxlength="4"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone">';
+            var st_html = '<input class="input required" type="text" placeholder="Fornavn*" name="st_first_name" id="st_first_name"><input class="input required" type="text" placeholder="Efternavn*" name="st_last_name" id="st_last_name"><input class="input required" type="text" placeholder="Vejnavn*" name="st_street_name" id="st_street_name"><input class="input required" type="text" placeholder="Hus/gade nr.*" name="st_street_number" id="st_street_number"><input class="w75 fl input2 required" type="text" placeholder="Postnr.*" name="st_zip" id="st_zip"><input class="w203 fr input2" type="text" placeholder="Bynavn*" name="st_city" id="st_city"><input class="input required" type="text" placeholder="Telefon*" name="st_phone" id="st_phone">';
             <?php }?>
             jQuery(".w_Address").html(st_html);
             jQuery("#STsameAsBT").val("0");
@@ -304,7 +304,7 @@ jQuery(document).ready(function(){
 });
 </script>
 <form method="post" id="checkoutForm" name="userForm" class="form-validate" style="padding:0;border-top:none" action="index.php">
-<div class="template2 mb70" style="margin-top:-30px;">
+<div class="template2 mb70" style="margin-top:-15px;">
     <div class="checkout_page clearfix">
         <div class="w285 fl">
             <h2><span>1</span>Kundeoplysninger</h2>
@@ -458,6 +458,7 @@ jQuery(document).ready(function(){
         <input type="hidden" id="total" value="<?php echo $cart->pricesUnformatted['billTotal']?>" />
         <input type="hidden" id="shipFee" value=""/>
         <input type="hidden" id="pay3" name="" value=""/>
+		<input type="hidden" id="isGiftCard" name="isGiftCard" value="<?php if($isGiftCard) echo 1; else echo 0;?>"/>
         
         <input type="hidden" name="option" value="com_virtuemart"/>
         <input type="hidden" name="view" value="cart"/>

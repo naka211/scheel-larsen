@@ -45,3 +45,18 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 	?>
 	</ul>
 </div>
+<?php
+foreach ($this->product->customfieldsSorted[$this->position] as $field) {
+	if ( $field->is_hidden ) //OSP http://forum.virtuemart.net/index.php?topic=99320.0
+		continue;
+	if ($field->display) {
+		if($field->field_type == "P")
+			continue;
+		if($field->field_type == "B"){
+			$oos[] = $field->custom_value;
+		} 
+	}
+}
+$oos_str = implode(",", $oos);
+?>
+<input type="hidden" id="outofstock" value="<?php echo $oos_str;?>" />
