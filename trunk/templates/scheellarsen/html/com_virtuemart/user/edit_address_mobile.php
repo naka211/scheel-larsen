@@ -326,9 +326,9 @@ function showDelivery(){
 					<label>
 						<input class="lbradio" name="virtuemart_paymentmethod_id" type="radio" checked="checked" value="1" id="pay1">
 						<img class="cart-icon" src="templates/scheellarsen/mobile/img/cart-ck.png"></label>
-					<label>
+					<!--<label>
 						<input class="lbradio" name="virtuemart_paymentmethod_id" type="radio" value="2" id="pay2">
-						<a class="btnCartcredit fancybox" href="#ppCartcredit"><img src="templates/scheellarsen/mobile/img/icon_via.png" alt=""></a></label>
+						<a class="btnCartcredit fancybox" href="#ppCartcredit"><img src="templates/scheellarsen/mobile/img/icon_via.png" alt=""></a></label>-->
 				</div>
 				<!--step3-->
 				<div class="step  step4 clearfix">
