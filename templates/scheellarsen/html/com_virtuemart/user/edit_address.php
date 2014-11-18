@@ -363,9 +363,9 @@ jQuery(document).ready(function(){
                 <p> <span>
                     <input name="virtuemart_paymentmethod_id" value="1" type="radio" id="pay1" checked>
                     </span> <img src="templates/scheellarsen/img/cart2.png" alt=""> </p>
-                <p> <span>
+                <!--<p> <span>
                     <input class="mt5" name="virtuemart_paymentmethod_id" value="2" type="radio" id="pay2">
-                    </span> <a href="#" data-reveal-id="ppCartcredit"><img src="templates/scheellarsen/img/icon_via.png" alt=""></a> </p>
+                    </span> <a href="#" data-reveal-id="ppCartcredit"><img src="templates/scheellarsen/img/icon_via.png" alt=""></a> </p>-->
             </div>
             <div class="order_Summary clearfix">
                 <h2><span>4</span>Ordreoversigt</h2>
