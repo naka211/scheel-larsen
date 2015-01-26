@@ -279,6 +279,9 @@ jQuery(document).ready(function(){
     jQuery(".w_Address").show();
     jQuery("#deduct").hide();
     jQuery("#shipPriceLabel1").html("0,00 DKK");
+	$(function() {
+		$('input, textarea').placeholder();
+	});
     <?php } else {?>
     jQuery(".w_Address").hide();
     <?php }?>
@@ -289,6 +292,10 @@ jQuery(document).ready(function(){
         event.preventDefault();
         jQuery(".w_Address").slideToggle("500","swing", function(){
             shipTo();
+			
+			$(function() {
+				$('input, textarea').placeholder();
+			});
         });
     });
     

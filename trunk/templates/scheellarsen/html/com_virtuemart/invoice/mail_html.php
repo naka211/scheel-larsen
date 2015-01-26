@@ -343,8 +343,7 @@ table tr td table.top_info {
                             </tr>
                             <?php foreach($this->orderDetails["items"] as $item){
                                 $item->product_attribute = preg_replace('#"\s*<span.*?<\\\/span>#','"',$item->product_attribute);
-                                $attrs = json_decode($item->product_attribute);
-                                $attrs = (array)$attrs;
+                                $attrs = json_decode($item->product_attribute, true);
                             ?>
                             <tr>
                                 <td><h4><?php echo $item->order_item_name;?></h4>
@@ -363,6 +362,7 @@ table tr td table.top_info {
                                 <td align="center"><?php echo number_format($item->product_final_price,2,',','.').' DKK'; ?></td>
                                 <td align="center"><?php echo number_format($item->product_final_price*$item->product_quantity,2,',','.').' DKK'; ?></td>
                             </tr>
+							
                             <?php }?>
                             <tr>
                                 <td style="padding: 0px;" colspan="4"><table width="100%" cellspacing="0" cellpadding="0" border="0" class="subtotal">
