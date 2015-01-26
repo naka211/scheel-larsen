@@ -134,6 +134,18 @@ JHtml::_('behavior.formvalidation');
 			});         
         });
     </script>
+	<!-- js PLACEHOLDER support IE<=9 --> 
+	<script type="text/javascript" src="<?php echo $tmpl;?>js/jquery.placeholder.js"></script> 
+	<script type="text/javascript">
+	   $(function() {
+		 $('input, textarea').placeholder();
+		});
+	</script>
+	<style> 
+		.placeholder { color: #aaa; }
+		.note { border: 1px solid orange; padding: 1em; background: #ffffe0; } 
+	</style>
+	<!-- End js PLACEHOLDER support IE<=9 -->
     </head>
     <body>
 	<script>
@@ -156,8 +168,8 @@ ga('send', 'pageview');
         <header class="clearfix">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container relative">
-				<div class="ads_left"></div>
-				<div class="ads_right"></div>
+				<!--<div class="ads_left"></div>
+				<div class="ads_right"></div>-->
 				<a class="navbar-brand" href=""><img src="<?php echo $tmpl;?>img/logo.png" alt="logo"></a>
                     <div class="w_info clearfix"> {module Information}
                         {module Search product} </div>
@@ -277,7 +289,7 @@ else{
         <footer>
             <div id="f_map" class="reveal-modal">
                 <div class="f_map clearfix">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2235.3331502889896!2d12.431027599999998!3d55.9262623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652478c58c6b30d%3A0x882207eeab2b9c27!2zSGVzc2VscsO4ZHZlaiAyNiwgMjk4MCBLb2trZWRhbCwgxJBhbiBN4bqhY2g!5e0!3m2!1svi!2s!4v1407298529040" width="940" height="450" frameborder="0" style="border:0"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2235.3331502889896!2d12.431027599999998!3d55.9262623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652478c58c6b30d%3A0x882207eeab2b9c27!2zSGVzc2VscsO4ZHZlaiAyNiwgMjk4MCBLb2trZWRhbCwgxJBhbiBN4bqhY2g!5e0!3m2!1svi!2s!4v1407298529040" width="705" height="338" frameborder="0" style="border:0"></iframe>
                 </div>
                 <a id="close-reveal-modal" class="close-reveal-modal"></a> </div>
             <div class="footer_top clearfix">
