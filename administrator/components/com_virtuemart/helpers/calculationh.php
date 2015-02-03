@@ -1312,6 +1312,7 @@ class calculationHelper {
 		foreach ($returnValues as $returnValue) {
 			$shipmentValid += $returnValue;
 		}
+		
 		if (!$shipmentValid) {
 			$cart->virtuemart_shipmentmethod_id = 0;
 			$cart->setCartIntoSession();

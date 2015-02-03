@@ -28,7 +28,7 @@
  */
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
-//print_r($this->orderDetails);exit;
+//print_r($this->recipient1);exit;
 $db = JFactory::getDBO();
 $orderDetail = $this->orderDetails['details']['BT'];
 $orderid = $orderDetail->virtuemart_order_id;
@@ -79,339 +79,330 @@ if($orderDetail->coupon_code){
 ?>
 <html lang="en">
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Email Template</title>
 <style>
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color: #505050;
-    background-color: #fff;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px !important;
+	color: #505050;
+	background-color: #fff;
 }
 a {
-    color: #505050;
-    text-decoration: none;
+	color: #505050;
+	text-decoration: none;
 }
 h2 {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 h4 {
-    margin: 5px 0;
-    text-transform: uppercase;
-    color: #000;
+	margin: 5px 0;
+	text-transform: uppercase;
+	color: #000;
 }
 p {
-    margin: 5px 0;
+	margin: 5px 0;
 }
 .page {
-    width: 50%;
-    margin: 0 auto;
-    border: 1px solid #c6c6c6;
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid #dcbe68;
 }
 .red {
-    color: red;
-    font-size: 16px;
+	color: red;
+	font-size: 16px;
 }
 table tr td {
-    padding: 5px;
+	padding: 5px;
 }
 table.list_SP {
-    margin-top: 10px;
-    padding: 0;
+	margin-top: 10px;
+	padding: 0;
 }
 table.list_SP tr th {
-    padding: 10px 5px;
-    background-color: #EFECE1;
+	padding: 10px 5px;
+	background-color: #EFECE1;
 }
 table.list_SP tr td {
-    border-bottom: 1px solid #c6c6c6;
-    padding: 5px 10px;
+	border-bottom: 1px solid #c6c6c6;
+	padding: 5px 10px;
 }
 table.subtotal {
-    background-color: #F9F7F3;
-    padding: 0;
+	background-color: #F9F7F3;
+	padding: 0;
 }
 table.subtotal tr td {
-    text-transform: uppercase;
-    color: #000;
-    padding: 10px;
-    border: none;
+	text-transform: uppercase;
+	color: #000;
+	padding: 10px;
+	border: none;
 }
 table tr td table.top_info {
-    padding: 0;
+	padding: 0;
 }
 </style>
 </head>
 
 <body>
 <div class="page">
-	<div style="margin-top:20px;"><img src="<?php echo JURI::base().'templates/scheellarsen/img/logo.png'?>" /></div>
-    <table width="100%" cellspacing="0" cellpadding="0" border="0" style="padding:10px;">
-        <tbody>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  	<tr style="background: #f5f4ed;">
+      <td colspan="2"><img src="<?php echo JURI::base().'templates/scheellarsen/img/mail_logo.png'?>" /></td>
+      <td colspan="2">Krukker & Havemøbler ApS<br>
+Hesselrødvej 26, Karlebo - 2980 Kokkedal<br>
+Mobil: 41628001 - Email: info@scheel-larsen.dk<br>
+CVR 30711912</td>
+    </tr>
+    <tr>
+      <td colspan="4"><h2>Indkøbskurven</h2></td>
+    </tr>
+    <tr>
+      <td colspan="4"><strong>Ordrenummer: <?php echo $orderDetail->order_number;?></strong></td>
+    </tr>
+    <tr>
+      <td colspan="4"><table width="100%" class="top_info">
+          <tr>
+            <td width="50%"><table width="100%">
+                <tr>
+                  <td colspan="2"><strong>Kundeoplysninger:</strong></td>
+                </tr>
+                <tr>
+                  <td width="30%">Kundetype:</td>
+                  <td><?php echo $type;?></td>
+                </tr>
+				<?php if($orderDetail->company){?>
+				<tr>
+					<td width="30%">Firmanavn:</td>
+					<td><?php echo $BT_info->company;?></td>
+				</tr>
+				<tr>
+					<td width="30%">CVR-nr.:</td>
+					<td><?php echo $BT_info->cvr;?></td>
+				</tr>
+				<?php }?>
+				<?php if($orderDetail->ean){?>
+				<tr>
+					<td width="30%">EAN-nr.:</td>
+					<td><?php echo $BT_info->ean;?></td>
+				</tr>
+				<tr>
+					<td width="30%">Myndighed/Institution:</td>
+					<td><?php echo $BT_info->authority;?></td>
+				</tr>
+				<tr>
+					<td width="30%">Ordre- el. rekvisitionsnr.:</td>
+					<td><?php echo $BT_info->order1;?></td>
+				</tr>
+				<tr>
+					<td width="30%">Personreference:</td>
+					<td><?php echo $BT_info->person;?></td>
+				</tr>
+				<?php }?>
+				<tr>
+					<td>Fornavn:</td>
+					<td><?php echo $BT_info->first_name;?></td>
+				</tr>
+                <tr>
+                  <td>Efternavn:</td>
+                  <td><?php echo $BT_info->last_name;?></td>
+                </tr>
+                <tr>
+                  <td>Vejnavn:</td>
+                  <td><?php echo $BT_info->street_name;?></td>
+                </tr>
+                <tr>
+                  <td>Hus/gade nr.:</td>
+                  <td><?php echo $BT_info->street_number;?></td>
+                </tr>
+                <tr>
+                  <td>Postnr.:</td>
+                  <td><?php echo $BT_info->zip;?></td>
+                </tr>
+                <tr>
+                  <td>Bynavn:</td>
+                  <td><?php echo $BT_info->city;?></td>
+                </tr>
+                <tr>
+                  <td>Telefonnummer:</td>
+                  <td><?php echo $BT_info->phone_1;?></td>
+                </tr>
+                <tr>
+                  <td>E-mail adresse:</td>
+                  <td><?php echo $BT_info->email;?></td>
+                </tr>
+                <tr>
+                  <td valign="top">Besked:</td>
+                  <td><?php echo $BT_info->message1;?></td>
+                </tr>
+                <tr>
+                  <td>Betalingsmetode:</td>
+                  <td><?php if($orderDetail->virtuemart_paymentmethod_id == 3){?>
+					Efterbetalte
+					<?php } else {?>
+					Kortbetaling
+					<?php }?></td>
+                </tr>
+              </table></td>
+            <td width="50%" valign="top"><table width="100%">
+                <tr>
+                  <td colspan="4"><strong><?php if($isGiftCard){?>
+						Modtageren af gavekortet:
+					<?php } else {?>
+						Leveringsadresse:
+					<?php }?></strong></td>
+                </tr>
+                <tr>
+                  <td width="30%">Fornavn:</td>
+                  <td><?php echo $ST_info->first_name;?></td>
+                </tr>
+                <tr>
+                  <td>Efternavn:</td>
+                  <td><?php echo $ST_info->last_name;?></td>
+                </tr>
+				<?php if($isGiftCard){?>
+				<tr>
+					<td>E-mail:</td>
+					<td><?php echo $ST_info->email1;?></td>
+				</tr>
+				<tr>
+					<td>Besked:</td>
+					<td><?php echo $ST_info->message1;?></td>
+				</tr>
+				<?php } else {?>
+                <tr>
+					<td>Vejnavn:</td>
+					<td><?php echo $ST_info->street_name;?></td>
+				</tr>
+				<tr>
+					<td>Hus/gade nr.:</td>
+					<td><?php echo $ST_info->street_number;?></td>
+				</tr>
+				<tr>
+					<td>Postnr.:</td>
+					<td><?php echo $ST_info->zip;?></td>
+				</tr>
+				<tr>
+					<td>Bynavn:</td>
+					<td><?php echo $ST_info->city;?></td>
+				</tr>
+				<tr>
+					<td>Telefonnummer:</td>
+					<td><?php echo $ST_info->phone_1;?></td>
+				</tr>
+				<?php }?>
+				<?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
+                <tr>
+                  <td colspan="2" valign="top"><strong style="color: red; font-size: 18px;">Bemærk! Vi kontakter jer, når varen er klar afhentning</strong></td>
+                </tr>
+				<?php }?>
+              </table></td>
+          </tr>
+          <tr>
+            <td colspan="4">
+            	<table width="100%">
+                	<tr>
+                    	<td valign="top" width="15%">Levering:</td>
+           				<td width="85%">
+						<?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
+						<span>Afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
+						<?php } else if($orderDetail->virtuemart_shipmentmethod_id == 2){?>
+						<span>Leveret på Sjælland</span>
+						<?php } else if($orderDetail->virtuemart_shipmentmethod_id == 3){?>
+						<span>Leveret til døren for Fyn og Jylland</span>
+						<?php } else {?>
+						<span>Leveret via e-mail</span>
+						<?php }?></td>
+                    </tr>
+                </table>
+            </td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+      <td valign="top"></td>
+      <td></td>
+      <td colspan="2" valign="top" width="50%"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border-top: 1px dotted #c6c6c6;"><table class="list_SP" width="100%" border="0" cellspacing="0" cellpadding="0" style="padding:0; border: 1px solid #c6c6c6;">
+          <tr>
+            <th align="left">Varebeskrivelse</th>
+            <th>Antal</th>
+            <th>Pris pr stk.</th>
+            <th>Pris i alt</th>
+          </tr>
+          <?php foreach($this->orderDetails["items"] as $item){
+				$product_attribute = preg_replace('#"\s*<span.*?<\\\/span>#','"',$item->product_attribute);
+				$attrs = json_decode($product_attribute, true);
+			?>
+			<tr>
+				<td><h4><?php echo $item->order_item_name;?></h4>
+					<p>Varenummer: <?php echo $item->order_item_sku;?></p>
+					  <?php 
+					  $i = 1;
+					  foreach($attrs as $attr){
+						  if($i != 2){
+					  ?>
+					  <p><?php echo $attr;?></p>
+					  <?php }
+					  $i++;
+					  }?>
+				</td>
+				<td align="center"><?php echo $item->product_quantity;?></td>
+				<td align="center"><?php echo number_format($item->product_final_price,2,',','.').' DKK'; ?></td>
+				<td align="center"><?php echo number_format($item->product_final_price*$item->product_quantity,2,',','.').' DKK'; ?></td>
+			</tr>
+			
+			<?php }?>
+          <tr>
             <tr>
-                <td colspan="4"><h2>ORDREOVERSIGT</h2></td>
-            </tr>
-            <tr>
-                <td colspan="4"><strong>Ordrenummer: <?php echo $orderDetail->order_number;?></strong></td>
-            </tr>
-            <tr>
-                <td colspan="4"><table width="100%" class="top_info">
-                        <tbody>
-                            <tr>
-                                <td width="50%"><table width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="2"><strong>Kundeoplysninger:</strong></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="30%">Kundetype:</td>
-                                                <td><?php echo $type;?></td>
-                                            </tr>
-                                            <?php if($orderDetail->company){?>
-                                            <tr>
-                                                <td width="30%">Firmanavn:</td>
-                                                <td><?php echo $BT_info->company;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="30%">CVR-nr.:</td>
-                                                <td><?php echo $BT_info->cvr;?></td>
-                                            </tr>
-                                            <?php }?>
-                                            <?php if($orderDetail->ean){?>
-                                            <tr>
-                                                <td width="30%">EAN-nr.:</td>
-                                                <td><?php echo $BT_info->ean;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="30%">Myndighed/Institution:</td>
-                                                <td><?php echo $BT_info->authority;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="30%">Ordre- el. rekvisitionsnr.:</td>
-                                                <td><?php echo $BT_info->order1;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="30%">Personreference:</td>
-                                                <td><?php echo $BT_info->person;?></td>
-                                            </tr>
-                                            <?php }?>
-                                            <tr>
-                                                <td>Fornavn:</td>
-                                                <td><?php echo $BT_info->first_name;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Efternavn:</td>
-                                                <td><?php echo $BT_info->last_name;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Vejnavn:</td>
-                                                <td><?php echo $BT_info->street_name;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Hus/gade nr.:</td>
-                                                <td><?php echo $BT_info->street_number;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Postnr.:</td>
-                                                <td><?php echo $BT_info->zip;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Bynavn:</td>
-                                                <td><?php echo $BT_info->city;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Telefonnummer:</td>
-                                                <td><?php echo $BT_info->phone_1;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>E-mail:</td>
-                                                <td><?php echo $BT_info->email;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td valign="top">Besked:</td>
-                                                <td><?php echo $BT_info->message1;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Betalingsmetode:</td>
-                                                <td>
-                                                <?php if($orderDetail->virtuemart_paymentmethod_id == 3){?>
-                                                Efterbetalte
-                                                <?php } else {?>
-                                                Kortbetaling
-                                                <?php }?>
-                                                </td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table></td>
-                                <td width="50%" valign="top"><table width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="4"><strong>
-                                                <?php if($isGiftCard){?>
-                                                    Modtageren af gavekortet:
-                                                <?php } else {?>
-                                                    Leveringsadresse:
-                                                <?php }?>
-                                                </strong></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="30%">Fornavn:</td>
-                                                <td><?php echo $ST_info->first_name;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Efternavn:</td>
-                                                <td><?php echo $ST_info->last_name;?></td>
-                                            </tr>
-                                            <?php if($isGiftCard){?>
-                                            <tr>
-                                                <td>E-mail:</td>
-                                                <td><?php echo $ST_info->email1;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Besked:</td>
-                                                <td><?php echo $ST_info->message1;?></td>
-                                            </tr>
-                                            <?php } else {?>
-                                            <tr>
-                                                <td>Vejnavn:</td>
-                                                <td><?php echo $ST_info->street_name;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Hus/gade nr.:</td>
-                                                <td><?php echo $ST_info->street_number;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Postnr.:</td>
-                                                <td><?php echo $ST_info->zip;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Bynavn:</td>
-                                                <td><?php echo $ST_info->city;?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Telefonnummer:</td>
-                                                <td><?php echo $ST_info->phone_1;?></td>
-                                            </tr>
-                                            <?php }?>
-                                            <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
-                                            <tr>
-                                                <td valign="top" colspan="2"><strong style="color: red; font-size:18px;">Bemærk! Vi kontakter jer, når varen er klar afhentning</strong></td>
-                                            </tr>
-                                            <?php }?>
-                                        </tbody>
-                                    </table></td>
-                            </tr>
-                            <tr>
-                                <td colspan="4">
-                                <table width="100%">
-                                    <tbody><tr>
-                                        <td width="18%" valign="top" align="left">Levering:</td>
-                                        <td width="82%">
-                                        <?php if($orderDetail->virtuemart_shipmentmethod_id == 1){?>
-                                        <span>Afhentning på Hesselrødvej 26, 2980 Kokkedal</span>
-                                        <?php } else if($orderDetail->virtuemart_shipmentmethod_id == 2){?>
-                                        <span>Leveret på Sjælland</span>
-                                        <?php } else if($orderDetail->virtuemart_shipmentmethod_id == 3){?>
-                                        <span>Leveret til døren for Fyn og Jylland</span>
-                                        <?php } else {?>
-                                        <span>Leveret via e-mail</span>
-                                        <?php }?>
-                                        </td>
-                                    </tr>
-                                </tbody></table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table></td>
-            </tr>
-            <tr>
-                <td valign="top"></td>
-                <td></td>
-                <td width="50%" valign="top" colspan="2"></td>
-            </tr>
-            <tr>
-                <td style="border-top: 1px dotted #c6c6c6;" colspan="4"><table width="100%" cellspacing="0" cellpadding="0" border="0" style="padding:0; border: 1px solid #c6c6c6;" class="list_SP">
-                        <tbody>
-                            <tr>
-                                <th align="left">Varebeskrivelse</th>
-                                <th>Antal</th>
-                                <th>Pris pr stk.</th>
-                                <th>Pris i alt</th>
-                            </tr>
-                            <?php foreach($this->orderDetails["items"] as $item){
-                                $item->product_attribute = preg_replace('#"\s*<span.*?<\\\/span>#','"',$item->product_attribute);
-                                $attrs = json_decode($item->product_attribute, true);
-                            ?>
-                            <tr>
-                                <td><h4><?php echo $item->order_item_name;?></h4>
-                                    <p>Varenummer: <?php echo $item->order_item_sku;?></p>
-                                      <?php 
-                                      $i = 1;
-                                      foreach($attrs as $attr){
-                                          if($i != 2){
-                                      ?>
-                                      <p><?php echo $attr;?></p>
-                                      <?php }
-                                      $i++;
-                                      }?>
-                                </td>
-                                <td align="center"><?php echo $item->product_quantity;?></td>
-                                <td align="center"><?php echo number_format($item->product_final_price,2,',','.').' DKK'; ?></td>
-                                <td align="center"><?php echo number_format($item->product_final_price*$item->product_quantity,2,',','.').' DKK'; ?></td>
-                            </tr>
-							
-                            <?php }?>
-                            <tr>
-                                <td style="padding: 0px;" colspan="4"><table width="100%" cellspacing="0" cellpadding="0" border="0" class="subtotal">
-                                        <tbody>
-                                            <tr>
-                                                <td width="74%" align="right">SUBTOTAL INKL. MOMS: </td>
-                                                <td width="26%" align="right"><?php echo number_format($orderDetail->order_salesPrice,2,',','.').' DKK'; ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td align="right">FRAGT:</td>
-                                                <td align="right"><?php 
-                                                    if($orderDetail->virtuemart_shipmentmethod_id != 1)
-                                                        echo number_format($orderDetail->order_shipment,2,',','.').' DKK'; 
-                                                    else
-                                                        echo 0 . ' DKK';
-                                                  ?>
-                                                </td>
-                                            </tr>
-                                            <?php if($orderDetail->coupon_code){?>
-                                            <tr>
-                                                <td align="right">Gavekort rabat: </td>
-                                                <td align="right"><?php echo number_format($orderDetail->coupon_discount,2,',','.').' DKK'; ?></td>
-                                            </tr>
-                                            <?php }?>
-                                            <?php 
-                                                if($orderDetail->virtuemart_shipmentmethod_id == 1){
-                                            ?>
-                                            <tr>
-                                                <td align="right">Rabat 10% ved afhentning: </td>
-                                                <td align="right"><?php echo '-'.number_format($orderDetail->order_subtotal*0.1,2,',','.').' DKK'; ?></td>
-                                            </tr>
-                                            <?php }?>
-                                            <tr>
-                                                <td align="right" style="font-size: 18px;">AT BETALE INKL. MOMS:</td>
-                                                <td align="right" style="font-size: 18px;"><?php echo number_format($orderDetail->order_total,2,',','.').' DKK'; ?></td>
-                                            </tr>
-                                            <?php if($orderDetail->coupon_code){?>
-                                            <tr>
-                                                <td align="right" colspan="2">(Gavekort restbeløb: <?php echo number_format($coupon_value,2,',','.').' DKK'; ?>)</td>
-                                            </tr>
-                                            <?php }?>
-                                        </tbody>
-                                    </table></td>
-                            </tr>
-                        </tbody>
-                    </table></td>
-            </tr>
-        </tbody>
-    </table>
+				<td style="padding: 0px;" colspan="4"><table width="100%" cellspacing="0" cellpadding="0" border="0" class="subtotal">
+						<tbody>
+							<tr>
+								<td width="74%" align="right">SUBTOTAL INKL. MOMS: </td>
+								<td width="26%" align="right"><?php echo number_format($orderDetail->order_salesPrice,2,',','.').' DKK'; ?></td>
+							</tr>
+							<tr>
+								<td align="right">FRAGT:</td>
+								<td align="right"><?php 
+									if($orderDetail->virtuemart_shipmentmethod_id != 1)
+										echo number_format($orderDetail->order_shipment,2,',','.').' DKK'; 
+									else
+										echo 0 . ' DKK';
+								  ?>
+								</td>
+							</tr>
+							<?php if($orderDetail->coupon_code){?>
+							<tr>
+								<td align="right">Gavekort rabat: </td>
+								<td align="right"><?php echo number_format($orderDetail->coupon_discount,2,',','.').' DKK'; ?></td>
+							</tr>
+							<?php }?>
+							<?php 
+								if($orderDetail->virtuemart_shipmentmethod_id == 1){
+							?>
+							<tr>
+								<td align="right">Rabat 10% ved afhentning: </td>
+								<td align="right"><?php echo '-'.number_format($orderDetail->order_subtotal*0.1,2,',','.').' DKK'; ?></td>
+							</tr>
+							<?php }?>
+							<tr>
+								<td align="right" style="font-size: 18px;">AT BETALE INKL. MOMS:</td>
+								<td align="right" style="font-size: 18px;"><?php echo number_format($orderDetail->order_total,2,',','.').' DKK'; ?></td>
+							</tr>
+							<?php if($orderDetail->coupon_code){?>
+							<tr>
+								<td align="right" colspan="2">(Gavekort restbeløb: <?php echo number_format($coupon_value,2,',','.').' DKK'; ?>)</td>
+							</tr>
+							<?php }?>
+						</tbody>
+					</table></td>
+			</tr>
+        </table></td>
+    </tr>
+  </table>
 </div>
 </body>
 </html>
