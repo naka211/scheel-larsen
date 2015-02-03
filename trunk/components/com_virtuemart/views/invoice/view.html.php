@@ -293,7 +293,6 @@ class VirtuemartViewInvoice extends VmView {
 
 	// FE public function renderMailLayout($doVendor=false)
 	function renderMailLayout ($doVendor, $recipient) {
-
 		$this->doVendor=$doVendor;
 		$this->frompdf=false;
 		$this->uselayout = 'mail';

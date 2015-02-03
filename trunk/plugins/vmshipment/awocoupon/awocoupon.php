@@ -240,7 +240,7 @@ class plgVmShipmentAwocoupon extends vmPSPlugin {
 	 * @return bool|null
 	 */
 	public function plgVmOnSelectedCalculatePriceShipment (VirtueMartCart $cart, array &$cart_prices, &$cart_prices_name) {
-
+		
 		return $this->onSelectedCalculatePrice ($cart, $cart_prices, $cart_prices_name);
 	}
 
