@@ -114,7 +114,8 @@
 							"top":  $(document).scrollTop()-topOffset,
 							"opacity" : 0
 						}, options.animationspeed/2, function() {
-							modal.css({'top':topMeasure, 'opacity' : 1, 'visibility' : 'hidden'});
+							/*modal.css({'top':topMeasure, 'opacity' : 1, 'visibility' : 'hidden'});*/
+							modal.css({'top':topMeasure, 'opacity' : 0, 'visibility' : 'hidden'});
 							unlockModal();
 						});					
 					}  	
@@ -123,7 +124,8 @@
 						modal.animate({
 							"opacity" : 0
 						}, options.animationspeed, function() {
-							modal.css({'opacity' : 1, 'visibility' : 'hidden', 'top' : topMeasure});
+							/*modal.css({'opacity' : 1, 'visibility' : 'hidden', 'top' : topMeasure});*/
+							modal.css({'opacity' : 0, 'visibility' : 'hidden', 'top' : topMeasure});
 							unlockModal();
 						});					
 					}  	

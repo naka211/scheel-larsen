@@ -287,7 +287,7 @@ else{
         </section>
         <section class="delivery"> {module Footer Information} </section>
         <footer>
-            <div id="f_map" class="reveal-modal">
+            <div id="f_map" class="reveal-modal" style="opacity:0;">
                 <div class="f_map clearfix">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2235.3331502889896!2d12.431027599999998!3d55.9262623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652478c58c6b30d%3A0x882207eeab2b9c27!2zSGVzc2VscsO4ZHZlaiAyNiwgMjk4MCBLb2trZWRhbCwgxJBhbiBN4bqhY2g!5e0!3m2!1svi!2s!4v1407298529040" width="705" height="338" frameborder="0" style="border:0"></iframe>
                 </div>

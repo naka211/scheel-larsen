@@ -232,7 +232,7 @@ ul.list-bn li:nth-child(2) { margin-right: 0%;}
 .wrapedit .update:hover {}
 .wrapedit span { color: #000;}
 .wrapedit { display: inline-block;margin: 0 auto;   width: 40%; float: left;}
-.wrapedit .inputNumber { width: 18px;text-align: center;font-size: 1em;margin: 0 2px;}
+.wrapedit .inputNumber { width: 25px;text-align: center;font-size: 1em;margin: 0 2px;}
 .proPriceTT {width: 40%;float: right;text-align: right;position: absolute;right: 1em;bottom: 1em; } 
 
 .wrapTotalPrice { } 

@@ -8,7 +8,7 @@ $optview = $option.$view;
 
 $tmpl = JURI::base().'templates/'.$this->template."/";
 $mobile = $tmpl."mobile/";
-JHtml::_('behavior.formvalidation');
+JHTML::_('behavior.formvalidation');
 ?>
 <!DOCTYPE html>
 <html>
@@ -237,7 +237,7 @@ $cart->prepareCartViewData();
                 <div class="form-newsletter">
                 	<form action="index.php" method="post" class="form-validate">
                         <input type="text" placeholder="Indtast din e-mail" class="txtInput required validate-email" name="email">
-                        <button type="submit" class="btnSubscribe btn2" style="cursor:pointer; border:none;">Tilmeld</button>
+                        <button type="submit" class="btnSubscribe btn2 validate" style="cursor:pointer; border:none;">Tilmeld</button>
                         <input type="hidden" name="option" value="com_virtuemart" />
                         <input type="hidden" name="controller" value="virtuemart" />
                         <input type="hidden" name="task" value="subscribe" />
