@@ -26,8 +26,15 @@ if ($parentCategoryID != '0') {
 
    $parent = $parentCategory->virtuemart_category_id;
 }
+if($this->category->virtuemart_category_id == 3){
 	?>
-
+	<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0018/6807.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<?php }?>
 <div id="content" class="w-content undepages product_page">
 	{module Breadcrumbs}
 	<div class="eachBox boxProduct">

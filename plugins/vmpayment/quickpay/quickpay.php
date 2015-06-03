@@ -274,6 +274,10 @@ class plgVMPaymentQuickpay extends vmPSPlugin {
 	//JRequest::setVar('paymentResponse', $returnValue);
 	return true;
     }
+	
+	//T.Trung
+
+	//T.Trung end
 
     /*
      *   plgVmOnPaymentNotification() - This event is fired by Offline Payment. It can be used to validate the payment data as entered by the user.

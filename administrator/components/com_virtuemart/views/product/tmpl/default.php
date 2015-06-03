@@ -84,6 +84,7 @@ if ($product_parent_id=JRequest::getInt('product_parent_id', false))   $col_prod
                 <th width="80px"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_MEDIA'); ?></th>
 		<th><?php echo $this->sort('product_sku') ?></th>
 		<th width="80px" ><?php echo $this->sort('product_price', 'COM_VIRTUEMART_PRODUCT_PRICE_TITLE') ; ?></th>
+		<th width="80px" ><?php echo JText::_('COM_VIRTUEMART_PRODUCT_FORM_IN_STOCK'); ?></th>
 <?php /*		<th><?php echo JHTML::_('grid.sort', 'COM_VIRTUEMART_CATEGORY', 'c.category_name', $this->lists['filter_order_Dir'], $this->lists['filter_order'] ); ?></th> */ ?>
 <th><?php echo JText::_( 'COM_VIRTUEMART_CATEGORY'); ?></th>
 		<!-- Only show reordering fields when a category ID is selected! -->
@@ -170,6 +171,7 @@ if ($product_parent_id=JRequest::getInt('product_parent_id', false))   $col_prod
 						echo JText::_('COM_VIRTUEMART_NO_PRICE_SET');
 					}
 				?></td>
+				<td align="center"><?php echo $product->product_in_stock; ?></td>
 				<!-- Category name -->
 				<td><?php //echo JHTML::_('link', JRoute::_('index.php?view=category&task=edit&virtuemart_category_id='.$product->virtuemart_category_id.'&option=com_virtuemart'), $product->category_name);
 					echo $product->categoriesList;
