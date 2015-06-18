@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>System - JO VM Auto Post Facebook</name>
+	<author>http://www.joomcore.com/</author>
+	<creationDate>24th October, 2012</creationDate>
+	<copyright>http://www.joomcore.com. All rights reserved.</copyright>
+	<authorEmail>contact@joomcore.com</authorEmail>
+	<authorUrl>http://www.joomcore.com/</authorUrl>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>2.5.0</version>
+	<description>Jo VM Auto Post Facebook</description>
+	<files>
+		<filename plugin="jo_vm_autopost_facebook">jo_vm_autopost_facebook.php</filename>
+		<filename>index.html</filename>
+	</files>	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">				
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>joautofacebook</name>
+	<author>http://www.joomcore.com/</author>
+	<creationDate>7th May, 2015</creationDate>
+	<copyright>http://www.joomcore.com. All rights reserved.</copyright>
+	<authorEmail>contact@joomcore.com</authorEmail>
+	<authorUrl>http://www.joomcore.com/</authorUrl>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>2.5.2</version>
+	<description>JO Auto facebook  version 2.5.2 for Joomla 1.6, 1.7, 2.5 installed successfully. This Component uses to manage your account facebook and manager post on facebook</description>
+	<install>
+	    	<sql>
+	        	<file driver="mysql" charset="utf8">sql/install.sql</file>
+	  	</sql>
+  	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+		</sql>
+	</uninstall>
+	
+	<files folder="site">
+		<filename>index.html</filename>
+		<folder>assets</folder>
+    	</files>
+	<administration>
+		<menu img="components/com_joautofacebook/assets/images/icon-16-joautofacebook.png" link="option=com_joautofacebook&amp;view=dashboard" 
+			view="dashboard" alt="dashboard/dashboard">joautofacebook</menu>
+		<submenu>
+			<menu img="components/com_joautofacebook/assets/images/icon-16-dashboard.png" link="option=com_joautofacebook&amp;view=dashboard"
+				 view="dashboard" alt="dashboard/dashboard">DASHBOARD</menu>
+			<menu img="components/com_joautofacebook/assets/images/icon-16-postmanager.png" link="option=com_joautofacebook&amp;view=postmanager"
+				view="postmanager" alt="postmanager/postmanager">POSTMANAGER</menu>	 
+			<menu img="components/com_joautofacebook/assets/images/icon-16-accounts.png" link="option=com_joautofacebook&amp;view=accounts"
+				view="accounts" alt="accounts/accounts">ACCOUNTS</menu>
+			<menu img="components/com_joautofacebook/assets/images/icon-16-config.png" link="option=com_joautofacebook&amp;view=settings"
+				alt="settings/settings">SETTINGS</menu>
+		</submenu>
+		<files folder="admin">
+			<folder>sql</folder>
+			<folder>assets</folder>
+			<folder>controllers</folder>	
+			<folder>helpers</folder>	
+			<folder>language</folder>
+			<folder>libraries</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>		
+			<filename>joautofacebook.php</filename>
+		</files>
+	</administration>
+</extension>
+

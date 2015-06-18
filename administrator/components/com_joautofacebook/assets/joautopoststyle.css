@@ -1,0 +1,64 @@
+/*------------------------------------------------------------------------
+# com_joautofacebook - JO Auto facebook for Joomla 1.6, 1.7, 2.5
+# ------------------------------------------------------------------------
+# author: http://www.joomcore.com
+# copyright Copyright (C) 2011 Joomcore.com. All Rights Reserved.
+# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Websites: http://www.joomcore.com
+# Technical Support:  Forum - http://www.joomcore.com/Support
+-------------------------------------------------------------------------*/
+.icon-48-joautofacebook_accounts{
+	background-image: url("../assets/images/icon-48-accounts.png");
+}
+.icon-48-joautofacebook_account{
+	background-image: url("../assets/images/icon-48-account.png");
+}
+.icon-48-joautofacebook_settings{
+	background-image: url("../assets/images/icon-48-config.png");
+}
+.icon-48-joautofacebook_posts{
+	background-image: url("../assets/images/icon-48-posts.png");
+}
+.icon-48-joautofacebook_dashboard{
+	background-image: url("../assets/images/icon-48-dashboard.png");
+}
+.icon-48-joautofacebook_postmanager{
+	background-image: url("../assets/images/icon-48-postmanager.png");
+}
+.cpanel div.icon a, #cpanel div.icon a {
+    -moz-transition-duration: 0.8s;
+    -moz-transition-property: background-position, -moz-border-radius-bottomleft, -moz-box-shadow;
+    background-color: #FFFFFF;
+    background-position: -30px center;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    color: #565656;
+    display: block;
+    float: left;
+    height: 97px;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 108px;
+}
+#cpanel img, .cpanel img {
+    margin: 0 auto;
+    padding: 10px 0;
+}
+#cpanel span, .cpanel span {
+    display: block;
+    text-align: center;
+}
+.cpanel div.icon, #cpanel div.icon {
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    text-align: center;
+}
+#cpanel div.icon a:hover, #cpanel div.icon a:focus, #cpanel div.icon a:active, .cpanel div.icon a:hover, .cpanel div.icon a:focus, .cpanel div.icon a:active {
+    background-position: 0 center;
+    border-bottom-left-radius: 50% 20px;
+    box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 10;
+}
+

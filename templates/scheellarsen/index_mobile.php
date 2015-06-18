@@ -24,13 +24,25 @@ JHTML::_('behavior.formvalidation');
         <link rel='stylesheet' id='camera-css' href="<?php echo $mobile;?>css/camera.css" type='text/css' media='all'>
         <link type="text/css" rel="stylesheet" href="<?php echo $mobile;?>css/jquery.mmenu.css" />
         <link type="text/css" rel="stylesheet" href="<?php echo $mobile;?>css/styles-moblie.css" />
+		<link type="text/css" rel="stylesheet" href="<?php echo $tmpl;?>css/bootstrap.min.css" /> 
+		<link type="text/css" rel="stylesheet" href="<?php echo $tmpl;?>css/ekko-lightbox.css" />
+		<style>
+		.modal-dialog {margin-top: 80px;}
+		</style>
         <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.5; user-scalable=1;" />
-        <script type='text/javascript' src="<?php echo $mobile;?>js/jquery-1.8.3.min.js"></script>
+        
         <!-- Add fancyBox -->
         <script type="text/javascript" src="<?php echo $mobile;?>fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
         <script type="text/javascript" src="<?php echo $mobile;?>fancybox/source/helpers/jquery.fancybox-media.js"></script>
+		<script type='text/javascript' src='<?php echo $tmpl;?>js/bootstrap.min.js'></script>
+		<script type='text/javascript' src='<?php echo $tmpl;?>js/ekko-lightbox.min.js'></script>
         <script type="text/javascript">
         $(document).ready(function() {
+			$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+			  event.preventDefault();
+			  $(this).ekkoLightbox();
+			});
+		
 			jQuery('.item-118').hide();
 			jQuery(".item-132 a").attr("href","#ppMap");
 			jQuery(".item-132 a").attr("class","fancybox");

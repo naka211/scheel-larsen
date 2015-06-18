@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="2.5" method="upgrade">
+	<name>JO VM Auto post Facebook Packages</name>
+	<creationDate>7th May, 2015</creationDate>
+	<author>http://www.joomcore.com/</author>
+	<packagename>jovmautofacebook</packagename>
+	<version>2.5.3</version>
+	<url>http://www.joomla.org</url>
+	<packager>Todor Iliev</packager>
+	<packagerurl>http://www.joomcore.com</packagerurl>
+	<description>Component and Plugin JO Auto facebook  version 2.5.3 for Joomla 1.6, 1.7, 2.5 installed successfully. You need enable Plugin "System - JO VM Auto Post Facebook" in plugins manager before using.</description>
+	<update>http://joomcore.com</update>
+	<files folder="packages">
+		<file type="component" 	id="com_joautofacebook" >com_joautofacebook.zip</file>
+		<file type="plugin"	id="jo_vm_autopost_facebook"	group="system">plg_jo_vm_autopost_facebook.zip</file>
+	</files>
+</extension>

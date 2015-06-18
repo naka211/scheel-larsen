@@ -92,6 +92,7 @@ JHtml::_('behavior.formvalidation');
     <link href="<?php echo $tmpl;?>css/reveal.css" rel="stylesheet">
     <link href="<?php echo $tmpl;?>css/prettyPhoto.css" rel="stylesheet">
     <link href="<?php echo $tmpl;?>css/tinyscrollbar.css" rel="stylesheet">
+	<link href="<?php echo $tmpl;?>css/ekko-lightbox.css" rel="stylesheet">
     <link href="<?php echo $tmpl;?>css/style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -111,6 +112,7 @@ JHtml::_('behavior.formvalidation');
     <script src="<?php echo $tmpl;?>source/helpers/jquery.fancybox-thumbs.js"></script>
     <script src="<?php echo $tmpl;?>js/jquery.prettyPhoto.js"></script>
     <script src="<?php echo $tmpl;?>js/jquery.tinyscrollbar.js"></script>
+	<script src='<?php echo $tmpl;?>js/ekko-lightbox.min.js'></script>
     <script src="<?php echo $tmpl;?>js/nicker.js"></script>
     <script>
         jQuery(document).ready(function(){
@@ -131,7 +133,12 @@ JHtml::_('behavior.formvalidation');
 				if (!textfield.validity.valid) {
 				  textfield.setCustomValidity('Venligst indtast din e-mail');  
 				}
-			});         
+			});  
+			
+			jQuery(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+				event.preventDefault();
+				jQuery(this).ekkoLightbox();
+			  });       
         });
     </script>
 	<!-- js PLACEHOLDER support IE<=9 --> 

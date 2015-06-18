@@ -276,7 +276,152 @@ class plgVMPaymentQuickpay extends vmPSPlugin {
     }
 	
 	//T.Trung
+	function handlePaymentUserCancel($virtuemart_order_id){
+		if (!class_exists('VirtueMartModelOrders')) require( JPATH_VM_ADMINISTRATOR . DS . 'models' . DS . 'orders.php' );
+		$orderModel = VmModel::getModel('orders');	
+		$order1 = array();		
+		$order1['order_status'] = "X";
+		$order1['customer_notified'] =0;
+		$orderModel->updateStatusForOneOrder($virtuemart_order_id, $order1, true);
+		
+		$order = $orderModel->getOrder($virtuemart_order_id);
+		
+		$html = '<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Email Template</title>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px !important;
+	color: #505050;
+	background-color: #fff;
+}
+a {
+	color: #505050;
+	text-decoration: none;
+}
+h2 {
+	text-transform: uppercase;
+}
+h4 {
+	margin: 5px 0;
+	text-transform: uppercase;
+	color: #000;
+}
+p {
+	margin: 5px 0;
+}
+.page {
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid #dcbe68;
+}
+.red {
+	color: red;
+	font-size: 16px;
+}
+table tr td {
+	padding: 5px;
+}
+table.list_SP {
+	margin-top: 10px;
+	padding: 0;
+}
+table.list_SP tr th {
+	padding: 10px 5px;
+	background-color: #EFECE1;
+}
+table.list_SP tr td {
+	border-bottom: 1px solid #c6c6c6;
+	padding: 5px 10px;
+}
+table.subtotal {
+	background-color: #F9F7F3;
+	padding: 0;
+}
+table.subtotal tr td {
+	text-transform: uppercase;
+	color: #000;
+	padding: 10px;
+	border: none;
+}
+table tr td table.top_info {
+	padding: 0;
+}
+</style>
+</head>
 
+<body>
+<div class="page">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  	<tr style="background: #f5f4ed;">
+      <td colspan="2"><img src="'.JURI::base().'templates/scheellarsen/img/mail_logo.png'.'" /></td>
+      <td colspan="2">Krukker & Havemøbler ApS<br>
+Hesselrødvej 26, Karlebo - 2980 Kokkedal<br>
+Mobil: 41628001 - Email: info@scheel-larsen.dk<br>
+CVR 30711912</td>
+    </tr>
+    
+    <tr>
+      <td>
+	  Kære '.$order['details']['BT']->first_name.',<br>
+	  Din ordre '.$order['details']['BT']->order_number.' annulleres, bedes du kontakte os, hvis du har spørgsmål.	  
+	  </td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border-top: 1px dotted #c6c6c6;"><table class="list_SP" width="100%" border="0" cellspacing="0" cellpadding="0" style="padding:0; border: 1px solid #c6c6c6;">
+          <tr>
+            <th align="left">Varebeskrivelse</th>
+            <th>Antal</th>
+            <th>Pris pr stk.</th>
+            <th>Pris i alt</th>
+          </tr>
+          ';
+		foreach($order["items"] as $item){
+				$product_attribute = preg_replace('#"\s*<span.*?<\\\/span>#','"',$item->product_attribute);
+				$attrs = json_decode($product_attribute, true);
+			$html .= '
+			<tr>
+				<td><h4>'.$item->order_item_name.'</h4>
+					<p>Varenummer: '.$item->order_item_sku.'</p>';
+					  $i = 1;
+					  foreach($attrs as $attr){
+						  if($i != 2){$html .= '<p>'.$attr.'</p>';}
+					  $i++;
+					  }
+				$html .= '</td>
+				<td align="center">'.$item->product_quantity.'</td>
+				<td align="center">'.number_format($item->product_final_price,2,',','.').' DKK'.'</td>
+				<td align="center">'.number_format($item->product_final_price*$item->product_quantity,2,',','.').' DKK</td>
+			</tr>';
+		 }
+         $html .=' <tr>
+            
+        </table></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>';
+				
+		$app = JFactory::getApplication();
+		$mailfrom = $app->get('mailfrom');
+		$fromname = $app->get('fromname');
+		
+		$admin = JFactory::getUser(62);
+			
+		$mail = JFactory::getMailer();
+		$mail->addRecipient($order['details']['BT']->email);
+		$mail->AddCC($admin->email);
+		$mail->setSender(array($mailfrom, $fromname));
+		$mail->setSubject($order['details']['BT']->order_number.' aflyst');
+		$mail->isHTML(true);
+		$mail->setBody($html);
+		$sent = $mail->Send();
+	}
 	//T.Trung end
 
     /*

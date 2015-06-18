@@ -10,7 +10,7 @@ if(!$text){
 }
 ?>
 <!--BEGIN Search Box -->
-<form id="vm_mod_search" class="navbar-form navbar-left relative" role="search" action="<?php echo JRoute::_('index.php?option=com_virtuemart&view=search&search=true&limitstart=0&virtuemart_category_id='.$category_id ); ?>" method="get">
+<form id="vm_mod_search" class="" role="search" action="<?php echo JRoute::_('index.php?option=com_virtuemart&view=search&search=true&limitstart=0&virtuemart_category_id='.$category_id ); ?>" method="get">
 <?php $output = '<input name="keyword" id="mod_virtuemart_search" class="txtip" type="text" value="'.$text.'"  onblur="if(this.value==\'\') this.value=\''.$text.'\';" onfocus="if(this.value==\''.$text.'\') this.value=\'\';" />';
  $image = JURI::base().'components/com_virtuemart/assets/images/vmgeneral/search.png' ;
 

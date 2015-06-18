@@ -55,7 +55,7 @@ a.btnActive { background: #4c3515;}
 .wrapSearch { width: 60%; float: left; padding-top: 0.55em; position: relative;}
 .wrapSearch .txtip {background: #e6e6e6;border-radius: 4px;border: none;outline: none;font-size: 0.55em;padding: 0.5em 0em 0.5em 0.8em;line-height: 1.8em;height: 3em;
 				width: 90%;margin: 0 auto;display: block;}
-.wrapSearch a {width: 8%; position: absolute;top: -0.3em; right: 0.8em;}		
+.wrapSearch a {width: 8%; position: absolute;top: 0em; right: 0.8em;}		
 .wrapSearch a img { max-width: 100%;}	
 
 .btnShopbag, .bntMenuleft { width: 20%; float: left; border-left: 1px solid #8c6933;height: 100%;height: 100%; text-align: center; }
@@ -511,6 +511,11 @@ ul.option li input { visibility: hidden;}
 .thankyou .rowAbove { position: static;}
 .thankyou .wrapedit { padding-right: 0.5em;}
 
+a:hover, a:focus {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
 /********** ---------------------- CSS MOBILE & TABEL FORM HERE ----------------------------- CSS MOBILE & TABEL FORM HERE  ------------------- **********/ 
 
 @media only screen and (max-width:  320px)  {/** Only iPhone 5 in portrait   **/
@@ -540,7 +545,7 @@ ul.list-icon-social { top: 55px;}
 .bntFowllow .textbt, .btnShopbag .textbt { font-size: 0.45em;margin-top: -1.8em;}
 .btniconAddwish img { margin-top: 0.5em;}
 .btnShopbag .nummber {top: 40%;}
-.wrapSearch a { right: 1.1em; top: 0.1em;}
+.wrapSearch a { right: 1.5em; top: 0.4em;}
 .proImg img { width: 90%; } 
  #footer .links h3 { font-size: 0.85em;}
  .proDel img {width: 12px;}

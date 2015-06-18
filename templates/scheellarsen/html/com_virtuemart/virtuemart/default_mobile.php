@@ -46,7 +46,7 @@ $mobile = JURI::base()."templates/scheellarsen/mobile/";
 		</ul>
 	</div>
 	<!--eachBox wrap-list-prod-->
-	
+	<div class="eachBox  box_gavekort">  <a href="https://youtu.be/awFTU3Rz1VM" data-toggle="lightbox"><img style="width: 100%" src="<?php echo $mobile;?>img/video_mobile.png"></a> </div>
 	<div class="eachBox  box_gavekort"> <a href="gavekort.html"><img src="<?php echo $mobile;?>img/gavekort.png"></a> </div>
 	<div class="eachBox">
 		<ul class="list-bn">

@@ -63,5 +63,5 @@ class JConfig {
 	public $feed_email = 'author';
 	public $cookie_domain = '';
 	public $cookie_path = '';
-	public $show_phone = '0';
+	public $show_phone = '1';
 }

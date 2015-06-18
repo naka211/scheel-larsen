@@ -38,7 +38,7 @@ if($this->orderDetails['details']['BT']->coupon_code){
 }
 //T.Trung end
 	?>
-<table border="0" cellspacing="0" cellpadding="0" style="margin: 15px; background: #fff; border: 1px solid #646464;">
+<table border="0" cellspacing="0" cellpadding="0" style="margin-top:-20px; background: #fff; border: 1px solid #646464;" width="550">
 	<tr>
 		<td colspan="4"><h2 style="color: #B48944; border-bottom: 1px dotted #CACACA; padding: 10px; margin: 0;">FAKTURA</h2></td>
 	</tr>
@@ -140,7 +140,7 @@ if($this->orderDetails['details']['BT']->coupon_code){
 		</td>
 
 		<td colspan="2" valign="top">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<table border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td colspan="2" height="30"><strong>
                     <?php if($isGiftCard){?>
@@ -211,7 +211,7 @@ if($this->orderDetails['details']['BT']->coupon_code){
 
 	<tr style="padding-left: 20px">
 		<td colspan="2">
-			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+			<table border="0" cellspacing="0" cellpadding="0">
 			<tr>
 			<td style="padding-left: 10px"><strong>Betaling: </strong></td>
 			</tr>
@@ -227,7 +227,7 @@ if($this->orderDetails['details']['BT']->coupon_code){
 			</table>
 		</td>
 		<td colspan="2">
-			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+			<table border="0" cellspacing="0" cellpadding="0">
 			<tr>
 			<td><strong>Levering:</strong></td>
 			</tr>
@@ -256,10 +256,10 @@ if($this->orderDetails['details']['BT']->coupon_code){
 	<td colspan="4">
 	<table border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #CACACA;line-height: 1.8em">
 		<tr align="right" style="background: #EFEFEF;">
-		<td width="40%" style="text-align: left; padding-left: 10px">Produkt</td>
+		<td width="30%" style="text-align: left; padding-left: 10px">Produkt</td>
 		<td width="20%">Antal</td>
 		<td width="20%">Pris pr. enhed</td>
-		<td width="20%" style="padding-right: 20px">Pris i alt</td>
+		<td width="30%" style="padding-right: 20px">Pris i alt</td>
 		</tr>
 
 	<?php foreach($this->orderDetails['items'] as $item){
@@ -288,7 +288,7 @@ if($this->orderDetails['details']['BT']->coupon_code){
 
 		<tr>
 		<td style="text-transform: uppercase; color: red; padding-left: 10px"></td>
-		<td width="400" colspan="2"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<td colspan="2"><table border="0" cellpadding="0" cellspacing="0">
 		<tr>
 			<td style="color: #3A3A3A;">SUBTOTAL INKL. MOMS:</td>
 		</tr>
@@ -317,7 +317,7 @@ if($this->orderDetails['details']['BT']->coupon_code){
         <?php }?>
 		</table></td>
 
-		<td><table width="100%" border="0" cellpadding="0" cellspacing="0" style="text-align: right;" >
+		<td><table border="0" cellpadding="0" cellspacing="0" style="text-align: right;" >
 		<tr>
 			<td style="padding: 0 10px; color: #3A3A3A;" ><?php echo number_format($this->orderDetails['details']['BT']->order_salesPrice,2,',','.');?> DKK</td>
 		</tr>
